@@ -1,0 +1,517 @@
+body {
+  font-family: "Lexend", sans-serif;
+  background: radial-gradient(circle at center, red 0%, #8b0000 100%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: white;
+}
+
+button{
+  border: none;
+}
+
+.cerrar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 8px;
+  background: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.botonArribaIzquierda {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 28px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 8px;
+  background: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.btn-servicio {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  justify-content: flex-start;
+  /* Alinea a la izquierda horizontalmente */
+  background: linear-gradient(red, darkred);
+  /* ✅ Corrección aquí */
+  width: 80%;
+  height: 50px;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+}
+
+.botonWhatsapp {
+  color: white;
+  padding: 15px;
+  width: 100%;
+  background: red;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+}
+
+.botonActivarCalculadora {
+  background: red;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  margin: 30px;
+}
+
+.botonObtenerResultado {
+  background: red;
+  height: 70px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  font-size: 20px;
+  margin: 30px;
+}
+
+.section1 {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorPrincipal {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  /* 🔹 Quita subrayado si aplica */
+  color: white;
+}
+
+p {
+  text-align: justify;
+  font-size: 18px;
+  margin: 50px;
+}
+
+.panelOcultable {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    to bottom right,
+    #555555,
+    /* gris medio-oscuro */ #1a1a1a /* gris muy oscuro, casi negro */
+  );
+  padding: 100px 20px 20px 20px;
+  z-index: 9999;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 90%;
+  border-radius: 30px;
+  align-items: center;
+}
+
+.imagenWeb {
+  width: 100%;
+  margin-top: 30px;
+}
+
+h2 {
+  display: flex;
+  background: linear-gradient(to top, rgba(50, 50, 50, 1), rgba(100, 100, 100, 1));
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  display: flex;
+  background-color: darkred;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  font-size: 18px;
+}
+
+label {
+  margin: 20px;
+}
+
+select,
+input {
+  all: unset;
+  /* Quita todos los estilos por defecto */
+  display: block;
+  width: 80%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  min-height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.calculadoraDeObra {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+i {
+  font-size: 20px;
+}
+
+.pieDePagina {
+  display: flex;
+  flex-direction: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: darkred;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  width: 100%;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  font-size: 20px;
+  color: white;
+  background: darkred;
+  height: 120px;
+  margin: 0;
+  z-index: 999;
+}
+
+.logotipo {
+  height: auto;
+  fill: none;
+  stroke: white;
+  stroke-width: 1.7;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw 10s linear infinite alternate;
+  background-color: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.linkLogoInicio {
+  width: 25%;
+  background: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.imgPersonajes {
+  height: 150px;
+  width: auto;
+}
+
+.menuNavegacion {
+  background: rgba(30, 30, 30, 0.9);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  align-content: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
+  color: white;
+  gap: 60px;
+  padding: 0 0 0 30px;
+
+  /* 🔹 Oculto inicialmente fuera del canvas */
+  transform: translateX(-100%);
+  opacity: 0;
+  transition:
+    transform 0.5s ease-out,
+    opacity 0.5s ease-out;
+}
+
+.menuNavegacion.activo {
+  transform: translateX(0);
+  /* 🔹 En su posición normal */
+  opacity: 1;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 400;
+    fill: transparent;
+  }
+
+  45% {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+
+  55% {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+
+  100% {
+    stroke-dashoffset: 400;
+    fill: transparent;
+  }
+}
+
+@media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
+  (max-width: 1080px) and (min-resolution: 1.8dppx) {
+  svg {
+    width: 70%;
+  }
+
+  .btn-text {
+    font-size: 40px;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 35px;
+    margin: 50px;
+  }
+
+  li {
+    text-align: justify;
+    font-size: 35px;
+    margin: 50px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  .btn-img {
+    height: 100%;
+    max-height: 250px;
+    margin-right: 50px;
+  }
+
+  .logotipo {
+    width: 50%;
+  }
+
+  .menu {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contenedorPrincipal {
+    width: 100%;
+  }
+
+  .pieDePagina {
+    font-size: 35px;
+    height: 100px;
+  }
+
+  label,
+  select,
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    min-height: 90px;
+    text-align: center;
+    font-size: 50px;
+    /* 🔹 Centra el texto horizontalmente */
+  }
+
+  button {
+    min-height: 90px;
+    font-size: 50px;
+    border: none;
+  }
+
+  .linkLogoInicio {
+    width: 100%;
+  }
+
+  .cerrar {
+    width: 150px;
+    height: 150px;
+    font-size: 60px;
+    margin: 50px;
+  }
+
+  .botonArribaIzquierda {
+    width: 150px;
+    height: 150px;
+    margin: 25px;
+  }
+
+  i {
+    font-size: 50px;
+  }
+
+  strong {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 50px;
+  }
+
+  a.btn-menu {
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  .btn-menu:hover {
+    background-color: #aa0000;
+  }
+
+  .btn-menu svg,
+  .btn-menu i {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+
+  .menuNavegacion {
+    width: 90%;
+    gap: 160px;
+  }
+
+  .botonObtenerResultado {
+    height: 170px;
+    width: 700px;
+    border-radius: 25px;
+    font-size: 50px;
+    margin: 30px;
+  }
+
+  .btn-servicio {
+    font-size: 50px;
+    width: 80%;
+    height: 100px;
+  }
+
+  .botonWhatsapp {
+    color: white;
+    padding: 50px;
+    width: 100%;
+    background: red;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+  }
+
+  .encabezado {
+    height: 200px;
+  }
+
+  .panelOcultable {
+    width: 95%;
+  }
+
+  #resultado {
+    font-size: 50px;
+  }
+
+  .botonActivarCalculadora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: none;
+    height: 150px;
+    margin: 100px;
+  }
+
+  .imgPersonajes {
+    height: 300px;
+    width: auto;
+  }
+}

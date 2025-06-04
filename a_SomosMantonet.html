@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <base target="_top" />
+
+    <link rel="stylesheet" href="c_estilos.css" />
+
+    <style>
+      body {
+        color: white; /* TODO: Establece todo el texto a blanco */
+        background-color: #2c3e50; /* TODO: Fondo oscuro para legibilidad del texto blanco. AJUSTA ESTE COLOR */
+        font-family: Arial, sans-serif; /* Una fuente base para mejor legibilidad */
+      }
+
+      /* Estilos para el botón de silencio */
+      .botonEncabezado {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em; /* Tamaño del icono */
+        cursor: pointer;
+        padding: 10px;
+        position: absolute; /* Para posicionarlo en la esquina */
+        top: 15px;
+        right: 15px;
+      }
+      .botonArribaIzquierda {
+        /* Aseguramos que el botón de menú también sea visible */
+        color: white;
+      }
+
+      /* Estilos logo */
+      .cls-1 {
+        /* PATHS DEL LOGO */
+        fill: white !important; /* TODO: Logo en blanco */
+        opacity: 1;
+      }
+      .logotipo {
+        /* Contenedor del logo si es necesario */
+        /* fill: white; /* Alternativa si .cls-1 no es suficiente */
+      }
+
+      /* Ajustes para la sección "Quiénes Somos" con texto blanco */
+      .quienes-somos-section h2 {
+        /* color: white; ya heredado del body */
+        margin-bottom: 20px;
+        font-size: 2em;
+      }
+      .quienes-somos-section h3 {
+        /* color: white; ya heredado del body */
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .quienes-somos-section p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+        /* color: white; ya heredado del body */
+      }
+      .quienes-somos-section ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+      .quienes-somos-section li {
+        margin-bottom: 8px;
+      }
+      .quienes-somos-section strong {
+        /* color: #e0e0e0; /* Un blanco ligeramente diferente si se desea para strong */
+      }
+      .quienes-somos-section a {
+        color: #a7d7f9; /* Un color celeste claro para los links, o puedes dejarlos blancos */
+        text-decoration: none;
+      }
+      .quienes-somos-section a:hover {
+        text-decoration: underline;
+      }
+
+      /* Pie de página con texto blanco */
+      .pieDePagina {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #1a252f; /* TODO: Fondo más oscuro para el pie de página */
+        /* color: white; ya heredado del body */
+        border-top: 1px solid #3c4a57;
+      }
+
+      /* Estilo para el menú de navegación y sus items */
+      .menuNavegacion .btn-servicio .btn-text {
+        /* color: white;  Heredado del body si no hay otra regla más específica en c_css */
+      }
+      .menuNavegacion .cerrar {
+        color: #ccc; /* Color para el botón de cerrar menú */
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="pageAudio" autoplay>
+      <source
+        src="https://raw.githubusercontent.com/SerchAboites/MANTONET/main/SONIDOS%20MANTONET/SOMOS%20MANTONET.mp3"
+        type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio. (Este texto será blanco)
+    </audio>
+
+    <div class="contenedorPrincipal">
+      <div class="encabezado">
+        <button onclick="mostrarMenu();" class="botonArribaIzquierda">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <a class="linkLogoInicio" href="<?= myURL(); ?>?page=a_principal" title="Página Principal">
+          <svg
+            id="Capa_2"
+            class="logotipo"
+            data-name="Capa 2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 446.66 134.17">
+            <g id="Capa_1-2" data-name="Capa 1">
+              <g>
+                <path
+                  class="cls-1"
+                  d="m311.33,83.59c2.54-16.33-.32-32.54-2.5-41.5,3.14-1.54,4.83-5.13,3.85-8.62-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.98,3.46,4.27,5.64,7.72,5.35,2.09,8.77,4.84,24.66,2.41,40.44-.23.02-.46.04-.7.08-7.59-20.42-22.3-53.99-29.41-69.9,2.52-1.74,3.78-4.95,2.91-8.06-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.05.16.1.32.16.48-16.79,9.77-47.88,28.2-60.73,37.98-.35-.25-.73-.46-1.13-.65,2.99-9.4,10.74-27.2,27.83-34.56,1.25,2.29,3.68,3.84,6.47,3.84,4.07,0,7.38-3.3,7.38-7.38s-3.3-7.38-7.38-7.38-7.38,3.3-7.38,7.38c0,.33.03.66.07.98-18.27,7.73-26.46,26.59-29.59,36.45-.17-.01-.34-.03-.51-.03-4.07,0-7.38,3.3-7.38,7.38,0,3.52,2.47,6.47,5.78,7.2.12,15.78,4.31,52.31,39.43,62.3-.03.75.06,1.51.27,2.27,1.1,3.92,5.18,6.2,9.1,5.1,3.92-1.1,6.2-5.18,5.1-9.1-1.1-3.92-5.18-6.2-9.1-5.1-2.24.63-3.94,2.23-4.79,4.22-33.73-9.62-37.46-44.36-37.42-59.58,2.32-.31,4.3-1.7,5.42-3.66,4.76,1.65,11.66,4.05,19.69,6.83-.41,2.01-.63,4.08-.63,6.21,0,16.88,13.68,30.56,30.56,30.56,12,0,22.37-6.92,27.37-16.98,6.19,2.12,11.67,4,15.97,5.45-.14.99-.09,2.01.2,3.03.5,1.78,1.62,3.22,3.06,4.16-.55,1.41-1.15,2.8-1.83,4.16-4.85,9.74-12.46,17.08-22.67,21.91-1.7-2.69-5.01-4.06-8.23-3.16-3.92,1.1-6.2,5.18-5.1,9.1,1.1,3.92,5.18,6.2,9.1,5.1,3.74-1.05,5.98-4.81,5.22-8.55,10.84-5.08,18.93-12.86,24.08-23.22.7-1.41,1.32-2.85,1.89-4.3,1.14.25,2.37.23,3.57-.11,3.92-1.1,6.2-5.18,5.1-9.1-.7-2.48-2.58-4.3-4.87-5.03Zm-24.42-1.91c1.35-3.45,2.1-7.2,2.1-11.12,0-16.88-13.68-30.56-30.56-30.56-13.81,0-25.48,9.17-29.26,21.75-7.93-2.75-14.76-5.12-19.48-6.76.06-.37.09-.74.09-1.12,0-1.59-.51-3.07-1.37-4.27,11.5-8.31,40.32-25.76,60.29-37.43,1.76,2.05,4.57,3.04,7.35,2.36,7.1,15.87,21.77,49.38,29.33,69.71-1.18.68-2.12,1.66-2.76,2.81-4.24-1.43-9.64-3.28-15.73-5.37Z" />
+                <path
+                  class="cls-1"
+                  d="m40.76,43.88l-9.14,24.84c-2.29,6.48-4.11,12.11-5.41,17.29h-.23c-1.29-5.33-3.05-10.97-5.18-17.29l-8.76-24.84H3.58L0,95.23h6.32l1.37-22.02c.46-7.69.84-16.3.99-22.7h.15c1.45,6.09,3.5,12.72,5.94,19.96l8.3,24.46h5.03l9.07-24.91c2.59-7.09,4.72-13.49,6.48-19.5h.23c-.08,6.4.38,15.01.76,22.17l1.29,22.55h6.48l-3.2-51.35h-8.46Z" />
+                <path
+                  class="cls-1"
+                  d="m75.42,43.88l-17.45,51.35h6.86l5.33-16.15h18.21l5.49,16.15h7.08l-17.52-51.35h-8Zm-3.89,30.02l5.03-14.86c.99-3.12,1.83-6.25,2.59-9.29h.15c.76,2.97,1.52,6.02,2.67,9.37l5.03,14.78h-15.47Z" />
+                <path
+                  class="cls-1"
+                  d="m140.79,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
+                <polygon
+                  class="cls-1"
+                  points="152.75 49.52 168.37 49.52 168.37 95.23 175.07 95.23 175.07 49.52 190.77 49.52 190.77 43.88 152.75 43.88 152.75 49.52" />
+                <path
+                  class="cls-1"
+                  d="m357.98,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
+                <polygon
+                  class="cls-1"
+                  points="382.44 71.15 402.4 71.15 402.4 65.67 382.44 65.67 382.44 49.44 403.54 49.44 403.54 43.88 375.81 43.88 375.81 95.23 404.68 95.23 404.68 89.67 382.44 89.67 382.44 71.15" />
+                <polygon
+                  class="cls-1"
+                  points="408.64 43.88 408.64 49.52 424.26 49.52 424.26 95.23 430.97 95.23 430.97 49.52 446.66 49.52 446.66 43.88 408.64 43.88" />
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <button id="muteButton" class="botonEncabezado">
+          <i class="fas fa-volume-up"></i>
+        </button>
+      </div>
+
+      <div class="menuNavegacion" id="menuNavegacion">
+        <button class="cerrar" onclick="ocultarMenu();">×</button>
+
+        <button class="btn-servicio" title="Impermeabilización" onclick="window.location.href='a_Imper.html'">
+          <span class="btn-text">Impermeabilización</span>
+          <img
+            src="https://raw.githubusercontent.com/SerchAboites/IMAGENES-PARA-HTML/refs/heads/main/MANTONET/GRAVIN%203.png"
+            class="imgPersonajes" />
+        </button>
+
+        <button class="btn-servicio" title="Pintura" onclick="window.location.href='a_Pintura.html'">
+          <span class="btn-text">Pintura</span>
+          <img
+            src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Broch%C3%ADn%20(2).png"
+            class="imgPersonajes" />
+        </button>
+
+        <button class="btn-servicio" title="Plomería" onclick="window.location.href='a_Plomeria.html'">
+          <span class="btn-text">Plomería</span>
+          <img
+            src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Tuercas%207.png"
+            class="imgPersonajes" />
+        </button>
+
+        <button class="btn-servicio" title="Electricidad" onclick="window.location.href='a_Electricidad.html'">
+          <span class="btn-text">Electricidad</span>
+          <img
+            src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/PERSONAJE%20-%20NEUTRINA%20Y%20LINEA.png"
+            class="imgPersonajes" />
+        </button>
+      </div>
+
+      <section class="section1 quienes-somos-section" style="margin-top: 200px; padding: 20px">
+        <h2>La Nueva Cara del Mantenimiento: Conozca a MANTONET</h2>
+        <p>
+          En un mundo que exige soluciones cada vez más inteligentes y eficientes, nace <strong>MANTONET</strong>, una
+          empresa dedicada a revolucionar el sector del mantenimiento general. Fundada por dos jóvenes emprendedores de
+          27 años, Alejandra y <strong>Sergio</strong>, MANTONET surge de la fusión de la experiencia práctica en el
+          corazón de la hotelería y la innovación disruptiva del mundo digital y la gestión de calidad.
+        </p>
+        <p>
+          Nuestra misión es ofrecer servicios profesionales de mantenimiento para residencias, complejos de
+          departamentos, hoteles y empresas, abarcando un abanico de soluciones que van desde impermeabilizaciones y
+          pintura, hasta plomería, electricidad y jardinería. Sin embargo, en MANTONET no solo nos enfocamos en el
+          "qué", sino en el "cómo".
+        </p>
+        <h3>La Fusión de Experiencia y Visión Innovadora</h3>
+        <p>
+          En el núcleo de nuestra empresa se encuentra una sinergia única y un equipo fundamental.
+          <strong>Alejandra</strong>, con su valiosa experiencia como supervisora de mantenimiento en la exigente
+          industria hotelera, aporta un profundo conocimiento de los estándares de calidad, la atención al detalle y la
+          logística impecable que garantiza la satisfacción del cliente. Ella es la voz de la experiencia que asegura
+          que cada trabajo se realice con la máxima profesionalidad.
+        </p>
+        <p>
+          <strong>Sergio</strong>, diseñador de animación y arte digital con experiencia en la implementación de
+          sistemas de gestión de calidad bajo la norma ISO 9001:2015, impulsa la visión tecnológica y creativa de
+          MANTONET. Esta perspectiva nos permite ir más allá del servicio tradicional, integrando herramientas digitales
+          de vanguardia como bases de datos para la gestión de proyectos, aplicaciones HTML para una comunicación fluida
+          con el cliente, y diseños 3D y renderizados para la visualización de proyectos.
+        </p>
+        <p>
+          Junto a nosotros, un pilar fundamental para el crecimiento y la difusión de nuestro proyecto es
+          <strong>Néstor</strong>, nuestro especialista en Marketing Digital. Con su formación y pericia, Néstor es el
+          arquitecto de nuestra presencia online, gestionando estratégicamente nuestras redes sociales y desarrollando
+          campañas de anuncios digitales a través de Google Ads. Su trabajo es crucial para conectar MANTONET con
+          quienes necesitan nuestros servicios y para construir una marca de alto impacto en el mercado.
+        </p>
+        <h3>Más que un Servicio, un Sistema Inteligente</h3>
+        <p>
+          Entendemos que la confianza se construye con resultados. Por ello, en nuestra etapa inicial, somos nosotros,
+          los fundadores, quienes nos arremangamos la camisa para ejecutar y supervisar directamente los servicios. Esta
+          inmersión total nos permite no solo garantizar la calidad, sino también perfeccionar cada proceso desde su
+          raíz.
+        </p>
+        <p>
+          Sin embargo, nuestra visión a largo plazo es la creación de un ecosistema de mantenimiento autosustentable.
+          Aspiramos a desarrollar nuestros propios sistemas de gestión digital, optimizando la administración y la
+          operación para poder expandir nuestro equipo. Queremos ser una plataforma que conecte a clientes con una red
+          de técnicos especializados, rigurosamente seleccionados y alineados con nuestra filosofía de calidad y
+          eficiencia.
+        </p>
+        <h3>Nuestro Compromiso: Juventud, Tecnología y Confianza</h3>
+        <p>
+          En MANTONET, vemos nuestra juventud no como una falta de experiencia, sino como nuestra mayor fortaleza. Somos
+          nativos digitales, ágiles y con una mentalidad orientada a la solución de problemas de forma creativa e
+          innovadora. Estamos comprometidos a:
+        </p>
+        <ul>
+          <li>
+            <strong>Profesionalizar el sector:</strong> Aplicando estándares de calidad y una gestión transparente en
+            cada proyecto.
+          </li>
+          <li>
+            <strong>Integrar la tecnología:</strong> Para ofrecer una experiencia de cliente superior, desde la
+            cotización hasta la finalización del servicio.
+          </li>
+          <li>
+            <strong>Generar confianza:</strong> A través de un trabajo bien hecho, una comunicación clara y la garantía
+            de satisfacción.
+          </li>
+          <li>
+            <strong>Construir una comunidad:</strong> Creando una red de trabajo sólida y confiable para especialistas
+            del mantenimiento.
+          </li>
+        </ul>
+        <p>
+          Somos MANTONET y estamos aquí para redefinir lo que significa un servicio de mantenimiento.
+          <strong>Permítanos ser su aliado estratégico para cuidar y valorizar su patrimonio.</strong>
+        </p>
+      </section>
+    </div>
+
+    <table style="width: 100%; margin: 30px 0; height: 50px">
+      <tr>
+        <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
+      </tr>
+    </table>
+
+    <script>
+      // Funciones del menú (ya existentes)
+      function mostrarMenu() {
+        const menu = document.querySelector(".menuNavegacion");
+        menu.classList.add("activo");
+      }
+
+      function ocultarMenu() {
+        const menu = document.querySelector(".menuNavegacion");
+        menu.classList.remove("activo");
+      }
+
+      // TODO: JavaScript para el botón de Mute/Unmute
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("pageAudio");
+        const muteButton = document.getElementById("muteButton");
+        const icon = muteButton.querySelector("i");
+
+        // Función para actualizar el icono del botón
+        function updateMuteButtonIcon() {
+          if (audio.muted || audio.paused) {
+            // Consideramos pausado como "silenciado" para el ícono
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-volume-mute");
+          } else {
+            icon.classList.remove("fa-volume-mute");
+            icon.classList.add("fa-volume-up");
+          }
+        }
+
+        // Intentar reproducir el audio y manejar promesas (importante para autoplay)
+        // El audio con autoplay puede ser bloqueado por el navegador.
+        // Si es bloqueado, a menudo se silencia o no se inicia.
+        if (audio) {
+          var playPromise = audio.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then((_) => {
+                // Autoplay iniciado!
+                updateMuteButtonIcon();
+              })
+              .catch((error) => {
+                // Autoplay fue prevenido.
+                // Esto puede pasar si el usuario no ha interactuado con la página aún.
+                // O si el audio no está silenciado por defecto en algunos navegadores.
+                console.warn("Autoplay del audio fue prevenido por el navegador:", error);
+                // Puedes intentar forzar el audio a estar 'muted' y luego reproducirlo
+                // audio.muted = true;
+                // audio.play();
+                updateMuteButtonIcon(); // Asegura que el icono refleje el estado actual (probablemente muteado o pausado)
+              });
+          }
+
+          // Actualizar el ícono si el estado de reproducción cambia (ej: finaliza)
+          audio.onplay = updateMuteButtonIcon;
+          audio.onpause = updateMuteButtonIcon;
+          audio.onvolumechange = updateMuteButtonIcon; // Si se cambia el volumen externamente
+
+          // Evento para el botón de Mute/Unmute
+          muteButton.addEventListener("click", function () {
+            if (audio.muted) {
+              audio.muted = false;
+              if (audio.paused) {
+                // Si estaba pausado y se desmutea, intentar reproducir
+                audio.play().catch((e) => console.warn("No se pudo reproducir tras desmutear:", e));
+              }
+            } else {
+              audio.muted = true;
+              // No necesariamente pausamos si se mutea, el usuario podría querer video/visualización sin sonido
+            }
+            updateMuteButtonIcon();
+          });
+
+          // Establecer el ícono inicial (importante si autoplay no funciona o se inicia muteado)
+          updateMuteButtonIcon();
+        }
+      });
+
+      function solicitarCotizacion() {
+        alert("Formulario de cotización pronto disponible. (Este texto será blanco)");
+      }
+    </script>
+  </body>
+</html>
