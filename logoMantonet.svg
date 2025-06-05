@@ -16,7 +16,7 @@
     stroke-width: 1.7;
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-    animation: draw 10s linear infinite alternate;
+    animation: draw 8s linear infinite alternate;
     justify-content: center;
     align-items: center;
     background: none;

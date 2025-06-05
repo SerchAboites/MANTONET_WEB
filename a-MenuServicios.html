@@ -15,7 +15,16 @@
     <!-- Icono para dispositivos Apple (pantalla de inicio en iOS) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-24X52F10Q2');
+    </script>
 
     <meta charset="UTF-8" />
     <title>Mantonet - Servicios</title>
@@ -64,22 +73,19 @@
             font-size: 35px;
             width: 100%;
             display: flex;
-            /* Duplicado, pero se mantiene */
             align-items: center;
-            /* Duplicado, pero se mantiene */
-            transition: background-color 0.3s ease;
+            /* This can be combined with align-content/justify-content */
+            transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+            /* Add transform to transition */
             min-height: 200px;
             overflow: hidden;
-            display: flex;
             align-content: center;
-            align-items: center;
             justify-content: center;
+            /* Removed the duplicate 'display: flex;' as it was already declared */
         }
 
         .btn-servicio:hover {
-
             transform: scale(1.1);
-            /* Example: Makes the button 5% larger */
         }
 
         .btn-svg {
@@ -139,9 +145,6 @@
             /* Add this line for a smooth transition */
         }
 
-        .botonLadoIzquierdo:hover {
-            fill: #a8a8a8;
-        }
 
         .botonLadoDerecho {
             fill: #7c0000;

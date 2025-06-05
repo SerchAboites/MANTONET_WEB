@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  
+
   <title>Pintura Profesional para Hogares y Empresas - Mantonet</title>
   <meta name="description"
     content="Servicios de pintura profesional para interiores y exteriores. Acabados de calidad, bitácora detallada del proyecto y cotización gratuita. Transforma tus espacios con Mantonet en la Ciudad de México y Estado de México." />
@@ -17,6 +17,17 @@
   <!-- Icono para dispositivos Apple (pantalla de inicio en iOS) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
   <base target="_top" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-24X52F10Q2');
+  </script>
 
   <script type="application/ld+json">
     {
@@ -73,18 +84,19 @@
         <i class="fas fa-bars"></i>
       </button>
 
-            <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="Volver al inicio de servicios Mantonet">
-                <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        fetch("logoMantonet.svg")
-                            .then((res) => res.text())
-                            .then((svg) => {
-                                document.getElementById("logo-container").innerHTML = svg;
-                            });
-                    });
-                </script>
-            </button>
+      <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'"
+        title="Volver al inicio de servicios Mantonet">
+        <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              });
+          });
+        </script>
+      </button>
     </header>
 
     <div id="menu-container"></div>
@@ -139,11 +151,11 @@
 
     <footer>
       <table style="width: 100%; margin: 30px; height: 50px">
-          <tr>
-              <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
-          </tr>
+        <tr>
+          <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
+        </tr>
       </table>
-  </footer>
+    </footer>
 
     <div id="ico_whatsapp"></div>
     <script>
