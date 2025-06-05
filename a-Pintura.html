@@ -9,6 +9,7 @@
     content="Servicios de pintura profesional para interiores y exteriores. Acabados de calidad, bitácora detallada del proyecto y cotización gratuita. Transforma tus espacios con Mantonet en la Ciudad de México y Estado de México." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="c_estilos.css" />
+  <link rel="stylesheet" href="c_textos.css" />
   <!-- Favicon estándar para navegadores -->
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
@@ -72,18 +73,18 @@
         <i class="fas fa-bars"></i>
       </button>
 
-      <a href="a-MenuServicios.html" class="linkLogoInicio" title="Ir a la página principal de servicios de Mantonet">
-        <div id="logo-container"></div>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            fetch("logoMantonet.svg")
-              .then((res) => res.text())
-              .then((svg) => {
-                document.getElementById("logo-container").innerHTML = svg;
-              });
-          });
-        </script>
-      </a>
+            <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="Volver al inicio de servicios Mantonet">
+                <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        fetch("logoMantonet.svg")
+                            .then((res) => res.text())
+                            .then((svg) => {
+                                document.getElementById("logo-container").innerHTML = svg;
+                            });
+                    });
+                </script>
+            </button>
     </header>
 
     <div id="menu-container"></div>
@@ -95,8 +96,8 @@
         });
     </script>
     <main class="main-content">
-      <section class="section1" style="margin-top: 150px;">
-        <h1>Pintura Profesional para Interiores y Exteriores con Mantonet</h1>
+      <section class="section1">
+        <h1>Aplicación de Pintura Profesional para Interiores y Exteriores con Mantonet</h1>
 
         <img src="img/brochin16-9.png"
           alt="Servicio de pintura profesional realizado por Mantonet, mostrando una brocha y colores vibrantes en un interior"

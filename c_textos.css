@@ -1,0 +1,158 @@
+/* text-styles.css */
+
+/* Estilos generales de texto */
+body {
+  font-family: "Lexend", sans-serif;
+  color: white; /* Asumiendo que el color de texto general se define aquí si aplica a todo */
+}
+
+h1 {
+  font-size: 40px;
+  padding: 30px;
+  text-align: center;
+}
+
+h2 {
+  display: flex;
+  background: linear-gradient(to top, rgba(50, 50, 50, 1), rgba(100, 100, 100, 1));
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+h3 {
+  display: flex;
+  background-color: darkred;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+
+/* Puedes añadir h4, h5, h6 aquí si los usas y necesitan estilos específicos */
+
+p {
+  text-align: justify;
+  font-size: 18px;
+  margin: 50px;
+}
+
+li {
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+ol {
+  /* Define aquí los estilos para listas ordenadas si los necesitas */
+}
+
+ul {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none; /* Quita subrayado si aplica */
+  color: white;
+}
+
+strong {
+  /* Si usas strong y quieres un estilo específico, va aquí */
+}
+
+label {
+  margin: 20px;
+}
+
+select,
+input {
+  all: unset; /* Quita todos los estilos por defecto */
+  display: block;
+  width: 80%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  min-height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+i {
+  font-size: 20px;
+}
+
+/* Media Queries para texto en pantallas más pequeñas */
+@media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
+(max-width: 1080px) and (min-resolution: 1.8dppx) {
+  .btn-text {
+    font-size: 40px;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 35px;
+    margin: 50px;
+  }
+
+  li {
+    text-align: justify;
+    font-size: 35px;
+    margin: 50px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  label,
+  select,
+  input {
+    min-height: 90px;
+    font-size: 50px;
+  }
+
+  button {
+    min-height: 90px;
+    font-size: 50px;
+  }
+
+  i {
+    font-size: 50px;
+  }
+
+  strong {
+    font-size: 30px;
+  }
+
+  a.btn-menu {
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  #resultado {
+    font-size: 50px;
+  }
+}

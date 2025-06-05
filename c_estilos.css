@@ -1,5 +1,6 @@
+/* visual-styles.css */
+
 body {
-  font-family: "Lexend", sans-serif;
   background: radial-gradient(circle at center, red 0%, #8b0000 100%);
   margin: 0;
   display: flex;
@@ -7,7 +8,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  color: white;
 }
 
 button {
@@ -20,7 +20,6 @@ button {
   left: 20px;
   z-index: 1000;
   display: flex;
-  /* flex para centrar el ícono */
   justify-content: center;
   align-items: center;
   width: 60px;
@@ -78,11 +77,8 @@ button {
 .btn-servicio {
   display: flex;
   align-items: center;
-  /* Centra verticalmente el contenido */
   justify-content: flex-start;
-  /* Alinea a la izquierda horizontalmente */
   background: linear-gradient(red, darkred);
-  /* ✅ Corrección aquí */
   width: 80%;
   height: 50px;
   border-radius: 15px;
@@ -129,6 +125,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 150px;
 }
 
 .contenedorPrincipal {
@@ -138,18 +135,6 @@ button {
   align-items: center;
 }
 
-a {
-  text-decoration: none;
-  /* 🔹 Quita subrayado si aplica */
-  color: white;
-}
-
-p {
-  text-align: justify;
-  font-size: 18px;
-  margin: 50px;
-}
-
 .panelOcultable {
   position: fixed;
   top: 50%;
@@ -157,10 +142,7 @@ p {
   transform: translate(-50%, -50%);
   background: linear-gradient(to bottom right,
       #555555,
-      /* gris medio-oscuro */
-      #1a1a1a
-      /* gris muy oscuro, casi negro */
-    );
+      #1a1a1a);
   padding: 100px 20px 20px 20px;
   z-index: 9999;
   width: 50%;
@@ -177,55 +159,6 @@ p {
   margin-top: 30px;
 }
 
-h2 {
-  display: flex;
-  background: linear-gradient(to top, rgba(50, 50, 50, 1), rgba(100, 100, 100, 1));
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
-}
-
-h3 {
-  display: flex;
-  background-color: darkred;
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-}
-
-li {
-  font-size: 18px;
-}
-
-label {
-  margin: 20px;
-}
-
-select,
-input {
-  all: unset;
-  /* Quita todos los estilos por defecto */
-  display: block;
-  width: 80%;
-  margin-bottom: 15px;
-  font-size: 16px;
-  border-radius: 10px;
-  min-height: 30px;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-}
-
 .calculadoraDeObra {
   display: flex;
   width: 95%;
@@ -233,17 +166,6 @@ input {
   align-items: center;
   text-align: center;
   margin: 0 auto;
-}
-
-#resultado {
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-}
-
-i {
-  font-size: 20px;
 }
 
 .pieDePagina {
@@ -280,7 +202,6 @@ i {
   z-index: 999;
   padding: 10px;
   box-sizing: border-box;
-  /* ✅ CLAVE */
 }
 
 .linkLogoInicio {
@@ -314,8 +235,6 @@ i {
   color: white;
   gap: 60px;
   padding: 0 0 0 30px;
-
-  /* 🔹 Oculto inicialmente fuera del canvas */
   transform: translateX(-100%);
   opacity: 0;
   transition:
@@ -325,38 +244,14 @@ i {
 
 .menuNavegacion.activo {
   transform: translateX(0);
-  /* 🔹 En su posición normal */
   opacity: 1;
 }
 
+/* Media Queries para elementos visuales en pantallas más pequeñas */
 @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
 (max-width: 1080px) and (min-resolution: 1.8dppx) {
   svg {
     width: 70%;
-  }
-
-  .btn-text {
-    font-size: 40px;
-  }
-
-  p {
-    text-align: justify;
-    font-size: 35px;
-    margin: 50px;
-  }
-
-  li {
-    text-align: justify;
-    font-size: 35px;
-    margin: 50px;
-  }
-
-  h2 {
-    font-size: 35px;
-  }
-
-  h3 {
-    font-size: 30px;
   }
 
   .btn-img {
@@ -366,37 +261,15 @@ i {
   }
 
   .whatsapp-button {
-    position: fixed;
     bottom: 150px;
     left: 20px;
-    z-index: 1000;
-    display: flex;
-    /* flex para centrar el ícono */
-    justify-content: center;
-    align-items: center;
     width: 180px;
     height: 180px;
-    border-radius: 50%;
-    background-color: darkred;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .whatsapp-button:hover {
-    transform: scale(1.1);
-  }
-
-  .whatsapp-button img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
   }
 
   #iconoContacto {
     transform: scale(2);
-    /* Escala el icono al 150% (1.5 veces su tamaño original) */
     transform-origin: center center;
-    /* Asegura que la escala se haga desde el centro del icono */
   }
 
   .menu {
@@ -417,29 +290,13 @@ i {
     height: 100px;
   }
 
-  label,
-  select,
-  input {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border-radius: 10px;
-    min-height: 90px;
-    text-align: center;
-    font-size: 50px;
-    /* 🔹 Centra el texto horizontalmente */
-  }
-
-  button {
-    min-height: 90px;
-    font-size: 50px;
-    border: none;
-  }
-
   .linkLogoInicio {
     width: 100%;
   }
+
+  .section1 {
+  margin-top: 250px;
+}
 
   .cerrar {
     width: 150px;
@@ -452,20 +309,6 @@ i {
     width: 150px;
     height: 150px;
     margin: 25px;
-  }
-
-  i {
-    font-size: 50px;
-  }
-
-  strong {
-    font-size: 30px;
-  }
-
-
-  a.btn-menu {
-    color: white !important;
-    text-decoration: none !important;
   }
 
   .btn-menu:hover {
@@ -499,12 +342,8 @@ i {
   }
 
   .botonWhatsapp {
-    color: white;
     padding: 50px;
     width: 100%;
-    background: red;
-    height: auto;
-    border: none;
     border-radius: 20px;
   }
 
@@ -516,19 +355,12 @@ i {
     width: 95%;
   }
 
-  #resultado {
-    font-size: 50px;
-  }
-
   .botonActivarCalculadora {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: red;
-    color: white;
     padding: 30px;
     border-radius: 20px;
-    border: none;
     height: 150px;
     margin: 100px;
   }
