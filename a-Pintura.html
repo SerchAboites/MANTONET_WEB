@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Es buena práctica incluir el charset -->
+    <title>Mantonet - Servicios Profesionales</title>
+    <!-- Título descriptivo para la página -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <base target="_top" />
+    <link rel="stylesheet" href="c_estilos.css" />
+
+    <script>
+      function mostrarMenu() {
+        const menu = document.querySelector(".menuNavegacion");
+        menu.classList.add("activo");
+      }
+
+      function ocultarMenu() {
+        const menu = document.querySelector(".menuNavegacion");
+        menu.classList.remove("activo");
+      }
+      // Puedes llamar a mostrarMenu() cuando necesites abrir el panel
+    </script>
+  </head>
+
+  <body>
+    <div class="contenedorPrincipal">
+      <div class="encabezado">
+        <button onclick="mostrarMenu();" class="botonArribaIzquierda">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- El código PHP se asume que es procesado correctamente por el servidor -->
+        <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="logo menu">
+          <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              fetch("logoMantonet.svg")
+                .then((res) => res.text())
+                .then((svg) => {
+                  document.getElementById("logo-container").innerHTML = svg;
+                });
+            });
+          </script>
+        </button>
+      </div>
+      <!-- Cierre de .encabezado -->
+
+      <!-- menu desplegable -->
+
+      <div id="menu-container"></div>
+
+      <script>
+        fetch("a-menu-desplegable.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("menu-container").innerHTML = data;
+          });
+      </script>
+
+      <!-- end menu desplegable -->
+
+      <section class="section1" style="margin-top: 200px">
+        <h2>Pintura Profesional</h2>
+        <p>
+          Dale vida a tus espacios con acabados limpios, uniformes y duraderos. Aplicamos pintura profesional en
+          interiores y exteriores, cuidando cada detalle en muros, techos y fachadas.
+        </p>
+        <p>
+          En cada proyecto entregamos una <strong>bitácora profesional</strong>, física o digital, que registra el
+          avance, los materiales aplicados y cualquier incidencia relevante, para que estés informado incluso si no
+          puedes estar presente.
+        </p>
+        <p><strong>Resultados estéticos, duraderos y documentados en cada paso.</strong></p>
+
+        <h3>¿Cómo trabajamos?</h3>
+        <ol>
+          <li>Agendamos una visita sin costo para evaluar tu espacio y necesidades.</li>
+          <li>Te enviamos una propuesta con opciones de color, tiempos estimados y costos.</li>
+          <li>Con tu aprobación, iniciamos los trabajos.</li>
+          <li>Documentamos todo el proceso en una bitácora profesional con fotos y comentarios técnicos.</li>
+        </ol>
+
+        <p>🎨 <a href="#agenda" style="text-decoration: none; font-weight: bold">Agenda tu visita gratuita</a></p>
+
+        <a
+          href="https://wa.me/5215519148472?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20una%20visita%20sin%20costo%20para%20cotizaci%C3%B3n%2C%20aprovechando%20su%20promoci%C3%B3n%20%22PROMO-WEB-MANTONET%22.%20%C2%A1Gracias%21"
+          target="_blank"
+          style="text-decoration: none">
+          <button
+            style="
+              background-color: #25d366;
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            ">
+            <i class="fab fa-whatsapp" style="color: white; margin-right: 8px"></i>
+            Cotización sin Costo por WhatsApp
+          </button>
+        </a>
+      </section>
+      <!-- Cierre de .section1 -->
+    </div>
+    <!-- Cierre de .contenedorPrincipal -->
+
+    <table style="width: 100%; margin: 30px; height: 50px">
+      <!-- Pie de página -->
+      <tr>
+        <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
+      </tr>
+    </table>
+
+    <script>
+      function solicitarCotizacion() {
+        // Puedes personalizar esta función para abrir un formulario o enviar un correo
+        alert("Formulario de cotización pronto disponible.");
+      }
+    </script>
+  </body>
+</html>

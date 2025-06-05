@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="c_estilos.css" />
         <meta charset="UTF-8" />
         <title>Mantonet - Servicios</title>
         <style>
@@ -12,63 +13,11 @@
                 font-family: "Lexend", sans-serif;
                 background: radial-gradient(circle at center, red 0%, #8b0000 100%);
                 margin: 0;
-                /* quitar height: 100vh */
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                /* o quitar esta línea */
                 width: 100%;
-            }
-
-            svg {
-                width: 30%;
-                height: auto;
-                background: none; /* Duplicado, pero se mantiene según solicitud */
-                display: block;
-                margin: 5px auto;
-                scale: 1;
-                background: none;
-            }
-
-            .logotipo {
-                fill: none;
-                stroke: white;
-                stroke-width: 1.7;
-                stroke-dasharray: 450;
-                /* Debe ser igual o mayor a la longitud del path */
-                stroke-dashoffset: 400;
-                animation: draw 10s linear infinite alternate;
-                width: 20%;
-                margin-top: 50px;
-            }
-
-            a {
-                /* Esta regla CSS existe pero no hay elementos <a> visibles a los que aplique directamente en el contenido principal */
-                text-decoration: none;
-            }
-
-            @keyframes draw {
-                0% {
-                    stroke-dashoffset: 400;
-                    fill: transparent;
-                }
-                45% {
-                    stroke-dashoffset: 0;
-                    fill: white;
-                }
-                50% {
-                    stroke-dashoffset: 0;
-                    fill: white;
-                }
-                55% {
-                    stroke-dashoffset: 0;
-                    fill: white;
-                }
-                100% {
-                    stroke-dashoffset: 400;
-                    fill: transparent;
-                }
             }
 
             .menu {
@@ -79,36 +28,6 @@
                 align-items: center;
                 gap: 30px;
                 margin-bottom: 80px; /* Espacio para que el footer no oculte el último botón */
-            }
-
-            label {
-                /* Se mantiene <label> según solicitud, aunque H1-H6 es semánticamente mejor para títulos */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 35px;
-                color: white;
-                width: 100%;
-                background: darkred;
-                height: 100px;
-                margin: 30px;
-            }
-
-            .pieDePagina {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                color: white;
-                background: darkred;
-                height: 50px;
-                margin: 0;
-                z-index: 999;
-                /* opcional para que esté encima de otros elementos */
             }
 
             .btn-servicio {
@@ -182,6 +101,15 @@
                 /* Para que rote alrededor de la base */
             }
 
+            .botonLadoIzquierdo {
+                fill: #920000;
+            }
+
+            .botonLadoDerecho {
+                fill: #7c0000;
+                animation: cambioColorRojo 4s ease-in-out infinite;
+            }
+
             @keyframes rotarLadoALado {
                 0% {
                     transform: rotate(-9deg);
@@ -192,14 +120,6 @@
                 100% {
                     transform: rotate(-10deg);
                 }
-            }
-
-            .botonLadoIzquierdo {
-            }
-
-            .botonLadoDerecho {
-                fill: #7c0000;
-                animation: cambioColorRojo 4s ease-in-out infinite;
             }
 
             @keyframes cambioColorRojo {
@@ -216,10 +136,6 @@
 
             @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
                 (max-width: 1080px) and (min-resolution: 1.8dppx) {
-                svg {
-                    /* Esta regla es general, podría ser más específica (ej. svg.logotipo) */
-                    width: 70%;
-                }
                 .btn-text {
                     font-size: 40px;
                 }
@@ -228,19 +144,11 @@
                     max-height: 250px;
                     margin-right: 50px;
                 }
-                .logotipo {
-                    /* Específico para el SVG del logo */
-                    width: 80%;
-                    margin-top: 50px;
-                }
+
                 .menu {
                     /* Propiedades de flex y background ya definidas globalmente, se mantienen */
                     width: 100%;
                     /* gap: 30px; ya definido globalmente, se mantiene */
-                }
-                .pieDePagina {
-                    font-size: 35px;
-                    height: 100px;
                 }
             }
         </style>
@@ -257,57 +165,36 @@
             </defs>
         </svg>
 
-        <svg
-            id="Capa_2"
-            class="logotipo"
-            data-name="Capa 2"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 446.66 134.17">
-            <title>Logotipo de Mantonet</title>
-            <!-- Título para accesibilidad del SVG -->
-            <defs>
-                <style>
-                    .cls-1 {
-                        fill: none;
-                        opacity: 1;
-                    }
-                </style>
-            </defs>
-            <g id="Capa_1-2" data-name="Capa 1">
-                <g>
-                    <path
-                        class="cls-1 logotipo"
-                        d="m311.33,83.59c2.54-16.33-.32-32.54-2.5-41.5,3.14-1.54,4.83-5.13,3.85-8.62-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.98,3.46,4.27,5.64,7.72,5.35,2.09,8.77,4.84,24.66,2.41,40.44-.23.02-.46.04-.7.08-7.59-20.42-22.3-53.99-29.41-69.9,2.52-1.74,3.78-4.95,2.91-8.06-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.05.16.1.32.16.48-16.79,9.77-47.88,28.2-60.73,37.98-.35-.25-.73-.46-1.13-.65,2.99-9.4,10.74-27.2,27.83-34.56,1.25,2.29,3.68,3.84,6.47,3.84,4.07,0,7.38-3.3,7.38-7.38s-3.3-7.38-7.38-7.38-7.38,3.3-7.38,7.38c0,.33.03.66.07.98-18.27,7.73-26.46,26.59-29.59,36.45-.17-.01-.34-.03-.51-.03-4.07,0-7.38,3.3-7.38,7.38,0,3.52,2.47,6.47,5.78,7.2.12,15.78,4.31,52.31,39.43,62.3-.03.75.06,1.51.27,2.27,1.1,3.92,5.18,6.2,9.1,5.1,3.92-1.1,6.2-5.18,5.1-9.1-1.1-3.92-5.18-6.2-9.1-5.1-2.24.63-3.94,2.23-4.79,4.22-33.73-9.62-37.46-44.36-37.42-59.58,2.32-.31,4.3-1.7,5.42-3.66,4.76,1.65,11.66,4.05,19.69,6.83-.41,2.01-.63,4.08-.63,6.21,0,16.88,13.68,30.56,30.56,30.56,12,0,22.37-6.92,27.37-16.98,6.19,2.12,11.67,4,15.97,5.45-.14.99-.09,2.01.2,3.03.5,1.78,1.62,3.22,3.06,4.16-.55,1.41-1.15,2.8-1.83,4.16-4.85,9.74-12.46,17.08-22.67,21.91-1.7-2.69-5.01-4.06-8.23-3.16-3.92,1.1-6.2,5.18-5.1,9.1,1.1,3.92,5.18,6.2,9.1,5.1,3.74-1.05,5.98-4.81,5.22-8.55,10.84-5.08,18.93-12.86,24.08-23.22.7-1.41,1.32-2.85,1.89-4.3,1.14.25,2.37.23,3.57-.11,3.92-1.1,6.2-5.18,5.1-9.1-.7-2.48-2.58-4.3-4.87-5.03Zm-24.42-1.91c1.35-3.45,2.1-7.2,2.1-11.12,0-16.88-13.68-30.56-30.56-30.56-13.81,0-25.48,9.17-29.26,21.75-7.93-2.75-14.76-5.12-19.48-6.76.06-.37.09-.74.09-1.12,0-1.59-.51-3.07-1.37-4.27,11.5-8.31,40.32-25.76,60.29-37.43,1.76,2.05,4.57,3.04,7.35,2.36,7.1,15.87,21.77,49.38,29.33,69.71-1.18.68-2.12,1.66-2.76,2.81-4.24-1.43-9.64-3.28-15.73-5.37Z" />
-                    <path
-                        class="cls-1 logotipo"
-                        d="m40.76,43.88l-9.14,24.84c-2.29,6.48-4.11,12.11-5.41,17.29h-.23c-1.29-5.33-3.05-10.97-5.18-17.29l-8.76-24.84H3.58L0,95.23h6.32l1.37-22.02c.46-7.69.84-16.3.99-22.7h.15c1.45,6.09,3.5,12.72,5.94,19.96l8.3,24.46h5.03l9.07-24.91c2.59-7.09,4.72-13.49,6.48-19.5h.23c-.08,6.4.38,15.01.76,22.17l1.29,22.55h6.48l-3.2-51.35h-8.46Z" />
-                    <path
-                        class="cls-1 logotipo"
-                        d="m75.42,43.88l-17.45,51.35h6.86l5.33-16.15h18.21l5.49,16.15h7.08l-17.52-51.35h-8Zm-3.89,30.02l5.03-14.86c.99-3.12,1.83-6.25,2.59-9.29h.15c.76,2.97,1.52,6.02,2.67,9.37l5.03,14.78h-15.47Z" />
-                    <path
-                        class="cls-1 logotipo"
-                        d="m140.79,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
-                    <polygon
-                        class="cls-1 logotipo"
-                        points="152.75 49.52 168.37 49.52 168.37 95.23 175.07 95.23 175.07 49.52 190.77 49.52 190.77 43.88 152.75 43.88 152.75 49.52" />
-                    <path
-                        class="cls-1 logotipo"
-                        d="m357.98,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
-                    <polygon
-                        class="cls-1 logotipo"
-                        points="382.44 71.15 402.4 71.15 402.4 65.67 382.44 65.67 382.44 49.44 403.54 49.44 403.54 43.88 375.81 43.88 375.81 95.23 404.68 95.23 404.68 89.67 382.44 89.67 382.44 71.15" />
-                    <polygon
-                        class="cls-1 logotipo"
-                        points="408.64 43.88 408.64 49.52 424.26 49.52 424.26 95.23 430.97 95.23 430.97 49.52 446.66 49.52 446.66 43.88 408.64 43.88" />
-                </g>
-            </g>
-        </svg>
+        <div class="encabezado">
+            <a href="a-MenuServicios.html" class="linkLogoInicio" title="Ir al inicio de Mantonet">
+                <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        fetch("logoMantonet.svg")
+                            .then((res) => res.text())
+                            .then((svg) => {
+                                document.getElementById("logo-container").innerHTML = svg;
+                            });
+                    });
+                </script>
+            </a>
+        </div>
 
-        <label>MANTENIMIENTO GENERAL</label>
+        <h1
+            style="
+                background-color: darkred;
+                width: 100%;
+                justify-content: center;
+                align-content: center;
+                text-align-last: center;
+                margin-top: 150px;
+            ">
+            MANTENIMIENTO GENERAL
+        </h1>
 
-        <div class="menu">
+        <div class="menu" style="margin: 0 0 0 0">
             <!-- IMPERMEABILIZACIÓN -->
-            <button onclick="window.location.href='a_Imper.html'" class="btn-servicio" title="Impermeabilización">
+            <button onclick="window.location.href='a-Imper.html'" class="btn-servicio" title="Impermeabilización">
                 <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
                     <!-- <defs> eliminado de aquí, se usa el gradiente global -->
                     <polygon
@@ -327,7 +214,7 @@
             </button>
 
             <!-- PINTURA -->
-            <button onclick="window.location.href='a_Pintura.html'" class="btn-servicio" title="Pintura">
+            <button onclick="window.location.href='a-Pintura.html'" class="btn-servicio" title="Pintura">
                 <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
                     <polygon
                         fill="url(#gradienteBotonUnico)"
@@ -346,7 +233,7 @@
             </button>
 
             <!-- PLOMERÍA -->
-            <button onclick="window.location.href='a_Plomeria.html'" class="btn-servicio" title="Plomería">
+            <button onclick="window.location.href='a-Plomeria.html'" class="btn-servicio" title="Plomería">
                 <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
                     <polygon
                         fill="url(#gradienteBotonUnico)"
@@ -365,7 +252,7 @@
             </button>
 
             <!-- ELECTRICIDAD -->
-            <button onclick="window.location.href='a_Electricidad.html'" class="btn-servicio" title="Electricidad">
+            <button onclick="window.location.href='a-Electricidad.html'" class="btn-servicio" title="Electricidad">
                 <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
                     <polygon
                         fill="url(#gradienteBotonUnico)"
@@ -384,7 +271,7 @@
             </button>
 
             <!-- SOMOS MANTONET -->
-            <button onclick="window.location.href='a_SomosMantonet.html'" class="btn-servicio" title="SOMOS MANTONET">
+            <button onclick="window.location.href='a-SomosMantonet.html'" class="btn-servicio" title="SOMOS MANTONET">
                 <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
                     <polygon
                         fill="url(#gradienteBotonUnico)"
