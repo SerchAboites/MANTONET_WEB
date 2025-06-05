@@ -83,32 +83,6 @@
                 width: 80%;
             }
 
-.botonMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #25d366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    height: 100%;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* sombra agregada */
-}
-
-
-            .icono {
-                color: white;
-                margin-right: 8px;
-                font-size: 20px;
-            }
-
             @keyframes draw {
                 to {
                     stroke-dashoffset: 0;
@@ -117,64 +91,67 @@
 
             @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
                 (max-width: 1080px) and (min-resolution: 1.8dppx) {
-                .botonMenu {
-                    padding: 10px 15px;
-                    border-radius: 15px;
-                    font-size: 30px;
-                    width: 100%;
-                    height: 100px;
-                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.26); /* sombra agregada */
-                }
-
-                .menu {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 70px;
-                    width: 80%;
-                }
-
-                svg {
-                    width: 700px;
-                    height: auto;
-                    background: none;
-                    display: block;
-                    margin: 100px;
-                    scale: 1;
-                    background: none;
-                }
-
-                path,
-                polygon {
-                    fill: none;
-                    stroke: white;
-                    stroke-width: 1.7;
-                    stroke-dasharray: 400; /* Debe ser igual o mayor a la longitud del path */
-                    stroke-dashoffset: 400;
-                    animation: draw 2s linear infinite alternate;
-                }
-
-                .btn-redirect {
-                    padding: 12px 24px;
-                    font-size: 16px;
-                    font-weight: bold;
-                    border-radius: 8px;
-                }
-
-                .btn-redirect:hover {
-                    background: radial-gradient(circle at center, #ff4d4d, #8b0000);
-                    transform: scale(1.05);
-                }
-
-                .btn-redirect:active {
-                    transform: scale(0.95);
-                }
-
-                .icono {
-                    color: white;
-                    margin-right: 40px;
-                    font-size: 50px;
-                }
+                    
+                    
+                  
+            svg {
+                width: 300px;
+                height: 100px;
+                background: none;
+                display: block;
+                margin: 40px auto;
+                scale: 1;
+                background: none;
             }
+
+            path,
+            polygon {
+                fill: none;
+                stroke: white;
+                stroke-width: 1.7;
+                stroke-dasharray: 400; /* Debe ser igual o mayor a la longitud del path */
+                stroke-dashoffset: 400;
+                animation: draw 2s linear infinite alternate;
+            }
+
+            .btn-redirect {
+                background: #8b0000;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition:
+                    background 0.3s ease,
+                    transform 0.2s ease;
+                box-shadow: 0 4px 6px rgba(139, 0, 0, 0.5);
+                text-decoration: none;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: "Lato", sans-serif;
+                font-size: 16px;
+            }
+
+            .btn-redirect:hover {
+                background: radial-gradient(circle at center, #ff4d4d, #8b0000);
+                transform: scale(1.05);
+            }
+
+            .btn-redirect:active {
+                transform: scale(0.95);
+            }  
+                    
+                    
+                    
+                    
+                    
+            }
+            
+            
+            
+            
         </style>
     </head>
     <body>
@@ -218,17 +195,31 @@
         </svg>
 
         <div class="menu">
-            <button onclick="window.location.href='a_MenuServicios.html'" class="botonMenu" style="background: darkred">
-                <i class="fas fa-globe icono"></i>
+            <button onclick="window.location.href='a_MenuServicios.html'" class="btn-redirect">
+                <i class="fas fa-globe"></i>
                 Visitar Mantonet
             </button>
 
             <a
                 href="https://wa.me/5215519148472?text=Hola%21%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20mantenimiento%20que%20ofrecen%20y%20cotizar.%20Muchas%20gracias%21"
                 target="_blank"
-                class="botonMenu"
-                style="background-color: #25d366; color: white;">
-                <i class="fab fa-whatsapp icono"></i>
+                style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #25d366;
+                    color: white;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: &quot;Lato&quot;, sans-serif;
+                    font-size: 16px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    height: 100%;
+                ">
+                <i class="fab fa-whatsapp" style="color: white; margin-right: 8px; font-size: 20px"></i>
                 WhatsApp
             </a>
 
@@ -236,9 +227,23 @@
             <a
                 href="https://www.instagram.com/mantonet_"
                 target="_blank"
-                class="botonMenu"
-                style="background-color: #e1306c; color: white;">
-                <i class="fab fa-instagram icono"></i>
+                style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #e1306c;
+                    color: white;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: &quot;Lato&quot;, sans-serif;
+                    font-size: 16px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    height: 100%;
+                ">
+                <i class="fab fa-instagram" style="color: white; margin-right: 8px; font-size: 20px"></i>
                 Instagram
             </a>
 
@@ -246,9 +251,23 @@
             <a
                 href="https://www.facebook.com/profile.php?id=61573370344228"
                 target="_blank"
-                class="botonMenu"
-                style="background-color: #1877f2; color: white">
-                <i class="fab fa-facebook-f icono"></i>
+                style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #1877f2;
+                    color: white;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: &quot;Lato&quot;, sans-serif;
+                    font-size: 16px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    height: 100%;
+                ">
+                <i class="fab fa-facebook-f" style="color: white; margin-right: 8px; font-size: 20px"></i>
                 Facebook
             </a>
 
