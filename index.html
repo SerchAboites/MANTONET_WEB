@@ -2,62 +2,104 @@
 <html lang="es">
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Mantonet | Mantenimiento y Construcción en CDMX</title>
+    <meta name="description"
+        content="Contacta a Mantonet para servicios profesionales de mantenimiento general, impermeabilizaciones, plomería, electricidad y remodelaciones en CDMX y área metropolitana. ¡Presupuesto sin compromiso!">
 
-    <!-- Favicon estándar para navegadores -->
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
-
-    <!-- Icono para dispositivos Apple (pantalla de inicio en iOS) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
 
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    </noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
 
-    <title>Animación con stroke-dasharray</title>
     <style>
         body {
             background: radial-gradient(circle at center, red 0%, #8b0000 100%);
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            /* Habilita Flexbox */
             flex-direction: column;
+            /* Organiza los elementos en una columna vertical */
             align-items: center;
+            /* Centra los elementos hijos horizontalmente */
             justify-content: center;
+            /* Centra los elementos hijos verticalmente (si hay espacio disponible) */
             width: 100%;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            padding-bottom: 20px;
         }
 
-        svg {
-            width: 300px;
-            height: 100px;
-            background: none;
-            display: block;
-            margin: 40px auto;
-            scale: 1;
-            background: none;
+        header,
+        main,
+        footer {
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            padding: 20px 0;
         }
 
-        path,
-        polygon {
-            fill: none;
-            stroke: white;
-            stroke-width: 1.7;
-            stroke-dasharray: 400;
-            /* Debe ser igual o mayor a la longitud del path */
-            stroke-dashoffset: 400;
-            animation: draw 2s linear infinite alternate;
+        h1 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: white;
+            /* Estilo discreto para h1 si se desea */
+            /* opacity: 0.8; */
+            /* font-size: 1.8em; */
         }
 
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: white;
+            /* Estilo discreto para h2 */
+            /* opacity: 0.7; */
+            /* font-size: 1.3em; */
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        li {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: white;
+        }
 
         .menu {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            width: 80%;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
         }
-
 
         .icono {
             color: white;
@@ -66,27 +108,24 @@
         }
 
         .botonMenu {
-            /* Color base y texto */
             background-color: darkred;
             color: white;
-            /* Aplica la fuente Lato */
             font-family: 'Lato', sans-serif;
-            /* Estilos generales del botón */
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 25px;
-            margin: 8px;
+            padding: 20px 25px;
+            margin: 0px;
             border: none;
             border-radius: 8px;
             font-size: 18px;
             font-weight: bold;
-            /* Esto usará el 'wght@700' de Lato */
             text-decoration: none;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Transiciones para una animación suave */
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .botonMenu .icono {
@@ -106,139 +145,250 @@
             background-color: #6C0000;
         }
 
+        svg {
+            width: 300px;
+            height: auto;
+            background: none;
+            display: block;
+            margin: 40px auto;
+        }
+
+        path,
+        polygon {
+            fill: none;
+            stroke: white;
+            stroke-width: 1.7;
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: draw 2s linear infinite alternate;
+        }
+
         @keyframes draw {
             to {
                 stroke-dashoffset: 0;
             }
         }
 
+/* Contenido discreto para SEO */
+.seo-content {
+    /* Mantén un max-width para limitar el ancho en pantallas grandes */
+    max-width: 1000px; /* Reduje a 900px para que haya espacio para centrar en pantallas grandes */
+    width: 100%; /* Dale un ancho porcentual para que sea responsivo */
+    margin: 50px auto 0 auto; /* Centra horizontalmente usando 'auto' en los márgenes laterales */
+    /* El 50px es para el margin-top, 0 para el margin-right, auto para margin-bottom, auto para margin-left */
+
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+        .seo-content h2,
+        .seo-content h3 {
+            color: rgba(255, 255, 255, 0.85);
+            /* Títulos un poco más visibles dentro de este div */
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .seo-content ul {
+            text-align: left;
+            /* Alinea las listas a la izquierda para mejor lectura */
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1000px;
+            /* Limita el ancho de la lista */
+        }
+
+        .seo-content li {
+            font-size: 1em;
+            margin-bottom: px;
+        }
+
+
+        /* Media queries para dispositivos móviles */
         @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
         (max-width: 1080px) and (min-resolution: 1.8dppx) {
-            .botonMenu {
-                padding: 10px 15px;
-                border-radius: 15px;
-                font-size: 30px;
-                width: 100%;
-                height: 100px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.26);
-                /* sombra agregada */
+            h1 {
+                font-size: 2em;
             }
 
-            .menu {
-                display: flex;
-                flex-direction: column;
-                gap: 70px;
-                width: 80%;
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p,
+            li {
+                font-size: 1em;
+            }
+
+            .botonMenu {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            .botonMenu .icono {
+                font-size: 30px;
+                margin-right: 20px;
             }
 
             svg {
-                width: 700px;
-                height: auto;
-                background: none;
-                display: block;
-                margin: 100px;
-                scale: 1;
-                background: none;
+                width: 200px;
             }
 
-            path,
-            polygon {
-                fill: none;
-                stroke: white;
-                stroke-width: 1.7;
-                stroke-dasharray: 400;
-                /* Debe ser igual o mayor a la longitud del path */
-                stroke-dashoffset: 400;
-                animation: draw 2s linear infinite alternate;
+            .menu {
+                width: 100%;
             }
 
-
-
-            .icono {
-                color: white;
-                margin-right: 40px;
-                font-size: 50px;
+            .seo-content {
+                width: 100%;
+                padding: 15px;
+                margin-top: 30px;
             }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mantonet",
+      "url": "https://www.tu-dominio.com/a-MenuServicios.html",
+      "logo": "https://www.tu-dominio.com/icons/FavIcon-Mantonet-180x180.png",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+52-1-5519148472",
+          "contactType": "customer service",
+          "areaServed": ["CDMX", "Área Metropolitana"],
+          "availableLanguage": ["es"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "contacto.mantonet@gmail.com",
+          "contactType": "sales",
+          "availableLanguage": ["es"]
+        }
+      ],
+      "sameAs": [
+        "https://wa.me/5215519148472",
+        "https://www.instagram.com/mantonet_",
+        "https://www.facebook.com/profile.php?id=61573370344228"
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 446.66 134.17">
-        <defs>
-            <style>
-                .cls-1 {
-                    fill: none;
-                    opacity: 1;
-                }
-            </style>
-        </defs>
-        <g id="Capa_1-2" data-name="Capa 1">
-            <g>
-                <path class="cls-1"
-                    d="m311.33,83.59c2.54-16.33-.32-32.54-2.5-41.5,3.14-1.54,4.83-5.13,3.85-8.62-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.98,3.46,4.27,5.64,7.72,5.35,2.09,8.77,4.84,24.66,2.41,40.44-.23.02-.46.04-.7.08-7.59-20.42-22.3-53.99-29.41-69.9,2.52-1.74,3.78-4.95,2.91-8.06-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.05.16.1.32.16.48-16.79,9.77-47.88,28.2-60.73,37.98-.35-.25-.73-.46-1.13-.65,2.99-9.4,10.74-27.2,27.83-34.56,1.25,2.29,3.68,3.84,6.47,3.84,4.07,0,7.38-3.3,7.38-7.38s-3.3-7.38-7.38-7.38-7.38,3.3-7.38,7.38c0,.33.03.66.07.98-18.27,7.73-26.46,26.59-29.59,36.45-.17-.01-.34-.03-.51-.03-4.07,0-7.38,3.3-7.38,7.38,0,3.52,2.47,6.47,5.78,7.2.12,15.78,4.31,52.31,39.43,62.3-.03.75.06,1.51.27,2.27,1.1,3.92,5.18,6.2,9.1,5.1,3.92-1.1,6.2-5.18,5.1-9.1-1.1-3.92-5.18-6.2-9.1-5.1-2.24.63-3.94,2.23-4.79,4.22-33.73-9.62-37.46-44.36-37.42-59.58,2.32-.31,4.3-1.7,5.42-3.66,4.76,1.65,11.66,4.05,19.69,6.83-.41,2.01-.63,4.08-.63,6.21,0,16.88,13.68,30.56,30.56,30.56,12,0,22.37-6.92,27.37-16.98,6.19,2.12,11.67,4,15.97,5.45-.14.99-.09,2.01.2,3.03.5,1.78,1.62,3.22,3.06,4.16-.55,1.41-1.15,2.8-1.83,4.16-4.85,9.74-12.46,17.08-22.67,21.91-1.7-2.69-5.01-4.06-8.23-3.16-3.92,1.1-6.2,5.18-5.1,9.1,1.1,3.92,5.18,6.2,9.1,5.1,3.74-1.05,5.98-4.81,5.22-8.55,10.84-5.08,18.93-12.86,24.08-23.22.7-1.41,1.32-2.85,1.89-4.3,1.14.25,2.37.23,3.57-.11,3.92-1.1,6.2-5.18,5.1-9.1-.7-2.48-2.58-4.3-4.87-5.03Zm-24.42-1.91c1.35-3.45,2.1-7.2,2.1-11.12,0-16.88-13.68-30.56-30.56-30.56-13.81,0-25.48,9.17-29.26,21.75-7.93-2.75-14.76-5.12-19.48-6.76.06-.37.09-.74.09-1.12,0-1.59-.51-3.07-1.37-4.27,11.5-8.31,40.32-25.76,60.29-37.43,1.76,2.05,4.57,3.04,7.35,2.36,7.1,15.87,21.77,49.38,29.33,69.71-1.18.68-2.12,1.66-2.76,2.81-4.24-1.43-9.64-3.28-15.73-5.37Z" />
-                <path class="cls-1"
-                    d="m40.76,43.88l-9.14,24.84c-2.29,6.48-4.11,12.11-5.41,17.29h-.23c-1.29-5.33-3.05-10.97-5.18-17.29l-8.76-24.84H3.58L0,95.23h6.32l1.37-22.02c.46-7.69.84-16.3.99-22.7h.15c1.45,6.09,3.5,12.72,5.94,19.96l8.3,24.46h5.03l9.07-24.91c2.59-7.09,4.72-13.49,6.48-19.5h.23c-.08,6.4.38,15.01.76,22.17l1.29,22.55h6.48l-3.2-51.35h-8.46Z" />
-                <path class="cls-1"
-                    d="m75.42,43.88l-17.45,51.35h6.86l5.33-16.15h18.21l5.49,16.15h7.08l-17.52-51.35h-8Zm-3.89,30.02l5.03-14.86c.99-3.12,1.83-6.25,2.59-9.29h.15c.76,2.97,1.52,6.02,2.67,9.37l5.03,14.78h-15.47Z" />
-                <path class="cls-1"
-                    d="m140.79,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
-                <polygon class="cls-1"
-                    points="152.75 49.52 168.37 49.52 168.37 95.23 175.07 95.23 175.07 49.52 190.77 49.52 190.77 43.88 152.75 43.88 152.75 49.52" />
-                <path class="cls-1"
-                    d="m357.98,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
-                <polygon class="cls-1"
-                    points="382.44 71.15 402.4 71.15 402.4 65.67 382.44 65.67 382.44 49.44 403.54 49.44 403.54 43.88 375.81 43.88 375.81 95.23 404.68 95.23 404.68 89.67 382.44 89.67 382.44 71.15" />
-                <polygon class="cls-1"
-                    points="408.64 43.88 408.64 49.52 424.26 49.52 424.26 95.23 430.97 95.23 430.97 49.52 446.66 49.52 446.66 43.88 408.64 43.88" />
+    <header>
+        <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 446.66 134.17" role="img"
+            aria-label="Logo de Mantonet, empresa de mantenimiento y construcción.">
+            <defs>
+                <style>
+                    .cls-1 {
+                        fill: none;
+                        opacity: 1;
+                    }
+                </style>
+            </defs>
+            <g id="Capa_1-2" data-name="Capa 1">
+                <g>
+                    <path class="cls-1"
+                        d="m311.33,83.59c2.54-16.33-.32-32.54-2.5-41.5,3.14-1.54,4.83-5.13,3.85-8.62-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.98,3.46,4.27,5.64,7.72,5.35,2.09,8.77,4.84,24.66,2.41,40.44-.23.02-.46.04-.7.08-7.59-20.42-22.3-53.99-29.41-69.9,2.52-1.74,3.78-4.95,2.91-8.06-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.05.16.1.32.16.48-16.79,9.77-47.88,28.2-60.73,37.98-.35-.25-.73-.46-1.13-.65,2.99-9.4,10.74-27.2,27.83-34.56,1.25,2.29,3.68,3.84,6.47,3.84,4.07,0,7.38-3.3,7.38-7.38s-3.3-7.38-7.38-7.38-7.38,3.3-7.38,7.38c0,.33.03.66.07.98-18.27,7.73-26.46,26.59-29.59,36.45-.17-.01-.34-.03-.51-.03-4.07,0-7.38,3.3-7.38,7.38,0,3.52,2.47,6.47,5.78,7.2.12,15.78,4.31,52.31,39.43,62.3-.03.75.06,1.51.27,2.27,1.1,3.92,5.18,6.2,9.1,5.1,3.92-1.1,6.2-5.18,5.1-9.1-1.1-3.92-5.18-6.2-9.1-5.1-2.24.63-3.94,2.23-4.79,4.22-33.73-9.62-37.46-44.36-37.42-59.58,2.32-.31,4.3-1.7,5.42-3.66,4.76,1.65,11.66,4.05,19.69,6.83-.41,2.01-.63,4.08-.63,6.21,0,16.88,13.68,30.56,30.56,30.56,12,0,22.37-6.92,27.37-16.98,6.19,2.12,11.67,4,15.97,5.45-.14.99-.09,2.01.2,3.03.5,1.78,1.62,3.22,3.06,4.16-.55,1.41-1.15,2.8-1.83,4.16-4.85,9.74-12.46,17.08-22.67,21.91-1.7-2.69-5.01-4.06-8.23-3.16-3.92,1.1-6.2,5.18-5.1,9.1,1.1,3.92,5.18,6.2,9.1,5.1,3.74-1.05,5.98-4.81,5.22-8.55,10.84-5.08,18.93-12.86,24.08-23.22.7-1.41,1.32-2.85,1.89-4.3,1.14.25,2.37.23,3.57-.11,3.92-1.1,6.2-5.18,5.1-9.1-.7-2.48-2.58-4.3-4.87-5.03Zm-24.42-1.91c1.35-3.45,2.1-7.2,2.1-11.12,0-16.88-13.68-30.56-30.56-30.56-13.81,0-25.48,9.17-29.26,21.75-7.93-2.75-14.76-5.12-19.48-6.76.06-.37.09-.74.09-1.12,0-1.59-.51-3.07-1.37-4.27,11.5-8.31,40.32-25.76,60.29-37.43,1.76,2.05,4.57,3.04,7.35,2.36,7.1,15.87,21.77,49.38,29.33,69.71-1.18.68-2.12,1.66-2.76,2.81-4.24-1.43-9.64-3.28-15.73-5.37Z" />
+                    <path class="cls-1"
+                        d="m40.76,43.88l-9.14,24.84c-2.29,6.48-4.11,12.11-5.41,17.29h-.23c-1.29-5.33-3.05-10.97-5.18-17.29l-8.76-24.84H3.58L0,95.23h6.32l1.37-22.02c.46-7.69.84-16.3.99-22.7h.15c1.45,6.09,3.5,12.72,5.94,19.96l8.3,24.46h5.03l9.07-24.91c2.59-7.09,4.72-13.49,6.48-19.5h.23c-.08,6.4.38,15.01.76,22.17l1.29,22.55h6.48l-3.2-51.35h-8.46Z" />
+                    <path class="cls-1"
+                        d="m75.42,43.88l-17.45,51.35h6.86l5.33-16.15h18.21l5.49,16.15h7.08l-17.52-51.35h-8Zm-3.89,30.02l5.03-14.86c.99-3.12,1.83-6.25,2.59-9.29h.15c.76,2.97,1.52,6.02,2.67,9.37l5.03,14.78h-15.47Z" />
+                    <path class="cls-1"
+                        d="m140.79,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
+                    <polygon class="cls-1"
+                        points="152.75 49.52 168.37 49.52 168.37 95.23 175.07 95.23 175.07 49.52 190.77 49.52 190.77 43.88 152.75 43.88 152.75 49.52" />
+                    <path class="cls-1"
+                        d="m357.98,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
+                    <polygon class="cls-1"
+                        points="382.44 71.15 402.4 71.15 402.4 65.67 382.44 65.67 382.44 49.44 403.54 49.44 403.54 43.88 375.81 43.88 375.81 95.23 404.68 95.23 404.68 89.67 382.44 89.67 382.44 71.15" />
+                    <polygon class="cls-1"
+                        points="408.64 43.88 408.64 49.52 424.26 49.52 424.26 95.23 430.97 95.23 430.97 49.52 446.66 49.52 446.66 43.88 408.64 43.88" />
+                </g>
             </g>
-        </g>
-    </svg>
+        </svg>
+        <h1>Contáctanos | Mantonet</h1>
+    </header>
+
+    <main>
+        <p>Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. ¡Elige cómo quieres
+            comunicarte con nosotros para obtener un **presupuesto sin costo**!</p>
+    </main>
 
     <div class="menu">
-        <button onclick="window.location.href='a-MenuServicios.html'" class="botonMenu">
+        <a href="https://www.tu-dominio.com/a-MenuServicios.html" class="botonMenu" rel="noopener noreferrer">
             <i class="fas fa-globe icono"></i>
             Visitar Mantonet
-        </button>
+        </a>
 
         <a href="https://wa.me/5215519148472?text=Hola%21%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20mantenimiento%20que%20ofrecen%20y%20cotizar.%20Muchas%20gracias%21"
-            target="_blank" class="botonMenu">
+            target="_blank" class="botonMenu" rel="noopener noreferrer">
             <i class="fab fa-whatsapp icono"></i>
-            WhatsApp
-        </a>
-
-        <a href="https://www.instagram.com/mantonet_" target="_blank" class="botonMenu">
-            <i class="fab fa-instagram icono"></i>
-            Instagram
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61573370344228" target="_blank" class="botonMenu">
-            <i class="fab fa-facebook-f icono"></i>
-            Facebook
+            WhatsApp (Cotiza Gratis)
         </a>
 
         <a href="tel:+5215519148472" class="botonMenu">
             <i class="fas fa-phone-alt icono"></i>
-            Llamar
+            Llamar Ahora
         </a>
 
         <a href="mailto:contacto.mantonet@gmail.com?subject=Encontré%20su%20anuncio%20en%20la%20web%20me%20interesa%20cotizar%20sin%20costo%20por%20su%20promo%20%22PROMO-WEB-MANTONET%22"
             class="botonMenu">
             <i class="fas fa-envelope icono"></i>
-            Correo
+            Enviar Correo Electrónico
         </a>
 
+        <a href="https://www.instagram.com/mantonet_" target="_blank" class="botonMenu" rel="noopener noreferrer">
+            <i class="fab fa-instagram icono"></i>
+            Instagram
+        </a>
 
-        <!-- Cargar la fuente Lato desde Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+        <a href="https://www.facebook.com/profile.php?id=61573370344228" target="_blank" class="botonMenu"
+            rel="noopener noreferrer">
+            <i class="fab fa-facebook-f icono"></i>
+            Facebook
+        </a>
     </div>
 
-    <div style="display: none">
-        Mantenimiento general e impermeabilizaciones en CDMX y área metropolitana. Servicios de plomería,
-        electricidad, pintura, albañilería, remodelaciones, instalación de lámparas y mezcladoras. Aplicación de
-        impermeabilizante acrílico y asfáltico, reparación de goteras y filtraciones, sellado de techos, servicio
-        profesional a domicilio en toda la Ciudad de México.
+    <div class="seo-content">
+        <h2>Servicios de Mantenimiento y Construcción en CDMX y Área Metropolitana</h2>
+        <p>En **Mantonet**, nos especializamos en **mantenimiento general** y **proyectos de impermeabilización** en
+            **Ciudad de México** y su **área metropolitana**. Contamos con un equipo de profesionales experimentados
+            para ofrecer soluciones integrales a tu hogar o negocio.</p>
+        <h3>Nuestras Especialidades:</h3>
+        <ul>
+            <li>**Plomería:** Detección y reparación de fugas, instalación de calentadores, tuberías y todo lo
+                relacionado con sistemas hidráulicos.</li>
+            <li>**Electricidad:** Instalación y mantenimiento de sistemas eléctricos, colocación de lámparas, contactos
+                y reparaciones seguras.</li>
+            <li>**Pintura Profesional:** Preparación de superficies y aplicación de pintura de alta calidad para
+                interiores y exteriores.</li>
+            <li>**Albañilería y Remodelaciones:** Desde pequeñas reparaciones hasta proyectos de remodelación completos,
+                garantizando acabados de primera.</li>
+            <li>**Impermeabilizaciones Expertas:**
+                <ul>
+                    <li>Aplicación de **impermeabilizante acrílico** y **asfáltico** para techos.</li>
+                    <li>**Reparación de goteras** y **filtraciones** en cualquier tipo de superficie.</li>
+                    <li>**Sellado de techos** para una protección duradera contra la humedad.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Ofrecemos **servicio profesional a domicilio** y estamos comprometidos con la calidad y la satisfacción del
+            cliente. ¡Permítenos ayudarte a mantener y mejorar tu propiedad!</p>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Mantonet. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 
 </html>
