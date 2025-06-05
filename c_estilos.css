@@ -10,8 +10,35 @@ body {
   color: white;
 }
 
-button{
+button {
   border: none;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  /* flex para centrar el ícono */
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: darkred;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
 
 .cerrar {
@@ -128,11 +155,12 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(
-    to bottom right,
-    #555555,
-    /* gris medio-oscuro */ #1a1a1a /* gris muy oscuro, casi negro */
-  );
+  background: linear-gradient(to bottom right,
+      #555555,
+      /* gris medio-oscuro */
+      #1a1a1a
+      /* gris muy oscuro, casi negro */
+    );
   padding: 100px 20px 20px 20px;
   z-index: 9999;
   width: 50%;
@@ -169,6 +197,7 @@ h3 {
   height: 100px;
   align-items: center;
   justify-content: center;
+  font-size: 25px;
 }
 
 li {
@@ -250,9 +279,9 @@ i {
   margin: 0;
   z-index: 999;
   padding: 10px;
-  box-sizing: border-box; /* ✅ CLAVE */
+  box-sizing: border-box;
+  /* ✅ CLAVE */
 }
-
 
 .linkLogoInicio {
   display: flex;
@@ -262,7 +291,6 @@ i {
   justify-content: center;
   align-items: center;
   background-color: none;
-  
 }
 
 .imgPersonajes {
@@ -301,9 +329,8 @@ i {
   opacity: 1;
 }
 
-
 @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
-  (max-width: 1080px) and (min-resolution: 1.8dppx) {
+(max-width: 1080px) and (min-resolution: 1.8dppx) {
   svg {
     width: 70%;
   }
@@ -325,7 +352,11 @@ i {
   }
 
   h2 {
-    font-size: 50px;
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 30px;
   }
 
   .btn-img {
@@ -334,7 +365,39 @@ i {
     margin-right: 50px;
   }
 
+  .whatsapp-button {
+    position: fixed;
+    bottom: 150px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    /* flex para centrar el ícono */
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: darkred;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
 
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+
+  .whatsapp-button img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
+  #iconoContacto {
+    transform: scale(2);
+    /* Escala el icono al 150% (1.5 veces su tamaño original) */
+    transform-origin: center center;
+    /* Asegura que la escala se haga desde el centro del icono */
+  }
 
   .menu {
     background: none;
@@ -399,9 +462,6 @@ i {
     font-size: 30px;
   }
 
-  h3 {
-    font-size: 50px;
-  }
 
   a.btn-menu {
     color: white !important;

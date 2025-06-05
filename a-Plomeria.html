@@ -1,115 +1,213 @@
 <!doctype html>
-<html>
-    <head>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-        <base target="_top" />
+<html lang="es"> <head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <base target="_top" />
 
-        <link rel="stylesheet" href="c_estilos.css" />
+    <title>Plomería en CDMX | Fugas, Taponamientos e Instalaciones - Mantonet</title>
+    <meta name="description" content="Expertos en plomería en CDMX para hogares, oficinas y comercios. Soluciones para fugas, taponamientos, instalaciones nuevas y mantenimiento preventivo. ¡Visita sin costo!">
 
-        <script>
-            function mostrarMenu() {
-                const menu = document.querySelector(".menuNavegacion");
-                menu.classList.add("activo");
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="c_estilos.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Servicios de Plomería en CDMX",
+      "description": "Mantonet ofrece soluciones profesionales de plomería para fugas, taponamientos, instalaciones hidráulicas nuevas y mantenimiento preventivo en casas, departamentos, oficinas y comercios en la Ciudad de México.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mantonet",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tu Dirección Aquí",
+          "addressLocality": "Ciudad de México",
+          "addressRegion": "CDMX",
+          "postalCode": "Tu Código Postal Aquí",
+          "addressCountry": "MX"
+        },
+        "telephone": "+5215519148472",
+        "url": "https://www.tumantone.com/plomeria" 
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Ciudad de México"
+      },
+      "serviceType": "Plomería",
+      "url": "https://www.tumantone.com/plomeria", 
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catálogo de Servicios de Plomería",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Fugas de Agua"
             }
-
-            function ocultarMenu() {
-                const menu = document.querySelector(".menuNavegacion");
-                menu.classList.remove("activo");
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desazolve de Tuberías"
             }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalaciones Hidráulicas Nuevas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento Preventivo de Plomería"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalación y Reparación de Boilers"
+            }
+          }
+        ]
+      }
+    }
+    </script>
 
-            // Puedes llamar a mostrarMenu() cuando necesites abrir el panel
-        </script>
-    </head>
+    <script>
+        function mostrarMenu() {
+            const menu = document.querySelector(".menuNavegacion");
+            menu.classList.add("activo");
+        }
 
-    <body>
-        <div class="contenedorPrincipal">
-            <div class="encabezado">
-                <button onclick="mostrarMenu();" class="botonArribaIzquierda">
-                    <i class="fas fa-bars"></i>
-                </button>
+        function ocultarMenu() {
+            const menu = document.querySelector(".menuNavegacion");
+            menu.classList.remove("activo");
+        }
+    </script>
+</head>
 
-                <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="logo menu">
-                    <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            fetch("logoMantonet.svg")
-                                .then((res) => res.text())
-                                .then((svg) => {
-                                    document.getElementById("logo-container").innerHTML = svg;
-                                });
-                        });
-                    </script>
-                </button>
-            </div>
+<body>
+    <div class="contenedorPrincipal">
+        <div class="encabezado">
+            <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
 
-            <!-- menu desplegable -->
-
-            <div id="menu-container"></div>
-
-            <script>
-                fetch("a-menu-desplegable.html")
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById("menu-container").innerHTML = data;
+            <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="Volver al inicio de servicios Mantonet">
+                <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        fetch("logoMantonet.svg")
+                            .then((res) => res.text())
+                            .then((svg) => {
+                                document.getElementById("logo-container").innerHTML = svg;
+                            });
                     });
-            </script>
-
-            <!-- end menu desplegable -->
-
-            <section class="section1" style="margin-top: 200px">
-                <h2>Plomería</h2>
-                <p>
-                    Resolvemos todo tipo de problemas hidráulicos: fugas, taponamientos, instalaciones nuevas y
-                    mantenimiento preventivo. Trabajamos en casas, departamentos, oficinas y comercios en la CDMX, con
-                    especial atención a zonas como el Centro Histórico.
-                </p>
-                <p>
-                    Utilizamos materiales de alta calidad, herramientas especializadas y te entregamos un
-                    <strong>informe técnico</strong> con el diagnóstico, fotografías y recomendaciones para evitar
-                    futuros problemas.
-                </p>
-                <p><strong>Más de 200 servicios de plomería ejecutados con satisfacción garantizada.</strong></p>
-
-                <h3>¿Cómo trabajamos?</h3>
-                <ol>
-                    <li>Realizamos una visita sin costo para identificar el problema o evaluar tu instalación.</li>
-                    <li>Te enviamos una propuesta detallada con materiales sugeridos, tiempos y costos.</li>
-                    <li>Agendamos la intervención una vez aprobada la propuesta.</li>
-                    <li>Ejecutamos el trabajo con limpieza, revisamos a fondo y entregamos tu informe final.</li>
-                </ol>
-
-                <a
-                    href="https://wa.me/5215519148472?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20una%20visita%20sin%20costo%20para%20cotizaci%C3%B3n%2C%20aprovechando%20su%20promoci%C3%B3n%20%22PROMO-WEB-MANTONET%22.%20%C2%A1Gracias%21"
-                    target="_blank"
-                    style="text-decoration: none">
-                    <button
-                        style="
-                            background-color: #25d366;
-                            color: white;
-                            padding: 10px 20px;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                        ">
-                        <i class="fab fa-whatsapp" style="color: white; margin-right: 8px"></i>
-                        Cotización sin Costo por WhatsApp
-                    </button>
-                </a>
-            </section>
+                </script>
+            </button>
         </div>
 
-        <table style="width: 100%; margin: 30px; height: 50px">
-            <!-- Pie de página -->
-            <tr>
-                <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
-            </tr>
-        </table>
-
+        <div id="menu-container"></div>
         <script>
-            function solicitarCotizacion() {
-                // Puedes personalizar esta función para abrir un formulario o enviar un correo
-                alert("Formulario de cotización pronto disponible.");
-            }
+            fetch("b-menu-desplegable.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("menu-container").innerHTML = data;
+                });
         </script>
+        <section class="section1" style="margin-top: 200px">
+            <h1>Plomería Profesional en CDMX: Soluciones Rápidas y Confiables</h1>
+
+            <img src="img/fonta-16-9.png" style="width: 100%;" alt="Servicios profesionales de plomería en CDMX, reparando fugas y tuberías de agua en un hogar">
+
+            <p>
+                En **Mantonet**, somos tus expertos en **plomería en la Ciudad de México**. Resolvemos **todo tipo de problemas hidráulicos**, desde **fugas de agua** y **taponamientos en tuberías** hasta **instalaciones hidráulicas nuevas** y **mantenimiento preventivo**. Ofrecemos servicios de **fontanería a domicilio** para casas, departamentos, oficinas y comercios en toda la CDMX, con especial atención a zonas céntricas y de alta demanda como el Centro Histórico, Roma, Condesa, Polanco y más.
+            </p>
+            <p>
+                Utilizamos **materiales de alta calidad** y **herramientas especializadas** de última generación (ej. equipo de termografía para detección de fugas no invasivas) para garantizar la durabilidad de nuestras reparaciones e instalaciones. Al finalizar, te entregamos un **informe técnico detallado** con el diagnóstico preciso, fotografías del antes y después, y recomendaciones personalizadas para prevenir futuros problemas.
+            </p>
+            <p>
+                Con **más de 200 servicios de plomería ejecutados con satisfacción garantizada** en la CDMX, tu tranquilidad es nuestra prioridad. Todos nuestros trabajos cuentan con una **garantía de [X meses/años]** sobre el servicio realizado.
+            </p>
+
+            ---
+
+            <h3>Nuestros Servicios de Plomería Incluyen:</h3>
+            <ul>
+                <li>**Reparación de Fugas de Agua:** Detección precisa y reparación de fugas visibles y ocultas en tuberías, paredes, techos, y pisos.</li>
+                <li>**Destapacaños y Desazolve:** Solución profesional y eficiente a taponamientos en lavabos, WC, regaderas, coladeras y sistemas de desagüe principales.</li>
+                <li>**Instalaciones Hidráulicas Nuevas:** Diseño e implementación de sistemas de plomería completos para construcciones residenciales y comerciales, incluyendo redes de agua potable y drenaje.</li>
+                <li>**Mantenimiento Preventivo:** Revisión periódica, limpieza de tuberías y optimización de sistemas hidráulicos para prolongar su vida útil y evitar problemas mayores.</li>
+                <li>**Instalación y Reparación de Boilers y Calentadores de Agua:** Servicio completo para calentadores de paso, de depósito y solares.</li>
+                <li>**Servicios de Plomería de Urgencia en CDMX:** Atención rápida para emergencias de plomería que requieren solución inmediata.</li>
+            </ul>
+
+            ---
+
+            <h3>¿Cómo Solicitas un Servicio de Plomería con Mantonet?</h3>
+            <ol>
+                <li>**Visita Sin Costo:** Realizamos una visita técnica gratuita en tu domicilio o negocio en CDMX para identificar el problema o evaluar tu instalación.</li>
+                <li>**Propuesta Detallada:** Te enviamos una cotización transparente y sin compromiso con materiales sugeridos, tiempos de ejecución y costos claros y competitivos.</li>
+                <li>**Agenda tu Servicio:** Agendamos la intervención profesional en el horario que mejor te convenga, con la flexibilidad que necesitas.</li>
+                <li>**Ejecución Profesional:** Nuestro equipo realiza el trabajo con máxima limpieza, revisa a fondo la funcionalidad y te entrega tu informe final de servicio para tu tranquilidad.</li>
+            </ol>
+
+            <a href="https://wa.me/5215519148472?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20una%20visita%20sin%20costo%20para%20cotizaci%C3%B3n%2C%20aprovechando%20su%20promoci%C3%B3n%20%22PROMO-WEB-MANTONET%22.%20%C2%A1Gracias%21"
+                target="_blank" style="text-decoration: none">
+                <button style="
+                            background-color: #25d366;
+                            color: white;
+                            padding: 12px 25px; /* Ligeramente más grande */
+                            border: none;
+                            border-radius: 8px; /* Bordes más suaves */
+                            cursor: pointer;
+                            font-size: 1.1em; /* Fuente un poco más grande */
+                            font-weight: bold;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 30px auto; /* Centrar el botón */
+                            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra para destacarlo */
+                        ">
+                    <i class="fab fa-whatsapp" style="color: white; margin-right: 10px; font-size: 1.3em;"></i>
+                    Solicita Tu Visita GRATIS por WhatsApp
+                </button>
+            </a>
+        </section>
+    </div>
+
+    <table style="width: 100%; margin: 30px; height: 50px">
+        <tr>
+            <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
+        </tr>
+    </table>
+
+    <script>
+        function solicitarCotizacion() {
+            // Puedes personalizar esta función para abrir un formulario o enviar un correo
+            alert("Formulario de cotización pronto disponible.");
+        }
+    </script>
+
+    <div id="ico_whatsapp"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("b-boton-whats.html")
+                .then((res) => res.text())
+                .then((svg) => {
+                    document.getElementById("ico_whatsapp").innerHTML = svg;
+                });
+        });
+    </script>
     </body>
+
 </html>

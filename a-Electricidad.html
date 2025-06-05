@@ -1,117 +1,211 @@
 <!doctype html>
-<html>
-    <head>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-        <base target="_top" />
+<html lang="es">
 
-        <link rel="stylesheet" href="c_estilos.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricistas en CDMX: Mantenimiento, Reparación e Instalación Eléctrica | MANTONET</title>
+    <meta name="description" content="Expertos electricistas en CDMX para hogares y negocios. Ofrecemos mantenimiento, reparación e instalación eléctrica segura, bajo NOM y con cotización gratis. ¡Confía en MANTONET!">
 
-        <script>
-            function mostrarMenu() {
-                const menu = document.querySelector(".menuNavegacion");
-                menu.classList.add("activo");
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="c_estilos.css" />
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Servicios Eléctricos Residenciales y Comerciales",
+      "name": "Servicios de Electricidad MANTONET",
+      "description": "Expertos en mantenimiento, reparación e instalación eléctrica para hogares, oficinas y negocios en la Ciudad de México, incluyendo el Centro Histórico. Trabajos bajo Normas Oficiales Mexicanas (NOM) y reportes técnicos detallados.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "MANTONET",
+        "image": "URL_A_TU_LOGO_MANTONET.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tu Dirección de Oficina/Operación (Ej: Calle Falsa 123)",
+          "addressLocality": "Ciudad de México",
+          "addressRegion": "CDMX",
+          "postalCode": "Tu Código Postal (Ej: 06000)",
+          "addressCountry": "MX"
+        },
+        "telephone": "+525519148472",
+        "url": "https://www.tudominio.com/electricidad.html",
+        "priceRange": "$$",
+        "areaServed": {
+          "@type": "State",
+          "name": "Ciudad de México"
+        },
+        "hasMap": "URL_A_Maps_DE_TU_NEGOCIO",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "14:00"
+          }
+        ]
+      },
+      "url": "https://www.tudominio.com/electricidad.html",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catálogo de Servicios Eléctricos MANTONET",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento Eléctrico Preventivo"
             }
-
-            function ocultarMenu() {
-                const menu = document.querySelector(".menuNavegacion");
-                menu.classList.remove("activo");
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Fallas Eléctricas"
             }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalación Eléctrica Completa"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Certificación de Instalaciones Eléctricas"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "75"
+      },
+      "image": "URL_DE_IMAGEN_PRINCIPAL_DEL_SERVICIO.jpg"
+    }
+    </script>
+    
+    <script>
+        function mostrarMenu() {
+            const menu = document.querySelector(".menuNavegacion");
+            menu.classList.add("activo");
+        }
 
-            // Puedes llamar a mostrarMenu() cuando necesites abrir el panel
-        </script>
-    </head>
+        function ocultarMenu() {
+            const menu = document.querySelector(".menuNavegacion");
+            menu.classList.remove("activo");
+        }
+    </script>
+</head>
 
-    <body>
-        <div class="contenedorPrincipal">
-            <div class="encabezado">
-                <button onclick="mostrarMenu();" class="botonArribaIzquierda">
-                    <i class="fas fa-bars"></i>
-                </button>
+<body>
+    <div class="contenedorPrincipal">
+        <header class="encabezado">
+            <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="logo menu">
-                    <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            fetch("logoMantonet.svg")
-                                .then((res) => res.text())
-                                .then((svg) => {
-                                    document.getElementById("logo-container").innerHTML = svg;
-                                });
-                        });
-                    </script>
-                </button>
-            </div>
-
-            <!-- menu desplegable -->
-
-            <div id="menu-container"></div>
-
-            <script>
-                fetch("a-menu-desplegable.html")
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById("menu-container").innerHTML = data;
+            <a href="a-MenuServicios.html" class="linkLogoInicio" title="Ir al menú de servicios de Mantonet">
+                <div id="logo-container" role="img" aria-label="Logo de Mantonet, Servicios Eléctricos"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        fetch("logoMantonet.svg")
+                            .then((res) => res.text())
+                            .then((svg) => {
+                                document.getElementById("logo-container").innerHTML = svg;
+                            });
                     });
-            </script>
+                </script>
+            </a>
+        </header>
 
-            <!-- end menu desplegable -->
+        <div id="menu-container"></div>
+        <script>
+            // Considera incrustar b-menu-desplegable.html directamente en el servidor para mejor SEO
+            fetch("b-menu-desplegable.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("menu-container").innerHTML = data;
+                });
+        </script>
+        <main>
+            <section class="section1 servicio-electricidad" style="margin-top: 150px;">
+                <h1>Electricistas Expertos en CDMX</h1>
 
-            <section class="section1" style="margin-top: 200px">
-                <h2>Electricidad</h2>
+                <img src="img/neutrina-16-9.png" class="imagen-servicio" style="width: 100%;"  alt="Electricista profesional de MANTONET revisando un tablero eléctrico en Ciudad de México." title="Mantenimiento y reparación eléctrica en CDMX">
+
                 <p>
-                    Garantiza la seguridad y el buen funcionamiento de tus instalaciones eléctricas. Contamos con amplia
-                    experiencia en mantenimiento, reparación e instalación eléctrica en hogares, oficinas y negocios
-                    dentro de la CDMX, incluyendo zonas como el Centro Histórico.
+                    Asegura la seguridad y eficiencia de tus **instalaciones eléctricas** con **electricistas expertos en CDMX**.
+                    En **MANTONET**, ofrecemos **servicios de mantenimiento, reparación e instalación eléctrica profesional**
+                    para **hogares, oficinas y negocios** en toda la Ciudad de México, incluyendo zonas clave como el **Centro Histórico**.
                 </p>
                 <p>
-                    Realizamos diagnósticos precisos, trabajamos bajo normas oficiales mexicanas (<strong>NOM</strong>),
-                    y te entregamos un <strong>reporte técnico detallado</strong> con fotografías, observaciones y
-                    recomendaciones para mantener tu sistema eléctrico en óptimas condiciones.
+                    Realizamos **diagnósticos precisos**, trabajamos rigurosamente bajo las **Normas Oficiales Mexicanas (NOM)**,
+                    y te entregamos un **reporte técnico detallado** con fotografías, observaciones y recomendaciones claras
+                    para mantener tu sistema eléctrico en óptimas condiciones.
                 </p>
-                <p><strong>Más de 150 proyectos eléctricos realizados sin incidentes.</strong></p>
+                <p><strong>¡Más de 150 proyectos eléctricos realizados sin incidentes nos respaldan!</strong></p>
 
-                <h3>¿Cómo trabajamos?</h3>
+                <h3>¿Cómo Trabajamos Nuestros Servicios Eléctricos?</h3>
                 <ol>
-                    <li>Agendamos una revisión sin costo para detectar fallas o necesidades de instalación.</li>
-                    <li>Te entregamos una propuesta con materiales, tiempos y precios claros.</li>
-                    <li>Programamos los trabajos una vez aprobada la propuesta.</li>
+                    <li>Agendamos una **revisión sin costo** para detectar fallas, evaluar necesidades de **instalación eléctrica** o **mantenimiento**.</li>
+                    <li>Te entregamos una **propuesta detallada** con materiales, tiempos de ejecución y **precios claros y transparentes**.</li>
+                    <li>Programamos los trabajos una vez aprobada la propuesta, adaptándonos a tu disponibilidad.</li>
                     <li>
-                        Ejecutamos de forma segura y limpia, entregamos tu reporte técnico y garantizamos el servicio.
+                        Ejecutamos los trabajos de forma **segura, limpia y eficiente**. Al finalizar, entregamos tu **reporte técnico** y garantizamos nuestro **servicio de electricidad**.
                     </li>
                 </ol>
 
-                <a
-                    href="https://wa.me/5215519148472?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20una%20visita%20sin%20costo%20para%20cotizaci%C3%B3n%2C%20aprovechando%20su%20promoci%C3%B3n%20%22PROMO-WEB-MANTONET%22.%20%C2%A1Gracias%21"
-                    target="_blank"
-                    style="text-decoration: none">
-                    <button
-                        style="
-                            background-color: #25d366;
-                            color: white;
-                            padding: 10px 20px;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                        ">
-                        <i class="fab fa-whatsapp" style="color: white; margin-right: 8px"></i>
+                <a href="https://wa.me/5215519148472?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20una%20visita%20sin%20costo%20para%20cotizaci%C3%B3n%2C%20aprovechando%20su%20promoci%C3%B3n%20%22PROMO-WEB-MANTONET%22.%20%C2%A1Gracias%21"
+                    target="_blank" class="cta-whatsapp" title="Contacta a un electricista en CDMX por WhatsApp">
+                    <button class="boton-whatsapp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         Cotización sin Costo por WhatsApp
                     </button>
                 </a>
             </section>
-        </div>
+        </main>
+    </div>
 
-        <table style="width: 100%; margin: 30px; height: 50px">
-            <!-- Pie de página -->
-            <tr>
-                <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
-            </tr>
-        </table>
+    <footer class="pieDePagina">
+        <p>© 2025 MANTONET. Todos los derechos reservados.</p>
+    </footer>
 
-        <script>
-            function solicitarCotizacion() {
-                // Puedes personalizar esta función para abrir un formulario o enviar un correo
-                alert("Formulario de cotización pronto disponible.");
-            }
-        </script>
+    <div id="ico_whatsapp"></div>
+    <script>
+        // Considera incrustar b-boton-whats.html directamente en el servidor para mejor SEO
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("b-boton-whats.html")
+                .then((res) => res.text())
+                .then((svg) => {
+                    document.getElementById("ico_whatsapp").innerHTML = svg;
+                });
+        });
+    </script>
     </body>
+
 </html>

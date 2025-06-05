@@ -1,314 +1,420 @@
 <!doctype html>
-<html>
-  <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <base target="_top" />
+<html lang="es">
 
-    <link rel="stylesheet" href="c_estilos.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-      body {
-        color: white; /* TODO: Establece todo el texto a blanco */
-        background-color: #2c3e50; /* TODO: Fondo oscuro para legibilidad del texto blanco. AJUSTA ESTE COLOR */
-        font-family: Arial, sans-serif; /* Una fuente base para mejor legibilidad */
-      }
+  <title>MANTONET: Mantenimiento Profesional | Soluciones Innovadoras para Hogar y Empresa</title>
 
-      /* Estilos para el botón de silencio */
-      .botonEncabezado {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5em; /* Tamaño del icono */
-        cursor: pointer;
-        padding: 10px;
-        position: absolute; /* Para posicionarlo en la esquina */
-        top: 15px;
-        right: 15px;
-      }
-      .botonArribaIzquierda {
-        /* Aseguramos que el botón de menú también sea visible */
-        color: white;
-      }
+  <!-- Favicon estándar para navegadores -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
 
-      /* Estilos logo */
-      .cls-1 {
-        /* PATHS DEL LOGO */
-        fill: white !important; /* TODO: Logo en blanco */
-        opacity: 1;
-      }
-      .logotipo {
-        /* Contenedor del logo si es necesario */
-        /* fill: white; /* Alternativa si .cls-1 no es suficiente */
-      }
+  <!-- Icono para dispositivos Apple (pantalla de inicio en iOS) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
 
-      /* Ajustes para la sección "Quiénes Somos" con texto blanco */
-      .quienes-somos-section h2 {
-        /* color: white; ya heredado del body */
-        margin-bottom: 20px;
-        font-size: 2em;
-      }
-      .quienes-somos-section h3 {
-        /* color: white; ya heredado del body */
-        margin-top: 30px;
-        margin-bottom: 15px;
-        font-size: 1.5em;
-      }
-      .quienes-somos-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-        /* color: white; ya heredado del body */
-      }
-      .quienes-somos-section ul {
-        list-style-type: disc;
-        margin-left: 20px;
-        margin-bottom: 15px;
-      }
-      .quienes-somos-section li {
-        margin-bottom: 8px;
-      }
-      .quienes-somos-section strong {
-        /* color: #e0e0e0; /* Un blanco ligeramente diferente si se desea para strong */
-      }
-      .quienes-somos-section a {
-        color: #a7d7f9; /* Un color celeste claro para los links, o puedes dejarlos blancos */
-        text-decoration: none;
-      }
-      .quienes-somos-section a:hover {
-        text-decoration: underline;
-      }
 
-      /* Pie de página con texto blanco */
-      .pieDePagina {
-        text-align: center;
-        padding: 20px 0;
-        background-color: #1a252f; /* TODO: Fondo más oscuro para el pie de página */
-        /* color: white; ya heredado del body */
-        border-top: 1px solid #3c4a57;
-      }
+  <meta name="description"
+    content="Descubre MANTONET, la empresa de mantenimiento que fusiona experiencia hotelera y tecnología ISO 9001. Ofrecemos servicios de calidad en impermeabilización, pintura, plomería, electricidad y jardinería para residencias, hoteles y empresas. ¡Confía en la nueva cara del mantenimiento!">
+  <meta name="keywords"
+    content="mantenimiento profesional, servicios de mantenimiento, empresa de mantenimiento, soluciones de mantenimiento, impermeabilización, pintura, plomería, electricidad, jardinería, mantenimiento residencial, mantenimiento para empresas, mantenimiento hoteles, mantenimiento inteligente, gestión de calidad ISO 9001, mantenimiento de confianza, servicios de calidad">
+  <meta name="author" content="MANTONET">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.tusitioweb.com/quienes-somos.html">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <base target="_top" />
 
-      /* Estilo para el menú de navegación y sus items */
-      .menuNavegacion .btn-servicio .btn-text {
-        /* color: white;  Heredado del body si no hay otra regla más específica en c_css */
-      }
-      .menuNavegacion .cerrar {
-        color: #ccc; /* Color para el botón de cerrar menú */
-      }
-    </style>
-  </head>
-  <body>
-    <audio id="pageAudio" autoplay>
-      <source
-        src="https://raw.githubusercontent.com/SerchAboites/MANTONET/main/SONIDOS%20MANTONET/SOMOS%20MANTONET.mp3"
-        type="audio/mpeg" />
-      Tu navegador no soporta el elemento de audio. (Este texto será blanco)
-    </audio>
+  <link rel="stylesheet" href="c_estilos.css" />
 
-    <div class="contenedorPrincipal">
-      <div class="encabezado">
-        <button onclick="mostrarMenu();" class="botonArribaIzquierda">
-          <i class="fas fa-bars"></i>
-        </button>
+  <style>
+    body {
+      color: white;
+      background-color: #2c3e50;
+      font-family: Arial, sans-serif;
+    }
 
-        <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="Página Principal">
-                    <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            fetch("logoMantonet.svg")
-                                .then((res) => res.text())
-                                .then((svg) => {
-                                    document.getElementById("logo-container").innerHTML = svg;
-                                });
-                        });
-                    </script>
-        </button>
 
-        <button id="muteButton" class="botonEncabezado">
-          <i class="fas fa-volume-up"></i>
-        </button>
-      </div>
+    /* Estilos para el botón de silencio */
+    .botonEncabezado {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
 
-            <!-- menu desplegable -->
+    .botonArribaIzquierda {
+      color: white;
+    }
 
-            <div id="menu-container"></div>
 
-            <script>
-                fetch("a-menu-desplegable.html")
-                    .then((response) => response.text())
-                    .then((data) => {
-                        document.getElementById("menu-container").innerHTML = data;
-                    });
-            </script>
+    /* Ajustes para la sección "Quiénes Somos" con texto blanco */
+    .quienes-somos-section {
+      margin-bottom: 20px;
+      font-size: 2.2em;
+      /* Ligeramente más grande para énfasis */
+    }
 
-            <!-- end menu desplegable -->
+    .quienes-somos-section {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.7em;
+      /* Ligeramente más grande */
+    }
 
-      <section class="section1 quienes-somos-section" style="margin-top: 200px; padding: 20px">
-        <h2>La Nueva Cara del Mantenimiento: Conozca a MANTONET</h2>
-        <p>
-          En un mundo que exige soluciones cada vez más inteligentes y eficientes, nace <strong>MANTONET</strong>, una
-          empresa dedicada a revolucionar el sector del mantenimiento general. Fundada por dos jóvenes emprendedores de
-          27 años, Alejandra y <strong>Sergio</strong>, MANTONET surge de la fusión de la experiencia práctica en el
-          corazón de la hotelería y la innovación disruptiva del mundo digital y la gestión de calidad.
-        </p>
-        <p>
-          Nuestra misión es ofrecer servicios profesionales de mantenimiento para residencias, complejos de
-          departamentos, hoteles y empresas, abarcando un abanico de soluciones que van desde impermeabilizaciones y
-          pintura, hasta plomería, electricidad y jardinería. Sin embargo, en MANTONET no solo nos enfocamos en el
-          "qué", sino en el "cómo".
-        </p>
-        <h3>La Fusión de Experiencia y Visión Innovadora</h3>
-        <p>
-          En el núcleo de nuestra empresa se encuentra una sinergia única y un equipo fundamental.
-          <strong>Alejandra</strong>, con su valiosa experiencia como supervisora de mantenimiento en la exigente
-          industria hotelera, aporta un profundo conocimiento de los estándares de calidad, la atención al detalle y la
-          logística impecable que garantiza la satisfacción del cliente. Ella es la voz de la experiencia que asegura
-          que cada trabajo se realice con la máxima profesionalidad.
-        </p>
-        <p>
-          <strong>Sergio</strong>, diseñador de animación y arte digital con experiencia en la implementación de
-          sistemas de gestión de calidad bajo la norma ISO 9001:2015, impulsa la visión tecnológica y creativa de
-          MANTONET. Esta perspectiva nos permite ir más allá del servicio tradicional, integrando herramientas digitales
-          de vanguardia como bases de datos para la gestión de proyectos, aplicaciones HTML para una comunicación fluida
-          con el cliente, y diseños 3D y renderizados para la visualización de proyectos.
-        </p>
-        <p>
-          Junto a nosotros, un pilar fundamental para el crecimiento y la difusión de nuestro proyecto es
-          <strong>Néstor</strong>, nuestro especialista en Marketing Digital. Con su formación y pericia, Néstor es el
-          arquitecto de nuestra presencia online, gestionando estratégicamente nuestras redes sociales y desarrollando
-          campañas de anuncios digitales a través de Google Ads. Su trabajo es crucial para conectar MANTONET con
-          quienes necesitan nuestros servicios y para construir una marca de alto impacto en el mercado.
-        </p>
-        <h3>Más que un Servicio, un Sistema Inteligente</h3>
-        <p>
-          Entendemos que la confianza se construye con resultados. Por ello, en nuestra etapa inicial, somos nosotros,
-          los fundadores, quienes nos arremangamos la camisa para ejecutar y supervisar directamente los servicios. Esta
-          inmersión total nos permite no solo garantizar la calidad, sino también perfeccionar cada proceso desde su
-          raíz.
-        </p>
-        <p>
-          Sin embargo, nuestra visión a largo plazo es la creación de un ecosistema de mantenimiento autosustentable.
-          Aspiramos a desarrollar nuestros propios sistemas de gestión digital, optimizando la administración y la
-          operación para poder expandir nuestro equipo. Queremos ser una plataforma que conecte a clientes con una red
-          de técnicos especializados, rigurosamente seleccionados y alineados con nuestra filosofía de calidad y
-          eficiencia.
-        </p>
-        <h3>Nuestro Compromiso: Juventud, Tecnología y Confianza</h3>
-        <p>
-          En MANTONET, vemos nuestra juventud no como una falta de experiencia, sino como nuestra mayor fortaleza. Somos
-          nativos digitales, ágiles y con una mentalidad orientada a la solución de problemas de forma creativa e
-          innovadora. Estamos comprometidos a:
-        </p>
-        <ul>
-          <li>
-            <strong>Profesionalizar el sector:</strong> Aplicando estándares de calidad y una gestión transparente en
-            cada proyecto.
-          </li>
-          <li>
-            <strong>Integrar la tecnología:</strong> Para ofrecer una experiencia de cliente superior, desde la
-            cotización hasta la finalización del servicio.
-          </li>
-          <li>
-            <strong>Generar confianza:</strong> A través de un trabajo bien hecho, una comunicación clara y la garantía
-            de satisfacción.
-          </li>
-          <li>
-            <strong>Construir una comunidad:</strong> Creando una red de trabajo sólida y confiable para especialistas
-            del mantenimiento.
-          </li>
-        </ul>
-        <p>
-          Somos MANTONET y estamos aquí para redefinir lo que significa un servicio de mantenimiento.
-          <strong>Permítanos ser su aliado estratégico para cuidar y valorizar su patrimonio.</strong>
-        </p>
-      </section>
+    .quienes-somos-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .quienes-somos-section ul {
+      list-style-type: disc;
+      margin-left: 25px;
+      /* Un poco más de sangría */
+      margin-bottom: 15px;
+    }
+
+    .quienes-somos-section li {
+      margin-bottom: 8px;
+    }
+
+    .quienes-somos-section strong {
+      /* Puedes mantener el color por defecto (blanco) o usar uno ligeramente diferente */
+    }
+
+    .quienes-somos-section a {
+      color: #a7d7f9;
+      text-decoration: none;
+    }
+
+    .quienes-somos-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilo para el menú de navegación y sus items */
+    .menuNavegacion .btn-servicio .btn-text {
+      /* Color heredado, si no hay otra regla más específica */
+    }
+
+    .menuNavegacion .cerrar {
+      color: #ccc;
+    }
+
+    /* Estilo para el botón CTA */
+    .cta-button {
+      transition: background-color 0.3s ease;
+      /* Transición suave al pasar el ratón */
+    }
+
+    .cta-button:hover {
+      background-color: #0056b3;
+      /* Un azul más oscuro al pasar el ratón */
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.tusitioweb.com/#organization",
+          "name": "MANTONET",
+          "url": "https://www.tusitioweb.com/",
+          "logo": "https://www.tusitioweb.com/assets/images/logoMantonet.svg",
+          "description": "MANTONET es una empresa innovadora dedicada a revolucionar el sector del mantenimiento general, ofreciendo soluciones profesionales con tecnología y altos estándares de calidad.",
+          "founders": [
+            {
+              "@type": "Person",
+              "name": "Alejandra"
+            },
+            {
+              "@type": "Person",
+              "name": "Sergio"
+            }
+          ],
+          "slogan": "La Nueva Cara del Mantenimiento",
+          "knowsAbout": [
+            "Mantenimiento General",
+            "Impermeabilización",
+            "Pintura",
+            "Plomería",
+            "Electricidad",
+            "Jardinería",
+            "Gestión de Calidad ISO 9001:2015",
+            "Tecnología en Mantenimiento"
+          ],
+          "areaServed": {
+            "@type": "Place",
+            "name": "México"
+            // Considera ser más específico: "Ciudad de México", "Estado de México"
+          },
+          "sameAs": [
+            "https://www.facebook.com/TuPaginaDeFacebook",
+            "https://www.instagram.com/TuPaginaDeInstagram",
+            "https://www.linkedin.com/company/TuEmpresa"
+            // ¡Importante! Reemplaza con tus URLs de redes sociales reales
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.tusitioweb.com/quienes-somos.html#webpage",
+          "url": "https://www.tusitioweb.com/quienes-somos.html",
+          "name": "Quiénes Somos MANTONET: La Nueva Cara del Mantenimiento",
+          "isPartOf": {
+            "@id": "https://www.tusitioweb.com/#website"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.tusitioweb.com/assets/images/quienes-somos-mantonet.jpg",
+            "width": "1200",
+            "height": "630"
+            // Reemplaza con una imagen representativa de la página "Quiénes Somos"
+          },
+          "about": {
+            "@id": "https://www.tusitioweb.com/#organization"
+          },
+          "description": "Conoce la historia, misión y visión de MANTONET, la empresa de mantenimiento fundada por Alejandra y Sergio, que integra tecnología y calidad para ofrecer servicios profesionales."
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <audio id="pageAudio" autoplay>
+    <source src="https://raw.githubusercontent.com/SerchAboites/MANTONET/main/SONIDOS%20MANTONET/SOMOS%20MANTONET.mp3"
+      type="audio/mpeg" />
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <header>
+    <div class="encabezado">
+      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <a href="a-MenuServicios.html" title="Página Principal de MANTONET" class="linkLogoInicio">
+        <div style="background: none; width: 100%; height: 100%" id="logo-container" role="img"
+          aria-label="Logotipo de MANTONET, ir a página de inicio"></div>
+
+        <script>
+          // Idealmente, el SVG del logo debería estar incrustado directamente en el HTML para evitar dependencias JS para elementos críticos.
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              })
+              .catch(e => console.error("Error al cargar el logo SVG:", e));
+          });
+        </script>
+
+      </a>
+
+      <button id="muteButton" class="botonEncabezado" aria-label="Silenciar o reactivar audio de la página">
+        <i class="fas fa-volume-up"></i>
+      </button>
     </div>
+    <!-- menu desplegable -->
 
+    <div id="menu-container"></div>
+
+    <script>
+      fetch("b-menu-desplegable.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+
+    <!-- end menu desplegable -->
+  </header>
+
+  <main>
+    <section class="quienes-somos-section" style="margin-top: 150px; padding: 20px;">
+      <h2>La Nueva Cara del Mantenimiento: Conozca a MANTONET</h2>
+      <p>
+        En un mundo que demanda **soluciones eficientes y profesionales**, nace **MANTONET**. Somos una **empresa
+        dedicada a revolucionar el mantenimiento general**, fundada por los jóvenes emprendedores Alejandra y Sergio.
+        Nuestra propuesta fusiona la vasta experiencia práctica en el sector **hotelero** con la innovación disruptiva
+        del mundo digital y una rigurosa **gestión de calidad ISO 9001:2015**.
+      </p>
+      <p>
+        Nuestra misión en **MANTONET** es ofrecer **servicios profesionales de mantenimiento** de la más alta calidad
+        para **residencias, complejos de departamentos, hoteles y empresas** en [Tu Ciudad/Región, ej. Ciudad de
+        México]. Abarcamos un abanico completo de **soluciones de mantenimiento integral**, incluyendo
+        **impermeabilizaciones, pintura, plomería, electricidad** y **jardinería**. En MANTONET, no solo nos enfocamos
+        en el "qué", sino en el "cómo", garantizando un **mantenimiento eficiente y de confianza**.
+      </p>
+
+      <h3>La Fusión de Experiencia y Visión Innovadora</h3>
+      <p>
+        En el núcleo de nuestra **empresa de mantenimiento** se encuentra una sinergia única y un equipo fundamental.
+        **Alejandra**, con su valiosa experiencia como supervisora de mantenimiento en la exigente industria hotelera,
+        aporta un profundo conocimiento de los estándares de calidad, la atención al detalle y la logística impecable
+        que garantiza la **satisfacción del cliente**. Ella es la voz de la experiencia que asegura que cada **trabajo
+        de mantenimiento** se realice con la máxima profesionalidad y **fiabilidad**.
+      </p>
+      <p>
+        **Sergio**, diseñador de animación y arte digital con experiencia en la implementación de **sistemas de gestión
+        de calidad bajo la norma ISO 9001:2015**, impulsa la visión tecnológica y creativa de MANTONET. Esta
+        perspectiva nos permite ir más allá del **servicio de mantenimiento tradicional**, integrando **herramientas
+        digitales de vanguardia** como bases de datos para la gestión de proyectos, aplicaciones HTML para una
+        comunicación fluida con el cliente, y diseños 3D y renderizados para la visualización de proyectos.
+      </p>
+      <p>
+        Junto a nosotros, un pilar fundamental para el crecimiento y la difusión de nuestro proyecto es **Néstor**,
+        nuestro especialista en **Marketing Digital**. Con su formación y pericia, Néstor es el arquitecto de nuestra
+        presencia online, gestionando estratégicamente nuestras redes sociales y desarrollando **campañas de anuncios
+        digitales a través de Google Ads**. Su trabajo es crucial para conectar MANTONET con quienes necesitan nuestros
+        **servicios de mantenimiento** y para construir una marca de alto impacto en el mercado.
+      </p>
+
+      <h3>Más que un Servicio, un Sistema Inteligente de Mantenimiento</h3>
+      <p>
+        Entendemos que la confianza se construye con resultados tangibles. Por ello, en nuestra etapa inicial, somos
+        nosotros, los fundadores, quienes nos arremangamos la camisa para ejecutar y supervisar directamente los
+        **servicios de mantenimiento**. Esta inmersión total nos permite no solo garantizar la calidad, sino también
+        perfeccionar cada proceso desde su raíz.
+      </p>
+      <p>
+        Sin embargo, nuestra visión a largo plazo es la creación de un **ecosistema de mantenimiento autosustentable**.
+        Aspiramos a desarrollar nuestros propios **sistemas de gestión digital**, optimizando la administración y la
+        operación para poder expandir nuestro equipo. Queremos ser una plataforma que conecte a clientes con una red
+        de **técnicos especializados**, rigurosamente seleccionados y alineados con nuestra filosofía de **calidad y
+        eficiencia en mantenimiento**.
+      </p>
+
+      <h3>Nuestro Compromiso: Juventud, Tecnología y Confianza en el Mantenimiento</h3>
+      <p>
+        En MANTONET, vemos nuestra juventud no como una falta de experiencia, sino como nuestra mayor fortaleza. Somos
+        **nativos digitales**, ágiles y con una mentalidad orientada a la **solución de problemas de forma creativa e
+        innovadora** en el sector del mantenimiento. Estamos comprometidos a:
+      </p>
+      <ul>
+        <li>
+          <strong>Profesionalizar el sector del mantenimiento:</strong> Aplicando estándares de calidad y una gestión
+          transparente en cada proyecto.
+        </li>
+        <li>
+          <strong>Integrar la tecnología avanzada:</strong> Para ofrecer una experiencia de cliente superior, desde la
+          cotización hasta la finalización del servicio de mantenimiento.
+        </li>
+        <li>
+          <strong>Generar confianza duradera:</strong> A través de un trabajo bien hecho, una comunicación clara y la
+          garantía de satisfacción en cada servicio.
+        </li>
+        <li>
+          <strong>Construir una comunidad sólida:</strong> Creando una red de trabajo confiable para especialistas del
+          mantenimiento.
+        </li>
+      </ul>
+      <p>
+        Somos MANTONET y estamos aquí para redefinir lo que significa un **servicio de mantenimiento profesional y de
+        calidad**.
+        <strong>Permítanos ser su aliado estratégico para cuidar y valorizar su patrimonio.</strong>
+      </p>
+
+
+    </section>
+  </main>
+
+  <footer>
     <table style="width: 100%; margin: 30px 0; height: 50px">
       <tr>
         <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
       </tr>
     </table>
+  </footer>
 
-    <script>
-      // Funciones del menú (ya existentes)
-      function mostrarMenu() {
-        const menu = document.querySelector(".menuNavegacion");
+  <script>
+    // Funciones del menú (ya existentes)
+    function mostrarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if (menu) { // Asegura que el elemento existe antes de manipularlo
         menu.classList.add("activo");
       }
+    }
 
-      function ocultarMenu() {
-        const menu = document.querySelector(".menuNavegacion");
+    function ocultarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if (menu) { // Asegura que el elemento existe antes de manipularlo
         menu.classList.remove("activo");
       }
+    }
 
-      // TODO: JavaScript para el botón de Mute/Unmute
-      document.addEventListener("DOMContentLoaded", function () {
-        const audio = document.getElementById("pageAudio");
-        const muteButton = document.getElementById("muteButton");
-        const icon = muteButton.querySelector("i");
+    // JavaScript para el botón de Mute/Unmute
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("pageAudio");
+      const muteButton = document.getElementById("muteButton");
+      const icon = muteButton ? muteButton.querySelector("i") : null; // Asegura que el botón y el ícono existen
 
-        // Función para actualizar el icono del botón
-        function updateMuteButtonIcon() {
-          if (audio.muted || audio.paused) {
-            // Consideramos pausado como "silenciado" para el ícono
-            icon.classList.remove("fa-volume-up");
-            icon.classList.add("fa-volume-mute");
-          } else {
-            icon.classList.remove("fa-volume-mute");
-            icon.classList.add("fa-volume-up");
-          }
+      function updateMuteButtonIcon() {
+        if (!audio || !icon) return; // Salir si los elementos no están disponibles
+        if (audio.muted || audio.paused) {
+          icon.classList.remove("fa-volume-up");
+          icon.classList.add("fa-volume-mute");
+        } else {
+          icon.classList.remove("fa-volume-mute");
+          icon.classList.add("fa-volume-up");
         }
-
-        // Intentar reproducir el audio y manejar promesas (importante para autoplay)
-        // El audio con autoplay puede ser bloqueado por el navegador.
-        // Si es bloqueado, a menudo se silencia o no se inicia.
-        if (audio) {
-          var playPromise = audio.play();
-          if (playPromise !== undefined) {
-            playPromise
-              .then((_) => {
-                // Autoplay iniciado!
-                updateMuteButtonIcon();
-              })
-              .catch((error) => {
-                // Autoplay fue prevenido.
-                // Esto puede pasar si el usuario no ha interactuado con la página aún.
-                // O si el audio no está silenciado por defecto en algunos navegadores.
-                console.warn("Autoplay del audio fue prevenido por el navegador:", error);
-                // Puedes intentar forzar el audio a estar 'muted' y luego reproducirlo
-                // audio.muted = true;
-                // audio.play();
-                updateMuteButtonIcon(); // Asegura que el icono refleje el estado actual (probablemente muteado o pausado)
-              });
-          }
-
-          // Actualizar el ícono si el estado de reproducción cambia (ej: finaliza)
-          audio.onplay = updateMuteButtonIcon;
-          audio.onpause = updateMuteButtonIcon;
-          audio.onvolumechange = updateMuteButtonIcon; // Si se cambia el volumen externamente
-
-          // Evento para el botón de Mute/Unmute
-          muteButton.addEventListener("click", function () {
-            if (audio.muted) {
-              audio.muted = false;
-              if (audio.paused) {
-                // Si estaba pausado y se desmutea, intentar reproducir
-                audio.play().catch((e) => console.warn("No se pudo reproducir tras desmutear:", e));
-              }
-            } else {
-              audio.muted = true;
-              // No necesariamente pausamos si se mutea, el usuario podría querer video/visualización sin sonido
-            }
-            updateMuteButtonIcon();
-          });
-
-          // Establecer el ícono inicial (importante si autoplay no funciona o se inicia muteado)
-          updateMuteButtonIcon();
-        }
-      });
-
-      function solicitarCotizacion() {
-        alert("Formulario de cotización pronto disponible. (Este texto será blanco)");
       }
-    </script>
-  </body>
+
+      if (audio && muteButton) {
+        var playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then((_) => {
+              updateMuteButtonIcon();
+            })
+            .catch((error) => {
+              console.warn("Autoplay del audio fue prevenido por el navegador:", error);
+              updateMuteButtonIcon();
+            });
+        }
+
+        audio.onplay = updateMuteButtonIcon;
+        audio.onpause = updateMuteButtonIcon;
+        audio.onvolumechange = updateMuteButtonIcon;
+
+        muteButton.addEventListener("click", function () {
+          if (audio.muted) {
+            audio.muted = false;
+            if (audio.paused) {
+              audio.play().catch((e) => console.warn("No se pudo reproducir tras desmutear:", e));
+            }
+          } else {
+            audio.muted = true;
+          }
+          updateMuteButtonIcon();
+        });
+
+        updateMuteButtonIcon();
+      }
+    });
+
+    function solicitarCotizacion() {
+      alert("Formulario de cotización pronto disponible. (Este texto será blanco)");
+    }
+  </script>
+
+  <div id="ico_whatsapp"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("b-boton-whats.html")
+        .then((res) => res.text())
+        .then((svg) => {
+          document.getElementById("ico_whatsapp").innerHTML = svg;
+        })
+        .catch(e => console.error("Error al cargar el botón de WhatsApp SVG:", e));
+    });
+  </script>
+</body>
+
 </html>

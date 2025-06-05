@@ -1,54 +1,196 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <base target="_top" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href="c_estilos.css" />
-        <meta charset="UTF-8" />
-        <title>Mantonet - Servicios</title>
-        <style>
-            body {
-                font-family: "Lexend", sans-serif;
-                background: radial-gradient(circle at center, red 0%, #8b0000 100%);
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                width: 100%;
+
+<head>
+    <base target="_top" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="c_estilos.css" />
+    <!-- Favicon estándar para navegadores -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
+
+    <!-- Icono para dispositivos Apple (pantalla de inicio en iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+
+
+    <meta charset="UTF-8" />
+    <title>Mantonet - Servicios</title>
+    <style>
+        body {
+            font-family: "Lexend", sans-serif;
+            background: radial-gradient(circle at center, red 0%, #8b0000 100%);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 150px;
+            background-color: darkred;
+            width: 100%;
+            justify-content: center;
+            align-content: center;
+            text-align-last: center;
+            height: 60px;
+            margin-bottom: 30px;
+        }
+
+        .menu {
+            background: none;
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            /* Espacio para que el footer no oculte el último botón */
+        }
+
+        .btn-servicio {
+            position: relative;
+            background-color: transparent;
+            color: white;
+            padding: 0px;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            font-size: 35px;
+            width: 100%;
+            display: flex;
+            /* Duplicado, pero se mantiene */
+            align-items: center;
+            /* Duplicado, pero se mantiene */
+            transition: background-color 0.3s ease;
+            min-height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-svg {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            /* ahora ocupa todo el botón */
+            height: auto;
+            /* Considerar height: 100% si el SVG debe llenar el botón verticalmente */
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 0px;
+        }
+
+        .btn-servicio i,
+        /* Regla presente, aunque no se usen <i> actualmente */
+        .btn-servicio .btn-text,
+        .btn-servicio .btn-img {
+            z-index: 1;
+            position: relative;
+        }
+
+        .btn-text {
+            font-family: "Lexend", sans-serif;
+            flex-grow: 1;
+            text-align: center;
+            color: #ffffff;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-left: 20px;
+            /* background-color: ; -- Eliminado por estar vacío */
+            height: 100%;
+            width: 100%;
+            font-weight: bold;
+            text-decoration: none;
+            /* No tiene efecto en <span>, sí en <a> */
+            /* 👈 ESTA LÍNEA */
+        }
+
+        .btn-img {
+            height: 100%;
+            max-height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
+            /* padding no tiene efecto en <img>, pero se mantiene */
+            margin-right: 30px;
+            /* Animación de rotación lateral */
+            animation: rotarLadoALado 3s ease-in-out infinite;
+            transform-origin: center bottom;
+            /* Para que rote alrededor de la base */
+        }
+
+        .botonLadoIzquierdo {
+            fill: #920000;
+        }
+
+        .botonLadoDerecho {
+            fill: #7c0000;
+            animation: cambioColorRojo 4s ease-in-out infinite;
+        }
+
+        @keyframes rotarLadoALado {
+            0% {
+                transform: rotate(-9deg);
             }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        @keyframes cambioColorRojo {
+
+            0%,
+            100% {
+                fill: #710000;
+                /* rojo oscuro */
+            }
+
+            50% {
+                fill: #ff0000;
+                /* rojo claro */
+            }
+        }
+
+        @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
+        (max-width: 1080px) and (min-resolution: 1.8dppx) {
+            .btn-text {
+                font-size: 40px;
+            }
+
+
+            .btn-img {
+                height: 100%;
+                max-height: 250px;
+                margin-right: 50px;
+            }
+
+            h1 {
+                margin-top: 250px;
+                height: 120px;
+                margin-bottom: 60px;
+            }
+
+
 
             .menu {
-                background: none;
-                display: flex;
-                flex-direction: column;
-                width: 40%;
-                align-items: center;
-                gap: 30px;
-                margin-bottom: 80px; /* Espacio para que el footer no oculte el último botón */
-            }
-
-            .btn-servicio {
-                position: relative;
-                background-color: transparent;
-                color: white;
-                padding: 0px;
-                border: none;
-                border-radius: 0px;
-                cursor: pointer;
-                font-size: 35px;
+                /* Propiedades de flex y background ya definidas globalmente, se mantienen */
                 width: 100%;
-                display: flex; /* Duplicado, pero se mantiene */
-                align-items: center; /* Duplicado, pero se mantiene */
-                transition: background-color 0.3s ease;
-                min-height: 200px;
-                overflow: hidden;
-                display: flex;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
+                gap: 60px;
             }
 
             .btn-svg {
@@ -56,246 +198,138 @@
                 left: 0;
                 width: 100%;
                 /* ahora ocupa todo el botón */
-                height: auto; /* Considerar height: 100% si el SVG debe llenar el botón verticalmente */
+                height: auto;
+                /* Considerar height: 100% si el SVG debe llenar el botón verticalmente */
                 z-index: 0;
                 pointer-events: none;
                 border-radius: 0px;
             }
 
-            .btn-servicio i, /* Regla presente, aunque no se usen <i> actualmente */
-    .btn-servicio .btn-text,
-    .btn-servicio .btn-img {
-                z-index: 1;
-                position: relative;
-            }
+        }
+    </style>
+</head>
 
-            .btn-text {
-                font-family: "Lexend", sans-serif;
-                flex-grow: 1;
-                text-align: center;
-                color: #ffffff;
-                font-size: 25px;
-                display: flex;
-                align-items: center;
-                justify-content: left;
-                margin-left: 20px;
-                /* background-color: ; -- Eliminado por estar vacío */
-                height: 100%;
-                width: 100%;
-                font-weight: bold;
-                text-decoration: none; /* No tiene efecto en <span>, sí en <a> */
-                /* 👈 ESTA LÍNEA */
-            }
+<body>
+    <!-- Definición global de gradiente para evitar IDs duplicados en SVGs de botones -->
+    <svg style="display: none" aria-hidden="true">
+        <defs>
+            <linearGradient id="gradienteBotonUnico" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#770000" />
+                <stop offset="100%" stop-color="#d30000" />
+            </linearGradient>
+        </defs>
+    </svg>
 
-            .btn-img {
-                height: 100%;
-                max-height: 200px;
-                border-radius: 50%;
-                object-fit: cover;
-                margin: 0;
-                padding: 0; /* padding no tiene efecto en <img>, pero se mantiene */
-                margin-right: 30px;
-                /* Animación de rotación lateral */
-                animation: rotarLadoALado 3s ease-in-out infinite;
-                transform-origin: center bottom;
-                /* Para que rote alrededor de la base */
-            }
+    <div class="encabezado">
+        <a href="a-MenuServicios.html" class="linkLogoInicio" title="Ir al inicio de Mantonet">
+            <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    fetch("logoMantonet.svg")
+                        .then((res) => res.text())
+                        .then((svg) => {
+                            document.getElementById("logo-container").innerHTML = svg;
+                        });
+                });
+            </script>
+        </a>
+    </div>
 
-            .botonLadoIzquierdo {
-                fill: #920000;
-            }
+    <h1>
+        MANTENIMIENTO GENERAL
+    </h1>
 
-            .botonLadoDerecho {
-                fill: #7c0000;
-                animation: cambioColorRojo 4s ease-in-out infinite;
-            }
+    <div class="menu" style="margin: 0 0 0 0">
+        <!-- IMPERMEABILIZACIÓN -->
+        <button onclick="window.location.href='a-Imper.html'" class="btn-servicio" title="Impermeabilización">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+                <!-- <defs> eliminado de aquí, se usa el gradiente global -->
+                <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
+                    points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+                <polygon fill="#330000" class="botonLadoDerecho"
+                    points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+            </svg>
+            <span class="btn-text">Impermeabilización</span>
+            <img src="https://raw.githubusercontent.com/SerchAboites/IMAGENES-PARA-HTML/refs/heads/main/MANTONET/GRAVIN%203.png"
+                class="btn-img" alt="Servicio de impermeabilización con rollo de material" />
+        </button>
 
-            @keyframes rotarLadoALado {
-                0% {
-                    transform: rotate(-9deg);
-                }
-                50% {
-                    transform: rotate(10deg);
-                }
-                100% {
-                    transform: rotate(-10deg);
-                }
-            }
+        <!-- PINTURA -->
+        <button onclick="window.location.href='a-Pintura.html'" class="btn-servicio" title="Pintura">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+                <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
+                    points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+                <polygon fill="#330000" class="botonLadoDerecho"
+                    points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+            </svg>
+            <span class="btn-text">Pintura</span>
+            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Broch%C3%ADn%20(2).png"
+                class="btn-img" alt="Servicio de pintura con brocha" />
+        </button>
 
-            @keyframes cambioColorRojo {
-                0%,
-                100% {
-                    fill: #710000;
-                    /* rojo oscuro */
-                }
-                50% {
-                    fill: #ff0000;
-                    /* rojo claro */
-                }
-            }
+        <!-- PLOMERÍA -->
+        <button onclick="window.location.href='a-Plomeria.html'" class="btn-servicio" title="Plomería">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+                <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
+                    points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+                <polygon fill="#330000" class="botonLadoDerecho"
+                    points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+            </svg>
+            <span class="btn-text">Plomería</span>
+            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Tuercas%207.png"
+                class="btn-img" alt="Servicio de plomería con tuercas" />
+        </button>
 
-            @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
-                (max-width: 1080px) and (min-resolution: 1.8dppx) {
-                .btn-text {
-                    font-size: 40px;
-                }
-                .btn-img {
-                    height: 100%;
-                    max-height: 250px;
-                    margin-right: 50px;
-                }
+        <!-- ELECTRICIDAD -->
+        <button onclick="window.location.href='a-Electricidad.html'" class="btn-servicio" title="Electricidad">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+                <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
+                    points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+                <polygon fill="#330000" class="botonLadoDerecho"
+                    points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+            </svg>
+            <span class="btn-text">Electricidad</span>
+            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/PERSONAJE%20-%20NEUTRINA%20Y%20LINEA.png"
+                class="btn-img" alt="Servicio de electricidad con personaje animado" />
+        </button>
 
-                .menu {
-                    /* Propiedades de flex y background ya definidas globalmente, se mantienen */
-                    width: 100%;
-                    /* gap: 30px; ya definido globalmente, se mantiene */
-                }
-            }
-        </style>
-    </head>
+        <!-- SOMOS MANTONET -->
+        <button onclick="window.location.href='a-SomosMantonet.html'" class="btn-servicio" title="SOMOS MANTONET">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+                <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
+                    points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+                <polygon fill="#330000" class="botonLadoDerecho"
+                    points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+            </svg>
+            <span class="btn-text">SOMOS MANTONET</span>
+            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Icono%20de%20Correo_Girando.gif"
+                class="btn-img" alt="Icono animado de correo para sección Somos Mantonet" />
+        </button>
+    </div>
+    <!-- Fin de .menu -->
 
-    <body>
-        <!-- Definición global de gradiente para evitar IDs duplicados en SVGs de botones -->
-        <svg style="display: none" aria-hidden="true">
-            <defs>
-                <linearGradient id="gradienteBotonUnico" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#770000" />
-                    <stop offset="100%" stop-color="#d30000" />
-                </linearGradient>
-            </defs>
-        </svg>
+    <table style="width: 100%; margin: 30px; height: 50px">
+        <!-- Se mantiene la tabla para el pie de página según solicitud -->
+        <tr>
+            <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
+        </tr>
+    </table>
 
-        <div class="encabezado">
-            <a href="a-MenuServicios.html" class="linkLogoInicio" title="Ir al inicio de Mantonet">
-                <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        fetch("logoMantonet.svg")
-                            .then((res) => res.text())
-                            .then((svg) => {
-                                document.getElementById("logo-container").innerHTML = svg;
-                            });
-                    });
-                </script>
-            </a>
-        </div>
+    <!-- Icono Whats General -->
 
-        <h1
-            style="
-                background-color: darkred;
-                width: 100%;
-                justify-content: center;
-                align-content: center;
-                text-align-last: center;
-                margin-top: 150px;
-            ">
-            MANTENIMIENTO GENERAL
-        </h1>
+    <div id="ico_whatsapp"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("b-boton-whats.html")
+                .then((res) => res.text())
+                .then((svg) => {
+                    document.getElementById("ico_whatsapp").innerHTML = svg;
+                });
+        });
+    </script>
 
-        <div class="menu" style="margin: 0 0 0 0">
-            <!-- IMPERMEABILIZACIÓN -->
-            <button onclick="window.location.href='a-Imper.html'" class="btn-servicio" title="Impermeabilización">
-                <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
-                    <!-- <defs> eliminado de aquí, se usa el gradiente global -->
-                    <polygon
-                        fill="url(#gradienteBotonUnico)"
-                        class="botonLadoIzquierdo"
-                        points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
-                    <polygon
-                        fill="#330000"
-                        class="botonLadoDerecho"
-                        points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
-                </svg>
-                <span class="btn-text">Impermeabilización</span>
-                <img
-                    src="https://raw.githubusercontent.com/SerchAboites/IMAGENES-PARA-HTML/refs/heads/main/MANTONET/GRAVIN%203.png"
-                    class="btn-img"
-                    alt="Servicio de impermeabilización con rollo de material" />
-            </button>
+    <!-- End Icono Whats General -->
 
-            <!-- PINTURA -->
-            <button onclick="window.location.href='a-Pintura.html'" class="btn-servicio" title="Pintura">
-                <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
-                    <polygon
-                        fill="url(#gradienteBotonUnico)"
-                        class="botonLadoIzquierdo"
-                        points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
-                    <polygon
-                        fill="#330000"
-                        class="botonLadoDerecho"
-                        points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
-                </svg>
-                <span class="btn-text">Pintura</span>
-                <img
-                    src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Broch%C3%ADn%20(2).png"
-                    class="btn-img"
-                    alt="Servicio de pintura con brocha" />
-            </button>
+</body>
 
-            <!-- PLOMERÍA -->
-            <button onclick="window.location.href='a-Plomeria.html'" class="btn-servicio" title="Plomería">
-                <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
-                    <polygon
-                        fill="url(#gradienteBotonUnico)"
-                        class="botonLadoIzquierdo"
-                        points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
-                    <polygon
-                        fill="#330000"
-                        class="botonLadoDerecho"
-                        points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
-                </svg>
-                <span class="btn-text">Plomería</span>
-                <img
-                    src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Tuercas%207.png"
-                    class="btn-img"
-                    alt="Servicio de plomería con tuercas" />
-            </button>
-
-            <!-- ELECTRICIDAD -->
-            <button onclick="window.location.href='a-Electricidad.html'" class="btn-servicio" title="Electricidad">
-                <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
-                    <polygon
-                        fill="url(#gradienteBotonUnico)"
-                        class="botonLadoIzquierdo"
-                        points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
-                    <polygon
-                        fill="#330000"
-                        class="botonLadoDerecho"
-                        points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
-                </svg>
-                <span class="btn-text">Electricidad</span>
-                <img
-                    src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/PERSONAJE%20-%20NEUTRINA%20Y%20LINEA.png"
-                    class="btn-img"
-                    alt="Servicio de electricidad con personaje animado" />
-            </button>
-
-            <!-- SOMOS MANTONET -->
-            <button onclick="window.location.href='a-SomosMantonet.html'" class="btn-servicio" title="SOMOS MANTONET">
-                <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
-                    <polygon
-                        fill="url(#gradienteBotonUnico)"
-                        class="botonLadoIzquierdo"
-                        points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
-                    <polygon
-                        fill="#330000"
-                        class="botonLadoDerecho"
-                        points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
-                </svg>
-                <span class="btn-text">SOMOS MANTONET</span>
-                <img
-                    src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Icono%20de%20Correo_Girando.gif"
-                    class="btn-img"
-                    alt="Icono animado de correo para sección Somos Mantonet" />
-            </button>
-        </div>
-        <!-- Fin de .menu -->
-
-        <table style="width: 100%; margin: 30px; height: 50px">
-            <!-- Se mantiene la tabla para el pie de página según solicitud -->
-            <tr>
-                <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
-            </tr>
-        </table>
-    </body>
 </html>

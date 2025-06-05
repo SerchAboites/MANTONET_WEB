@@ -1,122 +1,181 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Es buena práctica incluir el charset -->
-    <title>Mantonet - Servicios Profesionales</title>
-    <!-- Título descriptivo para la página -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <base target="_top" />
-    <link rel="stylesheet" href="c_estilos.css" />
 
-    <script>
-      function mostrarMenu() {
-        const menu = document.querySelector(".menuNavegacion");
-        menu.classList.add("activo");
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pintura Profesional para Hogares y Empresas - Mantonet</title>
+  <meta name="description"
+    content="Servicios de pintura profesional para interiores y exteriores. Acabados de calidad, bitácora detallada del proyecto y cotización gratuita. Transforma tus espacios con Mantonet en la Ciudad de México y Estado de México." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="c_estilos.css" />
+  <!-- Favicon estándar para navegadores -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
 
-      function ocultarMenu() {
-        const menu = document.querySelector(".menuNavegacion");
-        menu.classList.remove("activo");
-      }
-      // Puedes llamar a mostrarMenu() cuando necesites abrir el panel
+  <!-- Icono para dispositivos Apple (pantalla de inicio en iOS) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+  <base target="_top" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Servicio de Pintura Profesional de Mantonet",
+      "description": "Mantonet ofrece servicios de pintura profesional para interiores y exteriores, incluyendo muros, techos y fachadas. Garantizamos acabados de calidad, durabilidad y una bitácora detallada del proyecto. Solicita tu cotización gratuita.",
+      "serviceType": "Pintura Residencial y Comercial",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mantonet",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tu Dirección Completa Aquí (ej. Calle Ficticia #123)",
+          "addressLocality": "Tlalnepantla de Baz",
+          "addressRegion": "Estado de México",
+          "postalCode": "54000",
+          "addressCountry": "MX"
+        },
+        "telephone": "+5215519148472",
+        "url": "https://www.tusitioweb.com/pintura-profesional.html",
+        "priceRange": "$$",
+        "image": "https://www.tusitioweb.com/img/logo-mantonet.png",
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Mantonet+Tlalnepantla"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Ciudad de México"
+        },
+        {
+          "@type": "Place",
+          "name": "Estado de México"
+        }
+      ],
+      "hasOffer": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "MXN",
+          "minPrice": "0"
+        },
+        "description": "Visita y cotización sin costo para tu proyecto de pintura."
+      },
+      "url": "https://www.tusitioweb.com/pintura-profesional.html"
+    }
     </script>
-  </head>
+</head>
 
-  <body>
-    <div class="contenedorPrincipal">
-      <div class="encabezado">
-        <button onclick="mostrarMenu();" class="botonArribaIzquierda">
-          <i class="fas fa-bars"></i>
-        </button>
+<body>
+  <div class="contenedorPrincipal">
+    <header class="encabezado">
+      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
 
-        <!-- El código PHP se asume que es procesado correctamente por el servidor -->
-        <button class="linkLogoInicio" onclick="window.location.href='a-MenuServicios.html'" title="logo menu">
-          <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              fetch("logoMantonet.svg")
-                .then((res) => res.text())
-                .then((svg) => {
-                  document.getElementById("logo-container").innerHTML = svg;
-                });
-            });
-          </script>
-        </button>
-      </div>
-      <!-- Cierre de .encabezado -->
-
-      <!-- menu desplegable -->
-
-      <div id="menu-container"></div>
-
-      <script>
-        fetch("a-menu-desplegable.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("menu-container").innerHTML = data;
+      <a href="a-MenuServicios.html" class="linkLogoInicio" title="Ir a la página principal de servicios de Mantonet">
+        <div id="logo-container"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              });
           });
-      </script>
+        </script>
+      </a>
+    </header>
 
-      <!-- end menu desplegable -->
+    <div id="menu-container"></div>
+    <script>
+      fetch("b-menu-desplegable.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+    <main class="main-content">
+      <section class="section1" style="margin-top: 150px;">
+        <h1>Pintura Profesional para Interiores y Exteriores con Mantonet</h1>
 
-      <section class="section1" style="margin-top: 200px">
-        <h2>Pintura Profesional</h2>
+        <img src="img/brochin16-9.png"
+          alt="Servicio de pintura profesional realizado por Mantonet, mostrando una brocha y colores vibrantes en un interior"
+          loading="lazy" style="width: 100%;">
+
         <p>
-          Dale vida a tus espacios con acabados limpios, uniformes y duraderos. Aplicamos pintura profesional en
-          interiores y exteriores, cuidando cada detalle en muros, techos y fachadas.
+          En Mantonet, somos **especialistas en pintura profesional** con años de experiencia transformando hogares y
+          negocios en la Ciudad de México y Estado de México. Ofrecemos **servicios de pintura de interiores y
+          exteriores** que garantizan acabados limpios, uniformes y duraderos en muros, techos y fachadas. Nuestra
+          atención al detalle y el uso de materiales de alta calidad aseguran la máxima calidad en cada proyecto.
         </p>
         <p>
-          En cada proyecto entregamos una <strong>bitácora profesional</strong>, física o digital, que registra el
-          avance, los materiales aplicados y cualquier incidencia relevante, para que estés informado incluso si no
-          puedes estar presente.
+          La **transparencia y tu tranquilidad** son nuestra prioridad. En cada proyecto de pintura, te entregamos una
+          **bitácora profesional** detallada, disponible de forma física o digital. Esta bitácora documenta el avance
+          diario, los materiales utilizados y cualquier incidencia relevante, permitiéndote estar informado y confiado
+          en todo momento, incluso si no puedes estar presente en el lugar.
         </p>
-        <p><strong>Resultados estéticos, duraderos y documentados en cada paso.</strong></p>
+        <p>
+          Confía en nosotros para obtener **resultados estéticos, duraderos y documentados en cada paso**. Conoce
+          nuestro compromiso con la calidad y la fiabilidad.
+        </p>
 
-        <h3>¿Cómo trabajamos?</h3>
+        <h2>Proceso de Trabajo de Pintura Profesional en Mantonet</h2>
         <ol>
-          <li>Agendamos una visita sin costo para evaluar tu espacio y necesidades.</li>
-          <li>Te enviamos una propuesta con opciones de color, tiempos estimados y costos.</li>
-          <li>Con tu aprobación, iniciamos los trabajos.</li>
-          <li>Documentamos todo el proceso en una bitácora profesional con fotos y comentarios técnicos.</li>
+          <li>Agendamos una **visita sin costo** para evaluar tu espacio y necesidades específicas en tu hogar o
+            negocio.</li>
+          <li>Te enviamos una **propuesta detallada** con opciones de color, tiempos estimados de ejecución y costos
+            claros y competitivos.</li>
+          <li>Con tu aprobación, iniciamos los trabajos de pintura con nuestro equipo experto y certificado.</li>
+          <li>Documentamos todo el proceso en una **bitácora profesional** con fotos y comentarios técnicos, asegurando
+            la transparencia y tu control.</li>
         </ol>
 
-        <p>🎨 <a href="#agenda" style="text-decoration: none; font-weight: bold">Agenda tu visita gratuita</a></p>
+        <p class="cta-text">🎨 ¿Listo para renovar tus espacios? ¡No esperes más!</p>
 
-        <a
-          href="https://wa.me/5215519148472?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20solicitar%20una%20visita%20sin%20costo%20para%20cotizaci%C3%B3n%2C%20aprovechando%20su%20promoci%C3%B3n%20%22PROMO-WEB-MANTONET%22.%20%C2%A1Gracias%21"
-          target="_blank"
-          style="text-decoration: none">
-          <button
-            style="
-              background-color: #25d366;
-              color: white;
-              padding: 10px 20px;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-            ">
-            <i class="fab fa-whatsapp" style="color: white; margin-right: 8px"></i>
-            Cotización sin Costo por WhatsApp
-          </button>
-        </a>
+
       </section>
-      <!-- Cierre de .section1 -->
-    </div>
-    <!-- Cierre de .contenedorPrincipal -->
+    </main>
 
-    <table style="width: 100%; margin: 30px; height: 50px">
-      <!-- Pie de página -->
-      <tr>
-        <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
-      </tr>
-    </table>
+    <footer>
+      <table style="width: 100%; margin: 30px; height: 50px">
+          <tr>
+              <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
+          </tr>
+      </table>
+  </footer>
 
+    <div id="ico_whatsapp"></div>
     <script>
-      function solicitarCotizacion() {
-        // Puedes personalizar esta función para abrir un formulario o enviar un correo
-        alert("Formulario de cotización pronto disponible.");
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("b-boton-whats.html")
+          .then((res) => res.text())
+          .then((svg) => {
+            document.getElementById("ico_whatsapp").innerHTML = svg;
+          });
+      });
     </script>
-  </body>
+  </div>
+
+  <script defer>
+    function mostrarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if (menu) { // Asegúrate de que el elemento exista antes de manipularlo
+        menu.classList.add("activo");
+      }
+    }
+
+    function ocultarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if (menu) { // Asegúrate de que el elemento exista antes de manipularlo
+        menu.classList.remove("activo");
+      }
+    }
+
+    // Función de ejemplo, puedes eliminarla si no la usas
+    function solicitarCotizacion() {
+      alert("Formulario de cotización pronto disponible.");
+    }
+  </script>
+</body>
+
 </html>
