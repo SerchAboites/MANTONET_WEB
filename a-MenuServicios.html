@@ -76,6 +76,12 @@
             justify-content: center;
         }
 
+        .btn-servicio:hover {
+
+            transform: scale(1.1);
+            /* Example: Makes the button 5% larger */
+        }
+
         .btn-svg {
             position: absolute;
             left: 0;
@@ -122,16 +128,19 @@
             object-fit: cover;
             margin: 0;
             padding: 0;
-            /* padding no tiene efecto en <img>, pero se mantiene */
             margin-right: 30px;
-            /* Animación de rotación lateral */
             animation: rotarLadoALado 3s ease-in-out infinite;
             transform-origin: center bottom;
-            /* Para que rote alrededor de la base */
         }
 
         .botonLadoIzquierdo {
             fill: #920000;
+            transition: fill 0.3s ease;
+            /* Add this line for a smooth transition */
+        }
+
+        .botonLadoIzquierdo:hover {
+            fill: #a8a8a8;
         }
 
         .botonLadoDerecho {
@@ -177,13 +186,14 @@
             .btn-img {
                 height: 100%;
                 max-height: 250px;
-                margin-right: 50px;
+                margin-right: 100px;
             }
 
             h1 {
                 margin-top: 250px;
                 height: 120px;
                 margin-bottom: 60px;
+                box-sizing: border-box;
             }
 
 
@@ -192,6 +202,7 @@
                 /* Propiedades de flex y background ya definidas globalmente, se mantienen */
                 width: 100%;
                 gap: 60px;
+
             }
 
             .btn-svg {
