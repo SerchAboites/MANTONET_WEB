@@ -99,78 +99,78 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.restore();
     }
 
-    function spinWheel() {
-        if (isSpinning) return;
-        isSpinning = true;
-        resultDiv.textContent = '¡Girando...!';
-        spinButton.disabled = true;
-        lastSegmentIndex = -1; // Reinicia el tracker del sonido
+function spinWheel() {
+    if (isSpinning) return;
+    isSpinning = true;
+    resultDiv.textContent = '¡Girando...!';
+    spinButton.disabled = true;
+    
+    // --> CAMBIO: El sonido de giro ahora se reproduce UNA SOLA VEZ aquí.
+    tickSound.currentTime = 0;
+    tickSound.play();
 
-        const spinDuration = 5000;
-        const totalFullSpins = 5;
-        const targetSegmentIndex = Math.floor(Math.random() * numSegments);
-        let targetStopAngle = (-Math.PI / 2) - (targetSegmentIndex * arc + arc / 2);
-        targetStopAngle = (targetStopAngle % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
-        let angleToSpinFromCurrent = targetStopAngle - (currentRotation % (2 * Math.PI));
-        if (angleToSpinFromCurrent < 0) {
-            angleToSpinFromCurrent += (2 * Math.PI);
-        }
-        const totalSpinAmount = angleToSpinFromCurrent + (totalFullSpins * 2 * Math.PI);
-        let startTime;
+    // Ya no necesitamos la variable 'lastSegmentIndex'
+    // lastSegmentIndex = -1; 
 
-        function animateSpin(currentTime) {
-            if (!startTime) startTime = currentTime;
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / spinDuration, 1);
-            const easing = 1 - Math.pow(1 - progress, 3);
-            const currentAnimatedAngle = currentRotation + (totalSpinAmount * easing);
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.save();
-            ctx.translate(canvas.width / 2, canvas.height / 2);
-            ctx.rotate(currentAnimatedAngle);
-            ctx.translate(-canvas.width / 2, -canvas.height / 2);
-            drawWheel();
-            ctx.restore();
-            drawPointer();
-
-            // --> 3. LÓGICA PARA SONIDO DE "TICK"
-            const currentSegment = Math.floor((numSegments - (currentAnimatedAngle / arc) % numSegments) % numSegments);
-            if (currentSegment !== lastSegmentIndex) {
-                tickSound.currentTime = 0; // Reinicia el sonido para reproducirlo rápido
-                tickSound.play();
-                lastSegmentIndex = currentSegment;
-            }
-
-            if (progress < 1) {
-                requestAnimationFrame(animateSpin);
-            } else {
-                isSpinning = false;
-                spinButton.disabled = false;
-                currentRotation = currentAnimatedAngle % (2 * Math.PI);
-                const winner = segments[targetSegmentIndex];
-
-                // --> 4. REPRODUCIR SONIDO DE PREMIO
-                winSound.currentTime = 0;
-                winSound.play();
-
-                let prizeDisplayText;
-                if (typeof winner.value === 'number') {
-                    prizeDisplayText = `${winner.value} Puntos`;
-                } else {
-                    prizeDisplayText = winner.value;
-                }
-                resultDiv.textContent = `Resultado: ${prizeDisplayText}`;
-                modalResult.textContent = `¡Has ganado: ${prizeDisplayText}!`;
-                couponModal.style.display = 'flex';
-                couponForm.reset();
-                couponForm.dataset.prizeText = prizeDisplayText;
-                couponForm.dataset.prizeValue = winner.value;
-                console.log(`El usuario obtuvo: ${winner.text} (Valor: ${winner.value})`);
-            }
-        }
-        requestAnimationFrame(animateSpin);
+    const spinDuration = 5000;
+    const totalFullSpins = 5;
+    const targetSegmentIndex = Math.floor(Math.random() * numSegments);
+    let targetStopAngle = (-Math.PI / 2) - (targetSegmentIndex * arc + arc / 2);
+    targetStopAngle = (targetStopAngle % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+    let angleToSpinFromCurrent = targetStopAngle - (currentRotation % (2 * Math.PI));
+    if (angleToSpinFromCurrent < 0) {
+        angleToSpinFromCurrent += (2 * Math.PI);
     }
+    const totalSpinAmount = angleToSpinFromCurrent + (totalFullSpins * 2 * Math.PI);
+    let startTime;
+
+    function animateSpin(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / spinDuration, 1);
+        const easing = 1 - Math.pow(1 - progress, 3);
+        const currentAnimatedAngle = currentRotation + (totalSpinAmount * easing);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(currentAnimatedAngle);
+        ctx.translate(-canvas.width / 2, -canvas.height / 2);
+        drawWheel();
+        ctx.restore();
+        drawPointer();
+
+        // --> CAMBIO: Hemos eliminado la lógica del sonido de "tick" de aquí.
+        
+        if (progress < 1) {
+            requestAnimationFrame(animateSpin);
+        } else {
+            isSpinning = false;
+            spinButton.disabled = false;
+            currentRotation = currentAnimatedAngle % (2 * Math.PI);
+            const winner = segments[targetSegmentIndex];
+
+            // Reproducir sonido de premio
+            winSound.currentTime = 0;
+            winSound.play();
+
+            let prizeDisplayText;
+            if (typeof winner.value === 'number') {
+                prizeDisplayText = `${winner.value} Puntos`;
+            } else {
+                prizeDisplayText = winner.value;
+            }
+            resultDiv.textContent = `Resultado: ${prizeDisplayText}`;
+            modalResult.textContent = `¡Has ganado: ${prizeDisplayText}!`;
+            couponModal.style.display = 'flex';
+            couponForm.reset();
+            couponForm.dataset.prizeText = prizeDisplayText;
+            couponForm.dataset.prizeValue = winner.value;
+            console.log(`El usuario obtuvo: ${winner.text} (Valor: ${winner.value})`);
+        }
+    }
+    requestAnimationFrame(animateSpin);
+}
 
     closeButton.addEventListener('click', () => {
         couponModal.style.display = 'none';

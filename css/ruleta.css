@@ -93,16 +93,23 @@ body {
 
 /* Contenido del modal */
 .modal-content {
-    background: radial-gradient(red, darkred) ;
+    /* --- Tus estilos originales (se mantienen) --- */
+    background: radial-gradient(red, darkred);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     position: relative;
     width: 90%;
     max-width: 550px; /* Ancho máximo para pantallas grandes */
     text-align: center;
     animation: modalFadeIn 0.4s ease-out; /* Animación de aparición */
     color: white;
+
+    /* --- Propiedades AÑADIDAS para el scroll --- */
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh; /* Límite de altura (85% de la ventana). ¡Puedes ajustar este valor! */
+    overflow-y: auto; /* Muestra la barra de scroll si el contenido es muy alto */
 }
 
 /* Título del resultado en el modal */
