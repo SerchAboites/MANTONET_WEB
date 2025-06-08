@@ -1,0 +1,243 @@
+/* ESTILOS DE LA RULETA (ya existentes) */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle, red, darkred); /* Degradado del centro (red) hacia afuera (darkred) */
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.wheel-container {
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #580000;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    padding: 40px;
+    margin-top: 130px;
+}
+
+#wheelCanvas {
+    display: block;
+    border-radius: 50%;
+    background-color: #ce0000;
+}
+
+#spinButton {
+    padding: 18px 35px;
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: red; /* Un tono vibrante */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Botón más redondeado */
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none; /* Eliminar el contorno al hacer clic */
+}
+
+#spinButton:hover {
+    background-color: #440000; /* Tono más claro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto 3D */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#spinButton:active {
+    background-color: #4e0353; /* Tono más oscuro al hacer clic */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+#result {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 25px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #d60000;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 300px;
+}
+
+
+/* --- NUEVOS ESTILOS PARA EL MODAL DE CUPÓN --- */
+
+/* Fondo oscurecido del modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite desplazamiento si el contenido es grande */
+    background-color: rgba(0,0,0,0.8); /* Fondo negro semitransparente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
+    -webkit-backdrop-filter: blur(5px); /* Compatibilidad con Safari */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background: radial-gradient(red, darkred) ;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    width: 90%;
+    max-width: 550px; /* Ancho máximo para pantallas grandes */
+    text-align: center;
+    animation: modalFadeIn 0.4s ease-out; /* Animación de aparición */
+    color: white;
+}
+
+/* Título del resultado en el modal */
+#modalResult {
+    font-size: 2.2em;
+    color: #ffffff; /* Color del botón de girar (ajustado para que combine) */
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+/* Párrafo descriptivo en el modal */
+.modal-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Botón de cerrar del modal */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #b00000; /* Color que combina con el red/darkred */
+    text-decoration: none;
+}
+
+/* Estilos del formulario dentro del modal */
+#couponForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Espacio entre los grupos de formulario */
+}
+
+.form-group {
+    text-align: left;
+}
+
+.modal-content p {
+    color: white;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    width: calc(100% - 24px); /* Ajuste para el padding y borde */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="tel"]:focus {
+    border-color: #b00000; /* Color que combina con el red/darkred */
+    box-shadow: 0 0 0 3px rgba(176, 0, 0, 0.2); /* Sutil halo de enfoque */
+    outline: none;
+}
+
+/* Botón de enviar cupón */
+#sendCouponButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #fd0000; /* Un verde vibrante */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Redondeado como el botón de girar */
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    outline: none;
+}
+
+#sendCouponButton:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+#sendCouponButton:active {
+    background-color: #3e8e41;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Animación para el modal */
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries para responsividad del modal */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 25px;
+        width: 95%;
+    }
+    #modalResult {
+        font-size: 1.8em;
+    }
+    .modal-content p {
+        font-size: 1em;
+    }
+    .form-group input {
+        font-size: 0.95em;
+    }
+    #sendCouponButton {
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+}

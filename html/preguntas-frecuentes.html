@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+    <title>Ruleta de Puntos Mantonet para Marketing</title>
+    <link rel="stylesheet" href="/css/ruleta.css">
+    <link rel="stylesheet" href="/c_estilos.css">
+    <link rel="stylesheet" href="/c_textos.css">
+</head>
+
+<body>
+
+
+    <header class="encabezado">
+        <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+            <i class="fas fa-bars"></i>
+        </button>
+
+<button class="linkLogoInicio" onclick="window.location.href='/a-MenuServicios.html'"
+            title="Volver al inicio de servicios Mantonet">
+            <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Nota: La ruta del SVG también necesita ser ajustada si no está en la misma carpeta
+                    // Si 'logoMantonet.svg' está en la misma carpeta que 'index.html' y 'a-MenuServicios.html'
+                    fetch("/logoMantonet.svg") 
+                        .then((res) => res.text())
+                        .then((svg) => {
+                            document.getElementById("logo-container").innerHTML = svg;
+                        });
+                });
+            </script>
+        </button>
+
+    </header>
+
+    <div id="menu-container"></div>
+    <script>
+        // Considera incrustar b-menu-desplegable.html directamente en el servidor para mejor SEO
+        fetch("/b-menu-desplegable.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("menu-container").innerHTML = data;
+            });
+    </script>
+
+
+ 
+
+    <script>
+        function mostrarMenu() {
+            const menu = document.querySelector(".menuNavegacion");
+            menu.classList.add("activo");
+        }
+
+        function ocultarMenu() {
+            const menu = document.querySelector(".menuNavegacion");
+            menu.classList.remove("activo");
+        }
+
+    </script>
+
+
+</body>
+
+</html>
