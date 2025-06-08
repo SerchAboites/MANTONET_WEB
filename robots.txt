@@ -1,3 +1,3 @@
 # Bloquear archivos de plantilla específicos en la raíz
-Disallow: /menu-principal.html
+Disallow: /b-boton-whats.html
 Disallow: /b-menu-desplegable.html
