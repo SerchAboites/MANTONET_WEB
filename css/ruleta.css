@@ -7,7 +7,8 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle, red, darkred); /* Degradado del centro (red) hacia afuera (darkred) */
+    background: radial-gradient(circle, red, darkred);
+    /* Degradado del centro (red) hacia afuera (darkred) */
     color: #333;
     padding: 20px;
     box-sizing: border-box;
@@ -18,9 +19,19 @@ body {
     margin-bottom: 30px;
     background-color: #580000;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     padding: 40px;
     margin-top: 130px;
+    /* --- CAMBIOS PARA CENTRAR EL CONTENIDO INTERNO --- */
+    display: flex;
+    /* Convierte el contenedor en un flex container */
+    flex-direction: column;
+    /* Organiza los elementos internos en una columna */
+    justify-content: center;
+    /* Centra verticalmente los elementos */
+    align-items: center;
+    /* Centra horizontalmente los elementos */
+    /* --- FIN CAMBIOS --- */
 }
 
 #wheelCanvas {
@@ -33,29 +44,35 @@ body {
     padding: 18px 35px;
     font-size: 1.3em;
     font-weight: bold;
-    background-color: red; /* Un tono vibrante */
+    background-color: red;
+    /* Un tono vibrante */
     color: white;
     border: none;
-    border-radius: 50px; /* Botón más redondeado */
+    border-radius: 50px;
+    /* Botón más redondeado */
     cursor: pointer;
     margin-top: 30px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
     letter-spacing: 1px;
-    outline: none; /* Eliminar el contorno al hacer clic */
+    outline: none;
+    /* Eliminar el contorno al hacer clic */
 }
 
 #spinButton:hover {
-    background-color: #440000; /* Tono más claro al pasar el mouse */
-    transform: translateY(-2px); /* Pequeño efecto 3D */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    background-color: #440000;
+    /* Tono más claro al pasar el mouse */
+    transform: translateY(-2px);
+    /* Pequeño efecto 3D */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 #spinButton:active {
-    background-color: #4e0353; /* Tono más oscuro al hacer clic */
+    background-color: #4e0353;
+    /* Tono más oscuro al hacer clic */
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #result {
@@ -67,7 +84,7 @@ body {
     padding: 10px 20px;
     background-color: #d60000;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-width: 300px;
 }
 
@@ -76,19 +93,28 @@ body {
 
 /* Fondo oscurecido del modal */
 .modal-overlay {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1000; /* Asegura que esté por encima de todo */
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    /* Fijo en la pantalla */
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Permite desplazamiento si el contenido es grande */
-    background-color: rgba(0,0,0,0.8); /* Fondo negro semitransparente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
-    -webkit-backdrop-filter: blur(5px); /* Compatibilidad con Safari */
+    overflow: auto;
+    /* Permite desplazamiento si el contenido es grande */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo negro semitransparente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    backdrop-filter: blur(5px);
+    /* Efecto de desenfoque en el fondo */
+    -webkit-backdrop-filter: blur(5px);
+    /* Compatibilidad con Safari */
 }
 
 /* Contenido del modal */
@@ -100,25 +126,30 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     position: relative;
     width: 90%;
-    max-width: 550px; /* Ancho máximo para pantallas grandes */
+    max-width: 550px;
+    /* Ancho máximo para pantallas grandes */
     text-align: center;
-    animation: modalFadeIn 0.4s ease-out; /* Animación de aparición */
+    animation: modalFadeIn 0.4s ease-out;
+    /* Animación de aparición */
     color: white;
 
     /* --- Propiedades AÑADIDAS para el scroll --- */
     display: flex;
     flex-direction: column;
-    max-height: 85vh; /* Límite de altura (85% de la ventana). ¡Puedes ajustar este valor! */
-    overflow-y: auto; /* Muestra la barra de scroll si el contenido es muy alto */
+    max-height: 85vh;
+    /* Límite de altura (85% de la ventana). ¡Puedes ajustar este valor! */
+    overflow-y: auto;
+    /* Muestra la barra de scroll si el contenido es muy alto */
 }
 
 /* Título del resultado en el modal */
 #modalResult {
     font-size: 2.2em;
-    color: #ffffff; /* Color del botón de girar (ajustado para que combine) */
+    color: #ffffff;
+    /* Color del botón de girar (ajustado para que combine) */
     margin-bottom: 20px;
     font-weight: bolder;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
 }
 
@@ -140,11 +171,19 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    background-color: #ce0000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: #b00000; /* Color que combina con el red/darkred */
+    color: #b00000;
+    /* Color que combina con el red/darkred */
     text-decoration: none;
 }
 
@@ -153,7 +192,8 @@ body {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 18px; /* Espacio entre los grupos de formulario */
+    gap: 18px;
+    /* Espacio entre los grupos de formulario */
 }
 
 .form-group {
@@ -175,20 +215,23 @@ body {
 .form-group input[type="email"],
 .form-group input[type="text"],
 .form-group input[type="tel"] {
-    width: calc(100% - 24px); /* Ajuste para el padding y borde */
+    width: calc(100% - 24px);
+    /* Ajuste para el padding y borde */
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1em;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input[type="email"]:focus,
 .form-group input[type="text"]:focus,
 .form-group input[type="tel"]:focus {
-    border-color: #b00000; /* Color que combina con el red/darkred */
-    box-shadow: 0 0 0 3px rgba(176, 0, 0, 0.2); /* Sutil halo de enfoque */
+    border-color: #b00000;
+    /* Color que combina con el red/darkred */
+    box-shadow: 0 0 0 3px rgba(176, 0, 0, 0.2);
+    /* Sutil halo de enfoque */
     outline: none;
 }
 
@@ -197,14 +240,16 @@ body {
     padding: 15px 30px;
     font-size: 1.2em;
     font-weight: bold;
-    background-color: #fd0000; /* Un verde vibrante */
+    background-color: #fd0000;
+    /* Un verde vibrante */
     color: white;
     border: none;
-    border-radius: 20px; /* Redondeado como el botón de girar */
+    border-radius: 20px;
+    /* Redondeado como el botón de girar */
     cursor: pointer;
     margin-top: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     outline: none;
@@ -213,38 +258,111 @@ body {
 #sendCouponButton:hover {
     background-color: #45a049;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 #sendCouponButton:active {
     background-color: #3e8e41;
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.qrCode {
+    width: 90%;
 }
 
 /* Animación para el modal */
 @keyframes modalFadeIn {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Media Queries para responsividad del modal */
-@media (max-width: 600px) {
+/* Media Queries para elementos visuales en pantallas más pequeñas */
+@media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
+(max-width: 1080px) and (min-resolution: 1.8dppx) {
+
+    #modal-result h2 {
+        padding: 40px;
+    }
+
     .modal-content {
         padding: 25px;
-        width: 95%;
+        min-width: 80%;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
     #modalResult {
         font-size: 1.8em;
+        padding: 30px;
     }
+
+    #modal-result h2 {
+        padding: 40px;
+    }
+
+
     .modal-content p {
-        font-size: 1em;
+        font-size: 1.8em;
     }
+
     .form-group input {
-        font-size: 0.95em;
+        font-size: 1.8em;
+        min-width: 800px;
+        border-radius: 55px;
     }
+
+    .form-group label {
+        font-size: 1.8em;
+        min-width: 90%;
+    }
+
     #sendCouponButton {
         font-size: 1.1em;
         padding: 12px 20px;
+        margin: 50px;
     }
+
+    #wheelCanvas {
+        width: 95%;
+    }
+
+    #spinButton {
+        width: 80%;
+        font-size: 40px;
+        margin: 60px;
+    }
+
+    /* --- AJUSTES PARA LA RULETA EN PANTALLAS PEQUEÑAS --- */
+    .wheel-container {
+        width: 95%;
+        /* Ocupa el 95% del ancho disponible en el body */
+        padding: 20px;
+        /* Reduce el padding para pantallas pequeñas */
+        margin-top: 230px;
+        /* Ajusta el margen superior si es necesario */
+    }
+
+    /* Botón de cerrar del modal */
+    .close-button {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .qrCode {
+        width: 70%;
+        margin: 50px;
+    }
+
 }
