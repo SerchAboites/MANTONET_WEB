@@ -127,19 +127,15 @@ body {
     position: relative;
     width: 90%;
     max-width: 550px;
-    /* Ancho máximo para pantallas grandes */
     text-align: center;
     animation: modalFadeIn 0.4s ease-out;
-    /* Animación de aparición */
     color: white;
-
-    /* --- Propiedades AÑADIDAS para el scroll --- */
     display: flex;
     flex-direction: column;
     max-height: 85vh;
-    /* Límite de altura (85% de la ventana). ¡Puedes ajustar este valor! */
     overflow-y: auto;
-    /* Muestra la barra de scroll si el contenido es muy alto */
+    align-items: center;
+    padding-top: 50px;
 }
 
 /* Título del resultado en el modal */
@@ -193,11 +189,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    width: 100%;
     /* Espacio entre los grupos de formulario */
 }
 
 .form-group {
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    width: 100%;
+    justify-content: center;
 }
 
 .modal-content p {
@@ -300,6 +301,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 80px;
     }
 
     #modalResult {
@@ -318,9 +320,21 @@ body {
 
     .form-group input {
         font-size: 1.8em;
-        min-width: 800px;
         border-radius: 55px;
     }
+
+    #email {
+        font-size: 40px;
+    }
+
+    #name {
+        font-size: 40px;
+    }
+
+    #phone {
+        font-size: 40px;
+    }
+
 
     .form-group label {
         font-size: 1.8em;
