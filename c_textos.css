@@ -153,7 +153,11 @@ i {
     font-size: 40px;
   }
 
-  details {
+  details p {
+    font-size: 30px;
+  }
+
+    details[open] {
     font-size: 30px;
   }
 
