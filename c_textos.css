@@ -145,10 +145,10 @@ input {
 i {
   font-size: 20px;
 }
-.faq-container p{
+
+.faq-container p {
   font-size: 20px;
-    text-align: justify;
-  hyphens: auto;
+  text-align: left;
 
 }
 
@@ -159,16 +159,16 @@ i {
     font-size: 40px;
   }
 
-  .faq-container p{
-  font-size: 18px;
+  .faq-container p {
+    font-size: 18px;
 
-}
+  }
 
   details p {
     font-size: 30px;
   }
 
-    details[open] {
+  details[open] {
     font-size: 30px;
   }
 
