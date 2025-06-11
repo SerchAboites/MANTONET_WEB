@@ -149,9 +149,13 @@ i {
     font-size: 40px;
   }
 
+  details {
+font-size: 35px;
+}
+
   p {
     text-align: justify;
-    font-size: 30px;
+    font-size: 35px;
     margin: 50px;
   }
 
