@@ -152,6 +152,14 @@ i {
   margin: 0 0 2% 0; /* top right bottom left */
 }
 
+.faq-section li {
+  text-align: left;
+  border: 1px solid white;       /* Define el grosor y color del borde */
+  border-radius: 10px;           /* Es mejor usar px en lugar de % aquí */
+  padding: 0.5em 1em;            /* Opcional: mejora la apariencia */
+  margin-bottom: 0.5em;          /* Opcional: deja espacio entre elementos */
+}
+
 
 /* Media Queries para texto en pantallas más pequeñas */
 @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
