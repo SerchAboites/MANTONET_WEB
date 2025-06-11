@@ -151,7 +151,7 @@ i {
 
   p {
     text-align: justify;
-    font-size: 35px;
+    font-size: 30px;
     margin: 50px;
   }
 
@@ -166,11 +166,12 @@ i {
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   h4 {
-  font-size: 30px;
+  font-size: 35px;
+  height: 100%;
 }
 
   label,
