@@ -13,6 +13,7 @@ h1 {
   text-align: center;
 }
 
+
 h2 {
   display: flex;
   background: linear-gradient(to top, rgba(50, 50, 50, 1), rgba(100, 100, 100, 1));
@@ -24,6 +25,7 @@ h2 {
   justify-content: center;
   box-sizing: border-box;
 }
+
 
 h3 {
   display: flex;
