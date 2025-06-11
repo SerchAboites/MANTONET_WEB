@@ -60,7 +60,6 @@ details {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1em;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
@@ -149,8 +148,9 @@ i {
 .faq-container p {
   font-size: 20px;
   text-align: left;
-
+  margin: 0 0 1em 0; /* top right bottom left */
 }
+
 
 /* Media Queries para texto en pantallas más pequeñas */
 @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
