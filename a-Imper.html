@@ -495,7 +495,27 @@
       document.getElementById("resultado").textContent =
         `Costo estimado: $${total.toLocaleString("es-MX")} MXN`;
     }
+
   </script>
+
+  <!-- un detail abierto a la vez-->
+
+<script>
+
+  document.querySelectorAll('details').forEach((detail) => {
+  detail.addEventListener('toggle', (e) => {
+    if (detail.open) {
+      // Cierra los demás
+      document.querySelectorAll('details').forEach((other) => {
+        if (other !== detail) other.open = false;
+      });
+    }
+  });
+});
+
+</script>
+
+
 </body>
 
 </html>
