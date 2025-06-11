@@ -147,7 +147,7 @@ i {
 
 .faq-container p {
   font-size: 20px;
-  text-align: left;
+  text-align: justify;
   margin: 0 0 1em 0; /* top right bottom left */
 }
 
@@ -160,17 +160,10 @@ i {
   }
 
   .faq-container p {
-    font-size: 18px;
-
-  }
-
-  details p {
     font-size: 30px;
+
   }
 
-  details[open] {
-    font-size: 30px;
-  }
 
   p {
     text-align: justify;
