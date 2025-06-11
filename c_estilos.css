@@ -16,15 +16,13 @@ button {
 
 @keyframes redPulse {
   0% {
-    background-color: #8b0000; /* rojo oscuro */
+    background-color: #8b0000; /* Rojo oscuro */
   }
-
   50% {
-    background-color: #ff0000; /* rojo puro */
+    background-color: #ff0000; /* Rojo brillante */
   }
-
   100% {
-    background-color: #8b0000;
+    background-color: #8b0000; /* Vuelve a oscuro */
   }
 }
 
@@ -40,13 +38,12 @@ button {
   height: 60px;
   border-radius: 50%;
   background-color: #8b0000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  animation: redPulse 2.5s infinite ease-in-out;
+  animation: redPulse 2s infinite ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
 
 .whatsapp-button:hover {
-  transform: scale(1.5) rotate(30deg);
+  transform: scale(1.2) rotate(15deg);
 }
 
 .whatsapp-button img {
@@ -54,6 +51,7 @@ button {
   height: 60%;
   object-fit: contain;
 }
+
 
 
 .cerrar {
