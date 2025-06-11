@@ -60,9 +60,11 @@ details {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 8px;
   box-sizing: border-box;
+  width: 100%;
+  background: none;
 }
 
 .faq-section {
@@ -71,9 +73,8 @@ details {
   align-items: center;
   background: rgba(102, 0, 0, 0.5);
   border-radius: 30px;
-  padding: 50px;
+  padding: 3%;
   margin: 3%;
-  font-size: 35px;
 }
 
 audio {
