@@ -132,9 +132,7 @@ li {
   box-sizing: border-box;
 }
 
-ol {
-  /* Define aquí los estilos para listas ordenadas si los necesitas */
-}
+
 
 ul {
   margin: 0px;
@@ -147,9 +145,6 @@ a {
   color: white;
 }
 
-strong {
-  /* Si usas strong y quieres un estilo específico, va aquí */
-}
 
 label {
   margin: 20px;
