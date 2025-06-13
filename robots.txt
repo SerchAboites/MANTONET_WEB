@@ -1,3 +1,4 @@
 # Bloquear archivos de plantilla específicos en la raíz
+User-agent: *
 Disallow: /b-boton-whats.html
 Disallow: /b-menu-desplegable.html
