@@ -9,7 +9,7 @@
         content="Contacta a Mantonet para servicios profesionales de mantenimiento general, impermeabilizaciones, plomería, electricidad y remodelaciones en CDMX y área metropolitana. ¡Presupuesto sin compromiso!">
 
 
-<link rel="canonical" href="https://www.mantonet.com/index" />
+    <link rel="canonical" href="https://www.mantonet.com/index" />
 
 
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
@@ -38,7 +38,11 @@
         gtag('config', 'G-24X52F10Q2');
     </script>
 
+    <!-- Carga de Tailwind CSS para estilos de utilidad -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
+        /* Define la fuente para el cuerpo del documento */
         body {
             background: radial-gradient(circle at center, red 0%, #8b0000 100%);
             margin: 0;
@@ -52,6 +56,8 @@
             font-family: 'Lato', sans-serif;
             padding-bottom: 20px;
             box-sizing: border-box;
+            /* Evita la barra de desplazamiento horizontal que podría aparecer debido a la animación */
+            overflow-x: hidden;
         }
 
         header,
@@ -217,6 +223,97 @@
         }
 
 
+        /* Estilos para el contenedor principal del carrusel */
+        .carousel-container {
+            width: 100%;
+            /* El contenedor ocupa todo el ancho disponible */
+            overflow: hidden;
+            /* Oculta los videos que están fuera del contenedor */
+            border-radius: 0.5rem;
+            /* Bordes redondeados */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            /* Sombra suave */
+
+            background: darkred;
+        }
+
+        /* Estilos para la pista del carrusel, que contiene todos los videos */
+        .carousel-track {
+            display: flex;
+            /* Permite que los videos se coloquen en fila */
+            width: fit-content;
+            /* El ancho se ajusta al contenido (todos los videos) */
+            /* Aplica la animación de desplazamiento. 
+               La duración (30s) se puede ajustar para cambiar la velocidad.
+               'linear' para velocidad constante.
+               'infinite' para que se repita indefinidamente. */
+            animation: scroll-left 40s linear infinite;
+        }
+
+        /* Estilos para cada video dentro de la pista del carrusel */
+        /* IMPORTANTE: Cambiado de .carousel-track img a .carousel-track video */
+        .carousel-track video {
+            width: 300px;
+            /* Ancho fijo para cada video */
+            height: 200px;
+            /* Alto fijo para cada video */
+            flex-shrink: 0;
+            /* Evita que los videos se encojan */
+            object-fit: cover;
+            /* Asegura que el video cubra el área sin distorsión */
+            margin-right: 1rem;
+            /* Espacio entre videos (1rem = 16px por defecto) */
+            border-radius: 0.5rem;
+            /* Bordes redondeados para los videos */
+        }
+
+        /* Definición de la animación de desplazamiento */
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0%);
+                /* Empieza sin desplazamiento */
+            }
+
+            to {
+                /* Se desplaza hacia la izquierda por el ancho de un conjunto de videos originales.
+                   Hay 5 videos originales. Cada uno de 300px + 1rem (16px) de margen.
+                   El desplazamiento total es -(300px + 16px) * 5.
+                   Esto hace que el carrusel se reinicie visualmente sin saltos. */
+                transform: translateX(calc(-1 * (300px + 1rem) * 5));
+            }
+        }
+
+        .logoIndex {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+        }
+
+        /* Medias queries para diseño responsive en dispositivos más pequeños */
+        @media (max-width: 768px) {
+
+            /* IMPORTANTE: Cambiado de .carousel-track img a .carousel-track video */
+            .carousel-track video {
+                width: 200px;
+                /* Videos más pequeños en pantallas chicas */
+                height: 150px;
+            }
+
+            @keyframes scroll-left {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    /* Ajusta la animación para el nuevo ancho de los videos en móvil */
+                    transform: translateX(calc(-1 * (200px + 1rem) * 5));
+                }
+            }
+        }
+
+
         /* Media queries para dispositivos móviles */
         @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
         (max-width: 1080px) and (min-resolution: 1.8dppx) {
@@ -260,6 +357,10 @@
                 padding: 15px;
                 margin-top: 30px;
             }
+
+            .logoIndex {
+                width: 80%;
+            }
         }
     </style>
 
@@ -296,41 +397,82 @@
 
 <body>
     <header>
-        <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 446.66 134.17" role="img"
-            aria-label="Logo de Mantonet, empresa de mantenimiento y construcción.">
-            <defs>
-                <style>
-                    .cls-1 {
-                        fill: none;
-                        opacity: 1;
-                    }
-                </style>
-            </defs>
-            <g id="Capa_1-2" data-name="Capa 1">
-                <g>
-                    <path class="cls-1"
-                        d="m311.33,83.59c2.54-16.33-.32-32.54-2.5-41.5,3.14-1.54,4.83-5.13,3.85-8.62-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.98,3.46,4.27,5.64,7.72,5.35,2.09,8.77,4.84,24.66,2.41,40.44-.23.02-.46.04-.7.08-7.59-20.42-22.3-53.99-29.41-69.9,2.52-1.74,3.78-4.95,2.91-8.06-1.1-3.92-5.18-6.2-9.1-5.1-3.92,1.1-6.2,5.18-5.1,9.1.05.16.1.32.16.48-16.79,9.77-47.88,28.2-60.73,37.98-.35-.25-.73-.46-1.13-.65,2.99-9.4,10.74-27.2,27.83-34.56,1.25,2.29,3.68,3.84,6.47,3.84,4.07,0,7.38-3.3,7.38-7.38s-3.3-7.38-7.38-7.38-7.38,3.3-7.38,7.38c0,.33.03.66.07.98-18.27,7.73-26.46,26.59-29.59,36.45-.17-.01-.34-.03-.51-.03-4.07,0-7.38,3.3-7.38,7.38,0,3.52,2.47,6.47,5.78,7.2.12,15.78,4.31,52.31,39.43,62.3-.03.75.06,1.51.27,2.27,1.1,3.92,5.18,6.2,9.1,5.1,3.92-1.1,6.2-5.18,5.1-9.1-1.1-3.92-5.18-6.2-9.1-5.1-2.24.63-3.94,2.23-4.79,4.22-33.73-9.62-37.46-44.36-37.42-59.58,2.32-.31,4.3-1.7,5.42-3.66,4.76,1.65,11.66,4.05,19.69,6.83-.41,2.01-.63,4.08-.63,6.21,0,16.88,13.68,30.56,30.56,30.56,12,0,22.37-6.92,27.37-16.98,6.19,2.12,11.67,4,15.97,5.45-.14.99-.09,2.01.2,3.03.5,1.78,1.62,3.22,3.06,4.16-.55,1.41-1.15,2.8-1.83,4.16-4.85,9.74-12.46,17.08-22.67,21.91-1.7-2.69-5.01-4.06-8.23-3.16-3.92,1.1-6.2,5.18-5.1,9.1,1.1,3.92,5.18,6.2,9.1,5.1,3.74-1.05,5.98-4.81,5.22-8.55,10.84-5.08,18.93-12.86,24.08-23.22.7-1.41,1.32-2.85,1.89-4.3,1.14.25,2.37.23,3.57-.11,3.92-1.1,6.2-5.18,5.1-9.1-.7-2.48-2.58-4.3-4.87-5.03Zm-24.42-1.91c1.35-3.45,2.1-7.2,2.1-11.12,0-16.88-13.68-30.56-30.56-30.56-13.81,0-25.48,9.17-29.26,21.75-7.93-2.75-14.76-5.12-19.48-6.76.06-.37.09-.74.09-1.12,0-1.59-.51-3.07-1.37-4.27,11.5-8.31,40.32-25.76,60.29-37.43,1.76,2.05,4.57,3.04,7.35,2.36,7.1,15.87,21.77,49.38,29.33,69.71-1.18.68-2.12,1.66-2.76,2.81-4.24-1.43-9.64-3.28-15.73-5.37Z" />
-                    <path class="cls-1"
-                        d="m40.76,43.88l-9.14,24.84c-2.29,6.48-4.11,12.11-5.41,17.29h-.23c-1.29-5.33-3.05-10.97-5.18-17.29l-8.76-24.84H3.58L0,95.23h6.32l1.37-22.02c.46-7.69.84-16.3.99-22.7h.15c1.45,6.09,3.5,12.72,5.94,19.96l8.3,24.46h5.03l9.07-24.91c2.59-7.09,4.72-13.49,6.48-19.5h.23c-.08,6.4.38,15.01.76,22.17l1.29,22.55h6.48l-3.2-51.35h-8.46Z" />
-                    <path class="cls-1"
-                        d="m75.42,43.88l-17.45,51.35h6.86l5.33-16.15h18.21l5.49,16.15h7.08l-17.52-51.35h-8Zm-3.89,30.02l5.03-14.86c.99-3.12,1.83-6.25,2.59-9.29h.15c.76,2.97,1.52,6.02,2.67,9.37l5.03,14.78h-15.47Z" />
-                    <path class="cls-1"
-                        d="m140.79,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
-                    <polygon class="cls-1"
-                        points="152.75 49.52 168.37 49.52 168.37 95.23 175.07 95.23 175.07 49.52 190.77 49.52 190.77 43.88 152.75 43.88 152.75 49.52" />
-                    <path class="cls-1"
-                        d="m357.98,65.36c0,8,.15,14.25.76,21.1l-.15.08c-2.44-5.26-5.41-10.67-9.22-16.68l-16.46-25.98h-7.24v51.35h6.25v-21.94c0-8.53-.15-14.7-.53-21.18l.23-.08c2.59,5.56,6.02,11.43,9.6,17.14l16.3,26.06h6.7v-51.35h-6.25v21.49Z" />
-                    <polygon class="cls-1"
-                        points="382.44 71.15 402.4 71.15 402.4 65.67 382.44 65.67 382.44 49.44 403.54 49.44 403.54 43.88 375.81 43.88 375.81 95.23 404.68 95.23 404.68 89.67 382.44 89.67 382.44 71.15" />
-                    <polygon class="cls-1"
-                        points="408.64 43.88 408.64 49.52 424.26 49.52 424.26 95.23 430.97 95.23 430.97 49.52 446.66 49.52 446.66 43.88 408.64 43.88" />
-                </g>
-            </g>
-        </svg>
-        <h1>Contáctanos | Mantonet</h1>
+
+
+        <div class="flex flex-col items-center max-w-full">
+
+            <!-- Contenedor del carrusel que oculta el contenido desbordado -->
+            <div class="carousel-container p-4">
+                <!-- Pista del carrusel, donde se aplica la animación de desplazamiento -->
+                <div class="carousel-track">
+                    <!-- Conjunto original de videos -->
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
+                        alt="Proyecto de Construcción 1"></video>
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
+                        alt="Proyecto de Impermeabilización 2"></video>
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
+                        alt="Proyecto de Plomería 3"></video>
+                    <video autoplay muted loop playsinline src="https://placehold.co/300x200/9C27B0/ffffff?text=Video+4"
+                        alt="Proyecto de Electricidad 4"></video>
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
+                        alt="Proyecto de Remodelación 5"></video>
+
+                    <!-- Conjunto duplicado de videos para crear el bucle continuo.
+                     Es importante duplicar el mismo número de videos que el conjunto original. -->
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
+                        alt="Proyecto de Construcción 1 (Duplicado)"></video>
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
+                        alt="Proyecto de Impermeabilización 2 (Duplicado)"></video>
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
+                        alt="Proyecto de Plomería 3 (Duplicado)"></video>
+                    <video autoplay muted loop playsinline
+                        src="https://placehold.co/300x200/9C27B0/ffffff?text=Video+4 (Duplicado)"
+                        alt="Proyecto de Electricidad 4 (Duplicado)"></video>
+                    <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
+                        alt="Proyecto de Remodelación 5 (Duplicado)"></video>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div
+            style="display: flex; align-items: center; justify-items: center; justify-content: center; width: 100%;">
+            <!-- logo svg -->
+
+            <a href="a-MenuServicios.html"
+                style="min-width: 100%; align-items: center; justify-items: center; justify-content: center;"
+                title="Ir al inicio de Mantonet">
+                <div class="logoIndex" id="logo-container"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        fetch("logoMantonet.svg")
+                            .then((res) => res.text())
+                            .then((svg) => {
+                                document.getElementById("logo-container").innerHTML = svg;
+                            });
+                    });
+                </script>
+            </a>
+
+        </div>
+
+
+
+
+
+
     </header>
 
+
+
     <main>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center leading-tight">
+            Contáctanos | Mantonet
+        </h1>
         <p>Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. ¡Elige cómo quieres
             comunicarte con nosotros para obtener un **presupuesto sin costo**!</p>
     </main>
