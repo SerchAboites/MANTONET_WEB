@@ -66,7 +66,7 @@
             width: 100%;
             max-width: 1000px;
             text-align: center;
-            padding: 20px 0;
+            
         }
 
         h1 {
@@ -299,6 +299,7 @@
             background: none;
             height: auto;
             margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         summary {
@@ -438,6 +439,28 @@
 <body>
     <header>
 
+                <div
+            style="display: flex; align-items: center; justify-items: center; justify-content: center; width: 100%; height: 100%;">
+            <!-- logo svg -->
+
+            <a href="a-MenuServicios.html"
+                style="min-width: 100%; align-items: center; justify-items: center; justify-content: center;"
+                title="Ir al inicio de Mantonet">
+                <div class="logoIndex" id="logo-container"></div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        fetch("logoMantonet.svg")
+                            .then((res) => res.text())
+                            .then((svg) => {
+                                document.getElementById("logo-container").innerHTML = svg;
+                            });
+                    });
+                </script>
+            </a>
+
+        </div>
+
+
 
         <div class="flex flex-col items-center max-w-full">
 
@@ -477,40 +500,12 @@
 
 
 
-
-
-        <div
-            style="display: flex; align-items: center; justify-items: center; justify-content: center; width: 100%; height: 100%;">
-            <!-- logo svg -->
-
-            <a href="a-MenuServicios.html"
-                style="min-width: 100%; align-items: center; justify-items: center; justify-content: center;"
-                title="Ir al inicio de Mantonet">
-                <div class="logoIndex" id="logo-container"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        fetch("logoMantonet.svg")
-                            .then((res) => res.text())
-                            .then((svg) => {
-                                document.getElementById("logo-container").innerHTML = svg;
-                            });
-                    });
-                </script>
-            </a>
-
-        </div>
-
-
-
-
-
-
     </header>
 
 
 
     <main>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center leading-tight">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center leading-tight" style="margin-top: 5%;">
             Contáctanos | Mantonet
         </h1>
         <p>Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. ¡Elige cómo quieres
@@ -520,7 +515,7 @@
     <div class="menu">
         <a href="https://www.mantonet.com/a-MenuServicios.html" class="botonMenu" rel="noopener noreferrer">
             <i class="fas fa-globe icono"></i>
-            Visitar Mantonet
+            Menu Servicios
         </a>
 
         <a href="https://wa.me/5215519148472?text=Hola%21%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20mantenimiento%20que%20ofrecen%20y%20cotizar.%20Muchas%20gracias%21"
