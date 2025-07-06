@@ -66,12 +66,22 @@
             width: 100%;
             max-width: 1000px;
             text-align: center;
-            
+
+        }
+
+        .tituloH1 {
+            font-size: 30px;
+            margin-top: 5%;
+            margin-bottom: 2%;
+        }
+
+        .pContactanos {
+            margin-bottom: 3%;
         }
 
         h1 {
             font-family: 'Lexend', sans-serif;
-            font-size: 2.5em;
+            font-size: 50px;
             margin-bottom: 20px;
             color: white;
             /* Estilo discreto para h1 si se desea */
@@ -215,7 +225,7 @@
         .seo-content h3 {
             color: rgba(255, 255, 255, 0.85);
             /* Títulos un poco más visibles dentro de este div */
-            font-size: 1.7em;
+            font-size: 18px;
         }
 
         .seo-content ul {
@@ -237,12 +247,12 @@
             /* El contenedor ocupa todo el ancho disponible */
             overflow: hidden;
             /* Oculta los videos que están fuera del contenedor */
-            border-radius: 0.5rem;
+            border-radius: 0px;
             /* Bordes redondeados */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             /* Sombra suave */
 
-            background: darkred;
+            background: rgb(58, 58, 58);
         }
 
         /* Estilos para la pista del carrusel, que contiene todos los videos */
@@ -358,8 +368,19 @@
         /* Media queries para dispositivos móviles */
         @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
         (max-width: 1080px) and (min-resolution: 1.8dppx) {
+
+            .tituloH1 {
+                font-size: 30px;
+                margin-top: 10%;
+                margin-bottom: 8%;
+            }
+
+            .pContactanos {
+                margin-bottom: 5%;
+            }
+
             h1 {
-                font-size: 2em;
+                font-size: 20px;
             }
 
             h2 {
@@ -439,7 +460,7 @@
 <body>
     <header>
 
-                <div
+        <div
             style="display: flex; align-items: center; justify-items: center; justify-content: center; width: 100%; height: 100%;">
             <!-- logo svg -->
 
@@ -488,8 +509,7 @@
                         alt="Proyecto de Impermeabilización 2 (Duplicado)"></video>
                     <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
                         alt="Proyecto de Plomería 3 (Duplicado)"></video>
-                    <video autoplay muted loop playsinline
-                        src="img/Carrusel-Plomeria.webm"
+                    <video autoplay muted loop playsinline src="img/Carrusel-Plomeria.webm"
                         alt="Proyecto de Electricidad 4 (Duplicado)"></video>
                     <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
                         alt="Proyecto de Remodelación 5 (Duplicado)"></video>
@@ -505,10 +525,11 @@
 
 
     <main>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center leading-tight" style="margin-top: 5%;">
+        <h1 class="tituloH1">
             Contáctanos | Mantonet
         </h1>
-        <p>Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. ¡Elige cómo quieres
+        <p class="pContactanos">Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. ¡Elige
+            cómo quieres
             comunicarte con nosotros para obtener un **presupuesto sin costo**!</p>
     </main>
 
@@ -548,7 +569,8 @@
     </div>
 
     <div class="seo-content">
-        <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área Metropolitana</h2>
+        <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área
+            Metropolitana</h2>
         <p>En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y <b>proyectos de
                 impermeabilización</b> en
             <b>Ciudad de México</b> y su <b>área metropolitana</b>. Contamos con un equipo de profesionales
