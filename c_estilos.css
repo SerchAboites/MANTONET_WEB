@@ -1,7 +1,7 @@
 /* visual-styles.css */
 
 body {
-  background: radial-gradient(circle at center, red 0%, #8b0000 100%);
+  background: radial-gradient(circle at center, rgb(37, 37, 37) 0%, #2c2c2c 100%);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -211,7 +211,7 @@ button {
   align-items: center;
   font-size: 20px;
   color: white;
-  background: darkred;
+  background: none;
   margin: 0;
   z-index: 999;
   padding: 10px;

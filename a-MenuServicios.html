@@ -45,7 +45,7 @@
     <style>
         body {
             font-family: "Lexend", sans-serif;
-            background: radial-gradient(circle at center, red 0%, #8b0000 100%);
+            background: radial-gradient(circle at center, rgb(37, 37, 37) 0%, #2c2c2c 100%);
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -56,13 +56,14 @@
 
         h1 {
             margin-top: 150px;
-            background-color: darkred;
+            background-color: rgb(119, 119, 119);
             width: 100%;
             justify-content: center;
             align-content: center;
             text-align-last: center;
             height: 60px;
             margin-bottom: 30px;
+            color: white;
         }
 
         .menu {
@@ -79,10 +80,10 @@
         .btn-servicio {
             position: relative;
             background-color: transparent;
-            color: white;
+            color: red;
             padding: 0px;
             border: none;
-            border-radius: 0px;
+            border-radius: 20px;
             cursor: pointer;
             font-size: 35px;
             width: 100%;
@@ -95,7 +96,7 @@
             overflow: hidden;
             align-content: center;
             justify-content: center;
-
+            margin: 0px;
         }
 
         .btn-servicio:hover {
@@ -126,7 +127,7 @@
             font-family: "Lexend", sans-serif;
             flex-grow: 1;
             text-align: center;
-            color: #ffffff;
+            color:  white;
             font-size: 25px;
             display: flex;
             align-items: center;
@@ -154,7 +155,7 @@
         }
 
         .botonLadoIzquierdo {
-            fill: #920000;
+            fill: darkred;
             transition: fill 0.3s ease;
             /* Add this line for a smooth transition */
         }
@@ -183,12 +184,12 @@
 
             0%,
             100% {
-                fill: #710000;
+                fill: #b9b9b9;
                 /* rojo oscuro */
             }
 
             50% {
-                fill: #ff0000;
+                fill: #353535;
                 /* rojo claro */
             }
         }
@@ -217,7 +218,7 @@
 
             .menu {
                 /* Propiedades de flex y background ya definidas globalmente, se mantienen */
-                width: 100%;
+                width: 90%;
                 gap: 60px;
 
             }
