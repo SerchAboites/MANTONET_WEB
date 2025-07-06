@@ -8,15 +8,15 @@ body {
 }
 
 h1 {
-  font-size: 40px;
-  padding: 30px;
+  font-size: 30px;
+  padding: 0px;
   text-align: center;
 }
 
 
 h2 {
   display: flex;
-  background: linear-gradient(to top, rgba(50, 50, 50, 1), rgba(100, 100, 100, 1));
+  background: none;
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -24,20 +24,27 @@ h2 {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  background: #3a3a3aff;
+  border-radius: 15px;
+  font-size: 22px;
 }
 
 
 h3 {
   display: flex;
-  background-color: darkred;
-  padding: 10px;
+  background-color: none;
+  padding: 0px;
   text-align: center;
   width: 100%;
   height: 100px;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 20px;
   box-sizing: border-box;
+  margin: 0px;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-weight: 200;
 }
 
 h4 {
@@ -54,24 +61,68 @@ h4 {
 }
 
 summary {
-  width: 100%;
-  
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  background: none;
+  border-radius: 15px;
+  margin: 0px;
+  align-items: center;
+  list-style: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
+/* Asegura que el marcador predeterminado no se muestre en ningún navegador */
 summary::-webkit-details-marker,
 summary::marker {
   display: none;
 }
+
+/* Estilos para el título H3 dentro del summary */
+summary h3 {
+  margin: 0;
+  color: inherit;
+  padding-right: 50px;
+  /* Ajusta este valor según el tamaño de tu + */
+}
+
+.indicador-desplegable {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+}
+
+.indicador-desplegable::after {
+  content: '+';
+  /* La transición va aquí para que se anime la rotación */
+  transition: transform 0.2s ease-in-out;
+  display: block; /* Asegura que la transformación se aplique correctamente */
+}
+
+/* Cuando está abierto, simplemente rota el "+" existente */
+.servicio-desplegable[open] .indicador-desplegable::after {
+  transform: rotate(45deg);
+}
+
 details {
   position: relative;
-  padding: 1.5em 2em;
+  padding: 20px 40px;
+  margin: 0px 0px 15px 0px;
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 3em;
   cursor: pointer;
   background: none;
   border: 3px solid transparent;
+  background: #3a3a3aff;
 }
 
 /* Pseudo-elemento para el borde animado */
@@ -120,8 +171,8 @@ details[open]::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(102, 0, 0, 0.5);
-  border-radius: 30px;
+  background: #252525ff;
+  border-radius: 15px;
   margin: 3%;
 }
 
@@ -129,17 +180,17 @@ audio {
   width: 90%;
 }
 
-/* Puedes añadir h4, h5, h6 aquí si los usas y necesitan estilos específicos */
 
 p {
   text-align: justify;
-  font-size: 18px;
-  margin: 50px;
+  font-size: 20px;
+  margin: 20px;
 }
 
 li {
   font-size: 18px;
   box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
 
@@ -151,7 +202,6 @@ ul {
 
 a {
   text-decoration: none;
-  /* Quita subrayado si aplica */
   color: white;
 }
 
@@ -163,7 +213,6 @@ label {
 select,
 input {
   all: unset;
-  /* Quita todos los estilos por defecto */
   display: block;
   width: 80%;
   margin-bottom: 15px;
@@ -193,19 +242,21 @@ i {
   font-size: 20px;
   text-align: justify;
   margin: 0 0 2% 0;
-  /* top right bottom left */
 }
 
 .faq-section li {
   text-align: left;
-  border: 1px solid white;
-  /* Define el grosor y color del borde */
+  border: none;
   border-radius: 10px;
-  /* Es mejor usar px en lugar de % aquí */
   padding: 0.5em 1em;
-  /* Opcional: mejora la apariencia */
   margin-bottom: 0.5em;
-  /* Opcional: deja espacio entre elementos */
+  box-sizing: border-box;
+  width: 95%;
+  min-height: 70px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  
 }
 
 

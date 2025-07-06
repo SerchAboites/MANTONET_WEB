@@ -414,33 +414,22 @@
 
         .indicador-desplegable {
             position: absolute;
-            /* ¡Aquí está el cambio clave! */
             right: 15px;
-            /* Ajusta este valor para controlar la distancia desde el borde derecho del summary */
             top: 50%;
-            /* Centra verticalmente */
             transform: translateY(-50%);
-            /* Ajuste fino para el centrado vertical */
             font-size: 1.5em;
-            /* Tamaño del icono */
             font-weight: bold;
             line-height: 1;
             transition: transform 0.2s ease-in-out;
-            /* Animación suave al girar */
             color: white;
-            /* Asegura que el icono sea blanco */
-            /* No necesitamos 'display: inline-block' aquí si es 'absolute' */
         }
 
-        /* El contenido real del icono "+" */
         .indicador-desplegable::after {
             content: '+';
         }
 
-        /* Cuando el <details> está abierto, cambia el icono a "-" */
         .servicio-desplegable[open] .indicador-desplegable::after {
             content: '-';
-            /* Opcional: para que rote */
             transform: rotate(45deg);
         }
 

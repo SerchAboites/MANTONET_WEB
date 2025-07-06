@@ -55,13 +55,6 @@ button {
 }
 
 
-.DetailsQuitarFlecha > summary::-webkit-details-marker {
-  display: none;
-}
-
-.DetailsQuitarFlecha > summary::marker {
-  display: none;
-}
 
 
 .cerrar {
