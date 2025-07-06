@@ -55,8 +55,13 @@ h4 {
 
 summary {
   width: 100%;
+  
 }
 
+summary::-webkit-details-marker,
+summary::marker {
+  display: none;
+}
 details {
   position: relative;
   padding: 1.5em 2em;
@@ -74,7 +79,10 @@ details::before {
   content: "";
   pointer-events: none;
   position: absolute;
-  top: -3px; left: -3px; right: -3px; bottom: -3px;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
   border-radius: 11px;
   border: 3px solid transparent;
   box-sizing: border-box;
@@ -93,10 +101,12 @@ details[open]::before {
     border-color: #3498db;
     box-shadow: 0 0 10px #3498db;
   }
+
   50% {
     border-color: #e74c3c;
     box-shadow: 0 0 20px #e74c3c;
   }
+
   100% {
     border-color: #f1c40f;
     box-shadow: 0 0 10px #f1c40f;
@@ -182,15 +192,20 @@ i {
 .faq-container p {
   font-size: 20px;
   text-align: justify;
-  margin: 0 0 2% 0; /* top right bottom left */
+  margin: 0 0 2% 0;
+  /* top right bottom left */
 }
 
 .faq-section li {
   text-align: left;
-  border: 1px solid white;       /* Define el grosor y color del borde */
-  border-radius: 10px;           /* Es mejor usar px en lugar de % aquí */
-  padding: 0.5em 1em;            /* Opcional: mejora la apariencia */
-  margin-bottom: 0.5em;          /* Opcional: deja espacio entre elementos */
+  border: 1px solid white;
+  /* Define el grosor y color del borde */
+  border-radius: 10px;
+  /* Es mejor usar px en lugar de % aquí */
+  padding: 0.5em 1em;
+  /* Opcional: mejora la apariencia */
+  margin-bottom: 0.5em;
+  /* Opcional: deja espacio entre elementos */
 }
 
 

@@ -60,13 +60,72 @@
             overflow-x: hidden;
         }
 
+        .botonSaberMas {
+            /* Fondo transparente */
+            background: transparent;
+            /* Hace el fondo completamente transparente */
+            /* Opcional: si quieres un fondo ligeramente translúcido */
+            /* background: rgba(0, 0, 0, 0.2); */
+            /* Un negro con 20% de opacidad, ajusta si quieres otro color base */
+
+            /* Borde blanco */
+            border: 2px solid white;
+            /* 2px de grosor, estilo sólido, color blanco */
+            /* Puedes ajustar el grosor (2px) a tu gusto */
+            /* Otros estilos que ya tenías */
+            width: 140px;
+            height: 50px;
+            border-radius: 10px;
+            color: white;
+            /* Asegúrate de que el texto dentro del botón sea visible con el fondo transparente */
+            text-align: center;
+            /* Si el texto está dentro, céntralo */
+            line-height: 50px;
+            /* Si es solo texto y la altura es fija, esto lo centra verticalmente */
+            cursor: pointer;
+            /* Indica que es clicable */
+            /* Opcional: una transición suave para los estados hover/active */
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Opcional: Efecto al pasar el ratón (hover) */
+        .botonSaberMas:hover {
+            background: white;
+            /* El fondo se vuelve blanco */
+            color: darkred;
+            /* El texto se vuelve darkred para contraste */
+            border-color: darkred;
+            /* El borde también puede cambiar */
+        }
+
+        /* Opcional: Efecto al hacer clic (active) */
+        .botonSaberMas:active {
+            background: #cccccc;
+            /* Un gris claro al hacer clic */
+            color: #333333;
+            border-color: #333333;
+        }
+
         header,
-        main,
-        footer {
+        main {
             width: 100%;
             max-width: 1000px;
             text-align: center;
+            background: none;
+        }
 
+        footer {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            background: none;
+            height: 50px;
+            align-items: center;
+            font-size: 15px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .tituloH1 {
@@ -77,6 +136,7 @@
 
         .pContactanos {
             margin-bottom: 3%;
+            padding: 0px 10px 0px 10px;
         }
 
         h1 {
@@ -216,23 +276,34 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9em;
             line-height: 1.5;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: #3a3a3aff;
             border-radius: 8px;
             box-sizing: border-box;
         }
 
-        .seo-content h2,
+        .seo-content h2 {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+        }
+
+
         .seo-content h3 {
             color: rgba(255, 255, 255, 0.85);
-            /* Títulos un poco más visibles dentro de este div */
-            font-size: 18px;
+            font-size: 1.6em;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            /* ¡Aquí es donde aplicas la negrita! */
+        }
+
+        .seo-content h4 {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1em;
         }
 
         .seo-content ul {
             text-align: left;
-
             max-width: 1000px;
-            /* Limita el ancho de la lista */
         }
 
         .seo-content li {
@@ -241,49 +312,46 @@
         }
 
 
+        .espaciadorDeContenedor {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+
         /* Estilos para el contenedor principal del carrusel */
         .carousel-container {
             width: 100%;
-            /* El contenedor ocupa todo el ancho disponible */
             overflow: hidden;
-            /* Oculta los videos que están fuera del contenedor */
             border-radius: 0px;
-            /* Bordes redondeados */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            /* Sombra suave */
-
             background: rgb(58, 58, 58);
         }
 
         /* Estilos para la pista del carrusel, que contiene todos los videos */
         .carousel-track {
             display: flex;
-            /* Permite que los videos se coloquen en fila */
             width: fit-content;
-            /* El ancho se ajusta al contenido (todos los videos) */
-            /* Aplica la animación de desplazamiento. 
-               La duración (30s) se puede ajustar para cambiar la velocidad.
-               'linear' para velocidad constante.
-               'infinite' para que se repita indefinidamente. */
             animation: scroll-left 40s linear infinite;
         }
 
         /* Estilos para cada video dentro de la pista del carrusel */
-        /* IMPORTANTE: Cambiado de .carousel-track img a .carousel-track video */
-        .carousel-track video {
+        .carousel-track a {
             width: 300px;
-            /* Ancho fijo para cada video */
             height: 200px;
-            /* Alto fijo para cada video */
             flex-shrink: 0;
-            /* Evita que los videos se encojan */
             object-fit: cover;
-            /* Asegura que el video cubra el área sin distorsión */
             margin-right: 1rem;
-            /* Espacio entre videos (1rem = 16px por defecto) */
-            border-radius: 0.5rem;
-            /* Bordes redondeados para los videos */
+            background-color: none;
         }
+
+        .carousel-track video {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
 
         /* Definición de la animación de desplazamiento */
         @keyframes scroll-left {
@@ -312,44 +380,136 @@
             margin-bottom: 15px;
         }
 
+        /* ************************************************************************************ */
+
         summary {
             font-weight: bold;
             padding: 15px;
             cursor: pointer;
             outline: none;
             position: relative;
-            color: #34495e;
-            display: flex;
-            /* CAMBIO CLAVE: Usar flexbox */
-            align-items: center;
-            /* CAMBIO CLAVE: Centrar verticalmente */
-            list-style: none;
-            /* Oculta el marcador de flecha predeterminado en la mayoría de los navegadores */
-            -webkit-appearance: none;
-            /* Para Safari/Chrome */
-            -moz-appearance: none;
-            /* Para Firefox */
             background: darkred;
             border-radius: 15px;
             margin-top: 10px;
             margin-bottom: 10px;
+            align-items: center;
+            list-style: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
         }
 
-        /* Mantén esto para asegurar que el marcador Webkit esté oculto */
-        summary::-webkit-details-marker {
+        /* Asegura que el marcador predeterminado no se muestre en ningún navegador */
+        summary::-webkit-details-marker,
+        summary::marker {
             display: none;
         }
 
+        /* Estilos para el título H3 dentro del summary */
+        summary h3 {
+            margin: 0;
+            color: inherit;
+            padding-right: 30px;
+            /* Ajusta este valor según el tamaño de tu + */
+        }
 
+        .indicador-desplegable {
+            position: absolute;
+            /* ¡Aquí está el cambio clave! */
+            right: 15px;
+            /* Ajusta este valor para controlar la distancia desde el borde derecho del summary */
+            top: 50%;
+            /* Centra verticalmente */
+            transform: translateY(-50%);
+            /* Ajuste fino para el centrado vertical */
+            font-size: 1.5em;
+            /* Tamaño del icono */
+            font-weight: bold;
+            line-height: 1;
+            transition: transform 0.2s ease-in-out;
+            /* Animación suave al girar */
+            color: white;
+            /* Asegura que el icono sea blanco */
+            /* No necesitamos 'display: inline-block' aquí si es 'absolute' */
+        }
+
+        /* El contenido real del icono "+" */
+        .indicador-desplegable::after {
+            content: '+';
+        }
+
+        /* Cuando el <details> está abierto, cambia el icono a "-" */
+        .servicio-desplegable[open] .indicador-desplegable::after {
+            content: '-';
+            /* Opcional: para que rote */
+            transform: rotate(45deg);
+        }
+
+        /* Estilos para el contenido desplegable (pequeños ajustes) */
+        .contenido-servicio {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-top: none;
+            border-radius: 15px;
+            background-color: #464646;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            width: 100%;
+            box-sizing: border-box;
+
+            /* PROPIEDADES CLAVE PARA LA ANIMACIÓN SUAVE */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out;
+
+            /* --- PROPIEDADES CLAVE PARA CENTRAR LA IMAGEN --- */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Cuando el <details> está abierto, el max-height se expande */
+        .servicio-desplegable[open] .contenido-servicio {
+            max-height: 1000px;
+            padding: 15px;
+        }
+
+        /* Estilos para los párrafos y listas dentro del contenido-servicio (sin cambios) */
+        .contenido-servicio p,
+        .contenido-servicio ul {
+            margin-bottom: 10px;
+            color: inherit;
+            /* Hereda el color de .contenido-servicio */
+        }
+
+        .contenido-servicio ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .imgPersonaje {
+            width: 25%;
+        }
+
+        /* ********************************************************************************** */
 
         /* Medias queries para diseño responsive en dispositivos más pequeños */
         @media (max-width: 768px) {
 
-            /* IMPORTANTE: Cambiado de .carousel-track img a .carousel-track video */
             .carousel-track video {
-                width: 200px;
-                /* Videos más pequeños en pantallas chicas */
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+
+            .carousel-track a {
+                width: 215px;
                 height: 150px;
+                flex-shrink: 0;
+                object-fit: cover;
+                margin-right: 1rem;
+                border-radius: 10px;
+                background-color: none;
             }
 
             @keyframes scroll-left {
@@ -392,6 +552,10 @@
                 font-size: 1em;
             }
 
+            .imgPersonaje {
+                width: 80%;
+            }
+
             .botonMenu {
                 font-size: 16px;
                 padding: 10px 15px;
@@ -415,7 +579,7 @@
             }
 
             .seo-content {
-                width: 100%;
+                width: 90%;
                 padding: 15px;
                 margin-top: 30px;
             }
@@ -489,30 +653,67 @@
             <div class="carousel-container p-4">
                 <!-- Pista del carrusel, donde se aplica la animación de desplazamiento -->
                 <div class="carousel-track">
-                    <!-- Conjunto original de videos -->
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
-                        alt="Proyecto de Construcción 1"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
-                        alt="Proyecto de Impermeabilización 2"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
-                        alt="Proyecto de Plomería 3"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Plomeria.webm"
-                        alt="Proyecto de Electricidad 4"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
-                        alt="Proyecto de Remodelación 5"></video>
+                    <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
+                            alt="Video de proyecto de Electricidad">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
+                            alt="Video de proyecto de Impermeabilización">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
+                            alt="Video de proyecto de Pintura">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="a-Plomeria.html" title="Ver más sobre Plomería">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Plomeria.webm"
+                            alt="Video de proyecto de Plomería">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
+                            alt="Video de proyecto de Albañilería y Remodelación">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
 
-                    <!-- Conjunto duplicado de videos para crear el bucle continuo.
-                     Es importante duplicar el mismo número de videos que el conjunto original. -->
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
-                        alt="Proyecto de Construcción 1 (Duplicado)"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
-                        alt="Proyecto de Impermeabilización 2 (Duplicado)"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
-                        alt="Proyecto de Plomería 3 (Duplicado)"></video>
-                    <video autoplay muted loop playsinline src="img/Carrusel-Plomeria.webm"
-                        alt="Proyecto de Electricidad 4 (Duplicado)"></video>
-                    <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
-                        alt="Proyecto de Remodelación 5 (Duplicado)"></video>
+                    <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
+                            alt="Video de proyecto de Electricidad (Duplicado)">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
+                            alt="Video de proyecto de Impermeabilización (Duplicado)">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
+                            alt="Video de proyecto de Pintura (Duplicado)">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="a-Plomeria.html" title="Ver más sobre Plomería">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Plomeria.webm"
+                            alt="Video de proyecto de Plomería (Duplicado)">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
+                    <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
+                        <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
+                            alt="Video de proyecto de Albañilería y Remodelación (Duplicado)">
+                            Tu navegador no soporta videos WebM.
+                        </video>
+                    </a>
                 </div>
             </div>
 
@@ -528,13 +729,14 @@
         <h1 class="tituloH1">
             Contáctanos | Mantonet
         </h1>
-        <p class="pContactanos">Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. ¡Elige
-            cómo quieres
-            comunicarte con nosotros para obtener un **presupuesto sin costo**!</p>
+        <p class="pContactanos">Estamos listos para ayudarte con tus necesidades de mantenimiento y construcción. </p>
+
+        <p class="pContactanos">¡Elige cómo quieres comunicarte con nosotros para obtener un **presupuesto sin costo**!
+        </p>
     </main>
 
     <div class="menu">
-        <a href="https://www.mantonet.com/a-MenuServicios.html" class="botonMenu" rel="noopener noreferrer">
+        <a href="/a-MenuServicios.html" class="botonMenu" rel="noopener noreferrer">
             <i class="fas fa-globe icono"></i>
             Menú Servicios
         </a>
@@ -547,7 +749,7 @@
 
         <a href="tel:+5215519148472" class="botonMenu">
             <i class="fas fa-phone-alt icono"></i>
-            Llamar Ahora
+            Llamar Ahora (55191484728)
         </a>
 
         <a href="mailto:contacto.mantonet@gmail.com?subject=Encontré%20su%20anuncio%20en%20la%20web%20me%20interesa%20cotizar%20sin%20costo%20por%20su%20promo%20%22PROMO-WEB-MANTONET%22"
@@ -569,109 +771,244 @@
     </div>
 
     <div class="seo-content">
+
         <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área
             Metropolitana</h2>
-        <p>En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y <b>proyectos de
+        <p class="espaciadorDeContenedor">En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y
+            <b>proyectos de
                 impermeabilización</b> en
             <b>Ciudad de México</b> y su <b>área metropolitana</b>. Contamos con un equipo de profesionales
             experimentados
             para ofrecer soluciones integrales a tu hogar o negocio.
         </p>
 
-        <h3 style="margin-top: 2%; margin-bottom: 2%;">Nuestras Especialidades:</h3>
+        <h3>Nuestros Servicios:</h3>
 
-        <details>
+
+        <details class="servicio-desplegable">
             <summary>
-                <h3>Plomería</h3>
+                <h4>Impermeabilizaciones Expertas</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-                <p>Detección y reparación de fugas, instalación de calentadores, tuberías y todo lo
-                    relacionado con sistemas hidráulicos.</p>
-                <ul>
-                    <li>Detección y reparación de fugas</li>
-                    <li>Instalación y mantenimiento de calentadores de agua</li>
-                    <li>Revisión y cambio de tuberías</li>
-                    <li>Instalación de grifos, inodoros y regaderas</li>
-                    <li>Desatascos y limpieza de drenajes</li>
-                </ul>
-            </div>
-        </details>
 
-        <details>
-            <summary>
-                <h3>Electricidad</h3>
-            </summary>
-            <div class="contenido-servicio">
-                <p>Instalación y mantenimiento de sistemas eléctricos, colocación de lámparas, contactos
-                    y reparaciones seguras.</p>
-                <ul>
-                    <li>Instalación de circuitos eléctricos</li>
-                    <li>Mantenimiento y reparación de instalaciones eléctricas</li>
-                    <li>Colocación de lámparas, contactos e interruptores</li>
-                    <li>Diagnóstico y solución de cortocircuitos</li>
-                    <li>Instalación de paneles eléctricos y centros de carga</li>
-                </ul>
-            </div>
-        </details>
+                <img class="imgPersonaje" src="img/Gravín-1-1.png">
 
-        <details>
-            <summary>
-                <h3>Pintura Profesional</h3>
-            </summary>
-            <div class="contenido-servicio">
-                <p>Preparación de superficies y aplicación de pintura de alta calidad para
-                    interiores y exteriores.</p>
-                <ul>
-                    <li>Pintura de interiores y exteriores</li>
-                    <li>Preparación de superficies (lijado, resanado)</li>
-                    <li>Aplicación de recubrimientos especiales</li>
-                    <li>Diseño y combinación de colores</li>
-                    <li>Pintura decorativa y acabados finos</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <h3>Albañilería y Remodelaciones</h3>
-            </summary>
-            <div class="contenido-servicio">
-                <p>Desde pequeñas reparaciones hasta proyectos de remodelación completos,
-                    garantizando acabados de primera.</p>
-                <ul>
-                    <li>Construcción y reparación de muros</li>
-                    <li>Instalación de pisos y azulejos</li>
-                    <li>Remodelación de baños y cocinas</li>
-                    <li>Ampliaciones y adecuaciones de espacios</li>
-                    <li>Construcción de bardas y estructuras menores</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <h3>Impermeabilizaciones Expertas</h3>
-            </summary>
-            <div class="contenido-servicio">
-                <p>Ofrecemos soluciones duraderas para proteger tu propiedad de la humedad y filtraciones.</p>
-                <ul>
+                <p class="espaciadorDeContenedor">Ofrecemos soluciones duraderas para proteger tu propiedad de la
+                    humedad y filtraciones.</p>
+                <ul class="espaciadorDeContenedor">
                     <li>Aplicación de <b>impermeabilizante acrílico</b> para techos</li>
                     <li>Aplicación de <b>impermeabilizante asfáltico</b> para losas y terrazas</li>
                     <li><b>Reparación de goteras</b> y <b>filtraciones</b> en cualquier tipo de superficie</li>
                     <li><b>Sellado de techos</b> para una protección duradera contra la humedad</li>
                     <li>Mantenimiento preventivo de sistemas de impermeabilización</li>
                 </ul>
+
+                <a class="botonSaberMas" href="/a-Imper.html">Saber más</a>
             </div>
         </details>
 
-        <p>Ofrecemos <b>servicio profesional a domicilio</b> y estamos comprometidos con la calidad y la satisfacción
+
+        <details class="servicio-desplegable">
+            <summary>
+                <h4>Pintura Profesional</h4> <span class="indicador-desplegable"></span>
+            </summary>
+            <div class="contenido-servicio">
+
+                <img class="imgPersonaje" src="img/Brochín-1-1.png">
+
+                <p class="espaciadorDeContenedor">Preparación de superficies y aplicación de pintura de alta calidad
+                    para
+                    interiores y exteriores.</p>
+                <ul class="espaciadorDeContenedor">
+                    <li>Pintura de interiores y exteriores</li>
+                    <li>Preparación de superficies (lijado, resanado)</li>
+                    <li>Aplicación de recubrimientos especiales</li>
+                    <li>Diseño y combinación de colores</li>
+                    <li>Pintura decorativa y acabados finos</li>
+                    <li>Pintura de herrería</li>
+                </ul>
+
+                <a class="botonSaberMas" href="/a-Pintura.html">Saber más</a>
+
+            </div>
+        </details>
+
+        <details class="servicio-desplegable">
+            <summary>
+                <h4>Electricidad</h4> <span class="indicador-desplegable"></span>
+            </summary>
+            <div class="contenido-servicio">
+
+                <img class="imgPersonaje" src="img/Neutrina-1-1.png">
+
+                <p class="espaciadorDeContenedor">Instalación y mantenimiento de sistemas eléctricos, colocación de
+                    lámparas, contactos
+                    y reparaciones seguras.</p>
+                <ul class="espaciadorDeContenedor">
+                    <li>Instalación de circuitos eléctricos</li>
+                    <li>Mantenimiento y reparación de instalaciones eléctricas</li>
+                    <li>Colocación de lámparas, contactos e interruptores</li>
+                    <li>Diagnóstico y solución de cortocircuitos</li>
+                    <li>Instalación de paneles eléctricos y centros de carga</li>
+                </ul>
+
+                <a class="botonSaberMas" href="/a-Electricidad.html">Saber más</a>
+
+            </div>
+        </details>
+
+
+        <details class="servicio-desplegable">
+            <summary>
+                <h4>Plomería</h4> <span class="indicador-desplegable"></span>
+            </summary>
+            <div class="contenido-servicio">
+
+                <img class="imgPersonaje" src="img/Tuercas-1-1.png">
+
+                <p class="espaciadorDeContenedor">Detección y reparación de fugas, instalación de calentadores, tuberías
+                    y todo lo
+                    relacionado con sistemas hidráulicos.</p>
+                <ul class="espaciadorDeContenedor">
+                    <li>Detección y reparación de fugas</li>
+                    <li>Instalación y mantenimiento de calentadores de agua</li>
+                    <li>Revisión y cambio de tuberías</li>
+                    <li>Instalación de grifos, inodoros y regaderas</li>
+                    <li>Desatascos y limpieza de drenajes</li>
+                </ul>
+
+                <a class="botonSaberMas" href="/a-Plomeria.html">Saber más</a>
+
+            </div>
+        </details>
+
+
+
+        <details class="servicio-desplegable">
+            <summary>
+                <h4>Reparaciones Estéticas y Remodelaciones</h4> <span class="indicador-desplegable"></span>
+            </summary>
+            <div class="contenido-servicio">
+                <p class="espaciadorDeContenedor">Desde pequeñas reparaciones hasta proyectos de remodelación completos,
+                    garantizando acabados de primera.</p>
+                <ul class="espaciadorDeContenedor">
+                    <li>Construcción y reparación de muros</li>
+                    <li>Instalación de pisos y azulejos</li>
+                    <li>Remodelación de baños y cocinas</li>
+                    <li>Ampliaciones y adecuaciones de espacios</li>
+                    <li>Construcción de bardas y estructuras menores</li>
+                </ul>
+
+                 <a class="botonSaberMas" href="/html/a-Reparaciones-Esteticas.html">Saber más</a>
+
+            </div>
+        </details>
+
+        <p class="espaciadorDeContenedor">Ofrecemos <b>servicio profesional a domicilio</b> y estamos comprometidos con
+            la calidad y la satisfacción
             del
-            cliente. ¡Permítenos ayudarte a mantener y mejorar tu propiedad!</p>
+            cliente. </p>
+
+        <p class="espaciadorDeContenedor">¡Permítenos ayudarte a mantener y mejorar tu propiedad!</p>
     </div>
 
     <footer>
-        <p>&copy; 2024 Mantonet. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Mantonet. Todos los derechos reservados.</p>
     </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const detailsElements = document.querySelectorAll('details.servicio-desplegable');
+
+            detailsElements.forEach((details) => {
+                const content = details.querySelector('.contenido-servicio');
+                const summary = details.querySelector('summary');
+
+                if (!content) return; // Asegurarse de que el contenido existe
+
+                // Función para cerrar un details suavemente
+                const closeDetailsSmoothly = (detailToClose) => {
+                    const contentToClose = detailToClose.querySelector('.contenido-servicio');
+                    if (contentToClose && detailToClose.open) {
+                        // 1. Establecer la altura actual para que haya algo que transicionar
+                        contentToClose.style.maxHeight = contentToClose.scrollHeight + 'px';
+                        contentToClose.style.paddingTop = '15px';
+                        contentToClose.style.paddingBottom = '15px';
+
+                        // 2. Usar requestAnimationFrame para forzar el redibujado antes de cambiar a 0
+                        requestAnimationFrame(() => {
+                            contentToClose.style.maxHeight = '0'; // Anima a 0
+                            contentToClose.style.paddingTop = '0';
+                            contentToClose.style.paddingBottom = '0';
+
+                            // 3. Cuando la transición termina, realmente cierra el details
+                            const transitionEndHandler = () => {
+                                detailToClose.open = false; // Quita el atributo 'open'
+                                // Limpia los estilos inline para que CSS controle de nuevo
+                                contentToClose.style.maxHeight = '';
+                                contentToClose.style.paddingTop = '';
+                                contentToClose.style.paddingBottom = '';
+                                contentToClose.removeEventListener('transitionend', transitionEndHandler);
+                            };
+                            contentToClose.addEventListener('transitionend', transitionEndHandler, { once: true });
+                        });
+                    }
+                };
+
+                // Escucha el clic en el summary para controlar la apertura/cierre
+                summary.addEventListener('click', (e) => {
+                    e.preventDefault(); // Previene el comportamiento predeterminado del navegador
+
+                    if (details.open) {
+                        // Si ya está abierto, lo cerramos
+                        closeDetailsSmoothly(details);
+                    } else {
+                        // Si está cerrado, lo abrimos y cerramos los demás
+                        detailsElements.forEach((otherDetails) => {
+                            if (otherDetails !== details && otherDetails.open) {
+                                closeDetailsSmoothly(otherDetails);
+                            }
+                        });
+
+                        // Abrir el details actual
+                        details.open = true; // Esto añade el atributo 'open'
+
+                        // *** INICIO DEL AJUSTE PARA LA PRIMERA VEZ ***
+                        // Al abrir, el max-height inicialmente es 0 por CSS.
+                        // Para que la transición funcione la primera vez, necesitamos
+                        // establecer el max-height a su altura 'real' después de que
+                        // el navegador registre el estado inicial de 0.
+                        content.style.maxHeight = '0'; // Aseguramos que el estado inicial sea 0, si ya no lo está
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+
+                        // Usamos requestAnimationFrame para asegurar que el navegador vea el 0
+                        // antes de que le demos la altura real a la que debe transicionar.
+                        requestAnimationFrame(() => {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            content.style.paddingTop = '15px';
+                            content.style.paddingBottom = '15px';
+                        });
+                        // *** FIN DEL AJUSTE PARA LA PRIMERA VEZ ***
+
+                        // Una vez que la animación de apertura ha terminado,
+                        // removemos el max-height para que el contenido pueda crecer si es necesario.
+                        const openTransitionEndHandler = () => {
+                            if (details.open) {
+                                content.style.maxHeight = ''; // Resetear a altura automática
+                                content.style.paddingTop = '15px'; // Asegurar que el padding final se mantenga
+                                content.style.paddingBottom = '15px'; // Asegurar que el padding final se mantenga
+                            }
+                            content.removeEventListener('transitionend', openTransitionEndHandler);
+                        };
+                        content.addEventListener('transitionend', openTransitionEndHandler, { once: true });
+                    }
+                });
+            });
+        });
+    </script>
+
 
 </body>
 
