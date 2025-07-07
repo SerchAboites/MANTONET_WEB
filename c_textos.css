@@ -1,10 +1,6 @@
-/* text-styles.css */
-
-/* Estilos generales de texto */
 body {
   font-family: "Lexend", sans-serif;
   color: white;
-  /* Asumiendo que el color de texto general se define aquí si aplica a todo */
 }
 
 h1 {
@@ -28,19 +24,20 @@ h2 {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  background: #3a3a3aff;
+  background: #a32a2a;
   border-radius: 15px;
   font-size: 22px;
+  margin: 25px 0 25px 0;
 }
 
 
 h3 {
   display: flex;
-  background-color: none;
-  padding: 0px;
-  text-align: center;
+  background: none;
+  padding: 10px;
+  text-align: left;
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   align-items: center;
   justify-content: center;
   font-size: 20px;
@@ -48,12 +45,11 @@ h3 {
   margin: 0px;
   border: 2px solid white;
   border-radius: 15px;
-  font-weight: 200;
+  background: #2c2c2cff;
 }
 
 h4 {
   display: flex;
-  background-color: none;
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -62,11 +58,12 @@ h4 {
   justify-content: center;
   font-size: 20px;
   box-sizing: border-box;
+  background: #691415;
+  border-radius: 20px;
 }
 
 summary {
   font-weight: bold;
-  padding: 10px;
   cursor: pointer;
   outline: none;
   position: relative;
@@ -87,18 +84,19 @@ summary::marker {
 
 /* Estilos para el título H3 dentro del summary */
 summary h3 {
-  margin: 0;
+  margin-top: 10px;
   color: inherit;
-  padding-right: 50px;
   /* Ajusta este valor según el tamaño de tu + */
+  padding: 0px 70px 0px 25px;
+  text-align: left;
 }
 
 .indicador-desplegable {
   position: absolute;
-  right: 30px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.5em;
+  font-size: 30px;
   font-weight: bold;
   line-height: 1;
   color: white;
@@ -110,24 +108,29 @@ summary h3 {
   transition: transform 0.2s ease-in-out;
   display: block;
   /* Asegura que la transformación se aplique correctamente */
+
 }
 
 /* Cuando está abierto, simplemente rota el "+" existente */
 .servicio-desplegable[open] .indicador-desplegable::after {
   transform: rotate(45deg);
+  color: #cf3838;
+  margin: 0px;
+  
+
 }
 
 details {
   position: relative;
-  padding: 20px 40px;
-  margin: 0px 0px 15px 0px;
+  padding: 35px 35px 30px 35px;
+  margin: 0px 0px 0px 0px;
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
   background: none;
   border: 3px solid transparent;
-  background: #3a3a3aff;
+  background: none;
 }
 
 /* Pseudo-elemento para el borde animado */
@@ -150,6 +153,7 @@ details::before {
 details[open]::before {
   animation: borderMoveColor 3s linear infinite alternate;
   opacity: 1;
+  margin: 20px;
 }
 
 @keyframes borderMoveColor {
@@ -196,6 +200,10 @@ li {
   font-size: 18px;
   box-sizing: border-box;
   margin-bottom: 30px;
+}
+
+strong {
+  color: #cf3838;
 }
 
 
@@ -267,21 +275,15 @@ i {
 /* Media Queries para texto en pantallas más pequeñas */
 @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
 (max-width: 1080px) and (min-resolution: 1.8dppx) {
-  .btn-text {
-    font-size: 40px;
-  }
 
-  .faq-container p {
-    font-size: 12px;
 
-  }
 
   h1 {
-    font-size: 55px;
+    font-size: 50px;
     background: darkred;
     padding: 20px;
     border-radius: 20px;
-    margin: 40px;
+    margin: 40px 40px 30px 40px;
     line-height: 80px;
   }
 
@@ -290,15 +292,20 @@ i {
     line-height: 75px;
     margin: 0px;
     width: 90%;
-    background: #C51E1F;
+    margin: 40px 0 40px 0;
   }
 
   h3 {
     font-size: 45px;
+    padding: 40px;
   }
 
   h4 {
-    font-size: 40px;
+    font-size: 42px;
+    background: #691415;
+    height: auto;
+    border-radius: 20px;
+    padding: 30px;
   }
 
 
@@ -309,8 +316,9 @@ i {
     line-height: 65px;
   }
 
+
   li {
-    text-align: justify;
+    text-align: left;
     font-size: 45px;
     margin: 50px;
     line-height: 65px;
@@ -328,8 +336,29 @@ i {
     font-size: 50px;
   }
 
+  .btn-text {
+    font-size: 40px;
+  }
+
   i {
     font-size: 50px;
+  }
+
+  .indicador-desplegable {
+    font-size: 70px;
+    right: 60px;
+  }
+
+
+  summary h3 {
+    padding-right: 120px;
+    /* Ajusta este valor según el tamaño de tu + */
+    box-sizing: border-box;
+    padding: 30px 120px 30px 40px;
+  }
+
+  details p {
+font-size: 30px;
   }
 
 
@@ -339,7 +368,4 @@ i {
     text-decoration: none !important;
   }
 
-  #resultado {
-    font-size: 50px;
-  }
 }
