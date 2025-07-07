@@ -8,8 +8,12 @@ body {
 }
 
 h1 {
-  font-size: 30px;
-  padding: 0px;
+  font-size: 28px;
+  background: darkred;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 40px;
+  line-height: 40px;
   text-align: center;
 }
 
@@ -104,7 +108,8 @@ summary h3 {
   content: '+';
   /* La transición va aquí para que se anime la rotación */
   transition: transform 0.2s ease-in-out;
-  display: block; /* Asegura que la transformación se aplique correctamente */
+  display: block;
+  /* Asegura que la transformación se aplique correctamente */
 }
 
 /* Cuando está abierto, simplemente rota el "+" existente */
@@ -194,7 +199,6 @@ li {
 }
 
 
-
 ul {
   margin: 0px;
   box-sizing: border-box;
@@ -256,7 +260,7 @@ i {
   justify-content: center;
   align-items: center;
   justify-items: center;
-  
+
 }
 
 
@@ -272,30 +276,44 @@ i {
 
   }
 
+  h1 {
+    font-size: 55px;
+    background: darkred;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 40px;
+    line-height: 80px;
+  }
+
+  h2 {
+    font-size: 50px;
+    line-height: 75px;
+    margin: 0px;
+    width: 90%;
+    background: #C51E1F;
+  }
+
+  h3 {
+    font-size: 45px;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
+
 
   p {
-    text-align: justify;
-    font-size: 35px;
+    text-align: left;
+    font-size: 45px;
     margin: 50px;
+    line-height: 65px;
   }
 
   li {
     text-align: justify;
-    font-size: 35px;
+    font-size: 45px;
     margin: 50px;
-  }
-
-  h2 {
-    font-size: 35px;
-  }
-
-  h3 {
-    font-size: 35px;
-  }
-
-  h4 {
-    font-size: 35px;
-    height: 100%;
+    line-height: 65px;
   }
 
   label,
@@ -314,9 +332,7 @@ i {
     font-size: 50px;
   }
 
-  strong {
-    font-size: 30px;
-  }
+
 
   a.btn-menu {
     color: white !important;

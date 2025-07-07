@@ -171,10 +171,7 @@ button {
   align-items: center;
 }
 
-.imagenWeb {
-  width: 100%;
-  margin-top: 30px;
-}
+
 
 .calculadoraDeObra {
   display: flex;
@@ -238,6 +235,12 @@ button {
 .imgPersonajes {
   height: 150px;
   width: auto;
+}
+
+.imagenWeb {
+  width: 90%;
+  margin-top: 30px;
+  border-radius: 10px;
 }
 
 .menuNavegacion {
@@ -399,4 +402,11 @@ button {
     height: 300px;
     width: auto;
   }
+
+  .imagenWeb {
+  width: 90%;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+
 }
