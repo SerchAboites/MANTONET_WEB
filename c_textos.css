@@ -120,7 +120,7 @@ summary h3 {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease-out;
-  padding: 0px 40px 25px 12%;
+  padding: 0px 2% 25px 2%;
 }
 
 
@@ -134,7 +134,7 @@ summary h3 {
   /* Propiedades de la caja */
   width: 35px;  /* Tamaño fijo */
   height: 35px; /* Tamaño fijo */
-  background-color: #666666; /* Color de fondo del círculo */
+  background-color: none; /* Color de fondo del círculo */
   border-radius: 50%;
   
   /* Propiedades para centrar el contenido (el ::after) */
