@@ -99,9 +99,6 @@
             margin: 0px;
         }
 
-        .btn-servicio:hover {
-            transform: scale(0.9);
-        }
 
         .btn-svg {
             position: absolute;
@@ -126,20 +123,17 @@
         .btn-text {
             font-family: "Lexend", sans-serif;
             flex-grow: 1;
-            text-align: center;
-            color:  white;
+            text-align: left;
+            color: white;
             font-size: 25px;
             display: flex;
             align-items: center;
             justify-content: left;
             margin-left: 20px;
-            /* background-color: ; -- Eliminado por estar vacío */
             height: 100%;
             width: 100%;
             font-weight: bold;
             text-decoration: none;
-            /* No tiene efecto en <span>, sí en <a> */
-            /* 👈 ESTA LÍNEA */
         }
 
         .btn-img {
@@ -323,6 +317,19 @@
                 class="btn-img" alt="Servicio de electricidad con personaje animado" />
         </button>
 
+        <!-- REPARACIONES INSTALACIONES ESTÉTICAS -->
+        <button onclick="window.location.href='html/a-Reparaciones-Esteticas.html'" class="btn-servicio"
+            title="Reparaciones e Instalaciones">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+                <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
+                    points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+                <polygon fill="#330000" class="botonLadoDerecho"
+                    points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+            </svg>
+            <span class="btn-text">Reparaciones e Instalaciones</span>
+            <img src="" class="btn-img" alt="" />
+        </button>
+
         <!-- SOMOS MANTONET -->
         <button onclick="window.location.href='a-SomosMantonet.html'" class="btn-servicio" title="SOMOS MANTONET">
             <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
@@ -345,10 +352,9 @@
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">MEDIOS DE CONTACTO</span>
-            <img src=""
-                class="btn-img" alt="" />
+            <img src="" class="btn-img" alt="" />
         </button>
-   
+
 
         <!-- RULETA 
         <button onclick="window.location.href='/html/a-ruleta.html'" class="btn-servicio" title="RULETA PREMIOS">
@@ -365,7 +371,7 @@
 
         -->
 
-               <!-- PREGUNTAS FRECUENTES 
+        <!-- PREGUNTAS FRECUENTES 
         <button onclick="window.location.href='/html/preguntas-frecuentes.html'" class="btn-servicio" title="blog preguntas frcuentes">
             <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
@@ -385,12 +391,8 @@
 
     <!-- Fin de .menu -->
 
-    <table style="width: 100%; margin: 30px; height: 50px">
-        <!-- Se mantiene la tabla para el pie de página según solicitud -->
-        <tr>
-            <td class="pieDePagina">© 2025 MANTONET. Todos los derechos reservados.</td>
-        </tr>
-    </table>
+            <footer>© 2025 MANTONET. Todos los derechos reservados.</footer>
+
 
     <!-- Icono Whats General -->
 
