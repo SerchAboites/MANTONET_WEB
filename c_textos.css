@@ -1,6 +1,7 @@
 body {
   font-family: "Lexend", sans-serif;
   color: white;
+  font-weight: 300;
 }
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
   margin: 40px;
   line-height: 40px;
   text-align: center;
+  width: 95%;
 }
 
 
@@ -19,8 +21,9 @@ h2 {
   background: none;
   padding: 10px;
   text-align: center;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  min-height: 60px;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -58,7 +61,7 @@ h4 {
   justify-content: center;
   font-size: 20px;
   box-sizing: border-box;
-  background: #691415;
+  background: #666666ff;
   border-radius: 20px;
 }
 
@@ -87,37 +90,77 @@ summary h3 {
   margin-top: 10px;
   color: inherit;
   /* Ajusta este valor según el tamaño de tu + */
-  padding: 0px 70px 0px 25px;
+  padding: 0px 70px 0px 12%;
   text-align: left;
 }
 
+.servicio-desplegable summary i {
+  position: absolute;
+  left: 5%;
+  top: 50%; /* Centrar verticalmente el icono */
+  transform: translateY(-50%); /* Ajuste para centrado vertical */
+  margin-right: 12px; /* Ya no es tan necesario con el posicionamiento absoluto, pero puedes mantenerlo si quieres un espacio adicional */
+  /* color: #0056b3;     /* Color anterior */ 
+  color: white;
+  font-size: 1.2em; /* Puedes ajustar el tamaño del icono aquí */
+  width: auto;      /* El ancho se ajustará al tamaño del icono */
+  text-align: left; /* Alineación del texto dentro del icono, aunque aquí no aplica directamente */
+}
+
+
+/* Estilo para que el cursor indique que es clickeable */
+.servicio-desplegable > summary {
+  cursor: pointer;
+  list-style: none; /* Oculta el triángulo por defecto */
+}
+
+
+/* El contenedor del contenido que vamos a animar */
+.details-content-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease-out;
+  padding: 0px 40px 25px 12%;
+}
+
+
+/* 1. El contenedor AHORA tiene el tamaño, el fondo y el centrado */
 .indicador-desplegable {
   position: absolute;
   right: 40px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
+
+  /* Propiedades de la caja */
+  width: 35px;  /* Tamaño fijo */
+  height: 35px; /* Tamaño fijo */
+  background-color: #666666; /* Color de fondo del círculo */
+  border-radius: 50%;
+  
+  /* Propiedades para centrar el contenido (el ::after) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Propiedades de la fuente para el signo */
+  font-size: 28px;
   font-weight: bold;
-  line-height: 1;
   color: white;
+  transition: background-color 0.2s ease-in-out;
 }
 
+/* 2. El pseudo-elemento AHORA solo define el contenido */
 .indicador-desplegable::after {
   content: '+';
-  /* La transición va aquí para que se anime la rotación */
-  transition: transform 0.2s ease-in-out;
-  display: block;
-  /* Asegura que la transformación se aplique correctamente */
-
 }
 
-/* Cuando está abierto, simplemente rota el "+" existente */
-.servicio-desplegable[open] .indicador-desplegable::after {
-  transform: rotate(45deg);
-  color: #cf3838;
-  margin: 0px;
-  
+/* 3. El estado abierto solo cambia el contenido y el color del contenedor */
+.servicio-desplegable[open] .indicador-desplegable {
+  background-color: #a32a2a; /* Cambia el color del círculo */
+}
 
+.servicio-desplegable[open] .indicador-desplegable::after {
+  content: '−'; /* Usamos el signo de resta para mejor alineación */
 }
 
 details {
@@ -175,25 +218,16 @@ details[open]::before {
 
 
 
-
-.faq-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #252525ff;
-  border-radius: 15px;
-  margin: 3%;
-}
-
 audio {
   width: 90%;
 }
 
 
 p {
-  text-align: justify;
+  text-align: left;
   font-size: 20px;
   margin: 20px;
+  line-height: 35px;
 }
 
 li {
@@ -203,13 +237,15 @@ li {
 }
 
 strong {
-  color: #cf3838;
+  color: white;
+  font-weight: 800;
 }
 
 
 ul {
   margin: 0px;
   box-sizing: border-box;
+  
 }
 
 a {
@@ -250,26 +286,10 @@ i {
   font-size: 20px;
 }
 
-.faq-container p {
-  font-size: 20px;
-  text-align: justify;
-  margin: 0 0 2% 0;
-}
 
-.faq-section li {
-  text-align: left;
-  border: none;
-  border-radius: 10px;
-  padding: 0.5em 1em;
-  margin-bottom: 0.5em;
-  box-sizing: border-box;
-  width: 95%;
-  min-height: 70px;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
 
-}
+/****************************************************************************/
+/****************************************************************************/
 
 
 /* Media Queries para texto en pantallas más pequeñas */
@@ -285,6 +305,7 @@ i {
     border-radius: 20px;
     margin: 40px 40px 30px 40px;
     line-height: 80px;
+    
   }
 
   h2 {
@@ -346,20 +367,17 @@ i {
 
   .indicador-desplegable {
     font-size: 70px;
-    right: 60px;
+    right: 5%;
   }
 
 
   summary h3 {
-    padding-right: 120px;
     /* Ajusta este valor según el tamaño de tu + */
     box-sizing: border-box;
-    padding: 30px 120px 30px 40px;
+    padding: 30px 11% 30px 15%;
   }
 
-  details p {
-font-size: 30px;
-  }
+
 
 
 
