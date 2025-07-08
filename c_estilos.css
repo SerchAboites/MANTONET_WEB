@@ -31,6 +31,28 @@ button {
   border: none;
 }
 
+/* CSS Corregido para el botón */
+.boton-voz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #cf3838;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+
+.boton-voz:hover {
+  opacity: 0.7;
+}
+
+
 
 
 @keyframes redPulse {
@@ -306,6 +328,15 @@ section {
     font-size: 30px;
     font-family: "Lexend", sans-serif;
   }
+
+  /* CSS Corregido para el botón */
+  .boton-voz {
+    width: 140px;
+    height: 140px;
+    font-size: 80px;
+    margin: 30px 0 0 42%; 
+  }
+
 
   .whatsapp-button {
     bottom: 150px;
