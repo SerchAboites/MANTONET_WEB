@@ -1,5 +1,9 @@
 /* visual-styles.css */
 
+html {
+  font-size: 20px;
+}
+
 body {
   background: radial-gradient(circle at center, rgb(37, 37, 37) 0%, #2c2c2c 100%);
   margin: 0;
@@ -51,6 +55,15 @@ button {
 .boton-voz:hover {
   opacity: 0.7;
 }
+
+.encabezado-seccion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
 
 
 
@@ -167,6 +180,7 @@ section {
   background-color: #3a3a3aff;
   border-radius: 15px;
   width: 100%;
+  font-size: 1rem;
 }
 
 .contenedorPrincipal {
@@ -174,6 +188,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1rem;
 }
 
 .panelOcultable {
@@ -300,6 +315,10 @@ section {
 @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
 (max-width: 1080px) and (min-resolution: 1.8dppx) {
 
+  html {
+    font-size: 20px;
+  }
+
   footer {
     font-size: 35px;
     padding: 40px 0 40px 0;
@@ -334,7 +353,7 @@ section {
     width: 140px;
     height: 140px;
     font-size: 80px;
-    margin: 30px 0 0 42%; 
+    margin: 30px 0 0 42%;
   }
 
 

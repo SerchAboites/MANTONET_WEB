@@ -97,21 +97,28 @@ summary h3 {
 .servicio-desplegable summary i {
   position: absolute;
   left: 5%;
-  top: 50%; /* Centrar verticalmente el icono */
-  transform: translateY(-50%); /* Ajuste para centrado vertical */
-  margin-right: 12px; /* Ya no es tan necesario con el posicionamiento absoluto, pero puedes mantenerlo si quieres un espacio adicional */
-  /* color: #0056b3;     /* Color anterior */ 
+  top: 50%;
+  /* Centrar verticalmente el icono */
+  transform: translateY(-50%);
+  /* Ajuste para centrado vertical */
+  margin-right: 12px;
+  /* Ya no es tan necesario con el posicionamiento absoluto, pero puedes mantenerlo si quieres un espacio adicional */
+  /* color: #0056b3;     /* Color anterior */
   color: white;
-  font-size: 1.2em; /* Puedes ajustar el tamaño del icono aquí */
-  width: auto;      /* El ancho se ajustará al tamaño del icono */
-  text-align: left; /* Alineación del texto dentro del icono, aunque aquí no aplica directamente */
+  font-size: 1.2em;
+  /* Puedes ajustar el tamaño del icono aquí */
+  width: auto;
+  /* El ancho se ajustará al tamaño del icono */
+  text-align: left;
+  /* Alineación del texto dentro del icono, aunque aquí no aplica directamente */
 }
 
 
 /* Estilo para que el cursor indique que es clickeable */
-.servicio-desplegable > summary {
+.servicio-desplegable>summary {
   cursor: pointer;
-  list-style: none; /* Oculta el triángulo por defecto */
+  list-style: none;
+  /* Oculta el triángulo por defecto */
 }
 
 
@@ -132,11 +139,14 @@ summary h3 {
   transform: translateY(-50%);
 
   /* Propiedades de la caja */
-  width: 35px;  /* Tamaño fijo */
-  height: 35px; /* Tamaño fijo */
-  background-color: none; /* Color de fondo del círculo */
+  width: 35px;
+  /* Tamaño fijo */
+  height: 35px;
+  /* Tamaño fijo */
+  background-color: none;
+  /* Color de fondo del círculo */
   border-radius: 50%;
-  
+
   /* Propiedades para centrar el contenido (el ::after) */
   display: flex;
   align-items: center;
@@ -156,11 +166,13 @@ summary h3 {
 
 /* 3. El estado abierto solo cambia el contenido y el color del contenedor */
 .servicio-desplegable[open] .indicador-desplegable {
-  background-color: #a32a2a; /* Cambia el color del círculo */
+  background-color: #a32a2a;
+  /* Cambia el color del círculo */
 }
 
 .servicio-desplegable[open] .indicador-desplegable::after {
-  content: '−'; /* Usamos el signo de resta para mejor alineación */
+  content: '−';
+  /* Usamos el signo de resta para mejor alineación */
 }
 
 details {
@@ -245,7 +257,7 @@ strong {
 ul {
   margin: 0px;
   box-sizing: border-box;
-  
+
 }
 
 a {
@@ -287,6 +299,21 @@ i {
 }
 
 
+  .contenido-para-leer p {
+    font-size: 1rem;
+  }
+
+  .contenido-para-leer li {
+    font-size: 1rem;
+    padding-left: 10%;
+  }
+
+  .contenido-para-leer i {
+    font-size: 2rem;
+    padding-left: 10%;
+  }
+
+
 
 /****************************************************************************/
 /****************************************************************************/
@@ -305,7 +332,7 @@ i {
     border-radius: 20px;
     margin: 40px 40px 30px 40px;
     line-height: 80px;
-    
+
   }
 
   h2 {
@@ -374,8 +401,19 @@ i {
     padding: 30px 11% 30px 15%;
   }
 
+  .contenido-para-leer p {
+    font-size: 1rem;
+  }
 
+  .contenido-para-leer li {
+    font-size: 1rem;
+    padding-left: 10%;
+  }
 
+  .contenido-para-leer i {
+    font-size: 2rem;
+    padding-left: 10%;
+  }
 
 
   a.btn-menu {

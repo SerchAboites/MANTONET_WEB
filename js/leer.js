@@ -1,40 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let vozPreferida; // Variable para guardar la voz que encontremos
+    let vozPreferida;
 
-    // --- MEJORA: FUNCIÓN PARA BUSCAR Y ASIGNAR LA VOZ PREFERIDA ---
     function seleccionarVoz() {
-        // Obtenemos la lista de voces disponibles en el navegador
         const voces = speechSynthesis.getVoices();
-        
-        // Palabras clave para identificar una voz femenina en español
         const keywordsFemeninas = ['female', 'mujer', 'femenina', 'paulina', 'laura', 'isabella'];
 
-        // 1. Buscamos la voz ideal: Español de México y Femenina.
         vozPreferida = voces.find(voz =>
             voz.lang === 'es-MX' && keywordsFemeninas.some(keyword => voz.name.toLowerCase().includes(keyword))
-        );
-
-        // 2. Si no la encontramos, buscamos cualquier voz en español que sea femenina.
-        if (!vozPreferida) {
-            vozPreferida = voces.find(voz =>
-                voz.lang.startsWith('es-') && keywordsFemeninas.some(keyword => voz.name.toLowerCase().includes(keyword))
-            );
-        }
-        
-        // 3. Como última opción, si no hay femenina, tomamos la primera de México que encontremos.
-        if (!vozPreferida) {
-             vozPreferida = voces.find(voz => voz.lang === 'es-MX');
-        }
+        ) || voces.find(voz =>
+            voz.lang.startsWith('es-') && keywordsFemeninas.some(keyword => voz.name.toLowerCase().includes(keyword))
+        ) || voces.find(voz => voz.lang === 'es-MX');
     }
 
-    // El navegador tarda un momento en cargar las voces.
-    // Este evento se dispara cuando las voces ya están listas.
     speechSynthesis.onvoiceschanged = seleccionarVoz;
-    // También llamamos a la función una vez por si las voces ya estaban cargadas.
     seleccionarVoz();
 
-
-    // El resto de tu código permanece casi igual
     const botonesVoz = document.querySelectorAll('.boton-voz');
 
     botonesVoz.forEach(boton => {
@@ -42,8 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             event.stopPropagation();
 
-            const detailsElement = boton.closest('details');
-            const contenido = detailsElement.querySelector('.contenido-desplegable, .contenido-para-leer');
+            // --- AJUSTE CLAVE AQUÍ ---
+            // Buscamos el contenedor <section> o <details> más cercano
+            const contenedor = boton.closest('section, details');
+
+            if (!contenedor) return;
+
+            // Buscamos el div con el contenido para leer dentro de ese contenedor
+            const contenido = contenedor.querySelector('.contenido-para-leer, .contenido-desplegable');
 
             if (contenido && 'speechSynthesis' in window) {
                 const texto = contenido.innerText;
@@ -52,13 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     speechSynthesis.cancel();
                 } else {
                     const utterance = new SpeechSynthesisUtterance(texto);
-                    utterance.lang = 'es-MX'; // Mantenemos el idioma deseado
-
-                    // --- MEJORA: ASIGNAMOS LA VOZ PREFERIDA SI LA ENCONTRAMOS ---
+                    utterance.lang = 'es-MX';
                     if (vozPreferida) {
                         utterance.voice = vozPreferida;
                     }
-
                     speechSynthesis.speak(utterance);
                 }
             } else {
@@ -67,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Esta parte sigue funcionando para los FAQs
     document.querySelectorAll('details.servicio-desplegable').forEach(details => {
         details.addEventListener('toggle', () => {
             if (!details.open && speechSynthesis.speaking) {
