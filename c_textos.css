@@ -65,6 +65,16 @@ h4 {
   border-radius: 20px;
 }
 
+h5 {
+  font-size: 30px;
+  background: none;
+  border-radius: 10px;
+  padding: 5px;
+  width: 20%;
+  text-align: center;
+  margin: 25px 0px;
+}
+
 summary {
   font-weight: bold;
   cursor: pointer;
@@ -242,6 +252,12 @@ p {
   line-height: 35px;
 }
 
+.precio {
+  background: #3a3a3a;
+  border-radius: 8px;
+  padding: 5px;
+}
+
 li {
   font-size: 18px;
   box-sizing: border-box;
@@ -299,19 +315,19 @@ i {
 }
 
 
-  .contenido-para-leer p {
-    font-size: 1rem;
-  }
+.contenido-para-leer p {
+  font-size: 1rem;
+}
 
-  .contenido-para-leer li {
-    font-size: 1rem;
-    padding-left: 10%;
-  }
+.contenido-para-leer li {
+  font-size: 1rem;
+  padding-left: 10%;
+}
 
-  .contenido-para-leer i {
-    font-size: 2rem;
-    padding-left: 10%;
-  }
+.contenido-para-leer i {
+  font-size: 2rem;
+  padding-left: 10%;
+}
 
 
 
@@ -350,10 +366,25 @@ i {
 
   h4 {
     font-size: 42px;
-    background: #691415;
     height: auto;
     border-radius: 20px;
     padding: 30px;
+  }
+
+  h5 {
+    font-size: 60px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 60%;
+    margin: 25px 0px;
+  }
+
+  .precio {
+    width: 20%;
+    border-radius: 30px;
+    padding: 20px;
+    min-width: 30%;
+    margin-right: 12%;
   }
 
 
