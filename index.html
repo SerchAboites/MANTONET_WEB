@@ -58,17 +58,23 @@
 
 
     <script>
-        const esIframe2 = window.self !== window.top;
+        // Espera a que el contenido de la página esté listo
+        document.addEventListener('DOMContentLoaded', () => {
 
-        if (esIframe2) {
-            // Agregar target="_blank" a todos los enlaces
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                link.setAttribute('target', '_blank');
-                // Opcional: agregar rel="noopener noreferrer" por seguridad
-                link.setAttribute('rel', 'noopener noreferrer');
-            });
-        }
+            // Verifica si la página está dentro de un iframe
+            const esIframe = window.self !== window.top;
+
+            if (esIframe) {
+                // Selecciona todos los enlaces (etiquetas <a>) del documento
+                const links = document.querySelectorAll('a');
+
+                // Recorre cada enlace para modificarlo
+                links.forEach(link => {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer'); // Buena práctica de seguridad
+                });
+            }
+        });
     </script>
 
 
