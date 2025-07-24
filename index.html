@@ -38,24 +38,38 @@
         gtag('config', 'G-24X52F10Q2');
     </script>
 
+    <script>
+        // Verifica si está dentro de un iframe (como lo estaría en Google Sites)
+        const esIframe = window.self !== window.top;
 
-<script>
-  // Verifica si está dentro de un iframe (como lo estaría en Google Sites)
-  const esIframe = window.self !== window.top;
+        // Detecta el URL del sitio "padre" si está embebido
+        const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
 
-  // Detecta el URL del sitio "padre" si está embebido
-  const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+        // Crea imagen invisible para registrar visita con parámetros
+        const img = new Image(1, 1);
+        img.style.display = "none";
+        img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=SitioOficial&origen=" + encodeURIComponent(origen);
 
-  // Crea imagen invisible para registrar visita con parámetros
-  const img = new Image(1, 1);
-  img.style.display = "none";
-  img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=SitioOficial&origen=" + encodeURIComponent(origen);
+        // Muestra en consola la URL para depurar
+        console.log("Cargando imagen de tracking:", img.src);
 
-  // Muestra en consola la URL para depurar
-  console.log("Cargando imagen de tracking:", img.src);
+        document.body.appendChild(img);
+    </script>
 
-  document.body.appendChild(img);
-</script>
+
+    <script>
+        const esIframe2 = window.self !== window.top;
+
+        if (esIframe2) {
+            // Agregar target="_blank" a todos los enlaces
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.setAttribute('target', '_blank');
+                // Opcional: agregar rel="noopener noreferrer" por seguridad
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        }
+    </script>
 
 
     <!-- Carga de Tailwind CSS para estilos de utilidad -->
@@ -908,7 +922,7 @@
                     <li>Construcción de bardas y estructuras menores</li>
                 </ul>
 
-                 <a class="botonSaberMas" href="/html/a-Reparaciones-Esteticas.html">Saber más</a>
+                <a class="botonSaberMas" href="/html/a-Reparaciones-Esteticas.html">Saber más</a>
 
             </div>
         </details>
