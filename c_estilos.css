@@ -65,6 +65,42 @@ button {
 }
 
 
+.botonContactoRapido {
+  background-color: darkred;
+  min-height: 60px;
+  width: 25%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  animation: pulse-border 2s infinite;
+}
+
+.botonContactoRapido:hover {
+  background-color: #a32a2a;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(197, 30, 31, 0.7);
+    /* Color principal de tu marca con opacidad */
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(197, 30, 31, 0);
+    /* Transparente */
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(197, 30, 31, 0);
+    /* Transparente */
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s infinite;
+}
 
 
 
@@ -444,6 +480,14 @@ section {
     padding: 50px;
     width: 100%;
     border-radius: 20px;
+  }
+
+  .botonContactoRapido {
+    min-height: 150px;
+    font-size: 40px;
+    width: 80%;
+    border-radius: 25px;
+    margin-top: 60px;
   }
 
   .encabezado {
