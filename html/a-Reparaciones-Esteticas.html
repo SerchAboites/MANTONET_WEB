@@ -238,9 +238,8 @@
 
         <h2>¿Cómo Embellecemos tu Espacio?</h2>
         <ol>
-          <li>Agendamos una <strong>visita sin costo</strong> para entender tus ideas y necesidades, ya sea para
-            instalar, remodelar
-            con tablaroca, armar o diseñar.</li>
+          <li>Agendamos una <strong>visita</strong> para entender tus ideas y necesidades, ya sea para
+            instalar, remodelar con tablaroca, armar o diseñar.</li>
           <li>Te entregamos una <strong>propuesta detallada</strong> con los materiales, tiempos de ejecución y
             <strong>precios claros y
               transparentes</strong>.
@@ -473,6 +472,21 @@
   </div>
 
   <footer>© 2025 MANTONET. Todos los derechos reservados.</footer>
+
+
+    <!-- Icono Whats General -->
+  <div id="ico_whatsapp"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("b-boton-whats.html")
+        .then((res) => res.text())
+        .then((svg) => {
+          document.getElementById("ico_whatsapp").innerHTML = svg;
+        });
+    });
+  </script>
+  <!-- End Icono Whats General -->
+
 
   <script src="/js/details.js"></script>
   <script src="/js/leer.js"></script>
