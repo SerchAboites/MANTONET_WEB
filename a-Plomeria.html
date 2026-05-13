@@ -5,68 +5,92 @@
   <meta charset="UTF-8">
   <base target="_top">
 
-  <title>Plomería en CDMX | Fugas, Taponamientos e Instalaciones - Mantonet</title>
+  <!-- Título optimizado para abarcar zonas clave -->
+  <title>Plomeros Profesionales en CDMX, Naucalpan y Tlalnepantla | MANTONET</title>
+  
   <meta name="description"
-    content="Expertos en plomería en CDMX para hogares, oficinas y comercios. Soluciones para fugas, taponamientos, instalaciones nuevas y mantenimiento preventivo.">
+    content="Expertos en plomería en CDMX y Estado de México. Soluciones para fugas, taponamientos, instalaciones y mantenimiento. Diagnóstico técnico y bitácora profesional.">
 
   <!-- Fav icons -->
-
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-96x96.png" sizes="96x96">
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-180x180.png" sizes="180x180">
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-192x192.png" sizes="192x192">
-
   <link rel="icon" href="/favicon.ico">
-
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
-
   <!-- Fav icons -->
 
-  <link rel="canonical" href="https://www.mantonet.com/a-Plomeria" />
+  <!-- URL unificada sin discrepancias -->
+  <link rel="canonical" href="https://www.mantonet.com/a-Plomeria.html" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="c_estilos.css" />
   <link rel="stylesheet" href="c_textos.css" />
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2">
-  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-24X52F10Q2');
   </script>
 
+  <!-- Schema Markup Avanzado para SEO Local -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Servicios de Plomería en CDMX",
-      "description": "Mantonet ofrece soluciones profesionales de plomería para fugas, taponamientos, instalaciones hidráulicas nuevas y mantenimiento preventivo en casas, departamentos, oficinas y comercios en la Ciudad de México.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Mantonet",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Tu Dirección Aquí",
-          "addressLocality": "Ciudad de México",
-          "addressRegion": "CDMX",
-          "postalCode": "54080",
-          "addressCountry": "MX"
+      "@type": "Plumber",
+      "name": "MANTONET - Servicios de Plomería Profesional",
+      "description": "Soluciones profesionales de plomería para fugas, taponamientos, instalaciones hidráulicas nuevas y mantenimiento preventivo. Entregamos diagnóstico profesional y reporte fotográfico.",
+      "image": "https://www.mantonet.com/img/fonta-16-9.png",
+      "@id": "https://www.mantonet.com",
+      "url": "https://www.mantonet.com/a-Plomeria.html",
+      "telephone": "+5215519148472",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "postalCode": "54080",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Ciudad de México"
         },
-        "telephone": "+5215519148472",
-        "url": "https://www.mantonet.com/a-plomeria" 
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Ciudad de México"
-      },
-      "serviceType": "Plomería",
-      "url": "https://www.mantonet.com/a-plomeria", 
+        {
+          "@type": "City",
+          "name": "Tlalnepantla de Baz"
+        },
+        {
+          "@type": "City",
+          "name": "Naucalpan de Juárez"
+        },
+        {
+          "@type": "City",
+          "name": "Atizapán de Zaragoza"
+        },
+        {
+          "@type": "Neighborhood",
+          "name": "Polanco"
+        },
+        {
+          "@type": "Neighborhood",
+          "name": "Condado de Sayavedra"
+        },
+        {
+          "@type": "Neighborhood",
+          "name": "Club de Golf Bellavista"
+        },
+        {
+          "@type": "Neighborhood",
+          "name": "Las Arboledas"
+        }
+      ],
+      "priceRange": "$$",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Catálogo de Servicios de Plomería",
@@ -109,17 +133,17 @@
         ]
       }
     }
-    </script>
+  </script>
 
   <script>
     function mostrarMenu() {
       const menu = document.querySelector(".menuNavegacion");
-      menu.classList.add("activo");
+      if(menu) menu.classList.add("activo");
     }
 
     function ocultarMenu() {
       const menu = document.querySelector(".menuNavegacion");
-      menu.classList.remove("activo");
+      if(menu) menu.classList.remove("activo");
     }
   </script>
 </head>
@@ -146,7 +170,6 @@
       </button>
     </div>
 
-
     <div id="menu-container"></div>
     <script>
       fetch("b-menu-desplegable.html")
@@ -156,91 +179,72 @@
         });
     </script>
 
-
     <main>
 
-
-      <h1>Plomería Profesional en CDMX: Soluciones Rápidas y Confiables</h1>
+      <h1>Plomería Profesional en CDMX y Estado de México</h1>
 
       <img src="img/fonta-16-9.png" class="imagenWeb"
-        alt="Servicios profesionales de plomería en CDMX, reparando fugas y tuberías de agua en un hogar">
+        alt="Servicios profesionales de plomería reparando fugas y tuberías de agua en un hogar">
 
-
-      <!-- INICIA EL CÓDIGO DEL BOTÓN -->
-        <a 
-            href="https://wa.me/5215519148472?text=Hola,%20vi%20su%20página%20web%20y%20me%20gustaría%20saber%20más%20de%20sus%20servicios%20y%20costos%20de%20plomería." 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="botonContactoRapido animate-pulse-border"
-        >
-            <!-- Icono de Plomería (llave inglesa) -->
-            <i class="fas fa-wrench fa-lg mr-3"></i>
-            <span>Servicios de Plomería</span>
-        </a>
+      <!-- INICIA EL CÓDIGO DEL BOTÓN ACTUALIZADO A WHATSAPP -->
+      <a 
+          href="https://wa.me/5215519148472?text=Hola,%20vi%20su%20página%20web%20y%20me%20gustaría%20agendar%20una%20visita%20para%20servicios%20de%20plomería." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="botonContactoRapido animate-pulse-border"
+      >
+          <!-- Icono de WhatsApp en blanco -->
+          <i class="fab fa-whatsapp fa-lg mr-3" style="color: #ffffff;"></i>
+          <span>Agendar Visita</span>
+      </a>
       <!-- TERMINA EL CÓDIGO DEL BOTÓN -->
 
-
       <section id="Nuestra-Experiencia">
-        <h2>Nuestra Experiencia</h2>
+        <h2>Nuestra Experiencia Técnica</h2>
         <p>
-          En <strong>Mantonet</strong>, somos tus <strong>expertos en plomería en la Ciudad de México</strong>.
-          Resolvemos <strong>todo tipo de problemas hidráulicos</strong>, desde <strong>fugas de agua</strong> y
-          <strong>taponamientos en tuberías</strong> hasta <strong>instalaciones hidráulicas nuevas</strong> y
-          <strong>mantenimiento preventivo</strong>. Ofrecemos servicios de <strong>fontanería a domicilio</strong> para
-          casas, departamentos, oficinas y comercios en toda la CDMX, con especial atención a zonas céntricas y de alta
-          demanda como el Centro Histórico, Roma, Condesa, Polanco y más.
+          En <strong>Mantonet</strong>, somos especialistas en resolver todo tipo de problemas hidráulicos con precisión técnica. Desde fugas de agua ocultas y taponamientos en tuberías hasta instalaciones hidráulicas nuevas y mantenimientos preventivos.
         </p>
         <p>
-          Utilizamos <strong>materiales de alta calidad</strong> y <strong>herramientas especializadas</strong> de
-          última generación (ej. <strong>equipo de termografía para detección de fugas no invasivas</strong>) para
-          garantizar la <strong>durabilidad</strong> de nuestras reparaciones e instalaciones. Al finalizar, te
-          entregamos un <strong>informe técnico detallado</strong> con el diagnóstico preciso, fotografías del antes y
-          después, y <strong>recomendaciones personalizadas</strong> para prevenir futuros problemas.
+          Nuestra capacidad está respaldada por especialistas con <strong>más de 30 años de experiencia</strong> en el sector de la construcción y mantenimiento. Utilizamos materiales de alta calidad y herramientas de última generación (como equipos de termografía para detección de fugas no invasivas) para garantizar la durabilidad de nuestras intervenciones.
         </p>
         <p>
-          Con <strong>más de 200 servicios de plomería ejecutados con satisfacción garantizada</strong> en la CDMX, tu
-          tranquilidad es nuestra prioridad. Todos nuestros trabajos cuentan con una <strong>garantía sobre el servicio
-            realizado</strong>.
+          No trabajamos con suposiciones. Al finalizar cada proyecto, entregamos un <strong>diagnóstico profesional, una bitácora técnica y un reporte fotográfico</strong> detallado del antes y el después, junto con recomendaciones personalizadas. Con cientos de servicios ejecutados con satisfacción en la zona metropolitana, tu inversión cuenta con total transparencia y garantía.
         </p>
+      </section>
+
+      <!-- Nueva sección estratégica para SEO Local con redacción neutral -->
+      <section id="Seccion-Zonas-Cobertura" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h2>Nuestra Cobertura</h2>
+        <p>
+          Contamos con la infraestructura y logística necesarias para brindar atención oportuna, ya sea para emergencias o proyectos programados en:
+        </p>
+        <ul>
+          <li><strong>Estado de México:</strong> Tlalnepantla de Baz, Naucalpan de Juárez, Atizapán de Zaragoza y municipios aledaños.</li>
+          <li><strong>Zonas Residenciales:</strong> Ejecutamos trabajos limpios y profesionales en Condado de Sayavedra, Club de Golf Bellavista, Las Arboledas, Ciudad Satélite, Lomas Verdes y Zona Esmeralda.</li>
+          <li><strong>Ciudad de México:</strong> Brindamos servicio a departamentos, oficinas y comercios en Polanco, Lomas de Chapultepec, la Roma, la Condesa, el Centro Histórico y diversas alcaldías.</li>
+        </ul>
       </section>
 
       <section id="Nuestros-Servicios">
         <h2>Nuestros Servicios de Plomería Incluyen:</h2>
         <ul>
-          <li><strong>Reparación de Fugas de Agua:</strong> <strong>Detección precisa</strong> y reparación de fugas
-            <strong>visibles y ocultas</strong> en tuberías, paredes, techos, y pisos.
-          </li>
-          <li><strong>Destapacaños y Desazolve:</strong> Solución <strong>profesional y eficiente</strong> a
-            taponamientos en lavabos, WC, regaderas, coladeras y sistemas de desagüe principales.</li>
-          <li><strong>Instalaciones Hidráulicas Nuevas:</strong> Diseño e implementación de <strong>sistemas de plomería
-              completos</strong> para construcciones residenciales y comerciales, incluyendo redes de agua potable y
-            drenaje.</li>
-          <li><strong>Mantenimiento Preventivo:</strong> Revisión periódica, limpieza de tuberías y <strong>optimización
-              de sistemas hidráulicos</strong> para prolongar su vida útil y evitar problemas mayores.</li>
-          <li><strong>Instalación y Reparación de Boilers y Calentadores de Agua:</strong> Servicio completo para
-            calentadores de paso, de depósito y solares.</li>
-          <li><strong>Servicios de Plomería de Urgencia en CDMX:</strong> <strong>Atención rápida</strong> para
-            emergencias de plomería que requieren <strong>solución inmediata</strong>.</li>
+          <li><strong>Reparación de Fugas de Agua:</strong> <strong>Detección precisa</strong> y reparación de fugas visibles y ocultas en tuberías, paredes, techos, y pisos.</li>
+          <li><strong>Destapacaños y Desazolve:</strong> Solución profesional a taponamientos en lavabos, WC, regaderas, coladeras y sistemas de desagüe.</li>
+          <li><strong>Instalaciones Hidráulicas Nuevas:</strong> Diseño e implementación de sistemas de plomería completos para construcciones residenciales y comerciales.</li>
+          <li><strong>Mantenimiento Preventivo:</strong> Revisión periódica y optimización de sistemas hidráulicos para prolongar su vida útil.</li>
+          <li><strong>Instalación y Reparación de Boilers:</strong> Servicio técnico especializado para calentadores de paso, de depósito y solares.</li>
         </ul>
       </section>
 
       <section id="Como-Trabajamos">
-        <h2>¿Cómo Solicitas un Servicio de Plomería con Mantonet?</h2>
+        <h2>¿Cómo Solicitas un Servicio con Mantonet?</h2>
         <ol>
-          <li><strong>Visita</strong> Realizamos una <strong>visita técnica</strong> en tu domicilio
-            o negocio en CDMX para identificar el problema o evaluar tu instalación.</li>
-          <li><strong>Propuesta Detallada:</strong> Te enviamos una <strong>cotización transparente y sin
-              compromiso</strong> con materiales sugeridos, tiempos de ejecución y <strong>costos claros y
-              competitivos</strong>.</li>
-          <li><strong>Agenda tu Servicio:</strong> Agendamos la intervención profesional en el <strong>horario que mejor
-              te convenga</strong>, con la flexibilidad que necesitas.</li>
-          <li><strong>Ejecución Profesional:</strong> Nuestro equipo realiza el trabajo con <strong>máxima
-              limpieza</strong>, revisa a fondo la funcionalidad y te entrega tu <strong>informe final de
-              servicio</strong> para tu tranquilidad.</li>
+          <li><strong>Visita Técnica:</strong> Realizamos una evaluación en tu domicilio o negocio para identificar la raíz del problema.</li>
+          <li><strong>Propuesta Detallada:</strong> Te enviamos una cotización transparente con materiales sugeridos, tiempos de ejecución y costos claros.</li>
+          <li><strong>Ejecución Profesional:</strong> Agendamos la intervención y nuestro equipo realiza el trabajo con máxima limpieza y seguridad.</li>
+          <li><strong>Reporte Final:</strong> Verificamos la funcionalidad y te entregamos tu <strong>informe fotográfico y técnico</strong> para tu tranquilidad.</li>
         </ol>
       </section>
-
-
 
       <section id="Section-Faq">
         <h2>Preguntas Frecuentes sobre Plomería y Mantenimiento</h2>
@@ -252,17 +256,12 @@
           </summary>
           <i class="fa-solid fa-volume-high boton-voz" title="Leer en voz alta"></i>
           <div class="contenido-desplegable">
-            <p>El mantenimiento preventivo de plomería es clave para la salud de tu propiedad. Sus principales
-              beneficios son:</p>
+            <p>El mantenimiento preventivo de plomería es clave para la salud de tu propiedad. Sus principales beneficios son:</p>
             <ul>
-              <li><strong>Evitar reparaciones costosas:</strong> Detectar una pequeña fuga o un inicio de obstrucción es
-                mucho más barato que reparar una <strong>tubería rota</strong> o una inundación.</li>
-              <li><strong>Proteger la estructura del inmueble:</strong> Las fugas de agua no detectadas pueden causar
-                <strong>humedad, moho y daños estructurales</strong> graves a largo plazo.</li>
-              <li><strong>Asegurar la calidad del agua:</strong> Un sistema de tuberías limpio y sin sarro garantiza que
-                el agua que usas sea segura y libre de contaminantes.</li>
-              <li><strong>Ahorrar agua y dinero:</strong> Un simple goteo en un inodoro o una llave puede desperdiciar
-                miles de litros al año, impactando directamente tu <strong>recibo de agua</strong>.</li>
+              <li><strong>Evitar reparaciones costosas:</strong> Detectar una pequeña fuga o inicio de obstrucción es mucho más barato que reparar una tubería rota.</li>
+              <li><strong>Proteger la estructura:</strong> Las fugas de agua no detectadas causan humedad, moho y daños estructurales graves.</li>
+              <li><strong>Asegurar la calidad del agua:</strong> Un sistema limpio garantiza agua segura y libre de contaminantes.</li>
+              <li><strong>Ahorrar agua y dinero:</strong> Un goteo puede desperdiciar miles de litros al año, impactando tu recibo.</li>
             </ul>
           </div>
         </details>
@@ -275,68 +274,50 @@
           <i class="fa-solid fa-volume-high boton-voz" title="Leer en voz alta"></i>
           <div class="contenido-desplegable">
             <h4>El Enemigo Silencioso: Cómo Descubrir Fugas No Visibles</h4>
-            <p>Las fugas ocultas pueden pasar desapercibidas por meses. Presta atención a estas señales de alerta:</p>
+            <p>Las fugas ocultas pueden pasar desapercibidas por meses. Presta atención a estas señales:</p>
             <ul>
-              <li><strong>Aumento inesperado en el recibo de agua</strong> sin un cambio en tus hábitos de consumo.</li>
-              <li><strong>Manchas de humedad, moho o pintura descascarada</strong> en paredes, techos o pisos.</li>
-              <li><strong>Sonido constante de agua corriendo</strong> incluso cuando todas las llaves están cerradas.
-              </li>
-              <li><strong>Baja presión de agua</strong> repentina en toda la propiedad.</li>
-              <li><strong>Zonas del jardín o piso exterior inusualmente húmedas</strong> o con crecimiento de vegetación
-                más verde.</li>
-              <li>El <strong>medidor de agua sigue girando</strong> aunque no estés usando agua en ese momento.</li>
+              <li><strong>Aumento inesperado en el recibo de agua.</strong></li>
+              <li><strong>Manchas de humedad, moho o pintura descascarada</strong> en paredes o pisos.</li>
+              <li><strong>Sonido constante de agua corriendo</strong> con llaves cerradas.</li>
+              <li><strong>Baja presión de agua repentina.</strong></li>
+              <li><strong>Zonas del piso exterior inusualmente húmedas.</strong></li>
+              <li>El <strong>medidor de agua sigue girando</strong> sin uso activo.</li>
             </ul>
           </div>
         </details>
 
         <details class="servicio-desplegable">
           <summary>
-            <h3><i class="fa-solid fa-flask-vial"></i>¿Es recomendable usar destapacaños químicos para las tuberías?
-            </h3>
+            <h3><i class="fa-solid fa-flask-vial"></i>¿Es recomendable usar destapacaños químicos para las tuberías?</h3>
             <span class="indicador-desplegable"></span>
           </summary>
           <i class="fa-solid fa-volume-high boton-voz" title="Leer en voz alta"></i>
           <div class="contenido-desplegable">
-            <h4>Antes de Vaciar la Botella: Los Riesgos de los Químicos</h4>
-            <p>Aunque parecen una solución rápida, los destapacaños químicos deben usarse con extrema precaución o
-              evitarse por completo. Aquí las razones:</p>
+            <h4>Los Riesgos de los Químicos</h4>
+            <p>Los destapacaños químicos deben evitarse por estas razones:</p>
             <ul>
-              <li><strong>Son altamente corrosivos:</strong> Pueden <strong>dañar y debilitar las tuberías</strong>,
-                especialmente las de metal o PVC antiguo, causando fugas graves a futuro.</li>
-              <li><strong>Peligrosos para la salud:</strong> Sus vapores son tóxicos y el contacto con la piel puede
-                causar quemaduras químicas severas.</li>
-              <li><strong>No siempre solucionan el problema:</strong> Si la obstrucción es sólida (un objeto atorado),
-                el químico no funcionará y se quedará estancado, creando una situación aún más peligrosa.</li>
-              <li><strong>Daño ambiental:</strong> Estos químicos terminan en el sistema de drenaje, afectando el medio
-                ambiente.</li>
+              <li><strong>Son altamente corrosivos:</strong> Dañan y debilitan las tuberías (especialmente las antiguas de metal o PVC).</li>
+              <li><strong>Peligrosos para la salud:</strong> Sus vapores son tóxicos y causan quemaduras.</li>
+              <li><strong>No siempre solucionan la obstrucción sólida,</strong> dejando químico estancado y peligroso en la tubería.</li>
+              <li><strong>Daño ambiental.</strong></li>
             </ul>
-            <p><strong>La mejor opción:</strong> Intentar con métodos mecánicos (bomba destapacaños, alambre) o
-              <strong>llamar a un profesional</strong> que use equipo especializado.</p>
+            <p><strong>La mejor opción:</strong> Llamar a un profesional que use equipo mecánico especializado.</p>
           </div>
         </details>
 
         <details class="servicio-desplegable">
           <summary>
-            <h3><i class="fa-solid fa-building"></i>¿Qué diferencia hay entre plomería residencial y comercial (PYMES)?
-            </h3>
+            <h3><i class="fa-solid fa-building"></i>¿Qué diferencia hay entre plomería residencial y comercial (PYMES)?</h3>
             <span class="indicador-desplegable"></span>
           </summary>
           <i class="fa-solid fa-volume-high boton-voz" title="Leer en voz alta"></i>
           <div class="contenido-desplegable">
-            <h4>No es lo Mismo un Baño que Cien: Plomería para Negocios</h4>
-            <p>Aunque los principios son los mismos, la plomería comercial tiene exigencias mucho mayores:</p>
+            <p>La plomería comercial tiene exigencias mucho mayores:</p>
             <ul>
-              <li><strong>Mayor Demanda y Complejidad:</strong> Las instalaciones comerciales (restaurantes, oficinas,
-                gimnasios) tienen más pisos, más baños y un uso intensivo que requiere <strong>tuberías de mayor
-                  diámetro y durabilidad</strong>.</li>
-              <li><strong>Equipos Especializados:</strong> Los negocios a menudo necesitan <strong>trampas de
-                  grasa</strong> (restaurantes), calentadores de agua industriales, sistemas de bombeo y fluxómetros de
-                alta presión.</li>
-              <li><strong>Normatividad y Códigos:</strong> La plomería comercial debe cumplir con <strong>normas de
-                  sanidad y seguridad más estrictas</strong> que la residencial.</li>
-              <li><strong>Impacto de una Falla:</strong> Una falla de plomería en un negocio no solo es una
-                inconveniencia, significa <strong>pérdida de operaciones y clientes</strong>. Por eso, el mantenimiento
-                preventivo es aún más crítico.</li>
+              <li><strong>Mayor Demanda:</strong> Requiere tuberías de mayor diámetro y durabilidad.</li>
+              <li><strong>Equipos Especializados:</strong> Trampas de grasa, sistemas de bombeo, fluxómetros de alta presión.</li>
+              <li><strong>Normatividad y Códigos:</strong> Estrictas normas de sanidad y seguridad.</li>
+              <li><strong>Impacto de Falla:</strong> Una falla significa pérdida de operaciones y clientes.</li>
             </ul>
           </div>
         </details>
@@ -348,19 +329,14 @@
           </summary>
           <i class="fa-solid fa-volume-high boton-voz" title="Leer en voz alta"></i>
           <div class="contenido-desplegable">
-            <h4>Alarga la Vida de tu Boiler y Ahorra Gas</h4>
-            <p>Un mantenimiento anual a tu calentador es esencial para su eficiencia y seguridad. Debe incluir:</p>
+            <h4>Alarga la Vida de tu Boiler y Optimiza su Consumo</h4>
+            <p>Un mantenimiento profesional es esencial para la eficiencia técnica de tu equipo. Este debe incluir:</p>
             <ol>
-              <li><strong>Drenado del tanque (purgado):</strong> Para eliminar los sedimentos y el
-                <strong>sarro</strong> que se acumulan en el fondo, los cuales reducen la eficiencia y pueden dañar el
-                equipo.</li>
-              <li><strong>Revisión de la válvula de alivio:</strong> Comprobar que esta válvula de seguridad funcione
-                correctamente para liberar presión excesiva.</li>
-              <li><strong>Inspección del termostato:</strong> Asegurarse de que esté calibrado y funcionando a la
-                temperatura adecuada.</li>
-              <li><strong>Limpieza del quemador (en calentadores de gas):</strong> Un quemador sucio produce una llama
-                ineficiente, consumiendo más gas y generando hollín.</li>
-              <li><strong>Revisión de fugas de gas y agua</strong> en todas las conexiones del equipo.</li>
+              <li><strong>Drenado del tanque (uso de la válvula de purga):</strong> En calentadores de depósito, abrimos la válvula de purga para eliminar los sedimentos y el sarro acumulados en el fondo, los cuales reducen la eficiencia térmica y dañan el recubrimiento interno.</li>
+              <li><strong>Revisión de la válvula de alivio:</strong> Comprobamos que esta válvula de seguridad opere correctamente para liberar presiones peligrosas.</li>
+              <li><strong>Calibración de flujo y temperatura:</strong> Aseguramos que el equipo entregue el confort esperado ajustando los controles adecuadamente (reconociendo que, en equipos de paso como los Bosch, el indicador azul regula el caudal de agua y no directamente la sensación térmica).</li>
+              <li><strong>Limpieza del quemador:</strong> Un quemador sucio consume más gas y genera hollín.</li>
+              <li><strong>Inspección de hermeticidad:</strong> Revisión de fugas de agua y gas en todas las conexiones.</li>
             </ol>
           </div>
         </details>
@@ -372,21 +348,16 @@
           </summary>
           <i class="fa-solid fa-volume-high boton-voz" title="Leer en voz alta"></i>
           <div class="contenido-desplegable">
-            <h4>DIY vs. Profesional: No Te Arriesgues</h4>
-            <p>Algunas tareas menores puedes manejarlas, pero en estas situaciones, siempre llama a un experto:</p>
+            <p>En estas situaciones, siempre llama a un experto para evitar riesgos mayores:</p>
             <ul>
               <li><strong>Fugas en tuberías dentro de muros</strong> o bajo el piso.</li>
-              <li><strong>Ausencia total de agua</strong> en la propiedad sin que sea un corte del servicio general.
-              </li>
-              <li><strong>Baja presión de agua generalizada,</strong> ya que puede indicar un problema serio en la línea
-                principal o una fuga grande.</li>
-              <li><strong>Drenajes completamente bloqueados</strong> que no ceden con métodos simples.</li>
-              <li><strong>Olor a gas</strong> cerca del calentador de agua o cualquier línea de gas.</li>
-              <li>Para la <strong>instalación de cualquier aparato nuevo</strong> como un calentador, un lavavajillas o
-                la remodelación de un baño.</li>
+              <li><strong>Ausencia total de agua</strong> en la propiedad (sin reporte de corte del municipio).</li>
+              <li><strong>Baja presión de agua generalizada.</strong></li>
+              <li><strong>Drenajes completamente bloqueados.</strong></li>
+              <li><strong>Olor a gas</strong> cerca del boiler o líneas de suministro.</li>
+              <li>Instalación de nuevos aparatos o remodelación de instalaciones.</li>
             </ul>
-            <p>Recuerda: <strong>Un trabajo mal hecho puede causar una inundación.</strong> La inversión en un
-              profesional es garantía de seguridad y tranquilidad.</p>
+            <p>Recuerda: <strong>Un trabajo mal hecho puede causar una inundación o un accidente grave.</strong></p>
           </div>
         </details>
       </section>
@@ -394,15 +365,8 @@
 
   </div>
   <footer>
-    © 2025 MANTONET. Todos los derechos reservados.</td>
+    © 2026 MANTONET. Todos los derechos reservados.
   </footer>
-
-  <script>
-    function solicitarCotizacion() {
-      // Puedes personalizar esta función para abrir un formulario o enviar un correo
-      alert("Formulario de cotización pronto disponible.");
-    }
-  </script>
 
   <div id="ico_whatsapp"></div>
   <script>
@@ -417,6 +381,26 @@
 
   <script src="/js/details.js"></script>
   <script src="/js/leer.js"></script>
+
+  <!-- Script de Tracking de Visitas Google Apps Script -->
+  <script>
+    // Verifica si está dentro de un iframe
+    const esIframe = window.self !== window.top;
+
+    // Detecta el URL del sitio "padre" si está embebido
+    const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+
+    // Crea imagen invisible para registrar visita con parámetros
+    const img = new Image(1, 1);
+    img.style.display = "none";
+    // Parámetro 'pagina' actualizado a 'Plomeria'
+    img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=Plomeria&origen=" + encodeURIComponent(origen);
+
+    // Muestra en consola la URL para depurar
+    console.log("Cargando imagen de tracking para Plomeria:", img.src);
+
+    document.body.appendChild(img);
+  </script>
 </body>
 
 </html>
