@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+
+  <!-- Título Hyper-Localizado (Atracción Industrial y Residencial Grande) -->
+  <title>Impermeabilización Industrial y Residencial en Tlalnepantla y Satélite | MANTONET</title>
+  
+  <!-- Descripción enfocada en grandes superficies y naves industriales -->
+  <meta name="description"
+    content="Especialistas en impermeabilización de grandes superficies, naves industriales, techos de lámina y residencias en Tlalnepantla, Satélite y Cuautitlán. Garantía de 10 años.">
+
+  <!-- Fav icons -->
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-180x180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-192x192.png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+  <!-- URL Canonical -->
+  <link rel="canonical" href="https://www.mantonet.com/a-Imper-Satelite-Tlalnepantla.html" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/c_estilos.css" />
+  <link rel="stylesheet" href="/c_textos.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-24X52F10Q2');
+  </script>
+
+  <!-- Schema Markup Quirúrgico (Atrapando el corredor industrial/residencial norte) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "MANTONET - Impermeabilización Industrial y Residencial",
+      "description": "Empresa especializada en la impermeabilización de naves industriales, bodegas, techos de lámina y grandes superficies residenciales en Tlalnepantla, Ciudad Satélite y Cuautitlán.",
+      "image": "https://www.mantonet.com/img/Carrusel-Imper.png",
+      "@id": "https://www.mantonet.com",
+      "url": "https://www.mantonet.com/a-Imper-Satelite-Tlalnepantla.html",
+      "telephone": "+525519148472",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tlalnepantla de Baz",
+        "addressRegion": "Estado de México",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Tlalnepantla de Baz" },
+        { "@type": "Neighborhood", "name": "Ciudad Satélite" },
+        { "@type": "Neighborhood", "name": "Lomas Verdes" },
+        { "@type": "Neighborhood", "name": "Echegaray" },
+        { "@type": "Neighborhood", "name": "Viveros de la Loma" },
+        { "@type": "City", "name": "Cuautitlán Izcalli" },
+        { "@type": "City", "name": "Naucalpan de Juárez" }
+      ],
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios para Grandes Superficies y Naves",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilización de Naves Industriales" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento y Sellado de Techos de Lámina" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilización de Grandes Superficies Residenciales" } }
+        ]
+      }
+    }
+  </script>
+
+  <script>
+    function mostrarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.add("activo");
+    }
+
+    function ocultarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.remove("activo");
+    }
+  </script>
+</head>
+
+<body>
+  <div class="contenedorPrincipal">
+    <header class="encabezado">
+      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <button class="linkLogoInicio" onclick="window.location.href='/a-MenuServicios.html'"
+        title="Volver al inicio de servicios Mantonet">
+        <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("/logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              });
+          });
+        </script>
+      </button>
+    </header>
+
+    <div id="menu-container"></div>
+    <script>
+      fetch("/b-menu-desplegable.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+
+    <main>
+
+      <!-- H1 Orientado al cliente con grandes metrajes -->
+      <h1>Impermeabilización para Naves Industriales y Grandes Residencias</h1>
+
+      <!-- Atributo poster añadido para mejorar el LCP -->
+      <video class="imagenWeb" autoplay muted loop playsinline poster="/img/placeholder-video.jpg" src="/img/Banner-Web-Aplicacion-Rollo.webm" aria-label="Aplicación profesional de impermeabilizante">
+        Tu navegador no soporta videos WebM.
+      </video>
+
+      <!-- Botón Contacto a WhatsApp -->
+      <a 
+          href="https://wa.me/5215519148472?text=Hola,%20busco%20una%20cotización%20técnica%20para%20impermeabilizar%20mi%20bodega/casa%20en%20la%20zona%20norte." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="botonContactoRapido animate-pulse-border"
+      >
+          <i class="fab fa-whatsapp fa-lg mr-3" style="color: #ffffff;"></i>
+          <span>Cotizar Proyecto o Nave Industrial</span>
+      </a>
+
+      <!-- Sección de Autoridad Técnica para Altos Metrajes -->
+      <section id="Nuestra-Experiencia">
+        <h2>Soluciones de Alto Rendimiento para Grandes Superficies</h2>
+        <p>
+          El corredor norte <strong>(Tlalnepantla, Naucalpan y Cuautitlán)</strong> concentra la mayor cantidad de naves industriales, bodegas logísticas y residencias con azoteas de gran formato (Ciudad Satélite, Lomas Verdes). Las filtraciones en estas áreas no solo son una molestia, sino un riesgo directo para inventarios, maquinaria y patrimonio.
+        </p>
+        <p>
+          En <strong>MANTONET</strong>, contamos con la infraestructura y la experiencia de más de 30 años para ejecutar proyectos de alto metraje. Somos expertos en el <strong>tratamiento de techos de lámina</strong> (pijas, traslapes y oxidación), <strong>sellado de canalones pluviales</strong> y aplicación de sistemas robustos sobre losas de concreto masivas.
+        </p>
+        <p>
+          Ya sea mediante la termofusión de <strong>Manto Prefabricado pesado</strong> o recubrimientos especializados para techumbres metálicas, garantizamos que el agua no detendrá tus operaciones. Entregamos un diagnóstico estructural detallado, bitácora fotográfica de avance y una <strong>garantía por escrito de hasta 10 años</strong>.
+        </p>
+      </section>
+
+      <!-- Cobertura Explícita (Las palabras clave que pescarán el tráfico de empresas y casas grandes) -->
+      <section id="Seccion-Zonas-Cobertura" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h2>Cobertura Estratégica en el Corredor Norte</h2>
+        <p>
+          Atendemos con rapidez operativa y capacidad técnica a parques industriales, bodegas, comercios y zonas residenciales consolidadas en:
+        </p>
+        <ul>
+          <li><strong>Zonas Industriales:</strong> Centro de Tlalnepantla, Zonas Industriales de Naucalpan y Cuautitlán Izcalli.</li>
+          <li><strong>Zonas Residenciales:</strong> Ciudad Satélite, Lomas Verdes, Echegaray, Viveros de la Loma, Boulevares, Valle Dorado.</li>
+          <li><strong>Municipios:</strong> Tlalnepantla de Baz, Naucalpan de Juárez, Atizapán y Cuautitlán.</li>
+        </ul>
+      </section>
+
+      <section id="Como-Trabajamos">
+        <h2>Ingeniería y Logística para tu Proyecto</h2>
+        <ol>
+          <li>Realizamos una <strong>inspección técnica en sitio</strong> para evaluar traslapes, bajadas pluviales, canalones y el estado del sustrato (concreto o lámina).</li>
+          <li>Entregamos un <strong>diagnóstico y presupuesto escalable</strong>, detallando los sistemas a utilizar (mantos asfálticos, poliuretanos o acrílicos de uso rudo).</li>
+          <li>Ejecutamos la obra con estricto apego a las normas de seguridad (uso de arneses, equipo de protección) y sin interrumpir tus operaciones comerciales.</li>
+          <li>Te otorgamos tu <strong>Garantía Real por Escrito</strong> respaldando nuestra calidad técnica.</li>
+        </ol>
+      </section>
+
+      <!-- FAQ Orientada a bodegas, láminas y grandes superficies -->
+      <section id="Section-Faq">
+        <h2>Preguntas Frecuentes sobre Naves y Grandes Superficies</h2>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-industry"></i>Tengo una nave con techo de lámina galvanizada. ¿Cómo solucionan las goteras?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Sellado Integral de Pijas y Traslapes</h4>
+            <p>En techumbres de lámina, las filtraciones casi siempre ocurren por la dilatación térmica de las uniones y el desgaste de las pijas (tornillería). En MANTONET aplicamos un sistema de <strong>tratamiento puntual</strong>: cambiamos o sellamos cada pija con poliuretano, reforzamos los traslapes horizontales y verticales, y recubrimos con sistemas especiales que además reducen el calor interior.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-water"></i>¿Qué pasa si mis canalones se desbordan o filtran agua?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Rehabilitación de Canalones Pluviales</h4>
+            <p>Los canalones son el "Talón de Aquiles" de bodegas y residencias grandes. Realizamos limpieza profunda, tratamiento anticorrosivo (si son metálicos), recubrimiento interior con impermeabilizantes de alta resistencia al encharcamiento y garantizamos el correcto flujo hacia las bajadas de agua pluvial.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-hard-hat"></i>¿Cuentan con el equipo de seguridad para trabajos en altura?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Seguridad y Profesionalismo</h4>
+            <p>Totalmente. Entendemos las exigencias de seguridad de las empresas y parques industriales. Nuestro personal está capacitado y cuenta con el <strong>Equipo de Protección Personal (EPP)</strong> necesario, incluyendo arneses y líneas de vida para trabajos seguros en techos de naves o edificios altos.</p>
+          </div>
+        </details>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>© 2026 MANTONET. Todos los derechos reservados.</footer>
+
+  <!-- Icono Whats General -->
+  <div id="ico_whatsapp"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/b-boton-whats.html")
+        .then((res) => res.text())
+        .then((svg) => {
+          document.getElementById("ico_whatsapp").innerHTML = svg;
+        });
+    });
+  </script>
+
+  <script src="/js/details.js"></script>
+  <script src="/js/leer.js"></script>
+
+  <!-- Script de Tracking de Visitas Google Apps Script -->
+  <script>
+    const esIframe = window.self !== window.top;
+    const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+    const img = new Image(1, 1);
+    img.style.display = "none";
+    // Parámetro 'pagina' actualizado para rastrear el sector industrial y norte
+    img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=Imper_SateliteTlalnepantla&origen=" + encodeURIComponent(origen);
+    document.body.appendChild(img);
+  </script>
+
+</body>
+
+</html>

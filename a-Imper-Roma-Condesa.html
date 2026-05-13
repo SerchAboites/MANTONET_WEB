@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+
+  <!-- Título Hyper-Localizado (Lo que lee Google primero) -->
+  <title>Impermeabilización de Edificios en Roma, Condesa y Juárez | MANTONET</title>
+  
+  <!-- Descripción enfocada en el dolor del Escuadrón 1 -->
+  <meta name="description"
+    content="Especialistas en impermeabilización de edificios antiguos, reparación de grietas y humedad en muros colindantes en Roma, Condesa, Juárez y Escandón. Garantía de 10 años.">
+
+  <!-- Fav icons -->
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-180x180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-192x192.png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+  <!-- URL Canonical para evitar contenido duplicado -->
+  <link rel="canonical" href="https://www.mantonet.com/a-Imper-Roma-Condesa.html" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/c_estilos.css" />
+  <link rel="stylesheet" href="/c_textos.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-24X52F10Q2');
+  </script>
+
+  <!-- Schema Markup Quirúrgico (Atrapando las colonias del Escuadrón 1) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "MANTONET - Impermeabilización y Mantenimiento de Edificios",
+      "description": "Servicio técnico de impermeabilización especializado en el retiro de sistemas viejos, tratamiento de grietas y humedad en muros colindantes para edificios y departamentos.",
+      "image": "https://www.mantonet.com/img/Carrusel-Imper.png",
+      "@id": "https://www.mantonet.com",
+      "url": "https://www.mantonet.com/a-Imper-Roma-Condesa.html",
+      "telephone": "+525519148472",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        { "@type": "Neighborhood", "name": "Roma Norte" },
+        { "@type": "Neighborhood", "name": "Roma Sur" },
+        { "@type": "Neighborhood", "name": "Condesa" },
+        { "@type": "Neighborhood", "name": "Hipódromo" },
+        { "@type": "Neighborhood", "name": "Juárez" },
+        { "@type": "Neighborhood", "name": "San Rafael" },
+        { "@type": "Neighborhood", "name": "Santa María la Ribera" },
+        { "@type": "Neighborhood", "name": "Escandón" }
+      ],
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Especializados Centro CDMX",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilización de Edificios Antiguos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retiro de Chapopote y Sistemas Viejos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tratamiento de Humedad en Muros Colindantes" } }
+        ]
+      }
+    }
+  </script>
+
+  <script>
+    function mostrarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.add("activo");
+    }
+
+    function ocultarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.remove("activo");
+    }
+  </script>
+</head>
+
+<body>
+  <div class="contenedorPrincipal">
+    <header class="encabezado">
+      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <button class="linkLogoInicio" onclick="window.location.href='/a-MenuServicios.html'"
+        title="Volver al inicio de servicios Mantonet">
+        <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("/logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              });
+          });
+        </script>
+      </button>
+    </header>
+
+    <div id="menu-container"></div>
+    <script>
+      fetch("/b-menu-desplegable.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+
+    <main>
+
+      <!-- H1 Directo al problema de la zona -->
+      <h1>Impermeabilización para Edificios Antiguos y Departamentos</h1>
+
+      <!-- Atributo poster añadido para mejorar el LCP -->
+      <video class="imagenWeb" autoplay muted loop playsinline poster="/img/placeholder-video.jpg" src="/img/Banner-Web-Aplicacion-Rollo.webm" aria-label="Aplicación profesional de impermeabilizante">
+        Tu navegador no soporta videos WebM.
+      </video>
+
+      <!-- Botón Contacto a WhatsApp -->
+      <a 
+          href="https://wa.me/5215519148472?text=Hola,%20vi%20su%20página%20de%20impermeabilización%20y%20tengo%20un%20problema%20de%20humedad%20en%20mi%20edificio." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="botonContactoRapido animate-pulse-border"
+      >
+          <i class="fab fa-whatsapp fa-lg mr-3" style="color: #ffffff;"></i>
+          <span>Agendar Diagnóstico Técnico</span>
+      </a>
+
+      <!-- Sección de Autoridad Técnica y Dolor Específico de la Zona -->
+      <section id="Nuestra-Experiencia">
+        <h2>Soluciones a Filtraciones Complejas y Muros Colindantes</h2>
+        <p>
+          Los edificios y departamentos en el corredor central de la ciudad enfrentan retos únicos: <strong>múltiples capas de chapopote viejo, grietas por asentamientos estructurales y humedad severa en muros que colindan con vecinos</strong>.
+        </p>
+        <p>
+          En <strong>MANTONET</strong>, contamos con 30 años de experiencia técnica. No sobreponemos material nuevo encima del problema. Nuestro proceso incluye el <strong>retiro de impermeabilizantes inservibles</strong>, la apertura y sellado de grietas vivas con cementos plásticos, y el tratamiento de bajadas de agua obstruidas.
+        </p>
+        <p>
+          Protegemos tu patrimonio utilizando <strong>Manto Prefabricado termo-fusionado</strong>, el único sistema capaz de soportar los movimientos de un edificio antiguo sin fracturarse. Garantizamos nuestro trabajo por escrito de 5 a 10 años, entregando un <strong>reporte fotográfico</strong> detallado de los vicios ocultos reparados.
+        </p>
+      </section>
+
+      <!-- Cobertura Explícita (Las palabras clave que pescarán el tráfico) -->
+      <section id="Seccion-Zonas-Cobertura" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h2>Cobertura Estratégica Centro-Poniente</h2>
+        <p>
+          Brindamos atención técnica especializada y mantenimiento a consorcios, administradores de condominios y particulares en:
+        </p>
+        <ul>
+          <li><strong>Corredor Roma-Condesa:</strong> Roma Norte, Roma Sur, Condesa, Hipódromo Condesa.</li>
+          <li><strong>Corredor Histórico:</strong> Colonia Juárez, Cuauhtémoc, San Rafael, Santa María la Ribera.</li>
+          <li><strong>Zonas Aledañas:</strong> Escandón, San Miguel Chapultepec y Anzures.</li>
+        </ul>
+      </section>
+
+      <section id="Como-Trabajamos">
+        <h2>Metodología de Trabajo Profesional</h2>
+        <ol>
+          <li>Realizamos una <strong>visita de inspección técnica</strong> para evaluar el estado de la losa, chaflanes y muros colindantes.</li>
+          <li>Presentamos un <strong>diagnóstico y cotización transparente</strong>, explicando si es necesario retirar material viejo o si la losa requiere nivelación.</li>
+          <li>Ejecutamos la obra con limpieza y equipo de seguridad, respetando los reglamentos internos de tu condominio.</li>
+          <li>Te entregamos tu <strong>Garantía por Escrito</strong> junto con una bitácora fotográfica del proceso.</li>
+        </ol>
+      </section>
+
+      <!-- FAQ Optimizada para el SEO (La técnica que le robamos a tu competidor) -->
+      <section id="Section-Faq">
+        <h2>Preguntas Frecuentes sobre Problemas en Edificios</h2>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-house-crack"></i>¿Qué pasa si mi vecino no impermeabiliza su lado del muro?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Protección de Muros Colindantes</h4>
+            <p>Es un problema muy común en la Roma y Condesa. Si el agua entra por la pared del vecino, aplicamos un remate tipo "babero" con manto prefabricado sobre la barda divisoria, sellando la junta de dilatación para evitar que el agua cruce hacia tu propiedad por capilaridad.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-layer-group"></i>¿Tienen que arrancar todo el impermeabilizante viejo?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Depende del Diagnóstico</h4>
+            <p>Si el sistema anterior está abolsado, podrido o es chapopote agrietado, <strong>sí es obligatorio retirarlo</strong> hasta llegar a la losa firme. Poner material nuevo sobre una base suelta es tirar el dinero. Nuestro diagnóstico te dirá exactamente qué requiere tu azotea.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-regular fa-calendar-check"></i>¿Cuánto tiempo de garantía entregan?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Garantía Técnica por Escrito</h4>
+            <p>Ofrecemos pólizas de <strong>garantía de 5 hasta 10 años</strong>, respaldadas por un contrato de prestación de servicios. Esta garantía ampara tanto la calidad del Manto Prefabricado como la excelencia de nuestra mano de obra.</p>
+          </div>
+        </details>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>© 2026 MANTONET. Todos los derechos reservados.</footer>
+
+  <!-- Icono Whats General -->
+  <div id="ico_whatsapp"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/b-boton-whats.html")
+        .then((res) => res.text())
+        .then((svg) => {
+          document.getElementById("ico_whatsapp").innerHTML = svg;
+        });
+    });
+  </script>
+
+  <script src="/js/details.js"></script>
+  <script src="/js/leer.js"></script>
+
+  <!-- Script de Tracking de Visitas Google Apps Script -->
+  <script>
+    const esIframe = window.self !== window.top;
+    const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+    const img = new Image(1, 1);
+    img.style.display = "none";
+    // Parámetro 'pagina' actualizado para rastrear esta zona
+    img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=Imper_RomaCondesa&origen=" + encodeURIComponent(origen);
+    document.body.appendChild(img);
+  </script>
+
+</body>
+
+</html>

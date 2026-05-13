@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+
+  <!-- Título Hyper-Localizado (Atracción de Zonas Altas y Boscosas) -->
+  <title>Impermeabilización de Muros de Contención y Terrenos | MANTONET</title>
+  
+  <!-- Descripción enfocada en el dolor de la humedad negativa y contacto con tierra -->
+  <meta name="description"
+    content="Especialistas en humedad por tierra, muros de contención y barreras anti-raíz para residencias en Zona Esmeralda, Interlomas y La Herradura. Diagnóstico profesional.">
+
+  <!-- Fav icons -->
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-180x180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-192x192.png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+  <!-- URL Canonical -->
+  <link rel="canonical" href="https://www.mantonet.com/a-Imper-Esmeralda-Interlomas.html" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/c_estilos.css" />
+  <link rel="stylesheet" href="/c_textos.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-24X52F10Q2');
+  </script>
+
+  <!-- Schema Markup Quirúrgico (Atrapando zonas boscosas y de montaña) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "MANTONET - Impermeabilización contra Humedad Extrema",
+      "description": "Especialistas en la solución de humedad por contacto con tierra, filtraciones en sótanos y muros de contención para residencias en zonas boscosas de CDMX y Estado de México.",
+      "image": "https://www.mantonet.com/img/Carrusel-Imper.png",
+      "@id": "https://www.mantonet.com",
+      "url": "https://www.mantonet.com/a-Imper-Esmeralda-Interlomas.html",
+      "telephone": "+525519148472",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Estado de México",
+        "addressRegion": "Edo. Méx.",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        { "@type": "Neighborhood", "name": "Zona Esmeralda" },
+        { "@type": "Neighborhood", "name": "Condado de Sayavedra" },
+        { "@type": "Neighborhood", "name": "Interlomas" },
+        { "@type": "Neighborhood", "name": "La Herradura" },
+        { "@type": "Neighborhood", "name": "Tecamachalco" },
+        { "@type": "Neighborhood", "name": "Desierto de los Leones" },
+        { "@type": "Neighborhood", "name": "Club de Golf Bellavista" }
+      ],
+      "priceRange": "$$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Soluciones para Humedad Negativa y Cimientos",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilización de Muros de Contención" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas Anti-Raíz para Jardines" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aislamiento Térmico y Solución a Humedad por Capilaridad" } }
+        ]
+      }
+    }
+  </script>
+
+  <script>
+    function mostrarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.add("activo");
+    }
+
+    function ocultarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.remove("activo");
+    }
+  </script>
+</head>
+
+<body>
+  <div class="contenedorPrincipal">
+    <header class="encabezado">
+      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <button class="linkLogoInicio" onclick="window.location.href='/a-MenuServicios.html'"
+        title="Volver al inicio de servicios Mantonet">
+        <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("/logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              });
+          });
+        </script>
+      </button>
+    </header>
+
+    <div id="menu-container"></div>
+    <script>
+      fetch("/b-menu-desplegable.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+
+    <main>
+
+      <!-- H1 Orientado al dolor de la tierra y los desniveles -->
+      <h1>Impermeabilización para Muros de Contención y Zonas Boscosas</h1>
+
+      <!-- Atributo poster añadido para mejorar el LCP -->
+      <video class="imagenWeb" autoplay muted loop playsinline poster="/img/placeholder-video.jpg" src="/img/Banner-Web-Aplicacion-Rollo.webm" aria-label="Aplicación profesional de impermeabilizante">
+        Tu navegador no soporta videos WebM.
+      </video>
+
+      <!-- Botón Contacto a WhatsApp -->
+      <a 
+          href="https://wa.me/5215519148472?text=Hola,%20tengo%20problemas%20de%20humedad%20en%20muros/cimientos%20y%20me%20gustaría%20agendar%20una%20visita." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="botonContactoRapido animate-pulse-border"
+      >
+          <i class="fab fa-whatsapp fa-lg mr-3" style="color: #ffffff;"></i>
+          <span>Agendar Diagnóstico por Humedad</span>
+      </a>
+
+      <!-- Sección de Autoridad Técnica para Problemas Complejos -->
+      <section id="Nuestra-Experiencia">
+        <h2>Protección contra Humedad Subterránea y Frío Extremo</h2>
+        <p>
+          Las residencias ubicadas en topografías con desnivel o rodeadas de naturaleza (como <strong>Zona Esmeralda, Condado de Sayavedra e Interlomas</strong>) enfrentan un enemigo silencioso: la humedad de la tierra. Los muros de contención que están en contacto directo con la ladera sufren de presión hidrostática, lo que provoca desprendimiento de pintura, salitre y hongos en el interior de sótanos y habitaciones.
+        </p>
+        <p>
+          En <strong>MANTONET</strong>, no tratamos estos problemas con pintura impermeabilizante común porque sabemos que no funcionará. Nuestras soluciones técnicas abordan el problema de raíz (presión negativa y positiva). Utilizamos <strong>Manto Prefabricado con barreras anti-raíz</strong> para jardines, cementosos osmóticos para sótanos y membranas de poliuretano de alta resistencia.
+        </p>
+        <p>
+          Con más de 30 años de experiencia, protegemos no solo la estructura de tu casa, sino también la salud de tu familia al erradicar el moho. Entregamos un diagnóstico profesional y <strong>garantía por escrito de hasta 10 años</strong>.
+        </p>
+      </section>
+
+      <!-- Cobertura Explícita (Zonas de montaña y alta plusvalía) -->
+      <section id="Seccion-Zonas-Cobertura" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h2>Nuestra Cobertura en Zonas de Montaña y Residenciales</h2>
+        <p>
+          Atendemos de manera especializada las problemáticas de humedad y aislamiento en las zonas de mayor exigencia topográfica:
+        </p>
+        <ul>
+          <li><strong>Corredor Norte (Estado de México):</strong> Zona Esmeralda, Condado de Sayavedra, Chiluca, Club de Golf Bellavista.</li>
+          <li><strong>Corredor Poniente:</strong> Interlomas, La Herradura, Tecamachalco, Bosques de las Lomas.</li>
+          <li><strong>Corredor Sur (Bosque):</strong> Desierto de los Leones, San Bartolo Ameyalco, Ajusco.</li>
+        </ul>
+      </section>
+
+      <section id="Como-Trabajamos">
+        <h2>Metodología para Problemas de Tierra y Desnivel</h2>
+        <ol>
+          <li>Realizamos un <strong>diagnóstico estructural in-situ</strong> para identificar el nivel freático y los puntos de filtración por capilaridad o presión hidrostática.</li>
+          <li>Diseñamos una <strong>solución definitiva</strong> que puede incluir excavación perimetral (si es requerida), aplicación de sistemas cementosos o instalación de mantos prefabricados anti-raíz.</li>
+          <li>Ejecutamos el trabajo asegurando la protección de las áreas verdes y los acabados de tu residencia.</li>
+          <li>Te entregamos tu <strong>Garantía Real por Escrito</strong>, asegurando el bloqueo total del paso de agua y humedad hacia el interior.</li>
+        </ol>
+      </section>
+
+      <!-- FAQ Orientada a sótanos, salitre y muros enterrados -->
+      <section id="Section-Faq">
+        <h2>Preguntas Frecuentes sobre Humedad y Cimientos</h2>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-mountain"></i>Mi pared está bajo tierra y la pintura se bota constantemente. ¿Tiene solución?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Solución al Salitre y Humedad Negativa</h4>
+            <p>Ese es el clásico problema de "humedad por presión negativa". La humedad de la tierra intenta entrar a tu casa. Pintar encima solo oculta el problema unos meses. La solución profesional requiere raspar hasta llegar al muro firme y aplicar <strong>sistemas cementosos cristalizantes o impermeabilizantes osmóticos</strong> que bloquean el agua desde el interior del poro del concreto.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-leaf"></i>Tengo un jardín sobre el techo (Azotea Verde). ¿Cómo evitan que las raíces rompan la losa?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Barreras Anti-Raíz y Manto Prefabricado</h4>
+            <p>Para azoteas verdes o jardineras, un impermeabilizante estándar no es suficiente, ya que las raíces lo penetran fácilmente. Instalamos un sistema de <strong>Manto Prefabricado con protección especial anti-raíz</strong> aplicado con termofusión, diseñado específicamente para resistir la inmersión constante en tierra húmeda y la fuerza de las plantas.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-snowflake"></i>Mi casa es muy fría en invierno por estar en zona de bosque. ¿Esto ayuda?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Aislamiento Térmico Eficiente</h4>
+            <p>Sí. Además de bloquear el agua, los sistemas de impermeabilización modernos que utilizamos reducen la pérdida térmica. Al sellar correctamente la losa y eliminar la humedad de los muros (que enfría drásticamente los interiores), tu casa conservará mejor el calor durante el invierno, reduciendo el gasto en calefacción.</p>
+          </div>
+        </details>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>© 2026 MANTONET. Todos los derechos reservados.</footer>
+
+  <!-- Icono Whats General -->
+  <div id="ico_whatsapp"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/b-boton-whats.html")
+        .then((res) => res.text())
+        .then((svg) => {
+          document.getElementById("ico_whatsapp").innerHTML = svg;
+        });
+    });
+  </script>
+
+  <script src="/js/details.js"></script>
+  <script src="/js/leer.js"></script>
+
+  <!-- Script de Tracking de Visitas Google Apps Script -->
+  <script>
+    const esIframe = window.self !== window.top;
+    const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+    const img = new Image(1, 1);
+    img.style.display = "none";
+    // Parámetro 'pagina' actualizado para rastrear clientes de zonas altas
+    img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=Imper_EsmeraldaInterlomas&origen=" + encodeURIComponent(origen);
+    document.body.appendChild(img);
+  </script>
+
+</body>
+
+</html>

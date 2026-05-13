@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <!-- Páginas Principales -->
    <url>
       <loc>https://www.mantonet.com/index.html</loc>
-      <lastmod>2025-06-12</lastmod>
+      <lastmod>2026-05-12</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://www.mantonet.com/a-MenuServicios.html</loc>
-      <lastmod>2025-06-12</lastmod>
+      <lastmod>2026-05-12</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.9</priority>
    </url>
+   <url>
+      <loc>https://www.mantonet.com/a-SomosMantonet.html</loc>
+      <lastmod>2026-05-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <!-- Servicios Base -->
    <url>
       <loc>https://www.mantonet.com/a-Electricidad.html</loc>
       <lastmod>2026-05-12</lastmod>
@@ -37,14 +47,39 @@
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://www.mantonet.com/a-SomosMantonet.html</loc>
-      <lastmod>2025-06-12</lastmod>
+      <loc>https://www.mantonet.com/a-Reparaciones-Esteticas.html</loc>
+      <lastmod>2026-05-12</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
+      <priority>0.8</priority>
    </url>
 
+   <!-- Páginas de Estrategia: Escuadrones de Impermeabilización -->
    <url>
-      <loc>https://www.mantonet.com/html/a-Reparaciones-Esteticas.html</loc>
+      <loc>https://www.mantonet.com/a-Imper-Roma-Condesa.html</loc>
+      <lastmod>2026-05-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.mantonet.com/a-Imper-Narvarte-Del-Valle.html</loc>
+      <lastmod>2026-05-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.mantonet.com/a-Imper-Polanco-Lomas.html</loc>
+      <lastmod>2026-05-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.mantonet.com/a-Imper-Satelite-Tlalnepantla.html</loc>
+      <lastmod>2026-05-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.mantonet.com/a-Imper-Esmeralda-Interlomas.html</loc>
       <lastmod>2026-05-12</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>

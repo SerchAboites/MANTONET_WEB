@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+
+  <!-- Título Hyper-Localizado (Atracción Premium) -->
+  <title>Impermeabilización Residencial Premium en Polanco y Lomas | MANTONET</title>
+  
+  <!-- Descripción enfocada en el cliente High-Ticket -->
+  <meta name="description"
+    content="Sistemas de impermeabilización estética y aislamiento para residencias de alta gama en Polanco, Lomas de Chapultepec y Santa Fe. Cero demolición, limpieza y 10 años de garantía.">
+
+  <!-- Fav icons -->
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-180x180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-192x192.png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
+
+  <!-- URL Canonical -->
+  <link rel="canonical" href="https://www.mantonet.com/a-Imper-Polanco-Lomas.html" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/c_estilos.css" />
+  <link rel="stylesheet" href="/c_textos.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-24X52F10Q2');
+  </script>
+
+  <!-- Schema Markup Quirúrgico (Atrapando las colonias del Escuadrón 3) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "MANTONET - Impermeabilización Premium y Arquitectónica",
+      "description": "Especialistas en impermeabilización residencial de alta gama, sistemas de poliuretano y solución de filtraciones complejas para casas y corporativos en Polanco y Lomas de Chapultepec.",
+      "image": "https://www.mantonet.com/img/Carrusel-Imper.png",
+      "@id": "https://www.mantonet.com",
+      "url": "https://www.mantonet.com/a-Imper-Polanco-Lomas.html",
+      "telephone": "+525519148472",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        { "@type": "Neighborhood", "name": "Polanco" },
+        { "@type": "Neighborhood", "name": "Lomas de Chapultepec" },
+        { "@type": "Neighborhood", "name": "Bosques de las Lomas" },
+        { "@type": "Neighborhood", "name": "Santa Fe" },
+        { "@type": "Neighborhood", "name": "Lomas de Tecamachalco" },
+        { "@type": "Neighborhood", "name": "Jardines del Pedregal" }
+      ],
+      "priceRange": "$$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Residenciales Premium",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas Impermeables de Poliuretano" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilización Estética sin Demolición" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Protección de Terrazas de Alta Gama" } }
+        ]
+      }
+    }
+  </script>
+
+  <script>
+    function mostrarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.add("activo");
+    }
+
+    function ocultarMenu() {
+      const menu = document.querySelector(".menuNavegacion");
+      if(menu) menu.classList.remove("activo");
+    }
+  </script>
+</head>
+
+<body>
+  <div class="contenedorPrincipal">
+    <header class="encabezado">
+      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <button class="linkLogoInicio" onclick="window.location.href='/a-MenuServicios.html'"
+        title="Volver al inicio de servicios Mantonet">
+        <div style="background: none; width: 100%; height: 100%" id="logo-container"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("/logoMantonet.svg")
+              .then((res) => res.text())
+              .then((svg) => {
+                document.getElementById("logo-container").innerHTML = svg;
+              });
+          });
+        </script>
+      </button>
+    </header>
+
+    <div id="menu-container"></div>
+    <script>
+      fetch("/b-menu-desplegable.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+
+    <main>
+
+      <!-- H1 Orientado a la confianza y la estética -->
+      <h1>Impermeabilización Residencial Premium y Arquitectónica</h1>
+
+      <!-- Atributo poster añadido para mejorar el LCP -->
+      <video class="imagenWeb" autoplay muted loop playsinline poster="/img/placeholder-video.jpg" src="/img/Banner-Web-Aplicacion-Rollo.webm" aria-label="Aplicación profesional de impermeabilizante">
+        Tu navegador no soporta videos WebM.
+      </video>
+
+      <!-- Botón Contacto a WhatsApp -->
+      <a 
+          href="https://wa.me/5215519148472?text=Hola,%20busco%20un%20servicio%20profesional%20de%20impermeabilización%20para%20mi%20residencia/oficina." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="botonContactoRapido animate-pulse-border"
+      >
+          <i class="fab fa-whatsapp fa-lg mr-3" style="color: #ffffff;"></i>
+          <span>Agendar Diagnóstico Privado</span>
+      </a>
+
+      <!-- Sección de Autoridad Técnica y Cuidado Estético -->
+      <section id="Nuestra-Experiencia">
+        <h2>Protección Definitiva con Cero Demolición</h2>
+        <p>
+          Las residencias y corporativos en zonas como <strong>Polanco, Lomas de Chapultepec y Santa Fe</strong> requieren un trato meticuloso. Entendemos que una filtración no solo daña la estructura, sino que pone en riesgo acabados arquitectónicos, pisos de madera fina, obras de arte y diseño de interiores.
+        </p>
+        <p>
+          En <strong>MANTONET</strong>, llevamos más de 30 años ofreciendo soluciones de impermeabilización con el más alto rigor técnico y estético. <strong>Nuestro enfoque es la mínima invasión:</strong> evitamos demoliciones innecesarias en terrazas o techos complejos, implementando sistemas modernos como recubrimientos de <strong>Poliuretano y Manto Prefabricado</strong> de última generación que se adaptan a la geometría de tu hogar.
+        </p>
+        <p>
+          Trabajamos con personal altamente calificado, garantizando extrema limpieza durante la ejecución. Entregamos un <strong>diagnóstico profesional</strong> de viabilidad y, al finalizar, una bitácora técnica con reporte fotográfico que avala tu <strong>garantía por escrito de hasta 10 años</strong>. Tu tranquilidad y la estética de tu propiedad están aseguradas.
+        </p>
+      </section>
+
+      <!-- Cobertura Explícita (Las palabras clave que pescarán el tráfico Premium) -->
+      <section id="Seccion-Zonas-Cobertura" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h2>Cobertura Exclusiva en Zonas Residenciales y Corporativas</h2>
+        <p>
+          Llevamos nuestro servicio técnico especializado y de máxima discreción a las zonas de mayor exigencia arquitectónica en la Ciudad de México:
+        </p>
+        <ul>
+          <li><strong>Corredor Poniente:</strong> Polanco, Lomas de Chapultepec, Bosques de las Lomas.</li>
+          <li><strong>Corredor Santa Fe:</strong> Zona de Corporativos y Residenciales en Santa Fe y Lomas de Tecamachalco.</li>
+          <li><strong>Corredor Sur:</strong> Jardines del Pedregal y San Ángel.</li>
+        </ul>
+      </section>
+
+      <section id="Como-Trabajamos">
+        <h2>El Estándar MANTONET para Proyectos de Alta Gama</h2>
+        <ol>
+          <li>Agendamos una <strong>visita técnica discreta</strong> para evaluar las filtraciones sin afectar la rutina de tu hogar o corporativo.</li>
+          <li>Diseñamos una <strong>propuesta a la medida</strong>, seleccionando los materiales que mejor protejan tus acabados (sistemas transparentes, poliuretanos o mantos asfálticos pesados).</li>
+          <li>Garantizamos una ejecución impecable: nuestro personal protege pisos, muros y muebles, entregando un área de trabajo perfectamente limpia cada día.</li>
+          <li>Te otorgamos tu <strong>Garantía Real por Escrito</strong>, asegurando el valor y la protección de tu patrimonio a largo plazo.</li>
+        </ol>
+      </section>
+
+      <!-- FAQ Orientada al cuidado estético y la durabilidad extrema -->
+      <section id="Section-Faq">
+        <h2>Preguntas Frecuentes sobre Impermeabilización Especializada</h2>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-gem"></i>Tengo filtraciones en una terraza con loseta o mármol. ¿Deben romper el piso?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Sistemas de Cero Demolición</h4>
+            <p>En la gran mayoría de los casos, <strong>NO es necesario romper los acabados finos</strong>. Utilizamos sistemas de impermeabilización base poliuretano transparente o recubrimientos especializados que se aplican directamente sobre la loseta, mármol o cantera existente. Esto sella las filtraciones manteniendo intacta la estética original de tu terraza o balcón.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-temperature-arrow-down"></i>¿Los sistemas impermeables también ofrecen aislamiento térmico?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Confort Térmico Incluido</h4>
+            <p>Sí. Especialmente en residencias grandes donde el control de temperatura es vital, aplicamos sistemas que funcionan como reflectantes solares (aislamiento térmico). Esto reduce significativamente la temperatura interior de las habitaciones superiores durante el verano, optimizando el uso del aire acondicionado.</p>
+          </div>
+        </details>
+
+        <details class="servicio-desplegable">
+          <summary>
+            <h3><i class="fa-solid fa-shield-halved"></i>¿Qué protección y seguridad ofrecen durante los trabajos?</h3>
+            <span class="indicador-desplegable"></span>
+          </summary>
+          <div class="contenido-desplegable">
+            <h4>Profesionalismo y Confianza</h4>
+            <p>La seguridad de tu familia y propiedad es nuestra prioridad. Contamos con protocolos estrictos: nuestro personal está plenamente identificado, trabajamos con extremas medidas de limpieza para proteger tus interiores y todo el proceso está avalado por un contrato formal y un diagnóstico técnico transparente que elimina cualquier vicio oculto.</p>
+          </div>
+        </details>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>© 2026 MANTONET. Todos los derechos reservados.</footer>
+
+  <!-- Icono Whats General -->
+  <div id="ico_whatsapp"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/b-boton-whats.html")
+        .then((res) => res.text())
+        .then((svg) => {
+          document.getElementById("ico_whatsapp").innerHTML = svg;
+        });
+    });
+  </script>
+
+  <script src="/js/details.js"></script>
+  <script src="/js/leer.js"></script>
+
+  <!-- Script de Tracking de Visitas Google Apps Script -->
+  <script>
+    const esIframe = window.self !== window.top;
+    const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+    const img = new Image(1, 1);
+    img.style.display = "none";
+    // Parámetro 'pagina' actualizado para rastrear tráfico High-Ticket
+    img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=Imper_PolancoLomas&origen=" + encodeURIComponent(origen);
+    document.body.appendChild(img);
+  </script>
+
+</body>
+
+</html>
