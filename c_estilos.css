@@ -103,6 +103,44 @@ button {
 }
 
 
+.contenedor-botones-escuadrones {
+  padding: 20px;
+}
+
+.botonEscuadron {
+  background-color: #a32a2a; /* Color claro para que no compita con el botón de WhatsApp */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  flex: 1 1 250px; /* Se ajustan al ancho de la pantalla */
+  max-width: 320px;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.botonEscuadron i {
+  color: #ff4545; /* El rojo de tu marca Mantonet */
+}
+
+.botonEscuadron:hover {
+  background-color: #750101;
+  color: white;
+  border-color: #ff4545;
+  transform: translateY(-3px);
+}
+
+.botonEscuadron:hover i {
+  color: white;
+}
+
+
 
 @keyframes redPulse {
   0% {
