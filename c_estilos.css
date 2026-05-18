@@ -343,7 +343,7 @@ section {
 }
 
 .imagenWeb {
-  width: 70%;
+  width: 30%;
   border-radius: 10px;
 }
 
@@ -375,6 +375,242 @@ section {
   opacity: 1;
 }
 
+/* --- CONTENEDOR GRID DE TARJETAS --- */
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin: 30px 0;
+  box-sizing: border-box;
+}
+
+/* --- DISEÑO INTEGRAL DE LA TARJETA --- */
+.tarjeta-visual {
+  background: #2b2b2b !important; /* Un gris sutil que resalta del fondo general */
+  border: 1px solid #444 !important;
+  border-top: 5px solid #a32a2a !important; /* Tu rojo institucional en el borde superior */
+  padding: 30px 25px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Efecto Hover interactivo */
+.tarjeta-visual:hover {
+  transform: translateY(-5px) !important;
+  border-top-color: #cf3838 !important; /* Rojo más vivo al pasar el cursor */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- RESET COMPLETO DE ICONOS DENTRO DE LA TARJETA --- */
+.tarjeta-visual i {
+  font-size: 2.2rem !important;
+  color: #cf3838 !important;
+  margin: 0 0 15px 0 !important;
+  display: inline-block !important;
+  position: static !important; /* Cancela cualquier absoluto de otros estilos */
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+}
+
+/* --- RESET COMPLETO DE H3 (Elimina el cuadro blanco gigante) --- */
+.tarjeta-visual h3 {
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  width: auto !important;
+  font-size: 1.25rem !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px 0 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+/* --- RESET COMPLETO DE P (Controla tamaño y espaciados internos) --- */
+.tarjeta-visual p {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: #d1d1d1 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+/* --- LOGÍSTICA PARA TUS VIDEOS EN FORMATO VERTICAL --- */
+.contenedor-videos-duo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.video-tarjeta {
+  width: 100%;
+  max-width: 310px;
+  border-radius: 15px;
+  border: 2px solid #a32a2a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  background: #000;
+}
+
+.video-tarjeta video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* --- CONTENEDOR GRID PARA EL PROCEDIMIENTO --- */
+.grid-pasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin: 30px 0;
+  box-sizing: border-box;
+}
+
+/* --- TARJETA DE PASO (DISEÑO DIFERENTE CON ACENTO LATERAL) --- */
+.tarjeta-paso {
+  background: #262626 !important; /* Tono gris oscuro consistente */
+  border: 1px solid #3a3a3a !important;
+  border-left: 5px solid #a32a2a !important; /* Acento lateral izquierdo para diferenciarlo de la otra sección */
+  padding: 30px 25px !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  transition: transform 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hover interactivo para los pasos */
+.tarjeta-paso:hover {
+  transform: translateY(-5px) !important;
+  border-left-color: #cf3838 !important; /* Rojo más vivo al pasar el cursor */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Contenedor interno superior para Icono + Número de paso */
+.tarjeta-paso .encabezado-paso {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 20px !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+/* Iconos de los pasos */
+.tarjeta-paso i {
+  font-size: 2rem !important;
+  color: #cf3838 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  position: static !important;
+  transform: none !important;
+  background: none !important;
+}
+
+/* Burbuja con el número secuencial del paso */
+.badge-paso {
+  background: #3a3a3a !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  border: 1px solid #555 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Reset estricto del H3 del paso */
+.tarjeta-paso h3 {
+  display: block !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  width: auto !important;
+  font-size: 1.2rem !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin: 0 0 10px 0 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+/* Reset estricto del P descriptivo */
+.tarjeta-paso p {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: #cccccc !important;
+  margin: 0 !important;
+  text-align: left !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+
+/* --- CONTENEDOR ANCHO PARA EL CONTROL DE AUDIO --- */
+.control-audio-container {
+  width: 95% !important; /* Mismo ancho exacto que configuramos para tu h1 */
+  margin: 30px auto 15px auto !important; /* Centrado perfecto con márgenes limpios */
+  box-sizing: border-box !important;
+}
+
+/* --- BOTÓN ESTILO BARRA PREMIUM --- */
+.botonAudioControl {
+  width: 100% !important; /* Ocupa todo el ancho del contenedor */
+  background: #383838 !important; /* El mismo gris claro de tu h1 para homogeneidad */
+  border: 1px solid #444 !important;
+  border-left: 6px solid #a32a2a !important; /* Acento rojo grueso en el lateral izquierdo */
+  color: #ffffff !important;
+  padding: 14px 30px !important; /* Altura esbelta y elegante */
+  border-radius: 8px !important;
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* Centra el texto e icono dentro de la barra */
+  gap: 12px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  box-sizing: border-box !important;
+}
+
+/* Efecto interactivo al pasar el mouse */
+.botonAudioControl:hover {
+  background: #424242 !important;
+  border-left-color: #cf3838 !important; /* Rojo más vivo */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
 
 
 
@@ -556,5 +792,134 @@ section {
     margin-top: 30px;
     border-radius: 30px;
   }
+
+  /* ========================================================================== */
+  /* ADAPTACIÓN MÓVIL: TARJETAS (POR QUÉ ELEGIRNOS Y PROCEDIMIENTO)             */
+  /* ========================================================================== */
+
+  /* Forzar a que las cuadrículas se vuelvan una sola columna limpia */
+  .grid-tarjetas, 
+  .grid-pasos {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    width: 100% !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Ajustar espacios internos de las tarjetas en celular */
+  .tarjeta-visual, 
+  .tarjeta-paso {
+    padding: 50px 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Escalar los iconos para que se vean proporcionales */
+  .tarjeta-visual i, 
+  .tarjeta-paso i {
+    font-size: 4.5rem !important;
+    margin-bottom: 25px !important;
+  }
+
+  /* Ajustar los títulos de las tarjetas al tamaño móvil de tu marca */
+  .tarjeta-visual h3, 
+  .tarjeta-paso h3 {
+    font-size: 44px !important;
+    line-height: 60px !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+  }
+
+  /* Ajustar los párrafos internos al estándar de 45px de tu hoja de textos */
+  .tarjeta-visual p, 
+  .tarjeta-paso p {
+    font-size: 38px !important;
+    line-height: 58px !important;
+    text-align: left !important;
+  }
+
+  /* Alinear la sección de número de paso e icono en celular */
+  .tarjeta-paso .encabezado-paso {
+    margin-bottom: 30px !important;
+  }
+
+  /* Escalar la burbuja del número de paso (Paso 1, Paso 2, etc.) */
+  .badge-paso {
+    font-size: 28px !important;
+    padding: 8px 24px !important;
+    border-radius: 40px !important;
+  }
+
+ /* ========================================================================== */
+  /* ADAPTACIÓN MÓVIL: SECCIONES DE UBICACIONES (ULTRA COMPACTAS)               */
+  /* ========================================================================== */
+
+  /* Ajustes para la lista de Cobertura */
+  #Seccion-Zonas-Cobertura ul {
+    padding-left: 50px !important;
+    margin: 30px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #Seccion-Zonas-Cobertura li {
+    margin-bottom: 35px !important;
+    line-height: 65px !important;
+  }
+
+  /* Ajustes para el contenedor de los Escuadrones */
+  #Zonas-Especializadas .contenedor-botones-escuadrones {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important; /* Reduce la separación vertical entre botones */
+    width: 100% !important;
+    padding: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reducción estricta del tamaño de las cajas rojas */
+  .botonEscuadron {
+    font-size: 34px !important; /* Letra sutilmente más pequeña para permitir el encogimiento */
+    min-height: 0 !important; /* Eliminamos cualquier restricción de altura mínima */
+    max-width: 90% !important;
+    width: 100% !important;
+    padding: 10px 30px !important; /* Colchón vertical mínimo de 10px arriba y abajo */
+    border-radius: 14px !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Reducción del icono para que no ensanche la tarjeta verticalmente */
+  .botonEscuadron i {
+    font-size: 36px !important; /* El icono ahora se alinea al tamaño del texto */
+    margin-right: 15px !important;
+    display: inline-block !important;
+  }
+
+
+
+/* Ajuste de márgenes del contenedor en celular */
+  body .control-audio-container {
+    width: 95% !important;
+    margin: 50px auto 25px auto !important;
+  }
+
+  /* Escalado de la barra de audio en pantallas de alta densidad */
+  body .control-audio-container .botonAudioControl {
+    font-size: 34px !important;
+    line-height: 52px !important;
+    padding: 24px 40px !important;
+    border-radius: 14px !important;
+    border-left-width: 10px !important; /* Borde izquierdo más grueso y visible en móvil */
+    gap: 18px !important;
+  }
+
+  body .control-audio-container .botonAudioControl i {
+    font-size: 36px !important;
+    line-height: 1 !important;
+  }
+
+  
 
 }

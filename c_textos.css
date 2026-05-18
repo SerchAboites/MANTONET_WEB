@@ -4,17 +4,90 @@ body {
   font-weight: 300;
 }
 
+/* --- H1 ESTILO TARJETA CON ONDA Y RESPLANDOR PERIMETRAL DINÁMICO --- */
 h1 {
-  font-size: 28px;
-  background: darkred;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 40px;
-  line-height: 40px;
-  text-align: center;
-  width: 95%;
+  font-size: 28px !important;
+  color: #ffffff !important;
+  padding: 20px 40px !important;
+  margin: 40px auto !important;
+  line-height: 44px !important;
+  text-align: center !important;
+  width: 95% !important;
+  box-sizing: border-box !important;
+  
+  /* Aislamiento estructural */
+  position: relative !important;
+  z-index: 1 !important;
+  background: #383838 !important; /* Gris claro base */
+  border-radius: 12px !important;
+  overflow: hidden !important; /* Recorta el excedente de la onda interna */
+  
+  /* Animación del resplandor exterior sincronizada en tiempo con el giro */
+  animation: h1ResplandorExterior 4s linear infinite !important;
 }
 
+/* CAPA 1: La onda de luz perimetral (Se elimina el blanco para usar el gris base) */
+h1::before {
+  content: '' !important;
+  position: absolute !important;
+  width: 2000px !important;
+  height: 2000px !important;
+  top: calc(50% - 1000px) !important;
+  left: calc(50% - 1000px) !important;
+  
+  /* Gradiente cónico con camuflaje gris en los tramos intermedios */
+  background: conic-gradient(
+    from 0deg,
+    #a32a2a 0%,
+    #383838 25%,
+    #cf3838 50%,
+    #383838 75%,
+    #a32a2a 100%
+  ) !important;
+  
+  animation: h1OndaGiratoria 4s linear infinite !important;
+  z-index: -2 !important;
+}
+
+/* CAPA 2: Máscara central interna que define el grosor del contorno */
+h1::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 4px !important; /* Grosor de la línea perimetral */
+  background: #383838 !important;
+  border-radius: 8px !important;
+  z-index: -1 !important;
+}
+
+/* --- ANIMACIÓN 1: ROTACIÓN DE LA ONDA INTERNA --- */
+@keyframes h1OndaGiratoria {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- ANIMACIÓN 2: MOVIMIENTO DEL RESPLANDOR EXTERIOR (SIGUE A LOS SEGMENTOS ROJOS) --- */
+@keyframes h1ResplandorExterior {
+  0%, 100% {
+    /* Los segmentos rojos inician arriba y abajo */
+    box-shadow: 0px -15px 25px rgba(207, 56, 56, 0.6), 0px 15px 25px rgba(207, 56, 56, 0.6) !important;
+  }
+  25% {
+    /* La onda gira 90 grados: el resplandor se desplaza a los laterales (derecha e izquierda) */
+    box-shadow: 15px 0px 25px rgba(207, 56, 56, 0.6), -15px 0px 25px rgba(207, 56, 56, 0.6) !important;
+  }
+  50% {
+    /* La onda gira 180 grados: el resplandor vuelve de forma invertida a vertical */
+    box-shadow: 0px 15px 25px rgba(207, 56, 56, 0.6), 0px -15px 25px rgba(207, 56, 56, 0.6) !important;
+  }
+  75% {
+    /* La onda gira 270 grados: el resplandor se mueve a los laterales inversos */
+    box-shadow: -15px 0px 25px rgba(207, 56, 56, 0.6), 15px 0px 25px rgba(207, 56, 56, 0.6) !important;
+  }
+}
 
 h2 {
   display: flex;
@@ -341,15 +414,19 @@ i {
 
 
 
-  h1 {
-    font-size: 50px;
-    background: darkred;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 40px 40px 30px 40px;
-    line-height: 80px;
-
+h1 {
+    font-size: 46px !important;
+    line-height: 70px !important;
+    padding: 35px 25px !important;
+    margin: 60px auto 40px auto !important;
   }
+  
+  h1::after {
+    inset: 6px !important; /* Mantiene la onda nítida en pantallas de alta densidad */
+    border-radius: 6px !important;
+  }
+  
+
 
   h2 {
     font-size: 50px;
