@@ -1,16 +1,15 @@
-# Mantonet - Mantenimiento y Construcción en CDMX
+# Mantonet - Servicios de Mantenimiento y Construcción
 
-> Mantonet ofrece servicios profesionales de mantenimiento residencial y comercial, impermeabilización, electricidad, plomería, pintura y albañilería en la Ciudad de México y Área Metropolitana.
+> Mantonet ofrece servicios profesionales de mantenimiento general, impermeabilizaciones, electricidad, plomería, pintura y remodelaciones en la Ciudad de México y Área Metropolitana.
 
-## Servicios Principales
-- **Impermeabilizaciones:** Aplicación de impermeabilizante acrílico y asfáltico, sellado de losas, reparación de goteras y filtraciones.
-- **Pintura Profesional:** Interiores y exteriores, preparación de superficies, acabados finos y herrería.
-- **Electricidad:** Cableado, colocación de centros de carga, instalación de lámparas, contactos y corrección de cortocircuitos.
-- **Plomería:** Detección de fugas de agua y gas, cambio de tuberías, bombas de agua, calentadores y tinacos.
-- **Instalación y Remodelación:** Armado de muebles, colocación de repisas, herrajes y cancelería.
+## Servicios
+- [Impermeabilizaciones Expertas](https://mantonet.com/a-Imper.html): Aplicación de impermeabilizante acrílico, asfáltico y sellado de filtraciones.
+- [Pintura Profesional](https://mantonet.com/a-Pintura.html): Aplicación de pintura para interiores, exteriores y herrería.
+- [Electricidad Residencial y Comercial](https://mantonet.com/a-Electricidad.html): Circuitos eléctricos, centros de carga e iluminación.
+- [Plomería Especializada](https://mantonet.com/a-Plomeria.html): Reparación de fugas, bombas de agua, calentadores y tuberías.
+- [Albañilería y Remodelaciones](https://mantonet.com/html/a-Reparaciones-Esteticas.html): Colocación de muebles, resanes y propuestas de obra menor.
 
-## Información de Contacto
-- **Teléfono directo:** +52 55 1914 8472
-- **WhatsApp:** https://wa.me/5215519148472
-- **Correo Electrónico:** contacto.mantonet@gmail.com
-- **Zona de Cobertura:** Ciudad de México y Área Metropolitana (Naucalpan, Tlalnepantla, Huixquilucan, Atizapán).
+## Canales de Contacto
+- [Cotizar por WhatsApp](https://wa.me/5215519148472): Atención directa e inmediata para presupuestos.
+- [Llamada Telefónica](tel:+5215519148472): Línea de atención para emergencias y servicios.
+- [Sitio Web Oficial](https://mantonet.com/): Página principal de Mantonet.
