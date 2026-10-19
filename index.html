@@ -40,11 +40,25 @@
 
     <style>
         /* Clases utilitarias reemplazando cdn.tailwindcss.com */
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; }
-        .max-w-full { max-width: 100%; }
-        .p-4 { padding: 1rem; }
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .max-w-full {
+            max-width: 100%;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
 
         /* Estilos base */
         body {
@@ -84,7 +98,8 @@
             border-color: darkred;
         }
 
-        header, main {
+        header,
+        main {
             width: 100%;
             max-width: 1000px;
             text-align: center;
@@ -187,8 +202,13 @@
         }
 
         .botonMenu .icono {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
             margin-right: 30px;
             font-size: 40px;
+            line-height: 1;
+            text-align: center;
         }
 
         .botonMenu:hover {
@@ -204,7 +224,8 @@
             display: block;
         }
 
-        path, polygon {
+        path,
+        polygon {
             fill: none;
             stroke: white;
             stroke-width: 1.7;
@@ -214,7 +235,9 @@
         }
 
         @keyframes draw {
-            to { stroke-dashoffset: 0; }
+            to {
+                stroke-dashoffset: 0;
+            }
         }
 
         .seo-content {
@@ -288,17 +311,22 @@
         }
 
         @keyframes scroll-left {
-            from { transform: translateX(0%); }
-            to { transform: translateX(calc(-1 * (300px + 1rem) * 5)); }
+            from {
+                transform: translateX(0%);
+            }
+
+            to {
+                transform: translateX(calc(-1 * (300px + 1rem) * 5));
+            }
         }
 
         .logoIndex {
             width: 50%;
+            min-height: 90px;
+            /* Reserva el espacio exacto del logo */
             display: flex;
             justify-content: center;
             align-items: center;
-            background: none;
-            height: auto;
             margin-top: 15px;
             margin-bottom: 15px;
         }
@@ -317,7 +345,8 @@
             -webkit-appearance: none;
         }
 
-        summary::-webkit-details-marker, summary::marker {
+        summary::-webkit-details-marker,
+        summary::marker {
             display: none;
         }
 
@@ -337,7 +366,10 @@
             color: white;
         }
 
-        .indicador-desplegable::after { content: '+'; }
+        .indicador-desplegable::after {
+            content: '+';
+        }
+
         .servicio-desplegable[open] .indicador-desplegable::after {
             content: '-';
             transform: rotate(45deg);
@@ -376,32 +408,85 @@
             .carousel-track video {
                 border-radius: 10px;
             }
+
             .carousel-track a {
                 width: 215px;
                 height: 150px;
                 margin-right: 1rem;
                 border-radius: 10px;
             }
+
             @keyframes scroll-left {
-                from { transform: translateX(0); }
-                to { transform: translateX(calc(-1 * (200px + 1rem) * 5)); }
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(calc(-1 * (200px + 1rem) * 5));
+                }
             }
         }
 
         @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
         (max-width: 1080px) and (min-resolution: 1.8dppx) {
-            .tituloH1 { font-size: 30px; margin-top: 10%; margin-bottom: 8%; }
-            .pContactanos { margin-bottom: 5%; }
-            h1 { font-size: 20px; }
-            h2 { font-size: 1.5em; }
-            p, li { font-size: 1em; }
-            .imgPersonaje { width: 80%; }
-            .botonMenu { font-size: 16px; padding: 10px 15px; border-radius: 15px; max-width: 90%; }
-            .botonMenu .icono { font-size: 30px; margin-right: 20px; }
-            svg { width: 200px; }
-            .menu { display: flex; align-items: center; width: 100%; }
-            .seo-content { width: 90%; padding: 15px; margin-top: 30px; }
-            .logoIndex { width: 80%; }
+            .tituloH1 {
+                font-size: 30px;
+                margin-top: 10%;
+                margin-bottom: 8%;
+            }
+
+            .pContactanos {
+                margin-bottom: 5%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p,
+            li {
+                font-size: 1em;
+            }
+
+            .imgPersonaje {
+                width: 80%;
+            }
+
+            .botonMenu {
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 15px;
+                max-width: 90%;
+            }
+
+            .botonMenu .icono {
+                font-size: 30px;
+                margin-right: 20px;
+            }
+
+            svg {
+                width: 200px;
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+
+            .seo-content {
+                width: 90%;
+                padding: 15px;
+                margin-top: 30px;
+            }
+
+            .logoIndex {
+                width: 80%;
+            }
         }
     </style>
 
@@ -439,7 +524,8 @@
 <body>
     <header>
         <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
-            <a href="a-MenuServicios.html" style="min-width: 100%; display: flex; justify-content: center;" title="Ir al inicio de Mantonet">
+            <a href="a-MenuServicios.html" style="min-width: 100%; display: flex; justify-content: center;"
+                title="Ir al inicio de Mantonet">
                 <div class="logoIndex" id="logo-container"></div>
             </a>
         </div>
@@ -448,36 +534,46 @@
             <div class="carousel-container p-4">
                 <div class="carousel-track">
                     <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata"
+                            src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu
+                            navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu
+                            navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Plomeria.html" title="Ver más sobre Plomería">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu
+                            navegador no soporta videos WebM.</video>
                     </a>
                     <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata"
+                            src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
 
                     <!-- Duplicados para ciclo infinito -->
                     <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata"
+                            src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu
+                            navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu
+                            navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Plomeria.html" title="Ver más sobre Plomería">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu
+                            navegador no soporta videos WebM.</video>
                     </a>
                     <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
+                        <video autoplay muted loop playsinline preload="metadata"
+                            src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                 </div>
             </div>
@@ -487,7 +583,8 @@
     <main>
         <h1 class="tituloH1">Contáctanos | Mantonet</h1>
         <p class="pContactanos">Estamos listos para ayudarte con tus necesidades de mantenimiento.</p>
-        <p class="pContactanos">¡Elige cómo quieres comunicarte con nosotros para ayudarte a solucionar tus problemas de mantenimiento!</p>
+        <p class="pContactanos">¡Elige cómo quieres comunicarte con nosotros para ayudarte a solucionar tus problemas de
+            mantenimiento!</p>
     </main>
 
     <div class="menu">
@@ -521,8 +618,12 @@
     </div>
 
     <div class="seo-content">
-        <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área Metropolitana</h2>
-        <p class="espaciadorDeContenedor">En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y <b>proyectos de impermeabilización</b> en <b>Ciudad de México</b> y su <b>área metropolitana</b>. Contamos con un equipo de profesionales experimentados para ofrecer soluciones integrales a tu hogar o negocio.</p>
+        <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área
+            Metropolitana</h2>
+        <p class="espaciadorDeContenedor">En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y
+            <b>proyectos de impermeabilización</b> en <b>Ciudad de México</b> y su <b>área metropolitana</b>. Contamos
+            con un equipo de profesionales experimentados para ofrecer soluciones integrales a tu hogar o negocio.
+        </p>
 
         <h3>Nuestros Servicios:</h3>
 
@@ -531,8 +632,10 @@
                 <h4>Impermeabilizaciones Expertas</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-                <img class="imgPersonaje" src="img/Gravín-1-1.png" alt="Personaje Gravín de Impermeabilización" width="300" height="300" loading="lazy">
-                <p class="espaciadorDeContenedor">Ofrecemos soluciones duraderas para proteger tu propiedad de la humedad y filtraciones.</p>
+                <img class="imgPersonaje" src="img/Gravín-1-1.png" alt="Personaje Gravín de Impermeabilización"
+                    width="300" height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Ofrecemos soluciones duraderas para proteger tu propiedad de la
+                    humedad y filtraciones.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Aplicación de <b>impermeabilizante acrílico</b> para techos</li>
                     <li>Aplicación de <b>impermeabilizante asfáltico</b> para losas y terrazas</li>
@@ -549,8 +652,10 @@
                 <h4>Pintura Profesional</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-                <img class="imgPersonaje" src="img/Brochín-1-1.png" alt="Personaje Brochín de Pintura" width="300" height="300" loading="lazy">
-                <p class="espaciadorDeContenedor">Preparación de superficies y aplicación de pintura de alta calidad para interiores y exteriores.</p>
+                <img class="imgPersonaje" src="img/Brochín-1-1.png" alt="Personaje Brochín de Pintura" width="300"
+                    height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Preparación de superficies y aplicación de pintura de alta calidad
+                    para interiores y exteriores.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Pintura de interiores y exteriores</li>
                     <li>Preparación de superficies (lijado, resanado)</li>
@@ -568,8 +673,10 @@
                 <h4>Electricidad</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-                <img class="imgPersonaje" src="img/Neutrina-1-1.png" alt="Personaje Neutrina de Electricidad" width="300" height="300" loading="lazy">
-                <p class="espaciadorDeContenedor">Instalación y mantenimiento de sistemas eléctricos, colocación de lámparas, contactos y reparaciones seguras.</p>
+                <img class="imgPersonaje" src="img/Neutrina-1-1.png" alt="Personaje Neutrina de Electricidad"
+                    width="300" height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Instalación y mantenimiento de sistemas eléctricos, colocación de
+                    lámparas, contactos y reparaciones seguras.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Instalación de circuitos eléctricos</li>
                     <li>Mantenimiento y reparación de instalaciones eléctricas</li>
@@ -586,8 +693,10 @@
                 <h4>Plomería</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-                <img class="imgPersonaje" src="img/Tuercas-1-1.png" alt="Personaje Tuercas de Plomería" width="300" height="300" loading="lazy">
-                <p class="espaciadorDeContenedor">Detección y reparación de fugas, instalación de calentadores, tuberías y todo lo relacionado con sistemas hidráulicos.</p>
+                <img class="imgPersonaje" src="img/Tuercas-1-1.png" alt="Personaje Tuercas de Plomería" width="300"
+                    height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Detección y reparación de fugas, instalación de calentadores, tuberías
+                    y todo lo relacionado con sistemas hidráulicos.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Detección y reparación de fugas</li>
                     <li>Instalación y mantenimiento de calentadores de agua</li>
@@ -616,7 +725,8 @@
             </div>
         </details>
 
-        <p class="espaciadorDeContenedor">Ofrecemos <b>servicio profesional a domicilio</b> y estamos comprometidos con la calidad y la satisfacción del cliente.</p>
+        <p class="espaciadorDeContenedor">Ofrecemos <b>servicio profesional a domicilio</b> y estamos comprometidos con
+            la calidad y la satisfacción del cliente.</p>
         <p class="espaciadorDeContenedor">¡Permítenos ayudarte a mantener y mejorar tu propiedad!</p>
     </div>
 
@@ -642,7 +752,7 @@
                     const logoCont = document.getElementById("logo-container");
                     if (logoCont) logoCont.innerHTML = svg;
                 })
-                .catch(() => {});
+                .catch(() => { });
 
             // Si está dentro de iframe
             if (esIframe) {
@@ -704,4 +814,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Mantonet API & Contact Catalog",
+  "description": "Catálogo de servicios de mantenimiento y contacto directo para Mantonet",
+  "provider": {
+    "name": "Mantonet",
+    "url": "https://mantonet.com"
+  },
+  "endpoints": [
+    {
+      "name": "whatsapp_contact",
+      "description": "Canal de cotización y atención al cliente vía WhatsApp",
+      "url": "https://wa.me/5215519148472"
+    },
+    {
+      "name": "phone_call",
+      "description": "Llamada directa para urgencias de mantenimiento",
+      "url": "tel:+5215519148472"
+    }
+  ]
+}
