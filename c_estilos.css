@@ -923,3 +923,122 @@ section {
   
 
 }
+/* Panel de Navegacion Lateral */
+.menuNavegacion {
+  background: rgba(22, 22, 22, 0.96) !important;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  gap: 22px !important;
+  padding: 80px 20px 30px 20px !important;
+  width: 320px !important;
+  max-width: 85vw !important;
+  box-sizing: border-box;
+}
+
+/* Tarjetas dentro del menu lateral */
+.btn-servicio-lateral {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: transparent;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  transition: transform 0.2s ease; flex-shrink: 0;
+  margin-bottom: 10px; /* Space for the character popping out */
+}
+
+.btn-servicio-lateral:hover {
+  transform: scale(1.02);
+}
+
+.btn-servicio-lateral .btn-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 14px;
+  overflow: hidden; /* This clips the polygons inside the SVG to the rounded corners */
+}
+
+.btn-servicio-lateral .btn-text {
+  position: relative;
+  font-family: "Lexend", sans-serif;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+  flex: 1;
+  padding-right: 70px; /* Evita que el texto pise al personaje */
+}
+
+.btn-servicio-lateral .btn-img {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+  height: 95px; /* Mas alto que la tarjeta para que sobresalga */
+  max-width: 80px;
+  z-index: 2;
+  object-fit: contain;
+  filter: drop-shadow(-3px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.btn-servicio-lateral .icono-whatsapp-fa {
+  position: absolute;
+  right: 15px;
+  top: 16px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.btn-servicio-lateral .icono-whatsapp-fa i {
+  color: #ffffff !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+}
+
+
+.cerrar-lateral {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a32a2a;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cerrar-lateral:hover {
+  background: #cf3838;
+  transform: scale(1.05);
+}
+

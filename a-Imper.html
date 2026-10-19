@@ -14,9 +14,17 @@
   <!-- URL unificada sin discrepancias -->
   <link rel="canonical" href="https://mantonet.com/a-imper" />
 
+  <!-- Asegurar fuente Lexend -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="c_estilos.css" />
   <link rel="stylesheet" href="c_textos.css" />
+
+
 
   <!-- Fav icons -->
   <link rel="icon" type="image/png" href="/icons/Favicon-Mantonet-16x16.png" sizes="16x16">
@@ -103,6 +111,182 @@
       }
     }
   </script>
+
+  <style>
+    /* 1. SCROLL SUAVE Y RESET (Menú liberado) */
+    html {
+      scroll-behavior: smooth !important;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      width: 100% !important;
+      margin-top: 0 !important;
+    }
+
+    /* 2. SECCIÓN HERO A PANTALLA COMPLETA */
+    .hero-section {
+      position: relative !important;
+      width: 100% !important;
+      /* Cambiado a 100% para evitar barras horizontales */
+      height: 100vh !important;
+      min-height: 100vh !important;
+      margin: 0 0 40px 0 !important;
+      border-radius: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .hero-bg {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      z-index: 1 !important;
+    }
+
+    .hero-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: rgba(0, 0, 0, 0.6) !important;
+      z-index: 2 !important;
+    }
+
+    .hero-content {
+      position: relative !important;
+      z-index: 3 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 0 20px !important;
+      max-width: 900px !important;
+      width: 100% !important;
+    }
+
+    .hero-content h1 {
+      color: #ffffff !important;
+      font-family: "Lexend", sans-serif !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Restablecer el ancho para el resto de las secciones */
+    main>section:not(.hero-section) {
+      width: 85% !important;
+      max-width: 1200px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      scroll-margin-top: 130px;
+    }
+
+    main>video.imagenWeb {
+      margin-bottom: 20px;
+    }
+
+    /* 3. REPARAR EL BOTÓN CIRCULAR DE MÚSICA */
+    .boton-circular-audio {
+      /* Propiedades para hacerlo sticky abajo a la derecha */
+      position: fixed !important;
+      bottom: 60px !important;
+      right: 25px !important;
+      z-index: 9999 !important;
+      margin: 0 !important;
+      /* Quitamos el auto para que respete las coordenadas */
+
+      /* Propiedades visuales originales */
+      width: 90px !important;
+      height: 90px !important;
+      border-radius: 50% !important;
+      background: rgba(207, 56, 56, 0.75) !important;
+      backdrop-filter: blur(8px) !important;
+      border: none !important;
+      outline: none !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 8px 24px rgba(207, 56, 56, 0.4) !important;
+      transition: transform 0.3s ease, background 0.3s ease !important;
+      padding: 0 !important;
+    }
+
+    .boton-circular-audio:hover {
+      transform: scale(1.1) !important;
+      background: rgba(207, 56, 56, 0.95) !important;
+    }
+
+    .borde-animado-svg {
+      position: absolute !important;
+      top: -5px !important;
+      left: -5px !important;
+      width: calc(100% + 10px) !important;
+      height: calc(100% + 10px) !important;
+      pointer-events: none !important;
+      overflow: visible !important;
+    }
+
+    .borde-animado-svg circle {
+      transform-origin: center !important;
+    }
+
+    .boton-jingle-animado .borde-animado-svg circle {
+      animation: spinnerLine 2s ease-in-out infinite, spinnerRotate 2s linear infinite !important;
+    }
+
+    @keyframes spinnerRotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinnerLine {
+      0% {
+        stroke-dasharray: 10, 300;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 150, 300;
+        stroke-dashoffset: -50;
+      }
+
+      100% {
+        stroke-dasharray: 10, 300;
+        stroke-dashoffset: -280;
+      }
+    }
+
+    .boton-jingle-animado #iconoAudioSvg {
+      animation: latidoIcono 1s ease-in-out infinite alternate !important;
+    }
+
+    @keyframes latidoIcono {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.15);
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -122,7 +306,8 @@
         </script>
       </a>
 
-      <button onclick="mostrarMenu();" class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
+      <button type="button" onclick="event.preventDefault(); event.stopPropagation(); mostrarMenu();"
+        class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -131,7 +316,8 @@
     <nav id="menu-container"></nav>
 
     <script>
-      fetch("b-menu-desplegable.html")
+      // Apuntamos al archivo nuevo para evadir la caché del servidor
+      fetch("b-menu-desplegable.html", { cache: "no-store" })
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("menu-container").innerHTML = data;
@@ -139,20 +325,40 @@
     </script>
     <!-- end menú desplegable -->
 
-    <main>
+    <main class="main-fullscreen">
 
       <!-- H1 ajustado para incluir palabras clave más potentes -->
+      <!-- SECCIÓN HERO LIMPIA (SIN OVERLAY NI TÍTULO) -->
+      <section class="hero-section hero-fullscreen">
+        <img class="hero-bg" src="img/hero-Impermeabilizaciones.webp"
+          alt="Impermeabilización profesional de techos y terrazas" />
+
+        <div class="hero-content">
+          <!-- Botón de Audio / Jingle (Se queda aquí centrado en la imagen) -->
+          <div class="control-audio-container"
+            style="display: flex; justify-content: center; margin: 25px auto; position: relative;">
+            <button id="btnControlAudio" class="boton-circular-audio boton-jingle-animado"
+              aria-label="Reproducir Jingle">
+              <svg class="borde-animado-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="5"
+                  stroke-linecap="round"></circle>
+              </svg>
+              <svg version="1.1" id="iconoAudioSvg" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                viewBox="300,-72.5,1000,1000" style="position:relative; z-index:2;">
+                <g id="Capa 1" fill="#ffffff">
+                  <path
+                    d="M1109.42478,29.55155l20.36842,7.28888l3.70335,9.11109v517.50989c-8.14737,29.64142 -22.34354,53.33023 -42.58852,71.06649l-55.55027,32.79991l-33.33016,7.28888h-37.0335c-42.4651,-6.80294 -73.94358,-24.41771 -94.43545,-52.84431l-22.2201,-47.37768v-43.73322c8.88805,-38.63101 28.02201,-67.17909 57.40193,-85.64424l55.55027,-25.51104l59.2536,-3.64445c27.4048,4.85924 50.24215,13.36294 68.51201,25.51107c0,0 -1.38231,-139.2565 -1.34307,-161.57505c0.03924,-22.31855 -2.3603,-99.00211 -2.3603,-99.00211l-1.85167,-96.57756l-357.37336,94.75533v519.33212c-9.6287,34.25769 -27.52824,60.37615 -53.69858,78.35536c-17.28231,14.57775 -39.50241,24.29625 -66.66031,29.1555h-59.25362c-34.07083,-7.7748 -60.61151,-22.95995 -79.62205,-45.55545l-22.2201,-40.08879l-3.70335,-54.66654c8.39426,-35.4725 25.05934,-62.80579 49.99523,-81.99981c27.15791,-25.51104 69.12922,-36.44436 125.91393,-32.79993c26.17034,5.34516 47.77322,13.84888 64.80864,25.51107v-424.57679l12.96171,-12.75552z" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <h1>Impermeabilización Profesional en CDMX y Estado de México</h1>
 
-      <div class="control-audio-container">
-        <button id="btnControlAudio" class="botonAudioControl">
-          <i id="iconoAudio" class="fa-solid fa-pause"></i>
-          <span id="textoAudio">Pausar Música</span>
-        </button>
-      </div>
-
-      <video class="imagenWeb" autoplay muted loop playsinline poster="/img/placeholder-video.jpg"
-        src="/img/Imper-Banner-Pro_2.webm" aria-label="Aplicación profesional de impermeabilizante">
+      <video class="imagenWeb" autoplay muted loop playsinline src="/img/Imper-Banner-Pro_2.webm"
+        aria-label="Aplicación profesional de impermeabilizante">
         Tu navegador no soporta videos WebM.
       </video>
 
@@ -716,12 +922,18 @@
 
   <script>
     function mostrarMenu() {
-      const menu = document.querySelector(".menuNavegacion");
-      if (menu) menu.classList.add("activo");
+      console.log("¡Clic registrado!");
+      const menu = document.querySelector(".menuNavegacion") || document.getElementById("menuNavegacion");
+      if (menu) {
+        menu.classList.add("activo");
+        console.log("Clase 'activo' agregada al menú:", menu);
+      } else {
+        console.warn("No se encontró el menú en el HTML.");
+      }
     }
 
     function ocultarMenu() {
-      const menu = document.querySelector(".menuNavegacion");
+      const menu = document.querySelector(".menuNavegacion") || document.getElementById("menuNavegacion");
       if (menu) menu.classList.remove("activo");
     }
   </script>
@@ -755,60 +967,34 @@
     document.addEventListener("DOMContentLoaded", function () {
       const audio = document.getElementById("audioFondoImper");
       const btnAudio = document.getElementById("btnControlAudio");
-      const iconoAudio = document.getElementById("iconoAudio");
-      const textoAudio = document.getElementById("textoAudio");
 
-      // Fijar el volumen estrictamente al 50% de su capacidad
-      audio.volume = 0.5;
+      if (audio && btnAudio) {
+        audio.volume = 0.5;
 
-      // Sincroniza los textos e iconos del botón según el estado real de la pista
-      function actualizarInterfaz() {
-        if (audio.paused) {
-          iconoAudio.className = "fa-solid fa-play";
-          textoAudio.textContent = "Reproducir Música";
-        } else {
-          iconoAudio.className = "fa-solid fa-pause";
-          textoAudio.textContent = "Pausar Música";
+        function actualizarInterfaz() {
+          if (audio.paused) {
+            btnAudio.classList.add("boton-jingle-animado");
+          } else {
+            btnAudio.classList.remove("boton-jingle-animado");
+          }
         }
-      }
 
-      // Lógica segura de autoplay interactivo
-      function arrancarAutoplay() {
-        audio.play().then(() => {
-          actualizarInterfaz();
-          removerListenersAutoplay();
-        }).catch(() => {
+        btnAudio.addEventListener("click", function (event) {
+          event.stopPropagation();
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
           actualizarInterfaz();
         });
-      }
 
-      function removerListenersAutoplay() {
-        document.removeEventListener("click", arrancarAutoplay);
-        document.removeEventListener("touchstart", arrancarAutoplay);
-      }
+        audio.addEventListener("ended", function () {
+          actualizarInterfaz();
+        });
 
-      // Intentos iniciales automáticos
-      arrancarAutoplay();
-      document.addEventListener("click", arrancarAutoplay);
-      document.addEventListener("touchstart", arrancarAutoplay);
-
-      // Control manual del botón Play / Pause
-      btnAudio.addEventListener("click", function (event) {
-        event.stopPropagation(); // Evita que se reactive por los escuchas globales
-        removerListenersAutoplay(); // La acción manual cancela el intento de autoplay global
-
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
-        }
         actualizarInterfaz();
-      });
-
-      // Monitorea el fin de la canción para cambiar el botón a "Play" y permitir reanudarla
-      audio.addEventListener("ended", function () {
-        actualizarInterfaz();
-      });
+      }
     });
   </script>
 

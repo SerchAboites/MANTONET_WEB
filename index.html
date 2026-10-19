@@ -8,81 +8,45 @@
     <meta name="description"
         content="Contacta a Mantonet para servicios profesionales de mantenimiento general, impermeabilizaciones, plomería, electricidad y remodelaciones en CDMX y área metropolitana.">
 
-
     <link rel="canonical" href="https://www.mantonet.com/index" />
-
 
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/FavIcon-Mantonet-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/FavIcon-Mantonet-180x180.png">
 
+    <!-- Fuentes optimizadas con display swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
     </noscript>
+
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </noscript>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2">
-    </script>
+    <!-- Google tag (gtag.js) diferido -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-24X52F10Q2');
     </script>
 
-    <script>
-        // Verifica si está dentro de un iframe (como lo estaría en Google Sites)
-        const esIframe = window.self !== window.top;
-
-        // Detecta el URL del sitio "padre" si está embebido
-        const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
-
-        // Crea imagen invisible para registrar visita con parámetros
-        const img = new Image(1, 1);
-        img.style.display = "none";
-        img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=SitioOficial&origen=" + encodeURIComponent(origen);
-
-        // Muestra en consola la URL para depurar
-        console.log("Cargando imagen de tracking:", img.src);
-
-        document.body.appendChild(img);
-    </script>
-
-
-    <script>
-        // Espera a que el contenido de la página esté listo
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // Verifica si la página está dentro de un iframe
-            const esIframe = window.self !== window.top;
-
-            if (esIframe) {
-                // Selecciona todos los enlaces (etiquetas <a>) del documento
-                const links = document.querySelectorAll('a');
-
-                // Recorre cada enlace para modificarlo
-                links.forEach(link => {
-                    link.setAttribute('target', '_blank');
-                    link.setAttribute('rel', 'noopener noreferrer'); // Buena práctica de seguridad
-                });
-            }
-        });
-    </script>
-
-
-    <!-- Carga de Tailwind CSS para estilos de utilidad -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-        /* Define la fuente para el cuerpo del documento */
+        /* Clases utilitarias reemplazando cdn.tailwindcss.com */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .max-w-full { max-width: 100%; }
+        .p-4 { padding: 1rem; }
+
+        /* Estilos base */
         body {
             background: radial-gradient(circle at center, rgb(37, 37, 37) 0%, #2c2c2c 100%);
             margin: 0;
@@ -96,58 +60,31 @@
             font-family: 'Lato', sans-serif;
             padding-bottom: 20px;
             box-sizing: border-box;
-            /* Evita la barra de desplazamiento horizontal que podría aparecer debido a la animación */
             overflow-x: hidden;
         }
 
         .botonSaberMas {
-            /* Fondo transparente */
             background: transparent;
-            /* Hace el fondo completamente transparente */
-            /* Opcional: si quieres un fondo ligeramente translúcido */
-            /* background: rgba(0, 0, 0, 0.2); */
-            /* Un negro con 20% de opacidad, ajusta si quieres otro color base */
-
-            /* Borde blanco */
             border: 2px solid white;
-            /* 2px de grosor, estilo sólido, color blanco */
-            /* Puedes ajustar el grosor (2px) a tu gusto */
-            /* Otros estilos que ya tenías */
             width: 140px;
             height: 50px;
             border-radius: 10px;
             color: white;
-            /* Asegúrate de que el texto dentro del botón sea visible con el fondo transparente */
             text-align: center;
-            /* Si el texto está dentro, céntralo */
             line-height: 50px;
-            /* Si es solo texto y la altura es fija, esto lo centra verticalmente */
             cursor: pointer;
-            /* Indica que es clicable */
-            /* Opcional: una transición suave para los estados hover/active */
             transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        /* Opcional: Efecto al pasar el ratón (hover) */
         .botonSaberMas:hover {
             background: white;
-            /* El fondo se vuelve blanco */
             color: darkred;
-            /* El texto se vuelve darkred para contraste */
             border-color: darkred;
-            /* El borde también puede cambiar */
         }
 
-        /* Opcional: Efecto al hacer clic (active) */
-        .botonSaberMas:active {
-            background: #cccccc;
-            /* Un gris claro al hacer clic */
-            color: #333333;
-            border-color: #333333;
-        }
-
-        header,
-        main {
+        header, main {
             width: 100%;
             max-width: 1000px;
             text-align: center;
@@ -163,7 +100,6 @@
             height: 50px;
             align-items: center;
             font-size: 15px;
-            text-align: center;
             justify-content: center;
             margin-top: 20px;
         }
@@ -176,7 +112,7 @@
 
         .pContactanos {
             margin-bottom: 3%;
-            padding: 0px 10px 0px 10px;
+            padding: 0px 10px;
         }
 
         h1 {
@@ -184,9 +120,6 @@
             font-size: 50px;
             margin-bottom: 20px;
             color: white;
-            /* Estilo discreto para h1 si se desea */
-            /* opacity: 0.8; */
-            /* font-size: 1.8em; */
         }
 
         h2 {
@@ -195,9 +128,6 @@
             margin-top: 30px;
             margin-bottom: 15px;
             color: white;
-            /* Estilo discreto para h2 */
-            /* opacity: 0.7; */
-            /* font-size: 1.3em; */
         }
 
         p {
@@ -267,12 +197,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        .botonMenu:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #6C0000;
-        }
-
         svg {
             width: 300px;
             height: auto;
@@ -280,8 +204,7 @@
             display: block;
         }
 
-        path,
-        polygon {
+        path, polygon {
             fill: none;
             stroke: white;
             stroke-width: 1.7;
@@ -290,23 +213,10 @@
             animation: draw 2s linear infinite alternate;
         }
 
-        .lineaServicioIndex {
-
-            background: darkred;
-
-            border-radius: 15px;
-            min-height: 50px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
         @keyframes draw {
-            to {
-                stroke-dashoffset: 0;
-            }
+            to { stroke-dashoffset: 0; }
         }
 
-        /* Contenido discreto para SEO */
         .seo-content {
             max-width: 1000px;
             width: 100%;
@@ -326,14 +236,12 @@
             font-size: 18px;
         }
 
-
         .seo-content h3 {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1.6em;
             margin-top: 30px;
             margin-bottom: 30px;
             font-weight: bold;
-            /* ¡Aquí es donde aplicas la negrita! */
         }
 
         .seo-content h4 {
@@ -346,42 +254,29 @@
             max-width: 1000px;
         }
 
-        .seo-content li {
-            font-size: 1em;
-            margin-bottom: px;
-        }
-
-
         .espaciadorDeContenedor {
             margin-top: 30px;
             margin-bottom: 30px;
         }
 
-
-        /* Estilos para el contenedor principal del carrusel */
         .carousel-container {
             width: 100%;
             overflow: hidden;
-            border-radius: 0px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             background: rgb(58, 58, 58);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilos para la pista del carrusel, que contiene todos los videos */
         .carousel-track {
             display: flex;
             width: fit-content;
             animation: scroll-left 40s linear infinite;
         }
 
-        /* Estilos para cada video dentro de la pista del carrusel */
         .carousel-track a {
             width: 300px;
             height: 200px;
             flex-shrink: 0;
-            object-fit: cover;
             margin-right: 1rem;
-            background-color: none;
         }
 
         .carousel-track video {
@@ -392,21 +287,9 @@
             border-radius: 15px;
         }
 
-
-        /* Definición de la animación de desplazamiento */
         @keyframes scroll-left {
-            from {
-                transform: translateX(0%);
-                /* Empieza sin desplazamiento */
-            }
-
-            to {
-                /* Se desplaza hacia la izquierda por el ancho de un conjunto de videos originales.
-                   Hay 5 videos originales. Cada uno de 300px + 1rem (16px) de margen.
-                   El desplazamiento total es -(300px + 16px) * 5.
-                   Esto hace que el carrusel se reinicie visualmente sin saltos. */
-                transform: translateX(calc(-1 * (300px + 1rem) * 5));
-            }
+            from { transform: translateX(0%); }
+            to { transform: translateX(calc(-1 * (300px + 1rem) * 5)); }
         }
 
         .logoIndex {
@@ -420,8 +303,6 @@
             margin-bottom: 15px;
         }
 
-        /* ************************************************************************************ */
-
         summary {
             font-weight: bold;
             padding: 15px;
@@ -432,24 +313,18 @@
             border-radius: 15px;
             margin-top: 10px;
             margin-bottom: 10px;
-            align-items: center;
             list-style: none;
             -webkit-appearance: none;
-            -moz-appearance: none;
         }
 
-        /* Asegura que el marcador predeterminado no se muestre en ningún navegador */
-        summary::-webkit-details-marker,
-        summary::marker {
+        summary::-webkit-details-marker, summary::marker {
             display: none;
         }
 
-        /* Estilos para el título H3 dentro del summary */
         summary h3 {
             margin: 0;
             color: inherit;
             padding-right: 30px;
-            /* Ajusta este valor según el tamaño de tu + */
         }
 
         .indicador-desplegable {
@@ -459,21 +334,15 @@
             transform: translateY(-50%);
             font-size: 1.5em;
             font-weight: bold;
-            line-height: 1;
-            transition: transform 0.2s ease-in-out;
             color: white;
         }
 
-        .indicador-desplegable::after {
-            content: '+';
-        }
-
+        .indicador-desplegable::after { content: '+'; }
         .servicio-desplegable[open] .indicador-desplegable::after {
             content: '-';
             transform: rotate(45deg);
         }
 
-        /* Estilos para el contenido desplegable (pequeños ajustes) */
         .contenido-servicio {
             padding: 15px;
             border: 2px solid #ddd;
@@ -484,138 +353,55 @@
             color: #f0f0f0;
             width: 100%;
             box-sizing: border-box;
-
-            /* PROPIEDADES CLAVE PARA LA ANIMACIÓN SUAVE */
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding-top 0.4s ease-out, padding-bottom 0.4s ease-out;
-
-            /* --- PROPIEDADES CLAVE PARA CENTRAR LA IMAGEN --- */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
         }
 
-        /* Cuando el <details> está abierto, el max-height se expande */
         .servicio-desplegable[open] .contenido-servicio {
             max-height: 1000px;
             padding: 15px;
         }
 
-        /* Estilos para los párrafos y listas dentro del contenido-servicio (sin cambios) */
-        .contenido-servicio p,
-        .contenido-servicio ul {
-            margin-bottom: 10px;
-            color: inherit;
-            /* Hereda el color de .contenido-servicio */
-        }
-
-        .contenido-servicio ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
         .imgPersonaje {
             width: 25%;
+            height: auto;
         }
 
-        /* ********************************************************************************** */
-
-        /* Medias queries para diseño responsive en dispositivos más pequeños */
         @media (max-width: 768px) {
-
             .carousel-track video {
-                width: 100%;
-                height: 100%;
                 border-radius: 10px;
             }
-
             .carousel-track a {
                 width: 215px;
                 height: 150px;
-                flex-shrink: 0;
-                object-fit: cover;
                 margin-right: 1rem;
                 border-radius: 10px;
-                background-color: none;
             }
-
             @keyframes scroll-left {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    /* Ajusta la animación para el nuevo ancho de los videos en móvil */
-                    transform: translateX(calc(-1 * (200px + 1rem) * 5));
-                }
+                from { transform: translateX(0); }
+                to { transform: translateX(calc(-1 * (200px + 1rem) * 5)); }
             }
         }
 
-
-        /* Media queries para dispositivos móviles */
         @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
         (max-width: 1080px) and (min-resolution: 1.8dppx) {
-
-            .tituloH1 {
-                font-size: 30px;
-                margin-top: 10%;
-                margin-bottom: 8%;
-            }
-
-            .pContactanos {
-                margin-bottom: 5%;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            p,
-            li {
-                font-size: 1em;
-            }
-
-            .imgPersonaje {
-                width: 80%;
-            }
-
-            .botonMenu {
-                font-size: 16px;
-                padding: 10px 15px;
-                border-radius: 15px;
-                max-width: 90%;
-            }
-
-            .botonMenu .icono {
-                font-size: 30px;
-                margin-right: 20px;
-            }
-
-            svg {
-                width: 200px;
-            }
-
-            .menu {
-                display: flex;
-                align-items: center;
-                width: 100%;
-            }
-
-            .seo-content {
-                width: 90%;
-                padding: 15px;
-                margin-top: 30px;
-            }
-
-            .logoIndex {
-                width: 80%;
-            }
+            .tituloH1 { font-size: 30px; margin-top: 10%; margin-bottom: 8%; }
+            .pContactanos { margin-bottom: 5%; }
+            h1 { font-size: 20px; }
+            h2 { font-size: 1.5em; }
+            p, li { font-size: 1em; }
+            .imgPersonaje { width: 80%; }
+            .botonMenu { font-size: 16px; padding: 10px 15px; border-radius: 15px; max-width: 90%; }
+            .botonMenu .icono { font-size: 30px; margin-right: 20px; }
+            svg { width: 200px; }
+            .menu { display: flex; align-items: center; width: 100%; }
+            .seo-content { width: 90%; padding: 15px; margin-top: 30px; }
+            .logoIndex { width: 80%; }
         }
     </style>
 
@@ -624,7 +410,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Mantonet",
-      "url": "https://www.mantonet.com.html",
+      "url": "https://www.mantonet.com",
       "logo": "https://www.mantonet.com/icons/FavIcon-Mantonet-180x180.png",
       "contactPoint": [
         {
@@ -652,116 +438,56 @@
 
 <body>
     <header>
-
-        <div
-            style="display: flex; align-items: center; justify-items: center; justify-content: center; width: 100%; height: 100%;">
-            <!-- logo svg -->
-
-            <a href="a-MenuServicios.html"
-                style="min-width: 100%; align-items: center; justify-items: center; justify-content: center;"
-                title="Ir al inicio de Mantonet">
+        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+            <a href="a-MenuServicios.html" style="min-width: 100%; display: flex; justify-content: center;" title="Ir al inicio de Mantonet">
                 <div class="logoIndex" id="logo-container"></div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        fetch("logoMantonet.svg")
-                            .then((res) => res.text())
-                            .then((svg) => {
-                                document.getElementById("logo-container").innerHTML = svg;
-                            });
-                    });
-                </script>
             </a>
-
         </div>
 
-
-
         <div class="flex flex-col items-center max-w-full">
-
-            <!-- Contenedor del carrusel que oculta el contenido desbordado -->
             <div class="carousel-container p-4">
-                <!-- Pista del carrusel, donde se aplica la animación de desplazamiento -->
                 <div class="carousel-track">
                     <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
-                            alt="Video de proyecto de Electricidad">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
-                            alt="Video de proyecto de Impermeabilización">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
-                            alt="Video de proyecto de Pintura">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Plomeria.html" title="Ver más sobre Plomería">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Plomeria.webm"
-                            alt="Video de proyecto de Plomería">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
-                            alt="Video de proyecto de Albañilería y Remodelación">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
 
+                    <!-- Duplicados para ciclo infinito -->
                     <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Electricidad.webm"
-                            alt="Video de proyecto de Electricidad (Duplicado)">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Imper.webm"
-                            alt="Video de proyecto de Impermeabilización (Duplicado)">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Pintura.webm"
-                            alt="Video de proyecto de Pintura (Duplicado)">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Plomeria.html" title="Ver más sobre Plomería">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Plomeria.webm"
-                            alt="Video de proyecto de Plomería (Duplicado)">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
-                        <video autoplay muted loop playsinline src="/img/Carrusel-Reparaciones.webm"
-                            alt="Video de proyecto de Albañilería y Remodelación (Duplicado)">
-                            Tu navegador no soporta videos WebM.
-                        </video>
+                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                 </div>
             </div>
-
         </div>
-
-
-
     </header>
 
-
-
     <main>
-        <h1 class="tituloH1">
-            Contáctanos | Mantonet
-        </h1>
+        <h1 class="tituloH1">Contáctanos | Mantonet</h1>
         <p class="pContactanos">Estamos listos para ayudarte con tus necesidades de mantenimiento.</p>
-
-        <p class="pContactanos">¡Elige cómo quieres comunicarte con nosotros para ayudarte a solucionar tus problemas de mantenimineto!
-        </p>
+        <p class="pContactanos">¡Elige cómo quieres comunicarte con nosotros para ayudarte a solucionar tus problemas de mantenimiento!</p>
     </main>
 
     <div class="menu">
@@ -769,29 +495,24 @@
             <i class="fas fa-globe icono"></i>
             Menú Servicios
         </a>
-
         <a href="https://wa.me/5215519148472?text=Hola,%20vi%20su%20página%20web%20de%20contacto%20y%20me%20gustaría%20saber%20más%20de%20sus%20servicios%20y%20cotizar.%20Muchas%20gracias!"
             target="_blank" class="botonMenu" rel="noopener noreferrer">
             <i class="fab fa-whatsapp icono"></i>
             WhatsApp (Cotizar)
         </a>
-
         <a href="tel:+5215519148472" class="botonMenu">
             <i class="fas fa-phone-alt icono"></i>
             Llamar Ahora (5519148472)
         </a>
-
         <a href="mailto:contacto.mantonet@gmail.com?subject=Encontré%20su%20anuncio%20en%20la%20web%20me%20interesa%20cotizar%20sin%20costo%20por%20su%20promo%20%22PROMO-WEB-MANTONET%22"
             class="botonMenu">
             <i class="fas fa-envelope icono"></i>
             Enviar Correo Electrónico
         </a>
-
         <a href="https://www.instagram.com/mantonet_" target="_blank" class="botonMenu" rel="noopener noreferrer">
             <i class="fab fa-instagram icono"></i>
             Instagram
         </a>
-
         <a href="https://www.facebook.com/profile.php?id=61573370344228" target="_blank" class="botonMenu"
             rel="noopener noreferrer">
             <i class="fab fa-facebook-f icono"></i>
@@ -800,30 +521,18 @@
     </div>
 
     <div class="seo-content">
-
-        <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área
-            Metropolitana</h2>
-        <p class="espaciadorDeContenedor">En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y
-            <b>proyectos de
-                impermeabilización</b> en
-            <b>Ciudad de México</b> y su <b>área metropolitana</b>. Contamos con un equipo de profesionales
-            experimentados
-            para ofrecer soluciones integrales a tu hogar o negocio.
-        </p>
+        <h2 style="margin-top: 2%; margin-bottom: 2%;">Servicios de Mantenimiento y Construcción en CDMX y Área Metropolitana</h2>
+        <p class="espaciadorDeContenedor">En <b>Mantonet</b>, nos especializamos en <b>mantenimiento general</b> y <b>proyectos de impermeabilización</b> en <b>Ciudad de México</b> y su <b>área metropolitana</b>. Contamos con un equipo de profesionales experimentados para ofrecer soluciones integrales a tu hogar o negocio.</p>
 
         <h3>Nuestros Servicios:</h3>
-
 
         <details class="servicio-desplegable">
             <summary>
                 <h4>Impermeabilizaciones Expertas</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-
-                <img class="imgPersonaje" src="img/Gravín-1-1.png">
-
-                <p class="espaciadorDeContenedor">Ofrecemos soluciones duraderas para proteger tu propiedad de la
-                    humedad y filtraciones.</p>
+                <img class="imgPersonaje" src="img/Gravín-1-1.png" alt="Personaje Gravín de Impermeabilización" width="300" height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Ofrecemos soluciones duraderas para proteger tu propiedad de la humedad y filtraciones.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Aplicación de <b>impermeabilizante acrílico</b> para techos</li>
                     <li>Aplicación de <b>impermeabilizante asfáltico</b> para losas y terrazas</li>
@@ -831,23 +540,17 @@
                     <li><b>Sellado de techos</b> para una protección duradera contra la humedad</li>
                     <li>Mantenimiento preventivo de sistemas de impermeabilización</li>
                 </ul>
-
                 <a class="botonSaberMas" href="/a-Imper.html">Saber más</a>
             </div>
         </details>
-
 
         <details class="servicio-desplegable">
             <summary>
                 <h4>Pintura Profesional</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-
-                <img class="imgPersonaje" src="img/Brochín-1-1.png">
-
-                <p class="espaciadorDeContenedor">Preparación de superficies y aplicación de pintura de alta calidad
-                    para
-                    interiores y exteriores.</p>
+                <img class="imgPersonaje" src="img/Brochín-1-1.png" alt="Personaje Brochín de Pintura" width="300" height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Preparación de superficies y aplicación de pintura de alta calidad para interiores y exteriores.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Pintura de interiores y exteriores</li>
                     <li>Preparación de superficies (lijado, resanado)</li>
@@ -856,9 +559,7 @@
                     <li>Pintura decorativa y acabados finos</li>
                     <li>Pintura de herrería</li>
                 </ul>
-
                 <a class="botonSaberMas" href="/a-Pintura.html">Saber más</a>
-
             </div>
         </details>
 
@@ -867,12 +568,8 @@
                 <h4>Electricidad</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-
-                <img class="imgPersonaje" src="img/Neutrina-1-1.png">
-
-                <p class="espaciadorDeContenedor">Instalación y mantenimiento de sistemas eléctricos, colocación de
-                    lámparas, contactos
-                    y reparaciones seguras.</p>
+                <img class="imgPersonaje" src="img/Neutrina-1-1.png" alt="Personaje Neutrina de Electricidad" width="300" height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Instalación y mantenimiento de sistemas eléctricos, colocación de lámparas, contactos y reparaciones seguras.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Instalación de circuitos eléctricos</li>
                     <li>Mantenimiento y reparación de instalaciones eléctricas</li>
@@ -880,24 +577,17 @@
                     <li>Diagnóstico y solución de cortocircuitos</li>
                     <li>Instalación de paneles eléctricos y centros de carga</li>
                 </ul>
-
                 <a class="botonSaberMas" href="/a-Electricidad.html">Saber más</a>
-
             </div>
         </details>
-
 
         <details class="servicio-desplegable">
             <summary>
                 <h4>Plomería</h4> <span class="indicador-desplegable"></span>
             </summary>
             <div class="contenido-servicio">
-
-                <img class="imgPersonaje" src="img/Tuercas-1-1.png">
-
-                <p class="espaciadorDeContenedor">Detección y reparación de fugas, instalación de calentadores, tuberías
-                    y todo lo
-                    relacionado con sistemas hidráulicos.</p>
+                <img class="imgPersonaje" src="img/Tuercas-1-1.png" alt="Personaje Tuercas de Plomería" width="300" height="300" loading="lazy">
+                <p class="espaciadorDeContenedor">Detección y reparación de fugas, instalación de calentadores, tuberías y todo lo relacionado con sistemas hidráulicos.</p>
                 <ul class="espaciadorDeContenedor">
                     <li>Detección y reparación de fugas</li>
                     <li>Instalación y mantenimiento de calentadores de agua</li>
@@ -905,13 +595,9 @@
                     <li>Instalación de grifos, inodoros y regaderas</li>
                     <li>Desatascos y limpieza de drenajes</li>
                 </ul>
-
                 <a class="botonSaberMas" href="/a-Plomeria.html">Saber más</a>
-
             </div>
         </details>
-
-
 
         <details class="servicio-desplegable">
             <summary>
@@ -926,52 +612,63 @@
                     <li>Propuestas creativas para remodelación.</li>
                     <li>etc.</li>
                 </ul>
-
                 <a class="botonSaberMas" href="/html/a-Reparaciones-Esteticas.html">Saber más</a>
-
             </div>
         </details>
 
-        <p class="espaciadorDeContenedor">Ofrecemos <b>servicio profesional a domicilio</b> y estamos comprometidos con
-            la calidad y la satisfacción del cliente. </p>
-
+        <p class="espaciadorDeContenedor">Ofrecemos <b>servicio profesional a domicilio</b> y estamos comprometidos con la calidad y la satisfacción del cliente.</p>
         <p class="espaciadorDeContenedor">¡Permítenos ayudarte a mantener y mejorar tu propiedad!</p>
     </div>
 
     <footer>
-        <p>&copy; 2025 Mantonet. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Mantonet. Todos los derechos reservados.</p>
     </footer>
 
-
+    <!-- Scripts diferidos al final del DOM -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const detailsElements = document.querySelectorAll('details.servicio-desplegable');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tracking Google Script sin error de null
+            const esIframe = window.self !== window.top;
+            const origen = esIframe ? document.referrer || "GoogleSites" : "Directo";
+            const img = new Image(1, 1);
+            img.style.display = "none";
+            img.src = "https://script.google.com/macros/s/AKfycbzoC-7wONPKpZr3NVRiKOtyIbgmtvjnbkKfSGOp9RzACvu-0a6JAv40XnYK4WX4cuJ5/exec?pagina=SitioOficial&origen=" + encodeURIComponent(origen);
+            document.body.appendChild(img);
 
+            // Cargar SVG del logo
+            fetch("logoMantonet.svg")
+                .then((res) => res.text())
+                .then((svg) => {
+                    const logoCont = document.getElementById("logo-container");
+                    if (logoCont) logoCont.innerHTML = svg;
+                })
+                .catch(() => {});
+
+            // Si está dentro de iframe
+            if (esIframe) {
+                document.querySelectorAll('a').forEach(link => {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                });
+            }
+
+            // Desplegables animados
+            const detailsElements = document.querySelectorAll('details.servicio-desplegable');
             detailsElements.forEach((details) => {
                 const content = details.querySelector('.contenido-servicio');
                 const summary = details.querySelector('summary');
+                if (!content) return;
 
-                if (!content) return; // Asegurarse de que el contenido existe
-
-                // Función para cerrar un details suavemente
                 const closeDetailsSmoothly = (detailToClose) => {
                     const contentToClose = detailToClose.querySelector('.contenido-servicio');
                     if (contentToClose && detailToClose.open) {
-                        // 1. Establecer la altura actual para que haya algo que transicionar
                         contentToClose.style.maxHeight = contentToClose.scrollHeight + 'px';
-                        contentToClose.style.paddingTop = '15px';
-                        contentToClose.style.paddingBottom = '15px';
-
-                        // 2. Usar requestAnimationFrame para forzar el redibujado antes de cambiar a 0
                         requestAnimationFrame(() => {
-                            contentToClose.style.maxHeight = '0'; // Anima a 0
+                            contentToClose.style.maxHeight = '0';
                             contentToClose.style.paddingTop = '0';
                             contentToClose.style.paddingBottom = '0';
-
-                            // 3. Cuando la transición termina, realmente cierra el details
                             const transitionEndHandler = () => {
-                                detailToClose.open = false; // Quita el atributo 'open'
-                                // Limpia los estilos inline para que CSS controle de nuevo
+                                detailToClose.open = false;
                                 contentToClose.style.maxHeight = '';
                                 contentToClose.style.paddingTop = '';
                                 contentToClose.style.paddingBottom = '';
@@ -982,60 +679,29 @@
                     }
                 };
 
-                // Escucha el clic en el summary para controlar la apertura/cierre
                 summary.addEventListener('click', (e) => {
-                    e.preventDefault(); // Previene el comportamiento predeterminado del navegador
-
+                    e.preventDefault();
                     if (details.open) {
-                        // Si ya está abierto, lo cerramos
                         closeDetailsSmoothly(details);
                     } else {
-                        // Si está cerrado, lo abrimos y cerramos los demás
                         detailsElements.forEach((otherDetails) => {
                             if (otherDetails !== details && otherDetails.open) {
                                 closeDetailsSmoothly(otherDetails);
                             }
                         });
-
-                        // Abrir el details actual
-                        details.open = true; // Esto añade el atributo 'open'
-
-                        // *** INICIO DEL AJUSTE PARA LA PRIMERA VEZ ***
-                        // Al abrir, el max-height inicialmente es 0 por CSS.
-                        // Para que la transición funcione la primera vez, necesitamos
-                        // establecer el max-height a su altura 'real' después de que
-                        // el navegador registre el estado inicial de 0.
-                        content.style.maxHeight = '0'; // Aseguramos que el estado inicial sea 0, si ya no lo está
+                        details.open = true;
+                        content.style.maxHeight = '0';
                         content.style.paddingTop = '0';
                         content.style.paddingBottom = '0';
-
-                        // Usamos requestAnimationFrame para asegurar que el navegador vea el 0
-                        // antes de que le demos la altura real a la que debe transicionar.
                         requestAnimationFrame(() => {
                             content.style.maxHeight = content.scrollHeight + 'px';
                             content.style.paddingTop = '15px';
                             content.style.paddingBottom = '15px';
                         });
-                        // *** FIN DEL AJUSTE PARA LA PRIMERA VEZ ***
-
-                        // Una vez que la animación de apertura ha terminado,
-                        // removemos el max-height para que el contenido pueda crecer si es necesario.
-                        const openTransitionEndHandler = () => {
-                            if (details.open) {
-                                content.style.maxHeight = ''; // Resetear a altura automática
-                                content.style.paddingTop = '15px'; // Asegurar que el padding final se mantenga
-                                content.style.paddingBottom = '15px'; // Asegurar que el padding final se mantenga
-                            }
-                            content.removeEventListener('transitionend', openTransitionEndHandler);
-                        };
-                        content.addEventListener('transitionend', openTransitionEndHandler, { once: true });
                     }
                 });
             });
         });
     </script>
-
-
 </body>
-
 </html>

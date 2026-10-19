@@ -1,33 +1,65 @@
 <nav class="menuNavegacion" id="menuNavegacion">
-    <button class="cerrar" onclick="ocultarMenu();" aria-label="Cerrar menú">×</button>
+    <!-- GRADIENTE -->
+    <svg style="width: 0; height: 0; position: absolute;" aria-hidden="true">
+        <defs>
+            <linearGradient id="gradienteMenuLateral" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#770000" />
+                <stop offset="100%" stop-color="#d30000" />
+            </linearGradient>
+        </defs>
+    </svg>
 
-    <a href="/a-Imper.html" class="btn-servicio" title="Servicio de Impermeabilización">
+    <button class="cerrar-lateral" onclick="ocultarMenu();" aria-label="Cerrar menú">×</button>
+
+    <!-- IMPERMEABILIZACIÓN -->
+    <a href="/a-Imper.html" class="btn-servicio-lateral" title="Servicio de Impermeabilización">
+        <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon fill="url(#gradienteMenuLateral)" points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+            <polygon fill="#330000" points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+        </svg>
         <span class="btn-text">Impermeabilización</span>
-        <img src="https://raw.githubusercontent.com/SerchAboites/IMAGENES-PARA-HTML/refs/heads/main/MANTONET/GRAVIN%203.png"
-            class="imgPersonajes" alt="Icono de persona trabajando en impermeabilización de techo" />
+        <img src="img_servicios/gravin.webp" class="btn-img" alt="Servicio de Impermeabilización" />
     </a>
 
-    <a href="/a-Pintura.html" class="btn-servicio" title="Servicio de Pintura">
+    <!-- PINTURA -->
+    <a href="/a-Pintura.html" class="btn-servicio-lateral" title="Servicio de Pintura">
+        <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon fill="url(#gradienteMenuLateral)" points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+            <polygon fill="#330000" points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+        </svg>
         <span class="btn-text">Pintura</span>
-        <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Broch%C3%ADn%20(2).png"
-            class="imgPersonajes" alt="Icono de brocha de pintura" />
+        <img src="img_servicios/brochin.webp" class="btn-img" alt="Servicio de Pintura" />
     </a>
 
-    <a href="/a-Plomeria.html" class="btn-servicio" title="Servicio de Plomería">
+    <!-- PLOMERÍA -->
+    <a href="/a-Plomeria.html" class="btn-servicio-lateral" title="Servicio de Plomería">
+        <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon fill="url(#gradienteMenuLateral)" points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+            <polygon fill="#330000" points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+        </svg>
         <span class="btn-text">Plomería</span>
-        <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Tuercas%207.png"
-            class="imgPersonajes" alt="Icono de tuercas y herramientas de plomería" />
+        <img src="img_servicios/tuercas.webp" class="btn-img" alt="Servicio de Plomería" />
     </a>
 
-    <a href="/a-Electricidad.html" class="btn-servicio" title="Servicio de Electricidad">
+    <!-- ELECTRICIDAD -->
+    <a href="/a-Electricidad.html" class="btn-servicio-lateral" title="Servicio de Electricidad">
+        <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon fill="url(#gradienteMenuLateral)" points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+            <polygon fill="#330000" points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+        </svg>
         <span class="btn-text">Electricidad</span>
-        <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/PERSONAJE%20-%20NEUTRINA%20Y%20LINEA.png"
-            class="imgPersonajes" alt="Icono de electricista o energía eléctrica" />
+        <img src="img_servicios/neutrina-y-linea.webp" class="btn-img" alt="Servicio de Electricidad" />
     </a>
 
-    <a href="/index.html" class="btn-servicio" title="Medios de Contacto">
+    <!-- MEDIOS DE CONTACTO -->
+    <a href="/index.html" class="btn-servicio-lateral" title="Medios de Contacto">
+        <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon fill="url(#gradienteMenuLateral)" points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
+            <polygon fill="#330000" points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
+        </svg>
         <span class="btn-text">Medios de Contacto</span>
-        <img src=""
-            class="imgPersonajes" alt="" />
+        <div class="icono-whatsapp-fa">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
     </a>
 </nav>
