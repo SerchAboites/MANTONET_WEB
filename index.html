@@ -23,11 +23,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
     </noscript>
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- DESPUÉS (Asíncrono, no bloquea el FCP): -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </noscript>
+
 
     <!-- Google tag (gtag.js) diferido -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X52F10Q2"></script>
@@ -269,8 +271,10 @@
 
         .seo-content h4 {
             color: rgba(255, 255, 255, 0.85);
-            font-size: 1.1em;
+            font-size: 1.4em;
         }
+
+
 
         .seo-content ul {
             text-align: left;
@@ -409,6 +413,8 @@
                 border-radius: 10px;
             }
 
+
+
             .carousel-track a {
                 width: 215px;
                 height: 150px;
@@ -422,7 +428,8 @@
                 }
 
                 to {
-                    transform: translateX(calc(-1 * (200px + 1rem) * 5));
+                    /* Debe ser 215px para coincidir exactamente con el ancho de la tarjeta */
+                    transform: translateX(calc(-1 * (215px + 1rem) * 5));
                 }
             }
         }
@@ -446,6 +453,8 @@
             h2 {
                 font-size: 1.5em;
             }
+
+
 
             p,
             li {
@@ -614,7 +623,7 @@
             </a>
         </div>
 
-        <div class="flex flex-col items-center max-w-full">
+        <div class="carousel-container flex flex-col items-center max-w-full" style="width: 100%; overflow: hidden;">
             <div class="carousel-track">
                 <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
                     <video class="carrusel-video" muted loop playsinline preload="none" width="480" height="320"
@@ -913,16 +922,15 @@
                                 videoElement.load();
                                 const promesaPlay = videoElement.play();
                                 if (promesaPlay !== undefined) {
-                                    promesaPlay.catch(function () {
-                                        // Evita errores de autoplay bloqueado por políticas del navegador
-                                    });
+                                    promesaPlay.catch(function () { });
                                 }
                             }
                             observer.unobserve(videoElement);
                         }
                     });
                 }, {
-                    rootMargin: "200px 0px"
+                    /* 100px arriba/abajo y 600px a la derecha para anticipar el movimiento horizontal */
+                    rootMargin: "100px 600px 100px 0px"
                 });
 
                 videosCarrusel.forEach(function (video) {
