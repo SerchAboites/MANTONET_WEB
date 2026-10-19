@@ -618,45 +618,45 @@
             <div class="carousel-container p-4">
                 <div class="carousel-track">
                     <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
-                        <video autoplay muted loop playsinline preload="metadata"
+                        <video autoplay muted loop playsinline preload="none"
                             src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu
+                        <video autoplay muted loop playsinline preload="none" src="/img/Carrusel-Imper.webm">Tu
                             navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu
+                        <video autoplay muted loop playsinline preload="none" src="/img/Carrusel-Pintura.webm">Tu
                             navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Plomeria.html" title="Ver más sobre Plomería">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu
+                        <video autoplay muted loop playsinline preload="none" src="/img/Carrusel-Plomeria.webm">Tu
                             navegador no soporta videos WebM.</video>
                     </a>
                     <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
-                        <video autoplay muted loop playsinline preload="metadata"
+                        <video autoplay muted loop playsinline preload="none"
                             src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
 
                     <!-- Duplicados para ciclo infinito -->
                     <a href="a-Electricidad.html" title="Ver más sobre Electricidad">
-                        <video autoplay muted loop playsinline preload="metadata"
+                        <video autoplay muted loop playsinline preload="none"
                             src="/img/Carrusel-Electricidad.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Imper.html" title="Ver más sobre Impermeabilización">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Imper.webm">Tu
+                        <video autoplay muted loop playsinline preload="none" src="/img/Carrusel-Imper.webm">Tu
                             navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Pintura.html" title="Ver más sobre Pintura Profesional">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Pintura.webm">Tu
+                        <video autoplay muted loop playsinline preload="none" src="/img/Carrusel-Pintura.webm">Tu
                             navegador no soporta videos WebM.</video>
                     </a>
                     <a href="a-Plomeria.html" title="Ver más sobre Plomería">
-                        <video autoplay muted loop playsinline preload="metadata" src="/img/Carrusel-Plomeria.webm">Tu
+                        <video autoplay muted loop playsinline preload="none" src="/img/Carrusel-Plomeria.webm">Tu
                             navegador no soporta videos WebM.</video>
                     </a>
                     <a href="/html/a-Reparaciones-Esteticas.html" title="Ver más sobre Albañilería y Remodelaciones">
-                        <video autoplay muted loop playsinline preload="metadata"
+                        <video autoplay muted loop playsinline preload="none"
                             src="/img/Carrusel-Reparaciones.webm">Tu navegador no soporta videos WebM.</video>
                     </a>
                 </div>
@@ -889,6 +889,38 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const videos = document.querySelectorAll("video.lazy-carousel-video");
+
+            if ("IntersectionObserver" in window) {
+                const videoObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const video = entry.target;
+                            if (video.dataset.src) {
+                                video.src = video.dataset.src;
+                                video.removeAttribute("data-src");
+                                video.load();
+                                video.play().catch(() => { });
+                            }
+                            observer.unobserve(video);
+                        }
+                    });
+                }, { rootMargin: "150px" });
+
+                videos.forEach((video) => videoObserver.observe(video));
+            } else {
+                // Respaldo para navegadores antiguos
+                videos.forEach((video) => {
+                    video.src = video.dataset.src;
+                    video.play().catch(() => { });
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>
