@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    
+
 
     <link rel="canonical" href="https://mantonet.com/a-MenuServicios" />
 
@@ -55,66 +55,86 @@
             width: 100%;
         }
 
-        h1 {
-            margin-top: 150px;
-            background-color: rgb(119, 119, 119);
-            width: 100%;
-            justify-content: center;
-            align-content: center;
-            text-align-last: center;
-            height: 60px;
-            margin-bottom: 30px;
-            color: white;
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
+        /* --- CONTENEDOR DE TARJETAS (Modo Escritorio: Grid 2 y 3 Columnas) --- */
         .menu {
             background: none;
-            display: flex;
-            flex-direction: column;
-            width: 40%;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 80px;
-            /* Espacio para que el footer no oculte el último botón */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 1000px;
+            width: 90%;
+            gap: 22px;
+            margin-top: 15px;
+            margin-bottom: 140px;
+            box-sizing: border-box;
         }
 
+        @media (min-width: 1280px) {
+            .menu {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1240px;
+                gap: 26px;
+            }
+        }
+
+        /* --- TARJETAS EN ESCRITORIO (Más compactas y proporcionadas) --- */
         .btn-servicio {
             position: relative;
             background-color: transparent;
             color: red;
             padding: 0px;
             border: none;
-            border-radius: 20px;
+            border-radius: 18px;
             cursor: pointer;
-            font-size: 35px;
             width: 100%;
             display: flex;
             align-items: center;
-            /* This can be combined with align-content/justify-content */
-            transition: background-color 0.3s ease, transform 0.3s ease-in-out;
-            /* Add transform to transition */
-            min-height: 200px;
+            justify-content: space-between;
+            height: 115px;
+            min-height: 115px;
             overflow: hidden;
-            align-content: center;
-            justify-content: center;
             margin: 0px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-sizing: border-box;
         }
 
+        .btn-servicio:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(200, 0, 0, 0.35);
+        }
+
+        /* La última tarjeta (Medios de contacto) centrada y estética */
+        .btn-contacto {
+            grid-column: 1 / -1;
+            max-width: 480px;
+            justify-self: center;
+            width: 100%;
+        }
 
         .btn-svg {
             position: absolute;
+            top: 0;
             left: 0;
             width: 100%;
-            /* ahora ocupa todo el botón */
-            height: auto;
-            /* Considerar height: 100% si el SVG debe llenar el botón verticalmente */
+            height: 100%;
             z-index: 0;
             pointer-events: none;
-            border-radius: 0px;
+            border-radius: 18px;
         }
 
         .btn-servicio i,
-        /* Regla presente, aunque no se usen <i> actualmente */
         .btn-servicio .btn-text,
         .btn-servicio .btn-img {
             z-index: 1;
@@ -126,35 +146,39 @@
             flex-grow: 1;
             text-align: left;
             color: white;
-            font-size: 25px;
+            font-size: 20px;
             display: flex;
             align-items: center;
             justify-content: left;
             margin-left: 20px;
-            height: 100%;
-            width: 100%;
+            padding-right: 10px;
+            line-height: 1.25;
             font-weight: bold;
             text-decoration: none;
         }
 
         .btn-img {
-            height: 100%;
-            max-height: 200px;
+            height: 85%;
+            max-height: 95px;
             border-radius: 50%;
             object-fit: cover;
             margin: 0;
             padding: 0;
-            margin-right: 30px;
+            margin-right: 22px;
             animation: rotarLadoALado 3s ease-in-out infinite;
             transform-origin: center bottom;
+            filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.45));
+        }
+
+        .btn-img[src=""],
+        .btn-img:not([src]) {
+            display: none;
         }
 
         .botonLadoIzquierdo {
             fill: darkred;
             transition: fill 0.3s ease;
-            /* Add this line for a smooth transition */
         }
-
 
         .botonLadoDerecho {
             fill: #7c0000;
@@ -165,36 +189,60 @@
             0% {
                 transform: rotate(-9deg);
             }
-
             50% {
                 transform: rotate(10deg);
             }
-
             100% {
                 transform: rotate(-10deg);
             }
         }
 
         @keyframes cambioColorRojo {
-
-            0%,
-            100% {
+            0%, 100% {
                 fill: #b9b9b9;
-                /* rojo oscuro */
             }
-
             50% {
                 fill: #353535;
-                /* rojo claro */
             }
         }
 
-        @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
+        /* --- MODO MÓVIL (Conserva exactamente el estilo vertical grande y limpio) --- */
+        @media (max-width: 850px),
+        (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
         (max-width: 1080px) and (min-resolution: 1.8dppx) {
-            .btn-text {
-                font-size: 40px;
+            .menu {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                gap: 60px;
+                margin-top: 50px;
+                margin-bottom: 300px;
             }
 
+            .btn-servicio {
+                min-height: 200px;
+                height: auto;
+                font-size: 35px;
+                border-radius: 20px;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .btn-servicio:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .btn-contacto {
+                grid-column: auto;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .btn-text {
+                font-size: 40px;
+                margin-left: 20px;
+            }
 
             .btn-img {
                 height: 100%;
@@ -202,34 +250,16 @@
                 margin-right: 100px;
             }
 
-            h1 {
-                margin-top: 250px;
-                height: 120px;
-                margin-bottom: 60px;
-                box-sizing: border-box;
-            }
-
-
-
-            .menu {
-                /* Propiedades de flex y background ya definidas globalmente, se mantienen */
-                width: 90%;
-                gap: 60px;
-
-            }
-
             .btn-svg {
                 position: absolute;
+                top: 0;
                 left: 0;
                 width: 100%;
-                /* ahora ocupa todo el botón */
-                height: auto;
-                /* Considerar height: 100% si el SVG debe llenar el botón verticalmente */
+                height: 100%;
                 z-index: 0;
                 pointer-events: none;
-                border-radius: 0px;
+                border-radius: 20px;
             }
-
         }
     </style>
 </head>
@@ -260,14 +290,16 @@
         </a>
     </div>
 
-    <h1>
-        MANTENIMIENTO GENERAL
-    </h1>
 
-    <div class="menu" style="margin: 0 0 300px 0">
+    <div style="margin-top: 140px;">
+        <h1>Servicios de Mantenimiento Mantonet</h1>
+    </div>
+
+
+    <div class="menu">
         <!-- IMPERMEABILIZACIÓN -->
         <button onclick="window.location.href='a-Imper.html'" class="btn-servicio" title="Impermeabilización">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- <defs> eliminado de aquí, se usa el gradiente global -->
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
@@ -275,53 +307,53 @@
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">Impermeabilización</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/IMAGENES-PARA-HTML/refs/heads/main/MANTONET/GRAVIN%203.png"
+            <img src="/img_servicios/gravin.webp"
                 class="btn-img" alt="Servicio de impermeabilización con rollo de material" />
         </button>
 
         <!-- PINTURA -->
         <button onclick="window.location.href='a-Pintura.html'" class="btn-servicio" title="Pintura">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
                 <polygon fill="#330000" class="botonLadoDerecho"
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">Pintura</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Broch%C3%ADn%20(2).png"
+            <img src="/img_servicios/brochin.webp"
                 class="btn-img" alt="Servicio de pintura con brocha" />
         </button>
 
         <!-- PLOMERÍA -->
         <button onclick="window.location.href='a-Plomeria.html'" class="btn-servicio" title="Plomería">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
                 <polygon fill="#330000" class="botonLadoDerecho"
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">Plomería</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Tuercas%207.png"
+            <img src="/img_servicios/tuercas.webp"
                 class="btn-img" alt="Servicio de plomería con tuercas" />
         </button>
 
         <!-- ELECTRICIDAD -->
         <button onclick="window.location.href='a-Electricidad.html'" class="btn-servicio" title="Electricidad">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
                 <polygon fill="#330000" class="botonLadoDerecho"
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">Electricidad</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/PERSONAJE%20-%20NEUTRINA%20Y%20LINEA.png"
+            <img src="/img_servicios/neutrina-y-linea.webp"
                 class="btn-img" alt="Servicio de electricidad con personaje animado" />
         </button>
 
         <!-- REPARACIONES INSTALACIONES ESTÉTICAS -->
         <button onclick="window.location.href='html/a-Reparaciones-Esteticas.html'" class="btn-servicio"
             title="Reparaciones e Instalaciones">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
                 <polygon fill="#330000" class="botonLadoDerecho"
@@ -333,20 +365,20 @@
 
         <!-- SOMOS MANTONET -->
         <button onclick="window.location.href='a-SomosMantonet.html'" class="btn-servicio" title="SOMOS MANTONET">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
                 <polygon fill="#330000" class="botonLadoDerecho"
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">SOMOS MANTONET</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Icono%20de%20Correo_Girando.gif"
+            <img src="/img_servicios/logo-girando.gif"
                 class="btn-img" alt="Icono animado de correo para sección Somos Mantonet" />
         </button>
 
         <!-- MEDIOS DE CONTACTO -->
-        <button onclick="window.location.href='index.html'" class="btn-servicio" title="SOMOS MANTONET">
-            <svg class="btn-svg" viewBox="0 0 293.36 110.66" xmlns="http://www.w3.org/2000/svg">
+        <button onclick="window.location.href='index.html'" class="btn-servicio btn-contacto" title="Medios de Contacto">
+            <svg class="btn-svg" viewBox="0 0 293.36 110.66" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon fill="url(#gradienteBotonUnico)" class="botonLadoIzquierdo"
                     points="0 0 0 110.66 143.38 110.66 191.3 0 0 0" />
                 <polygon fill="#330000" class="botonLadoDerecho"
@@ -366,7 +398,7 @@
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">RULETA DE PREMIOS</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Icono%20de%20Correo_Girando.gif"
+            <img src="/img_servicios/logo-girando.gif"
                 class="btn-img" alt="Icono animado de ruleta de premios" />
         </button>
 
@@ -381,7 +413,7 @@
                     points="293.36 0 191.3 0 143.38 110.66 293.36 110.66 293.36 0" />
             </svg>
             <span class="btn-text">PREGUNTAS FRECUENTES</span>
-            <img src="https://raw.githubusercontent.com/SerchAboites/MANTONET/refs/heads/main/Icono%20de%20Correo_Girando.gif"
+            <img src="/img_servicios/logo-girando.gif"
                 class="btn-img" alt="Sección preguntas frecuentes" />
         </button>
         -->
@@ -392,7 +424,7 @@
 
     <!-- Fin de .menu -->
 
-            <footer>© 2025 MANTONET. Todos los derechos reservados.</footer>
+    <footer>© 2026 MANTONET. Todos los derechos reservados.</footer>
 
 
     <!-- Icono Whats General -->
