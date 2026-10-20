@@ -128,6 +128,44 @@
       margin-top: 0 !important;
     }
 
+    /* Header del Hero: Se queda arriba en el hero, no baja con el scroll */
+    .encabezado {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 110px !important;
+      background: linear-gradient(to bottom, rgba(12, 12, 12, 0.78) 0%, rgba(12, 12, 12, 0.3) 60%, transparent 100%) !important;
+      z-index: 10 !important;
+      pointer-events: auto !important;
+    }
+
+    .botonArribaIzquierda {
+      position: absolute !important;
+      top: 25px !important;
+      left: 25px !important;
+      z-index: 20 !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 10px !important;
+      width: 44px !important;
+      height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      font-size: 20px !important;
+      color: #ffffff !important;
+      cursor: pointer !important;
+      transition: background 0.25s ease, transform 0.25s ease !important;
+    }
+
+    .botonArribaIzquierda:hover {
+      background: #cf3838 !important;
+      border-color: #ff5252 !important;
+      transform: scale(1.06) !important;
+    }
+
     /* 2. SECCIÓN HERO A PANTALLA COMPLETA */
     .hero-section {
       position: relative !important;
@@ -173,11 +211,14 @@
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
-      justify-content: center !important;
+      justify-content: flex-end !important;
       text-align: center !important;
-      padding: 0 20px !important;
-      max-width: 900px !important;
+      padding: 0 20px 45px 20px !important;
+      max-width: 1200px !important;
       width: 100% !important;
+      height: 100% !important;
+      box-sizing: border-box !important;
+      pointer-events: none;
     }
 
     .hero-content h1 {
@@ -186,104 +227,1044 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
 
-    /* Restablecer el ancho para el resto de las secciones */
+    /* Restablecer el ancho para el resto de las secciones y margen para sticky header */
     main>section:not(.hero-section) {
       width: 85% !important;
       max-width: 1200px !important;
       margin-left: auto !important;
       margin-right: auto !important;
-      scroll-margin-top: 130px;
+      scroll-margin-top: 85px !important;
     }
 
     main>video.imagenWeb {
       margin-bottom: 20px;
     }
 
-    /* 3. REPARAR EL BOTÓN CIRCULAR DE MÚSICA */
+    /* 3. BOTÓN CIRCULAR DE MÚSICA CON ANIMACIÓN DE LATIDO DE CORAZÓN */
     .boton-circular-audio {
-      /* Propiedades para hacerlo sticky abajo a la derecha */
       position: fixed !important;
-      bottom: 60px !important;
+      bottom: 50px !important;
       right: 25px !important;
       z-index: 9999 !important;
       margin: 0 !important;
-      /* Quitamos el auto para que respete las coordenadas */
 
-      /* Propiedades visuales originales */
-      width: 90px !important;
-      height: 90px !important;
+      width: 80px !important;
+      height: 80px !important;
       border-radius: 50% !important;
-      background: rgba(207, 56, 56, 0.75) !important;
+      background: rgba(207, 56, 56, 0.88) !important;
       backdrop-filter: blur(8px) !important;
-      border: none !important;
+      border: 2px solid rgba(255, 255, 255, 0.5) !important;
       outline: none !important;
       cursor: pointer !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      box-shadow: 0 8px 24px rgba(207, 56, 56, 0.4) !important;
-      transition: transform 0.3s ease, background 0.3s ease !important;
+      box-shadow: 0 6px 20px rgba(207, 56, 56, 0.45) !important;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease !important;
       padding: 0 !important;
     }
 
     .boton-circular-audio:hover {
-      transform: scale(1.1) !important;
-      background: rgba(207, 56, 56, 0.95) !important;
+      transform: scale(1.12) !important;
+      background: rgba(220, 20, 60, 0.98) !important;
     }
 
+    /* Se oculta el spinner circular que parecía barra de carga */
     .borde-animado-svg {
-      position: absolute !important;
-      top: -5px !important;
-      left: -5px !important;
-      width: calc(100% + 10px) !important;
-      height: calc(100% + 10px) !important;
-      pointer-events: none !important;
-      overflow: visible !important;
+      display: none !important;
     }
 
-    .borde-animado-svg circle {
-      transform-origin: center !important;
+    /* Animación de Latido de Corazón (Ritmo Sístole-Diástole "lub-dub") */
+    .boton-circular-audio.boton-latido {
+      animation: latidoCorazon 1.35s ease-in-out infinite !important;
     }
 
-    .boton-jingle-animado .borde-animado-svg circle {
-      animation: spinnerLine 2s ease-in-out infinite, spinnerRotate 2s linear infinite !important;
+    .boton-circular-audio.boton-latido #iconoAudioSvg {
+      animation: latidoIconoCorazon 1.35s ease-in-out infinite !important;
     }
 
-    @keyframes spinnerRotate {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes spinnerLine {
-      0% {
-        stroke-dasharray: 10, 300;
-        stroke-dashoffset: 0;
-      }
-
-      50% {
-        stroke-dasharray: 150, 300;
-        stroke-dashoffset: -50;
-      }
-
-      100% {
-        stroke-dasharray: 10, 300;
-        stroke-dashoffset: -280;
-      }
-    }
-
-    .boton-jingle-animado #iconoAudioSvg {
-      animation: latidoIcono 1s ease-in-out infinite alternate !important;
-    }
-
-    @keyframes latidoIcono {
+    @keyframes latidoCorazon {
       0% {
         transform: scale(1);
+        box-shadow: 0 4px 18px rgba(207, 56, 56, 0.4), 0 0 0 0 rgba(207, 56, 56, 0.65);
+      }
+      14% {
+        transform: scale(1.14);
+        box-shadow: 0 8px 25px rgba(207, 56, 56, 0.65), 0 0 0 10px rgba(207, 56, 56, 0.35);
+      }
+      28% {
+        transform: scale(1.03);
+        box-shadow: 0 4px 18px rgba(207, 56, 56, 0.5), 0 0 0 6px rgba(207, 56, 56, 0.2);
+      }
+      42% {
+        transform: scale(1.22);
+        box-shadow: 0 10px 32px rgba(207, 56, 56, 0.8), 0 0 0 20px rgba(207, 56, 56, 0);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 4px 18px rgba(207, 56, 56, 0.4), 0 0 0 0 rgba(207, 56, 56, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 4px 18px rgba(207, 56, 56, 0.4), 0 0 0 0 rgba(207, 56, 56, 0);
+      }
+    }
+
+    @keyframes latidoIconoCorazon {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.15); }
+      28% { transform: scale(1.04); }
+      42% { transform: scale(1.22); }
+      70% { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Estado activo cuando la música se está reproduciendo */
+    .boton-circular-audio.boton-reproduciendo {
+      background: rgba(220, 20, 60, 0.95) !important;
+      animation: pulsoMusical 0.85s ease-in-out infinite alternate !important;
+      box-shadow: 0 0 22px rgba(255, 60, 60, 0.75), 0 0 45px rgba(255, 60, 60, 0.35) !important;
+    }
+
+    @keyframes pulsoMusical {
+      0% { transform: scale(1.02); }
+      100% { transform: scale(1.12); }
+    }
+
+    /* =========================================================
+       4. EFECTO CSS: LLUVIA Y GOTAS DE AGUA EN EL HERO
+       ========================================================= */
+    .hero-rain-fx {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    /* Bruma y atmósfera húmeda de tormenta */
+    .rain-mist-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 35%, rgba(18, 32, 50, 0.3) 0%, rgba(10, 18, 28, 0.52) 100%);
+      pointer-events: none;
+    }
+
+    .rain-niebla-piso {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 42%;
+      background: linear-gradient(to top, rgba(14, 24, 36, 0.6) 0%, rgba(20, 35, 52, 0.22) 55%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Gotas de lluvia cayendo con estela de agua en ángulo */
+    .gota-lluvia {
+      position: absolute;
+      top: -120px;
+      border-radius: 0 0 2px 2px;
+      pointer-events: none;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    /* Capa 1: Lluvia frontal rápida */
+    .gota-frontal {
+      width: 1.6px;
+      height: 75px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(185, 225, 255, 0.4) 60%, rgba(235, 250, 255, 0.95) 100%);
+      animation: caerLluviaFrontal 0.72s linear infinite;
+    }
+
+    /* Capa 2: Lluvia media intermedia */
+    .gota-media {
+      width: 1.2px;
+      height: 55px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(160, 210, 250, 0.3) 50%, rgba(210, 240, 255, 0.78) 100%);
+      animation: caerLluviaMedia 0.95s linear infinite;
+    }
+
+    /* Capa 3: Llovizna fina de fondo */
+    .gota-fondo {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(150, 200, 245, 0.2) 50%, rgba(200, 230, 255, 0.55) 100%);
+      animation: caerLluviaFondo 1.25s linear infinite;
+    }
+
+    @keyframes caerLluviaFrontal {
+      0% {
+        transform: translate3d(0, -90px, 0) rotate(-9deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.9;
+      }
+      85% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translate3d(-35px, 112vh, 0) rotate(-9deg);
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes caerLluviaMedia {
+      0% {
+        transform: translate3d(0, -70px, 0) rotate(-8deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.75;
+      }
+      85% {
+        opacity: 0.75;
+      }
+      100% {
+        transform: translate3d(-30px, 110vh, 0) rotate(-8deg);
+        opacity: 0.15;
+      }
+    }
+
+    @keyframes caerLluviaFondo {
+      0% {
+        transform: translate3d(0, -50px, 0) rotate(-7deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.5;
+      }
+      85% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate3d(-24px, 108vh, 0) rotate(-7deg);
+        opacity: 0.1;
+      }
+    }
+
+    /* Salpicaduras / Ondas de agua en la superficie del techo */
+    .salpicadura-contenedor {
+      position: absolute;
+      bottom: 22%;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+    }
+
+    .onda-agua {
+      position: absolute;
+      border: 1.5px solid rgba(200, 235, 255, 0.7);
+      border-radius: 50%;
+      transform: scale(0.1) rotateX(65deg);
+      opacity: 0;
+      will-change: transform, opacity;
+      animation: efectoOndaAgua 2.2s ease-out infinite;
+    }
+
+    @keyframes efectoOndaAgua {
+      0% {
+        transform: scale(0.1) rotateX(65deg);
+        opacity: 0.85;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(2.2) rotateX(65deg);
+        opacity: 0;
+      }
+    }
+
+    .micro-salpique {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: rgba(220, 245, 255, 0.9);
+      border-radius: 50%;
+      box-shadow: 0 0 4px rgba(180, 225, 255, 0.8);
+      animation: saltoGota 2.2s ease-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes saltoGota {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.9;
+        transform: translate(-4px, -12px) scale(0.9);
+      }
+      30% {
+        opacity: 0.6;
+        transform: translate(-7px, 2px) scale(0.6);
+      }
+      50%, 100% {
+        opacity: 0;
+        transform: translate(-7px, 2px) scale(0.1);
+      }
+    }
+
+    /* =========================================================
+       5. BOTONES DE NAVEGACIÓN EN EL HERO
+       ========================================================= */
+    .hero-nav-secciones {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      pointer-events: auto;
+    }
+
+    .hero-nav-titulo {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-nav-botones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .btn-hero-nav {
+      background: rgba(22, 22, 22, 0.82);
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(10px);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+      transition: all 0.25s ease;
+    }
+
+    .btn-hero-nav i {
+      color: #ff5252;
+      transition: transform 0.25s ease;
+    }
+
+    .btn-hero-nav:hover {
+      background: #cf3838;
+      border-color: #ff5252;
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 8px 22px rgba(207, 56, 56, 0.55);
+    }
+
+    .btn-hero-nav:hover i {
+      color: #ffffff;
+      transform: scale(1.2);
+    }
+
+    /* =========================================================
+       6. HEADER STICKY UNIFICADO (GLASSMORPHISM TRAS EL HERO)
+       ========================================================= */
+    .header-sticky-nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(24, 24, 24, 0.88);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header-sticky-inner {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Bloque Izquierdo: Menú Hamburguesa + Logotipo SVG */
+    .sticky-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-shrink: 0;
+    }
+
+    .btn-hamburger-sticky {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      padding: 0;
+    }
+
+    .btn-hamburger-sticky:hover {
+      background: #cf3838;
+      border-color: #ff5252;
+      transform: scale(1.05);
+      color: #ffffff;
+    }
+
+    .sticky-logo-link {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      width: 145px;
+      text-decoration: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .sticky-logo-link:hover {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+
+    .sticky-logo-svg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .sticky-logo-svg svg {
+      width: 100%;
+      height: 100%;
+      max-height: 38px;
+    }
+
+    /* Bloque Navegación: Chips de Secciones */
+    .sticky-nav-chips {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 0;
+    }
+
+    .sticky-nav-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip-seccion {
+      background: rgba(50, 50, 50, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f0f0f0 !important;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .chip-seccion i {
+      color: #ff5252;
+      font-size: 13px;
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .chip-seccion:hover {
+      background: #cf3838;
+      border-color: #ff5252;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(207, 56, 56, 0.5);
+    }
+
+    .chip-seccion:hover i {
+      color: #ffffff;
+      transform: scale(1.15);
+    }
+
+    /* =========================================================
+       7. MÓVIL (UN SOLO BREAKPOINT, IGUAL QUE c_estilos.css / c_textos.css)
+       El sitio no declara <meta viewport>: el móvil dibuja ~980px y lo reduce
+       (~0.36x). Por eso las medidas móviles son 3x (header 200px, botones 150px).
+       ========================================================= */
+
+    /* Por defecto (desktop) el botón derecho y el drawer no existen */
+    .btn-secciones-drawer,
+    .botonArribaDerecha,
+    .drawer-secciones,
+    .drawer-secciones-backdrop,
+    .hero-mobile-trigger-container,
+    .modal-constelacion {
+      display: none;
+    }
+
+    /* El menú lateral izquierdo debe quedar por encima del header sticky */
+    .menuNavegacion {
+      z-index: 10003 !important;
+    }
+
+    @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
+    (max-width: 1080px) and (min-resolution: 1.8dppx) {
+
+      /* ---- Hero: sin botones de texto, queda limpio ---- */
+      .hero-nav-secciones {
+        display: none !important;
       }
 
-      100% {
-        transform: scale(1.15);
+      /* ---- Header del hero ---- */
+      .encabezado {
+        height: 200px !important;
+        padding: 0 !important;
       }
+      .linkLogoInicio {
+        width: 44% !important;
+        height: 130px !important;
+      }
+      .botonArribaIzquierda,
+      .botonArribaDerecha {
+        display: flex !important;
+        position: absolute !important;
+        top: 35px !important;
+        width: 130px !important;
+        height: 130px !important;
+        aspect-ratio: 1 / 1;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 30px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 2px solid rgba(255, 255, 255, 0.25) !important;
+        color: #ffffff !important;
+        z-index: 20 !important;
+      }
+      .botonArribaIzquierda { left: 30px !important; }
+      .botonArribaDerecha { right: 30px !important; left: auto !important; }
+      .botonArribaIzquierda i,
+      .botonArribaDerecha i {
+        font-size: 62px !important;
+        color: #ffffff;
+      }
+
+      /* ---- Header sticky: [hamburguesa] [logo] [secciones] ---- */
+      .header-sticky-inner {
+        padding: 22px 30px !important;
+        gap: 0 !important;
+      }
+      .sticky-brand-group {
+        width: 100% !important;
+        justify-content: space-between !important;
+        gap: 20px !important;
+      }
+      .btn-hamburger-sticky {
+        width: 120px !important;
+        height: 120px !important;
+        aspect-ratio: 1 / 1;
+        border-radius: 28px !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
+      }
+      .btn-hamburger-sticky.btn-secciones-drawer {
+        display: flex !important;
+      }
+      .btn-hamburger-sticky i {
+        font-size: 58px !important;
+      }
+      .sticky-logo-link {
+        width: 380px !important;
+        height: 100px !important;
+      }
+      .sticky-logo-svg svg {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+      }
+      .sticky-nav-chips {
+        display: none !important;
+      }
+      main>section:not(.hero-section) {
+        scroll-margin-top: 200px !important;
+      }
+
+      /* ---- Botones flotantes: círculos perfectos ---- */
+      .boton-circular-audio,
+      .whatsapp-button {
+        width: 150px !important;
+        height: 150px !important;
+        aspect-ratio: 1 / 1;
+        border-radius: 50% !important;
+        flex-shrink: 0 !important;
+        bottom: 90px !important;
+        padding: 0 !important;
+      }
+      .boton-circular-audio { right: 30px !important; left: auto !important; }
+      .whatsapp-button { left: 30px !important; }
+      #iconoAudioSvg {
+        width: 76px !important;
+        height: 76px !important;
+      }
+      #iconoPausaAudio {
+        font-size: 66px !important;
+      }
+      #iconoContacto {
+        width: 72px !important;
+        height: 72px !important;
+        transform: none !important;
+      }
+
+      /* ---- Drawer derecho de secciones ---- */
+      .drawer-secciones-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 10004;
+        background: rgba(8, 10, 14, 0.7);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s;
+      }
+      .drawer-secciones-backdrop.activo {
+        opacity: 1;
+        visibility: visible;
+      }
+      .drawer-secciones {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 74%;
+        max-width: 780px;
+        z-index: 10005;
+        box-sizing: border-box;
+        padding: 40px 36px;
+        overflow-y: auto;
+        background: rgba(24, 24, 24, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-left: 2px solid rgba(255, 255, 255, 0.14);
+        box-shadow: -12px 0 40px rgba(0, 0, 0, 0.6);
+        transform: translateX(105%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .drawer-secciones.activo {
+        transform: translateX(0);
+      }
+      .drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 34px;
+        padding-bottom: 28px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+      }
+      .drawer-titulo {
+        font-family: "Lexend", sans-serif;
+        font-size: 46px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .btn-cerrar-drawer {
+        width: 110px;
+        height: 110px;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        cursor: pointer;
+      }
+      .btn-cerrar-drawer i {
+        font-size: 52px !important;
+      }
+      .drawer-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 36px 32px;
+        margin-bottom: 24px;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 2px solid rgba(255, 255, 255, 0.14);
+        color: #ffffff !important;
+        font-family: "Lexend", sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        text-decoration: none !important;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .drawer-link i {
+        width: 64px;
+        text-align: center;
+        font-size: 46px !important;
+        color: #ff5252;
+      }
+      .drawer-link:active {
+        background: #cf3838;
+        border-color: #ff5252;
+      }
+
+      /* ---- Menú lateral izquierdo (inyectado): escala móvil del sitio ---- */
+      .menuNavegacion {
+        width: 80% !important;
+        max-width: 820px !important;
+        padding: 210px 36px 60px 36px !important;
+        gap: 34px !important;
+        justify-content: flex-start !important;
+        overflow-y: auto !important;
+      }
+      .menuNavegacion .cerrar-lateral {
+        top: 40px !important;
+        right: 36px !important;
+        width: 130px !important;
+        height: 130px !important;
+        aspect-ratio: 1 / 1;
+        font-size: 76px !important;
+        line-height: 1 !important;
+      }
+      .menuNavegacion .btn-servicio-lateral {
+        height: 200px !important;
+        min-height: 200px !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 44px !important;
+        border-radius: 32px !important;
+      }
+      .menuNavegacion .btn-servicio-lateral .btn-svg {
+        border-radius: 32px !important;
+      }
+      .menuNavegacion .btn-servicio-lateral .btn-text {
+        font-size: 46px !important;
+        line-height: 1.2 !important;
+        padding-right: 240px !important;
+      }
+      .menuNavegacion .btn-servicio-lateral .btn-img {
+        height: 250px !important;
+        max-height: 250px !important;
+        max-width: 220px !important;
+        right: 14px !important;
+        margin: 0 !important;
+      }
+      .menuNavegacion .icono-whatsapp-fa {
+        width: 112px !important;
+        height: 112px !important;
+        right: 44px !important;
+        top: 44px !important;
+      }
+      .menuNavegacion .icono-whatsapp-fa i {
+        font-size: 70px !important;
+      }
+
+      /* ---- Hero móvil: botón de nodos (estilo logo Mantonet) ---- */
+      .hero-content {
+        padding-bottom: 330px !important;
+      }
+      .hero-mobile-trigger-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        pointer-events: auto;
+        position: relative;
+        z-index: 10;
+      }
+      .btn-nodo-constelacion {
+        display: inline-flex;
+        align-items: center;
+        gap: 24px;
+        padding: 26px 54px;
+        border-radius: 90px;
+        background: rgba(22, 22, 26, 0.88);
+        border: 3px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        color: #ffffff;
+        font-family: "Lexend", sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        cursor: pointer;
+        animation: pulsoResplandorConstelacion 3s ease-in-out infinite alternate;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-nodo-constelacion:active {
+        background: #cf3838;
+        border-color: #ff5252;
+      }
+      .icono-nodo-svg {
+        width: 100px !important;
+        height: 100px !important;
+        flex-shrink: 0;
+        animation: rotarSutilConstelacion 14s linear infinite;
+      }
+      .btn-nodo-constelacion .flecha-pulso {
+        font-size: 40px !important;
+        color: #ff5252;
+        animation: rebotarFlecha 1.4s ease-in-out infinite alternate;
+      }
+
+      /* ---- Modal Constelación ---- */
+      .modal-constelacion {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 10006;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s;
+      }
+      .modal-constelacion.activo {
+        opacity: 1;
+        visibility: visible;
+      }
+      .constelacion-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 12, 16, 0.84);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+      .constelacion-panel {
+        position: relative;
+        z-index: 2;
+        width: 90%;
+        max-width: 900px;
+        box-sizing: border-box;
+        padding: 40px 36px 44px 36px;
+        border-radius: 56px;
+        background: rgba(22, 22, 26, 0.96);
+        border: 2px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 50px rgba(207, 56, 56, 0.25);
+        transform: scale(0.92) translateY(30px);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .modal-constelacion.activo .constelacion-panel {
+        transform: scale(1) translateY(0);
+      }
+      .constelacion-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 28px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+      }
+      .constelacion-badge {
+        display: block;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #ff5252;
+      }
+      .constelacion-titulo {
+        font-family: "Lexend", sans-serif;
+        font-size: 50px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .btn-cerrar-constelacion {
+        width: 110px;
+        height: 110px;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+      }
+      .btn-cerrar-constelacion i {
+        font-size: 52px !important;
+      }
+      .constelacion-grafo-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        margin: 20px 0 10px 0;
+      }
+      .constelacion-lineas-svg {
+        position: absolute;
+        inset: 0;
+        width: 100% !important;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .linea-vectorial {
+        stroke: rgba(255, 255, 255, 0.6);
+        stroke-width: 2.5;
+        stroke-dasharray: 180;
+        stroke-dashoffset: 180;
+        transition: stroke-dashoffset 0.7s ease;
+      }
+      .modal-constelacion.activo .linea-vectorial {
+        stroke-dashoffset: 0;
+      }
+      .linea-orbita-exterior {
+        fill: none;
+        stroke: rgba(207, 56, 56, 0.5);
+        stroke-width: 2;
+        stroke-dasharray: 5, 5;
+      }
+      .nodo-constelacion {
+        position: absolute;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none !important;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .nodo-burbuja {
+        width: 132px;
+        height: 132px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #d32f2f 0%, #9a1010 100%);
+        border: 4px solid rgba(255, 255, 255, 0.65);
+        box-shadow: 0 8px 26px rgba(211, 47, 47, 0.55);
+        color: #ffffff;
+      }
+      .nodo-burbuja i {
+        font-size: 56px !important;
+      }
+      .nodo-constelacion:active .nodo-burbuja {
+        background: #ff5252;
+      }
+      .nodo-etiqueta {
+        margin-top: 12px;
+        padding: 6px 20px;
+        border-radius: 24px;
+        background: rgba(18, 18, 20, 0.9);
+        border: 2px solid rgba(255, 255, 255, 0.18);
+        font-family: "Lexend", sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        color: #ffffff;
+        white-space: nowrap;
+      }
+      .nodo-pos-1 { top: 2%;  left: 50%; transform: translate(-50%, 0); }
+      .nodo-pos-2 { top: 22%; left: 84%; transform: translate(-50%, 0); }
+      .nodo-pos-3 { top: 64%; left: 84%; transform: translate(-50%, 0); }
+      .nodo-pos-4 { top: 78%; left: 50%; transform: translate(-50%, 0); }
+      .nodo-pos-5 { top: 64%; left: 16%; transform: translate(-50%, 0); }
+      .nodo-pos-6 { top: 22%; left: 16%; transform: translate(-50%, 0); }
+      .nodo-nucleo {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      .nucleo-icono-box {
+        position: relative;
+        z-index: 2;
+        width: 150px;
+        height: 150px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle, #e53935 0%, #6f0000 100%);
+        border: 4px solid #ffffff;
+        box-shadow: 0 0 40px rgba(229, 57, 53, 0.85);
+        color: #ffffff;
+      }
+      .nucleo-icono-box i {
+        font-size: 64px !important;
+      }
+      .nucleo-halo-onda {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 82, 82, 0.6);
+        animation: pulsoHaloNucleo 2.2s infinite ease-out;
+      }
+      .nucleo-label {
+        margin-top: 8px;
+        padding: 4px 18px;
+        border-radius: 20px;
+        background: rgba(22, 22, 26, 0.96);
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .constelacion-subtexto {
+        margin: 44px 0 0 0;
+        text-align: center;
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+    @keyframes pulsoResplandorConstelacion {
+      0% { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55), 0 0 10px rgba(207, 56, 56, 0.3); border-color: rgba(255, 255, 255, 0.35); }
+      100% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.65), 0 0 28px rgba(207, 56, 56, 0.8); border-color: rgba(255, 82, 82, 0.75); }
+    }
+    @keyframes rotarSutilConstelacion {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes rebotarFlecha {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+    @keyframes pulsoHaloNucleo {
+      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
     }
   </style>
 
@@ -300,7 +1281,10 @@
             fetch("logoMantonet.svg")
               .then((res) => res.text())
               .then((svg) => {
-                document.getElementById("logo-container").innerHTML = svg;
+                const logoHero = document.getElementById("logo-container");
+                const logoSticky = document.getElementById("sticky-logo-container");
+                if (logoHero) logoHero.innerHTML = svg;
+                if (logoSticky) logoSticky.innerHTML = svg;
               });
           });
         </script>
@@ -309,6 +1293,10 @@
       <button type="button" onclick="event.preventDefault(); event.stopPropagation(); mostrarMenu();"
         class="botonArribaIzquierda" aria-label="Abrir menú de navegación">
         <i class="fas fa-bars"></i>
+      </button>
+
+      <button type="button" class="botonArribaDerecha btn-secciones-drawer" aria-label="Abrir secciones de la página">
+        <i class="fas fa-list-ul"></i>
       </button>
     </div>
 
@@ -327,33 +1315,136 @@
 
     <main class="main-fullscreen">
 
-      <!-- H1 ajustado para incluir palabras clave más potentes -->
-      <!-- SECCIÓN HERO LIMPIA (SIN OVERLAY NI TÍTULO) -->
+      <!-- SECCIÓN HERO CON EFECTO DE LLUVIA Y GOTAS DE AGUA -->
       <section class="hero-section hero-fullscreen">
         <img class="hero-bg" src="img/hero-Impermeabilizaciones.webp"
           alt="Impermeabilización profesional de techos y terrazas" />
 
+        <!-- Efecto CSS: Lluvia y Partículas de Agua -->
+        <div class="hero-rain-fx" aria-hidden="true">
+          <div class="rain-mist-overlay"></div>
+          <div class="rain-niebla-piso"></div>
+
+          <!-- Capa 1: Lluvia frontal rápida -->
+          <div class="gota-lluvia gota-frontal" style="left: 4%; animation-delay: 0.1s; animation-duration: 0.68s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 12%; animation-delay: 0.42s; animation-duration: 0.72s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 21%; animation-delay: 0.18s; animation-duration: 0.65s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 29%; animation-delay: 0.55s; animation-duration: 0.74s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 38%; animation-delay: 0.05s; animation-duration: 0.70s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 47%; animation-delay: 0.38s; animation-duration: 0.67s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 56%; animation-delay: 0.22s; animation-duration: 0.75s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 64%; animation-delay: 0.62s; animation-duration: 0.69s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 73%; animation-delay: 0.12s; animation-duration: 0.71s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 82%; animation-delay: 0.48s; animation-duration: 0.66s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 91%; animation-delay: 0.27s; animation-duration: 0.73s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 97%; animation-delay: 0.58s; animation-duration: 0.68s;"></div>
+
+          <!-- Capa 2: Lluvia media intermedia -->
+          <div class="gota-lluvia gota-media" style="left: 7%; animation-delay: 0.3s; animation-duration: 0.92s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 16%; animation-delay: 0.75s; animation-duration: 0.98s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 25%; animation-delay: 0.15s; animation-duration: 0.90s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 34%; animation-delay: 0.5s; animation-duration: 1.02s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 43%; animation-delay: 0.85s; animation-duration: 0.94s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 52%; animation-delay: 0.25s; animation-duration: 0.88s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 60%; animation-delay: 0.65s; animation-duration: 0.96s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 69%; animation-delay: 0.1s; animation-duration: 1.05s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 78%; animation-delay: 0.45s; animation-duration: 0.91s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 87%; animation-delay: 0.8s; animation-duration: 0.97s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 95%; animation-delay: 0.35s; animation-duration: 0.93s;"></div>
+
+          <!-- Capa 3: Llovizna fina de fondo -->
+          <div class="gota-lluvia gota-fondo" style="left: 10%; animation-delay: 0.2s; animation-duration: 1.2s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 23%; animation-delay: 0.8s; animation-duration: 1.35s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 36%; animation-delay: 0.4s; animation-duration: 1.15s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 50%; animation-delay: 1.0s; animation-duration: 1.3s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 66%; animation-delay: 0.6s; animation-duration: 1.25s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 79%; animation-delay: 0.1s; animation-duration: 1.18s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 93%; animation-delay: 0.7s; animation-duration: 1.28s;"></div>
+
+          <!-- Salpicaduras / Ondas de agua en la superficie del techo -->
+          <div class="salpicadura-contenedor">
+            <div class="onda-agua" style="left: 22%; bottom: 25px; width: 45px; height: 18px; animation-delay: 0.2s;"></div>
+            <div class="micro-salpique" style="left: 23%; bottom: 32px; animation-delay: 0.2s;"></div>
+
+            <div class="onda-agua" style="left: 48%; bottom: 40px; width: 50px; height: 20px; animation-delay: 0.8s;"></div>
+            <div class="micro-salpique" style="left: 49%; bottom: 48px; animation-delay: 0.8s;"></div>
+
+            <div class="onda-agua" style="left: 65%; bottom: 20px; width: 42px; height: 16px; animation-delay: 1.4s;"></div>
+            <div class="micro-salpique" style="left: 66%; bottom: 27px; animation-delay: 1.4s;"></div>
+
+            <div class="onda-agua" style="left: 80%; bottom: 35px; width: 46px; height: 18px; animation-delay: 0.5s;"></div>
+            <div class="micro-salpique" style="left: 81%; bottom: 42px; animation-delay: 0.5s;"></div>
+          </div>
+        </div>
+
         <div class="hero-content">
-          <!-- Botón de Audio / Jingle (Se queda aquí centrado en la imagen) -->
-          <div class="control-audio-container"
-            style="display: flex; justify-content: center; margin: 25px auto; position: relative;">
-            <button id="btnControlAudio" class="boton-circular-audio boton-jingle-animado"
-              aria-label="Reproducir Jingle">
-              <svg class="borde-animado-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="5"
-                  stroke-linecap="round"></circle>
+          <!-- Botones de Navegación integrados en el Hero (Desktop) -->
+          <nav class="hero-nav-secciones" aria-label="Navegación de secciones de Impermeabilización">
+            <div class="hero-nav-titulo"><i class="fas fa-compass"></i> Secciones de Interés</div>
+            <div class="hero-nav-botones">
+              <a href="#Section-Nuestros-Servicios" class="btn-hero-nav"><i class="fas fa-layer-group"></i> Servicios</a>
+              <a href="#Section-Nuestro-Procedimiento" class="btn-hero-nav"><i class="fas fa-list-check"></i> Procedimiento</a>
+              <a href="#Section-Porque-Elegirnos" class="btn-hero-nav"><i class="fas fa-award"></i> Garantías</a>
+              <a href="#Seccion-Zonas-Cobertura" class="btn-hero-nav"><i class="fas fa-map-marker-alt"></i> Cobertura</a>
+              <a href="#Seccion-Nuestra-Experiencia" class="btn-hero-nav"><i class="fas fa-certificate"></i> Experiencia</a>
+              <a href="#Section-Faq" class="btn-hero-nav"><i class="fas fa-circle-question"></i> FAQ</a>
+            </div>
+          </nav>
+
+          <!-- Móvil: botón de nodos (estilo logo Mantonet) que abre la constelación -->
+          <div class="hero-mobile-trigger-container">
+            <button type="button" class="btn-nodo-constelacion" id="btnAbrirConstelacion" aria-label="Explorar secciones de la página">
+              <svg class="icono-nodo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <line x1="50" y1="50" x2="22" y2="32" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
+                <line x1="50" y1="50" x2="78" y2="32" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
+                <line x1="50" y1="50" x2="22" y2="68" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
+                <line x1="50" y1="50" x2="78" y2="68" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
+                <line x1="50" y1="50" x2="50" y2="86" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
+                <line x1="50" y1="50" x2="50" y2="14" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
+                <circle cx="50" cy="50" r="14" fill="#cf3838" />
+                <circle cx="22" cy="32" r="6" fill="#ffffff" />
+                <circle cx="78" cy="32" r="6" fill="#ffffff" />
+                <circle cx="22" cy="68" r="6" fill="#ffffff" />
+                <circle cx="78" cy="68" r="6" fill="#ffffff" />
+                <circle cx="50" cy="86" r="6" fill="#ffffff" />
+                <circle cx="50" cy="14" r="6" fill="#ffffff" />
               </svg>
-              <svg version="1.1" id="iconoAudioSvg" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                viewBox="300,-72.5,1000,1000" style="position:relative; z-index:2;">
-                <g id="Capa 1" fill="#ffffff">
-                  <path
-                    d="M1109.42478,29.55155l20.36842,7.28888l3.70335,9.11109v517.50989c-8.14737,29.64142 -22.34354,53.33023 -42.58852,71.06649l-55.55027,32.79991l-33.33016,7.28888h-37.0335c-42.4651,-6.80294 -73.94358,-24.41771 -94.43545,-52.84431l-22.2201,-47.37768v-43.73322c8.88805,-38.63101 28.02201,-67.17909 57.40193,-85.64424l55.55027,-25.51104l59.2536,-3.64445c27.4048,4.85924 50.24215,13.36294 68.51201,25.51107c0,0 -1.38231,-139.2565 -1.34307,-161.57505c0.03924,-22.31855 -2.3603,-99.00211 -2.3603,-99.00211l-1.85167,-96.57756l-357.37336,94.75533v519.33212c-9.6287,34.25769 -27.52824,60.37615 -53.69858,78.35536c-17.28231,14.57775 -39.50241,24.29625 -66.66031,29.1555h-59.25362c-34.07083,-7.7748 -60.61151,-22.95995 -79.62205,-45.55545l-22.2201,-40.08879l-3.70335,-54.66654c8.39426,-35.4725 25.05934,-62.80579 49.99523,-81.99981c27.15791,-25.51104 69.12922,-36.44436 125.91393,-32.79993c26.17034,5.34516 47.77322,13.84888 64.80864,25.51107v-424.57679l12.96171,-12.75552z" />
-                </g>
-              </svg>
+              <span>Explorar Secciones</span>
+              <i class="fas fa-chevron-up flecha-pulso"></i>
             </button>
           </div>
         </div>
       </section>
+
+      <!-- Header Sticky Unificado Glassmorphism (Aparece tras el Hero) -->
+      <header class="header-sticky-nav" id="headerStickyNav" aria-label="Navegación principal">
+        <div class="header-sticky-inner">
+          <!-- Izquierda: hamburguesa + logo | (móvil) botón de secciones a la derecha -->
+          <div class="sticky-brand-group">
+            <button type="button" class="btn-hamburger-sticky"
+              onclick="event.preventDefault(); event.stopPropagation(); mostrarMenu();"
+              aria-label="Abrir menú de navegación">
+              <i class="fas fa-bars"></i>
+            </button>
+            <a href="a-MenuServicios.html" class="sticky-logo-link" title="Ir al inicio de Mantonet">
+              <div id="sticky-logo-container" class="sticky-logo-svg"></div>
+            </a>
+            <button type="button" class="btn-hamburger-sticky btn-secciones-drawer" aria-label="Abrir secciones de la página">
+              <i class="fas fa-list-ul"></i>
+            </button>
+          </div>
+
+          <!-- Desktop: chips de secciones -->
+          <nav class="sticky-nav-chips" aria-label="Navegación rápida de secciones">
+            <a href="#Section-Nuestros-Servicios" class="chip-seccion"><i class="fas fa-layer-group"></i> <span>Servicios</span></a>
+            <a href="#Section-Nuestro-Procedimiento" class="chip-seccion"><i class="fas fa-list-check"></i> <span>Procedimiento</span></a>
+            <a href="#Section-Porque-Elegirnos" class="chip-seccion"><i class="fas fa-award"></i> <span>Garantías</span></a>
+            <a href="#Seccion-Zonas-Cobertura" class="chip-seccion"><i class="fas fa-map-marker-alt"></i> <span>Cobertura</span></a>
+            <a href="#Seccion-Nuestra-Experiencia" class="chip-seccion"><i class="fas fa-certificate"></i> <span>Experiencia</span></a>
+            <a href="#Section-Faq" class="chip-seccion"><i class="fas fa-circle-question"></i> <span>Preguntas</span></a>
+          </nav>
+        </div>
+      </header>
 
       <h1>Impermeabilización Profesional en CDMX y Estado de México</h1>
 
@@ -961,40 +2052,209 @@
     document.body.appendChild(img);
   </script>
 
+  <!-- Botón Circular de Audio / Jingle con animación de Latido de Corazón -->
+  <button id="btnControlAudio" class="boton-circular-audio boton-latido"
+    aria-label="Reproducir Jingle de Mantonet" title="Reproducir Jingle Mantonet">
+    <svg version="1.1" id="iconoAudioSvg" xmlns="http://www.w3.org/2000/svg" width="46" height="46"
+      viewBox="300,-72.5,1000,1000" style="position:relative; z-index:2; transition: transform 0.25s ease;">
+      <g id="Capa 1" fill="#ffffff">
+        <path
+          d="M1109.42478,29.55155l20.36842,7.28888l3.70335,9.11109v517.50989c-8.14737,29.64142 -22.34354,53.33023 -42.58852,71.06649l-55.55027,32.79991l-33.33016,7.28888h-37.0335c-42.4651,-6.80294 -73.94358,-24.41771 -94.43545,-52.84431l-22.2201,-47.37768v-43.73322c8.88805,-38.63101 28.02201,-67.17909 57.40193,-85.64424l55.55027,-25.51104l59.2536,-3.64445c27.4048,4.85924 50.24215,13.36294 68.51201,25.51107c0,0 -1.38231,-139.2565 -1.34307,-161.57505c0.03924,-22.31855 -2.3603,-99.00211 -2.3603,-99.00211l-1.85167,-96.57756l-357.37336,94.75533v519.33212c-9.6287,34.25769 -27.52824,60.37615 -53.69858,78.35536c-17.28231,14.57775 -39.50241,24.29625 -66.66031,29.1555h-59.25362c-34.07083,-7.7748 -60.61151,-22.95995 -79.62205,-45.55545l-22.2201,-40.08879l-3.70335,-54.66654c8.39426,-35.4725 25.05934,-62.80579 49.99523,-81.99981c27.15791,-25.51104 69.12922,-36.44436 125.91393,-32.79993c26.17034,5.34516 47.77322,13.84888 64.80864,25.51107v-424.57679l12.96171,-12.75552z" />
+      </g>
+    </svg>
+    <i class="fa-solid fa-pause" id="iconoPausaAudio" style="display: none; font-size: 26px; color: #ffffff; position: relative; z-index: 2;"></i>
+  </button>
+
   <audio id="audioFondoImper" src="sonidos/Tu_Refugio_Bajo_Techo.mp3" preload="auto"></audio>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const audio = document.getElementById("audioFondoImper");
       const btnAudio = document.getElementById("btnControlAudio");
+      const iconoNota = document.getElementById("iconoAudioSvg");
+      const iconoPausa = document.getElementById("iconoPausaAudio");
 
       if (audio && btnAudio) {
         audio.volume = 0.5;
 
         function actualizarInterfaz() {
           if (audio.paused) {
-            btnAudio.classList.add("boton-jingle-animado");
+            btnAudio.classList.add("boton-latido");
+            btnAudio.classList.remove("boton-reproduciendo");
+            btnAudio.setAttribute("title", "Reproducir Jingle Mantonet");
+            btnAudio.setAttribute("aria-label", "Reproducir Jingle Mantonet");
+            if (iconoNota) iconoNota.style.display = "block";
+            if (iconoPausa) iconoPausa.style.display = "none";
           } else {
-            btnAudio.classList.remove("boton-jingle-animado");
+            btnAudio.classList.remove("boton-latido");
+            btnAudio.classList.add("boton-reproduciendo");
+            btnAudio.setAttribute("title", "Pausar Jingle Mantonet");
+            btnAudio.setAttribute("aria-label", "Pausar Jingle Mantonet");
+            if (iconoNota) iconoNota.style.display = "none";
+            if (iconoPausa) iconoPausa.style.display = "block";
           }
         }
 
         btnAudio.addEventListener("click", function (event) {
           event.stopPropagation();
           if (audio.paused) {
-            audio.play();
+            audio.play().catch(function (e) {
+              console.log("Audio play error:", e);
+            });
           } else {
             audio.pause();
           }
           actualizarInterfaz();
         });
 
+        audio.addEventListener("play", actualizarInterfaz);
+        audio.addEventListener("pause", actualizarInterfaz);
         audio.addEventListener("ended", function () {
           actualizarInterfaz();
         });
 
         actualizarInterfaz();
       }
+    });
+  </script>
+
+  <!-- Drawer lateral derecho: navegación de secciones (solo móvil) -->
+  <div id="drawerBackdrop" class="drawer-secciones-backdrop"></div>
+  <aside id="drawerSecciones" class="drawer-secciones" aria-hidden="true" aria-label="Secciones de la página">
+    <div class="drawer-header">
+      <div class="drawer-titulo">Secciones</div>
+      <button type="button" class="btn-cerrar-drawer" id="btnCerrarDrawer" aria-label="Cerrar secciones">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <a href="#Section-Nuestros-Servicios" class="drawer-link"><i class="fas fa-layer-group"></i><span>Servicios</span></a>
+    <a href="#Section-Nuestro-Procedimiento" class="drawer-link"><i class="fas fa-list-check"></i><span>Procedimiento</span></a>
+    <a href="#Section-Porque-Elegirnos" class="drawer-link"><i class="fas fa-award"></i><span>Garantías</span></a>
+    <a href="#Seccion-Zonas-Cobertura" class="drawer-link"><i class="fas fa-map-marker-alt"></i><span>Cobertura</span></a>
+    <a href="#Seccion-Nuestra-Experiencia" class="drawer-link"><i class="fas fa-certificate"></i><span>Experiencia</span></a>
+    <a href="#Section-Faq" class="drawer-link"><i class="fas fa-circle-question"></i><span>Preguntas</span></a>
+  </aside>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const drawer = document.getElementById("drawerSecciones");
+      const backdrop = document.getElementById("drawerBackdrop");
+      const abrirBtns = document.querySelectorAll(".btn-secciones-drawer");
+      const cerrarBtn = document.getElementById("btnCerrarDrawer");
+      const links = document.querySelectorAll(".drawer-link");
+
+      function abrir() {
+        drawer.classList.add("activo");
+        backdrop.classList.add("activo");
+        drawer.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function cerrar() {
+        drawer.classList.remove("activo");
+        backdrop.classList.remove("activo");
+        drawer.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      abrirBtns.forEach(function (b) {
+        b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); abrir(); });
+      });
+      cerrarBtn.addEventListener("click", cerrar);
+      backdrop.addEventListener("click", cerrar);
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrar(); });
+
+      links.forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          const id = this.getAttribute("href");
+          cerrar();
+          setTimeout(function () {
+            const el = document.querySelector(id);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }, 250);
+        });
+      });
+    });
+  </script>
+
+  <!-- Modal Constelación de Nodos (móvil) -->
+  <div id="modalConstelacion" class="modal-constelacion" aria-hidden="true" role="dialog" aria-label="Secciones de la página">
+    <div class="constelacion-backdrop" id="backdropConstelacion"></div>
+    <div class="constelacion-panel">
+      <div class="constelacion-header">
+        <div>
+          <span class="constelacion-badge">Mantonet Red</span>
+          <div class="constelacion-titulo">Explorar Secciones</div>
+        </div>
+        <button type="button" class="btn-cerrar-constelacion" id="btnCerrarConstelacion" aria-label="Cerrar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="constelacion-grafo-container">
+        <svg class="constelacion-lineas-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+          <line class="linea-vectorial" x1="160" y1="160" x2="160" y2="40" />
+          <line class="linea-vectorial" x1="160" y1="160" x2="269" y2="100" />
+          <line class="linea-vectorial" x1="160" y1="160" x2="269" y2="230" />
+          <line class="linea-vectorial" x1="160" y1="160" x2="160" y2="275" />
+          <line class="linea-vectorial" x1="160" y1="160" x2="51" y2="230" />
+          <line class="linea-vectorial" x1="160" y1="160" x2="51" y2="100" />
+          <polygon class="linea-orbita-exterior" points="160,40 269,100 269,230 160,275 51,230 51,100" />
+        </svg>
+
+        <div class="nodo-constelacion nodo-nucleo">
+          <div class="nucleo-halo-onda"></div>
+          <div class="nucleo-icono-box"><i class="fas fa-shield-halved"></i></div>
+          <span class="nucleo-label">Mantonet</span>
+        </div>
+
+        <a href="#Section-Nuestros-Servicios" class="nodo-constelacion nodo-pos-1"><div class="nodo-burbuja"><i class="fas fa-layer-group"></i></div><span class="nodo-etiqueta">Servicios</span></a>
+        <a href="#Section-Nuestro-Procedimiento" class="nodo-constelacion nodo-pos-2"><div class="nodo-burbuja"><i class="fas fa-list-check"></i></div><span class="nodo-etiqueta">Procedimiento</span></a>
+        <a href="#Section-Porque-Elegirnos" class="nodo-constelacion nodo-pos-3"><div class="nodo-burbuja"><i class="fas fa-award"></i></div><span class="nodo-etiqueta">Garantías</span></a>
+        <a href="#Seccion-Zonas-Cobertura" class="nodo-constelacion nodo-pos-4"><div class="nodo-burbuja"><i class="fas fa-map-marker-alt"></i></div><span class="nodo-etiqueta">Cobertura</span></a>
+        <a href="#Seccion-Nuestra-Experiencia" class="nodo-constelacion nodo-pos-5"><div class="nodo-burbuja"><i class="fas fa-certificate"></i></div><span class="nodo-etiqueta">Experiencia</span></a>
+        <a href="#Section-Faq" class="nodo-constelacion nodo-pos-6"><div class="nodo-burbuja"><i class="fas fa-circle-question"></i></div><span class="nodo-etiqueta">Preguntas</span></a>
+      </div>
+
+      <p class="constelacion-subtexto">Toca un nodo para ir a la sección</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("modalConstelacion");
+      const abrir = document.getElementById("btnAbrirConstelacion");
+      const cerrarBtn = document.getElementById("btnCerrarConstelacion");
+      const backdrop = document.getElementById("backdropConstelacion");
+      const nodos = document.querySelectorAll("#modalConstelacion a.nodo-constelacion");
+
+      function abrirModal() {
+        modal.classList.add("activo");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function cerrarModal() {
+        modal.classList.remove("activo");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      if (abrir) abrir.addEventListener("click", abrirModal);
+      cerrarBtn.addEventListener("click", cerrarModal);
+      backdrop.addEventListener("click", cerrarModal);
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrarModal(); });
+
+      nodos.forEach(function (n) {
+        n.addEventListener("click", function (e) {
+          e.preventDefault();
+          const id = this.getAttribute("href");
+          cerrarModal();
+          setTimeout(function () {
+            const el = document.querySelector(id);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }, 250);
+        });
+      });
     });
   </script>
 

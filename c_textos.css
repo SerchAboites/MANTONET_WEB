@@ -19,7 +19,7 @@ h1 {
   position: relative !important;
   z-index: 1 !important;
   background: #383838 !important; /* Gris claro base */
-  border-radius: 12px !important;
+  border-radius: 30px !important;
   overflow: hidden !important; /* Recorta el excedente de la onda interna */
   
   /* Animación del resplandor exterior sincronizada en tiempo con el giro */
@@ -55,7 +55,7 @@ h1::after {
   position: absolute !important;
   inset: 4px !important; /* Grosor de la línea perimetral */
   background: #383838 !important;
-  border-radius: 8px !important;
+  border-radius: 30px !important;
   z-index: -1 !important;
 }
 
