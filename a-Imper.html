@@ -288,22 +288,27 @@
         transform: scale(1);
         box-shadow: 0 4px 18px rgba(207, 56, 56, 0.4), 0 0 0 0 rgba(207, 56, 56, 0.65);
       }
+
       14% {
         transform: scale(1.14);
         box-shadow: 0 8px 25px rgba(207, 56, 56, 0.65), 0 0 0 10px rgba(207, 56, 56, 0.35);
       }
+
       28% {
         transform: scale(1.03);
         box-shadow: 0 4px 18px rgba(207, 56, 56, 0.5), 0 0 0 6px rgba(207, 56, 56, 0.2);
       }
+
       42% {
         transform: scale(1.22);
         box-shadow: 0 10px 32px rgba(207, 56, 56, 0.8), 0 0 0 20px rgba(207, 56, 56, 0);
       }
+
       70% {
         transform: scale(1);
         box-shadow: 0 4px 18px rgba(207, 56, 56, 0.4), 0 0 0 0 rgba(207, 56, 56, 0);
       }
+
       100% {
         transform: scale(1);
         box-shadow: 0 4px 18px rgba(207, 56, 56, 0.4), 0 0 0 0 rgba(207, 56, 56, 0);
@@ -311,12 +316,29 @@
     }
 
     @keyframes latidoIconoCorazon {
-      0% { transform: scale(1); }
-      14% { transform: scale(1.15); }
-      28% { transform: scale(1.04); }
-      42% { transform: scale(1.22); }
-      70% { transform: scale(1); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      14% {
+        transform: scale(1.15);
+      }
+
+      28% {
+        transform: scale(1.04);
+      }
+
+      42% {
+        transform: scale(1.22);
+      }
+
+      70% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     /* Estado activo cuando la música se está reproduciendo */
@@ -327,8 +349,13 @@
     }
 
     @keyframes pulsoMusical {
-      0% { transform: scale(1.02); }
-      100% { transform: scale(1.12); }
+      0% {
+        transform: scale(1.02);
+      }
+
+      100% {
+        transform: scale(1.12);
+      }
     }
 
     /* =========================================================
@@ -402,12 +429,15 @@
         transform: translate3d(0, -90px, 0) rotate(-9deg);
         opacity: 0;
       }
+
       15% {
         opacity: 0.9;
       }
+
       85% {
         opacity: 0.9;
       }
+
       100% {
         transform: translate3d(-35px, 112vh, 0) rotate(-9deg);
         opacity: 0.2;
@@ -419,12 +449,15 @@
         transform: translate3d(0, -70px, 0) rotate(-8deg);
         opacity: 0;
       }
+
       15% {
         opacity: 0.75;
       }
+
       85% {
         opacity: 0.75;
       }
+
       100% {
         transform: translate3d(-30px, 110vh, 0) rotate(-8deg);
         opacity: 0.15;
@@ -436,12 +469,15 @@
         transform: translate3d(0, -50px, 0) rotate(-7deg);
         opacity: 0;
       }
+
       15% {
         opacity: 0.5;
       }
+
       85% {
         opacity: 0.5;
       }
+
       100% {
         transform: translate3d(-24px, 108vh, 0) rotate(-7deg);
         opacity: 0.1;
@@ -472,9 +508,11 @@
         transform: scale(0.1) rotateX(65deg);
         opacity: 0.85;
       }
+
       50% {
         opacity: 0.5;
       }
+
       100% {
         transform: scale(2.2) rotateX(65deg);
         opacity: 0;
@@ -497,15 +535,19 @@
         transform: translate(0, 0) scale(1);
         opacity: 0;
       }
+
       15% {
         opacity: 0.9;
         transform: translate(-4px, -12px) scale(0.9);
       }
+
       30% {
         opacity: 0.6;
         transform: translate(-7px, 2px) scale(0.6);
       }
-      50%, 100% {
+
+      50%,
+      100% {
         opacity: 0;
         transform: translate(-7px, 2px) scale(0.1);
       }
@@ -751,10 +793,12 @@
         height: 200px !important;
         padding: 0 !important;
       }
+
       .linkLogoInicio {
         width: 44% !important;
         height: 130px !important;
       }
+
       .botonArribaIzquierda,
       .botonArribaDerecha {
         display: flex !important;
@@ -773,8 +817,16 @@
         color: #ffffff !important;
         z-index: 20 !important;
       }
-      .botonArribaIzquierda { left: 30px !important; }
-      .botonArribaDerecha { right: 30px !important; left: auto !important; }
+
+      .botonArribaIzquierda {
+        left: 30px !important;
+      }
+
+      .botonArribaDerecha {
+        right: 30px !important;
+        left: auto !important;
+      }
+
       .botonArribaIzquierda i,
       .botonArribaDerecha i {
         font-size: 62px !important;
@@ -786,11 +838,13 @@
         padding: 22px 30px !important;
         gap: 0 !important;
       }
+
       .sticky-brand-group {
         width: 100% !important;
         justify-content: space-between !important;
         gap: 20px !important;
       }
+
       .btn-hamburger-sticky {
         width: 120px !important;
         height: 120px !important;
@@ -799,24 +853,30 @@
         flex-shrink: 0 !important;
         padding: 0 !important;
       }
+
       .btn-hamburger-sticky.btn-secciones-drawer {
         display: flex !important;
       }
+
       .btn-hamburger-sticky i {
         font-size: 58px !important;
       }
+
       .sticky-logo-link {
         width: 380px !important;
         height: 100px !important;
       }
+
       .sticky-logo-svg svg {
         width: 100% !important;
         height: 100% !important;
         max-height: none !important;
       }
+
       .sticky-nav-chips {
         display: none !important;
       }
+
       main>section:not(.hero-section) {
         scroll-margin-top: 200px !important;
       }
@@ -832,15 +892,25 @@
         bottom: 90px !important;
         padding: 0 !important;
       }
-      .boton-circular-audio { right: 30px !important; left: auto !important; }
-      .whatsapp-button { left: 30px !important; }
+
+      .boton-circular-audio {
+        right: 30px !important;
+        left: auto !important;
+      }
+
+      .whatsapp-button {
+        left: 30px !important;
+      }
+
       #iconoAudioSvg {
         width: 76px !important;
         height: 76px !important;
       }
+
       #iconoPausaAudio {
         font-size: 66px !important;
       }
+
       #iconoContacto {
         width: 72px !important;
         height: 72px !important;
@@ -860,10 +930,12 @@
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s;
       }
+
       .drawer-secciones-backdrop.activo {
         opacity: 1;
         visibility: visible;
       }
+
       .drawer-secciones {
         display: flex;
         flex-direction: column;
@@ -885,9 +957,11 @@
         transform: translateX(105%);
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
+
       .drawer-secciones.activo {
         transform: translateX(0);
       }
+
       .drawer-header {
         display: flex;
         align-items: center;
@@ -896,12 +970,14 @@
         padding-bottom: 28px;
         border-bottom: 2px solid rgba(255, 255, 255, 0.12);
       }
+
       .drawer-titulo {
         font-family: "Lexend", sans-serif;
         font-size: 46px;
         font-weight: 700;
         color: #ffffff;
       }
+
       .btn-cerrar-drawer {
         width: 110px;
         height: 110px;
@@ -917,9 +993,11 @@
         color: #ffffff;
         cursor: pointer;
       }
+
       .btn-cerrar-drawer i {
         font-size: 52px !important;
       }
+
       .drawer-link {
         display: flex;
         align-items: center;
@@ -936,12 +1014,14 @@
         text-decoration: none !important;
         -webkit-tap-highlight-color: transparent;
       }
+
       .drawer-link i {
         width: 64px;
         text-align: center;
         font-size: 46px !important;
         color: #ff5252;
       }
+
       .drawer-link:active {
         background: #cf3838;
         border-color: #ff5252;
@@ -956,6 +1036,7 @@
         justify-content: flex-start !important;
         overflow-y: auto !important;
       }
+
       .menuNavegacion .cerrar-lateral {
         top: 40px !important;
         right: 36px !important;
@@ -965,6 +1046,7 @@
         font-size: 76px !important;
         line-height: 1 !important;
       }
+
       .menuNavegacion .btn-servicio-lateral {
         height: 200px !important;
         min-height: 200px !important;
@@ -973,14 +1055,17 @@
         padding: 0 44px !important;
         border-radius: 32px !important;
       }
+
       .menuNavegacion .btn-servicio-lateral .btn-svg {
         border-radius: 32px !important;
       }
+
       .menuNavegacion .btn-servicio-lateral .btn-text {
         font-size: 46px !important;
         line-height: 1.2 !important;
         padding-right: 240px !important;
       }
+
       .menuNavegacion .btn-servicio-lateral .btn-img {
         height: 250px !important;
         max-height: 250px !important;
@@ -988,12 +1073,14 @@
         right: 14px !important;
         margin: 0 !important;
       }
+
       .menuNavegacion .icono-whatsapp-fa {
         width: 112px !important;
         height: 112px !important;
         right: 44px !important;
         top: 44px !important;
       }
+
       .menuNavegacion .icono-whatsapp-fa i {
         font-size: 70px !important;
       }
@@ -1002,6 +1089,7 @@
       .hero-content {
         padding-bottom: 330px !important;
       }
+
       .hero-mobile-trigger-container {
         display: flex;
         justify-content: center;
@@ -1010,6 +1098,7 @@
         position: relative;
         z-index: 10;
       }
+
       .btn-nodo-constelacion {
         display: inline-flex;
         align-items: center;
@@ -1028,16 +1117,19 @@
         animation: pulsoResplandorConstelacion 3s ease-in-out infinite alternate;
         -webkit-tap-highlight-color: transparent;
       }
+
       .btn-nodo-constelacion:active {
         background: #cf3838;
         border-color: #ff5252;
       }
+
       .icono-nodo-svg {
         width: 100px !important;
         height: 100px !important;
         flex-shrink: 0;
         animation: rotarSutilConstelacion 14s linear infinite;
       }
+
       .btn-nodo-constelacion .flecha-pulso {
         font-size: 40px !important;
         color: #ff5252;
@@ -1056,10 +1148,12 @@
         visibility: hidden;
         transition: opacity 0.35s ease, visibility 0.35s;
       }
+
       .modal-constelacion.activo {
         opacity: 1;
         visibility: visible;
       }
+
       .constelacion-backdrop {
         position: absolute;
         inset: 0;
@@ -1067,6 +1161,7 @@
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
       }
+
       .constelacion-panel {
         position: relative;
         z-index: 2;
@@ -1081,9 +1176,11 @@
         transform: scale(0.92) translateY(30px);
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
+
       .modal-constelacion.activo .constelacion-panel {
         transform: scale(1) translateY(0);
       }
+
       .constelacion-header {
         display: flex;
         align-items: center;
@@ -1091,6 +1188,7 @@
         padding-bottom: 28px;
         border-bottom: 2px solid rgba(255, 255, 255, 0.12);
       }
+
       .constelacion-badge {
         display: block;
         font-size: 26px;
@@ -1099,12 +1197,14 @@
         text-transform: uppercase;
         color: #ff5252;
       }
+
       .constelacion-titulo {
         font-family: "Lexend", sans-serif;
         font-size: 50px;
         font-weight: 700;
         color: #ffffff;
       }
+
       .btn-cerrar-constelacion {
         width: 110px;
         height: 110px;
@@ -1119,15 +1219,18 @@
         border: 2px solid rgba(255, 255, 255, 0.25);
         color: #ffffff;
       }
+
       .btn-cerrar-constelacion i {
         font-size: 52px !important;
       }
+
       .constelacion-grafo-container {
         position: relative;
         width: 100%;
         aspect-ratio: 1 / 1;
         margin: 20px 0 10px 0;
       }
+
       .constelacion-lineas-svg {
         position: absolute;
         inset: 0;
@@ -1136,6 +1239,7 @@
         pointer-events: none;
         z-index: 1;
       }
+
       .linea-vectorial {
         stroke: rgba(255, 255, 255, 0.6);
         stroke-width: 2.5;
@@ -1143,15 +1247,18 @@
         stroke-dashoffset: 180;
         transition: stroke-dashoffset 0.7s ease;
       }
+
       .modal-constelacion.activo .linea-vectorial {
         stroke-dashoffset: 0;
       }
+
       .linea-orbita-exterior {
         fill: none;
         stroke: rgba(207, 56, 56, 0.5);
         stroke-width: 2;
         stroke-dasharray: 5, 5;
       }
+
       .nodo-constelacion {
         position: absolute;
         z-index: 3;
@@ -1161,6 +1268,7 @@
         text-decoration: none !important;
         -webkit-tap-highlight-color: transparent;
       }
+
       .nodo-burbuja {
         width: 132px;
         height: 132px;
@@ -1174,12 +1282,15 @@
         box-shadow: 0 8px 26px rgba(211, 47, 47, 0.55);
         color: #ffffff;
       }
+
       .nodo-burbuja i {
         font-size: 56px !important;
       }
+
       .nodo-constelacion:active .nodo-burbuja {
         background: #ff5252;
       }
+
       .nodo-etiqueta {
         margin-top: 12px;
         padding: 6px 20px;
@@ -1192,18 +1303,50 @@
         color: #ffffff;
         white-space: nowrap;
       }
-      .nodo-pos-1 { top: 2%;  left: 50%; transform: translate(-50%, 0); }
-      .nodo-pos-2 { top: 22%; left: 84%; transform: translate(-50%, 0); }
-      .nodo-pos-3 { top: 64%; left: 84%; transform: translate(-50%, 0); }
-      .nodo-pos-4 { top: 78%; left: 50%; transform: translate(-50%, 0); }
-      .nodo-pos-5 { top: 64%; left: 16%; transform: translate(-50%, 0); }
-      .nodo-pos-6 { top: 22%; left: 16%; transform: translate(-50%, 0); }
+
+      .nodo-pos-1 {
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      .nodo-pos-2 {
+        top: 22%;
+        left: 84%;
+        transform: translate(-50%, 0);
+      }
+
+      .nodo-pos-3 {
+        top: 64%;
+        left: 84%;
+        transform: translate(-50%, 0);
+      }
+
+      .nodo-pos-4 {
+        top: 78%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      .nodo-pos-5 {
+        top: 64%;
+        left: 16%;
+        transform: translate(-50%, 0);
+      }
+
+      .nodo-pos-6 {
+        top: 22%;
+        left: 16%;
+        transform: translate(-50%, 0);
+      }
+
       .nodo-nucleo {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         pointer-events: none;
       }
+
       .nucleo-icono-box {
         position: relative;
         z-index: 2;
@@ -1219,9 +1362,11 @@
         box-shadow: 0 0 40px rgba(229, 57, 53, 0.85);
         color: #ffffff;
       }
+
       .nucleo-icono-box i {
         font-size: 64px !important;
       }
+
       .nucleo-halo-onda {
         position: absolute;
         top: 50%;
@@ -1232,6 +1377,7 @@
         border: 3px solid rgba(255, 82, 82, 0.6);
         animation: pulsoHaloNucleo 2.2s infinite ease-out;
       }
+
       .nucleo-label {
         margin-top: 8px;
         padding: 4px 18px;
@@ -1243,6 +1389,7 @@
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.9);
       }
+
       .constelacion-subtexto {
         margin: 44px 0 0 0;
         text-align: center;
@@ -1250,21 +1397,49 @@
         color: rgba(255, 255, 255, 0.65);
       }
     }
+
     @keyframes pulsoResplandorConstelacion {
-      0% { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55), 0 0 10px rgba(207, 56, 56, 0.3); border-color: rgba(255, 255, 255, 0.35); }
-      100% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.65), 0 0 28px rgba(207, 56, 56, 0.8); border-color: rgba(255, 82, 82, 0.75); }
+      0% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55), 0 0 10px rgba(207, 56, 56, 0.3);
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+
+      100% {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.65), 0 0 28px rgba(207, 56, 56, 0.8);
+        border-color: rgba(255, 82, 82, 0.75);
+      }
     }
+
     @keyframes rotarSutilConstelacion {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
+
     @keyframes rebotarFlecha {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-8px);
+      }
     }
+
     @keyframes pulsoHaloNucleo {
-      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
-      100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+      }
     }
   </style>
 
@@ -1317,8 +1492,16 @@
 
       <!-- SECCIÓN HERO CON EFECTO DE LLUVIA Y GOTAS DE AGUA -->
       <section class="hero-section hero-fullscreen">
-        <img class="hero-bg" src="img/hero-Impermeabilizaciones.webp"
-          alt="Impermeabilización profesional de techos y terrazas" />
+        <picture>
+          <!-- Versión vertical para móviles -->
+          <source
+            media="(max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8), (max-width: 1080px) and (min-resolution: 1.8dppx)"
+            srcset="img/Hero-Imper-vertical.webp">
+
+          <!-- Imagen por defecto (Escritorio / Pantallas grandes) -->
+          <img class="hero-bg" src="img/hero-Impermeabilizaciones.webp"
+            alt="Impermeabilización profesional de techos y terrazas">
+        </picture>
 
         <!-- Efecto CSS: Lluvia y Partículas de Agua -->
         <div class="hero-rain-fx" aria-hidden="true">
@@ -1326,53 +1509,84 @@
           <div class="rain-niebla-piso"></div>
 
           <!-- Capa 1: Lluvia frontal rápida -->
-          <div class="gota-lluvia gota-frontal" style="left: 4%; animation-delay: 0.1s; animation-duration: 0.68s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 12%; animation-delay: 0.42s; animation-duration: 0.72s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 21%; animation-delay: 0.18s; animation-duration: 0.65s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 29%; animation-delay: 0.55s; animation-duration: 0.74s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 38%; animation-delay: 0.05s; animation-duration: 0.70s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 47%; animation-delay: 0.38s; animation-duration: 0.67s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 56%; animation-delay: 0.22s; animation-duration: 0.75s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 64%; animation-delay: 0.62s; animation-duration: 0.69s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 73%; animation-delay: 0.12s; animation-duration: 0.71s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 82%; animation-delay: 0.48s; animation-duration: 0.66s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 91%; animation-delay: 0.27s; animation-duration: 0.73s;"></div>
-          <div class="gota-lluvia gota-frontal" style="left: 97%; animation-delay: 0.58s; animation-duration: 0.68s;"></div>
+          <div class="gota-lluvia gota-frontal" style="left: 4%; animation-delay: 0.1s; animation-duration: 0.68s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 12%; animation-delay: 0.42s; animation-duration: 0.72s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 21%; animation-delay: 0.18s; animation-duration: 0.65s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 29%; animation-delay: 0.55s; animation-duration: 0.74s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 38%; animation-delay: 0.05s; animation-duration: 0.70s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 47%; animation-delay: 0.38s; animation-duration: 0.67s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 56%; animation-delay: 0.22s; animation-duration: 0.75s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 64%; animation-delay: 0.62s; animation-duration: 0.69s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 73%; animation-delay: 0.12s; animation-duration: 0.71s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 82%; animation-delay: 0.48s; animation-duration: 0.66s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 91%; animation-delay: 0.27s; animation-duration: 0.73s;">
+          </div>
+          <div class="gota-lluvia gota-frontal" style="left: 97%; animation-delay: 0.58s; animation-duration: 0.68s;">
+          </div>
 
           <!-- Capa 2: Lluvia media intermedia -->
           <div class="gota-lluvia gota-media" style="left: 7%; animation-delay: 0.3s; animation-duration: 0.92s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 16%; animation-delay: 0.75s; animation-duration: 0.98s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 25%; animation-delay: 0.15s; animation-duration: 0.90s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 34%; animation-delay: 0.5s; animation-duration: 1.02s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 43%; animation-delay: 0.85s; animation-duration: 0.94s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 52%; animation-delay: 0.25s; animation-duration: 0.88s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 60%; animation-delay: 0.65s; animation-duration: 0.96s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 69%; animation-delay: 0.1s; animation-duration: 1.05s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 78%; animation-delay: 0.45s; animation-duration: 0.91s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 87%; animation-delay: 0.8s; animation-duration: 0.97s;"></div>
-          <div class="gota-lluvia gota-media" style="left: 95%; animation-delay: 0.35s; animation-duration: 0.93s;"></div>
+          <div class="gota-lluvia gota-media" style="left: 16%; animation-delay: 0.75s; animation-duration: 0.98s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 25%; animation-delay: 0.15s; animation-duration: 0.90s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 34%; animation-delay: 0.5s; animation-duration: 1.02s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 43%; animation-delay: 0.85s; animation-duration: 0.94s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 52%; animation-delay: 0.25s; animation-duration: 0.88s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 60%; animation-delay: 0.65s; animation-duration: 0.96s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 69%; animation-delay: 0.1s; animation-duration: 1.05s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 78%; animation-delay: 0.45s; animation-duration: 0.91s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 87%; animation-delay: 0.8s; animation-duration: 0.97s;">
+          </div>
+          <div class="gota-lluvia gota-media" style="left: 95%; animation-delay: 0.35s; animation-duration: 0.93s;">
+          </div>
 
           <!-- Capa 3: Llovizna fina de fondo -->
           <div class="gota-lluvia gota-fondo" style="left: 10%; animation-delay: 0.2s; animation-duration: 1.2s;"></div>
-          <div class="gota-lluvia gota-fondo" style="left: 23%; animation-delay: 0.8s; animation-duration: 1.35s;"></div>
-          <div class="gota-lluvia gota-fondo" style="left: 36%; animation-delay: 0.4s; animation-duration: 1.15s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 23%; animation-delay: 0.8s; animation-duration: 1.35s;">
+          </div>
+          <div class="gota-lluvia gota-fondo" style="left: 36%; animation-delay: 0.4s; animation-duration: 1.15s;">
+          </div>
           <div class="gota-lluvia gota-fondo" style="left: 50%; animation-delay: 1.0s; animation-duration: 1.3s;"></div>
-          <div class="gota-lluvia gota-fondo" style="left: 66%; animation-delay: 0.6s; animation-duration: 1.25s;"></div>
-          <div class="gota-lluvia gota-fondo" style="left: 79%; animation-delay: 0.1s; animation-duration: 1.18s;"></div>
-          <div class="gota-lluvia gota-fondo" style="left: 93%; animation-delay: 0.7s; animation-duration: 1.28s;"></div>
+          <div class="gota-lluvia gota-fondo" style="left: 66%; animation-delay: 0.6s; animation-duration: 1.25s;">
+          </div>
+          <div class="gota-lluvia gota-fondo" style="left: 79%; animation-delay: 0.1s; animation-duration: 1.18s;">
+          </div>
+          <div class="gota-lluvia gota-fondo" style="left: 93%; animation-delay: 0.7s; animation-duration: 1.28s;">
+          </div>
 
           <!-- Salpicaduras / Ondas de agua en la superficie del techo -->
           <div class="salpicadura-contenedor">
-            <div class="onda-agua" style="left: 22%; bottom: 25px; width: 45px; height: 18px; animation-delay: 0.2s;"></div>
+            <div class="onda-agua" style="left: 22%; bottom: 25px; width: 45px; height: 18px; animation-delay: 0.2s;">
+            </div>
             <div class="micro-salpique" style="left: 23%; bottom: 32px; animation-delay: 0.2s;"></div>
 
-            <div class="onda-agua" style="left: 48%; bottom: 40px; width: 50px; height: 20px; animation-delay: 0.8s;"></div>
+            <div class="onda-agua" style="left: 48%; bottom: 40px; width: 50px; height: 20px; animation-delay: 0.8s;">
+            </div>
             <div class="micro-salpique" style="left: 49%; bottom: 48px; animation-delay: 0.8s;"></div>
 
-            <div class="onda-agua" style="left: 65%; bottom: 20px; width: 42px; height: 16px; animation-delay: 1.4s;"></div>
+            <div class="onda-agua" style="left: 65%; bottom: 20px; width: 42px; height: 16px; animation-delay: 1.4s;">
+            </div>
             <div class="micro-salpique" style="left: 66%; bottom: 27px; animation-delay: 1.4s;"></div>
 
-            <div class="onda-agua" style="left: 80%; bottom: 35px; width: 46px; height: 18px; animation-delay: 0.5s;"></div>
+            <div class="onda-agua" style="left: 80%; bottom: 35px; width: 46px; height: 18px; animation-delay: 0.5s;">
+            </div>
             <div class="micro-salpique" style="left: 81%; bottom: 42px; animation-delay: 0.5s;"></div>
           </div>
         </div>
@@ -1382,18 +1596,23 @@
           <nav class="hero-nav-secciones" aria-label="Navegación de secciones de Impermeabilización">
             <div class="hero-nav-titulo"><i class="fas fa-compass"></i> Secciones de Interés</div>
             <div class="hero-nav-botones">
-              <a href="#Section-Nuestros-Servicios" class="btn-hero-nav"><i class="fas fa-layer-group"></i> Servicios</a>
-              <a href="#Section-Nuestro-Procedimiento" class="btn-hero-nav"><i class="fas fa-list-check"></i> Procedimiento</a>
+              <a href="#Section-Nuestros-Servicios" class="btn-hero-nav"><i class="fas fa-layer-group"></i>
+                Servicios</a>
+              <a href="#Section-Nuestro-Procedimiento" class="btn-hero-nav"><i class="fas fa-list-check"></i>
+                Procedimiento</a>
               <a href="#Section-Porque-Elegirnos" class="btn-hero-nav"><i class="fas fa-award"></i> Garantías</a>
-              <a href="#Seccion-Zonas-Cobertura" class="btn-hero-nav"><i class="fas fa-map-marker-alt"></i> Cobertura</a>
-              <a href="#Seccion-Nuestra-Experiencia" class="btn-hero-nav"><i class="fas fa-certificate"></i> Experiencia</a>
+              <a href="#Seccion-Zonas-Cobertura" class="btn-hero-nav"><i class="fas fa-map-marker-alt"></i>
+                Cobertura</a>
+              <a href="#Seccion-Nuestra-Experiencia" class="btn-hero-nav"><i class="fas fa-certificate"></i>
+                Experiencia</a>
               <a href="#Section-Faq" class="btn-hero-nav"><i class="fas fa-circle-question"></i> FAQ</a>
             </div>
           </nav>
 
           <!-- Móvil: botón de nodos (estilo logo Mantonet) que abre la constelación -->
           <div class="hero-mobile-trigger-container">
-            <button type="button" class="btn-nodo-constelacion" id="btnAbrirConstelacion" aria-label="Explorar secciones de la página">
+            <button type="button" class="btn-nodo-constelacion" id="btnAbrirConstelacion"
+              aria-label="Explorar secciones de la página">
               <svg class="icono-nodo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <line x1="50" y1="50" x2="22" y2="32" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
                 <line x1="50" y1="50" x2="78" y2="32" stroke="rgba(255,255,255,0.85)" stroke-width="3" />
@@ -1429,19 +1648,26 @@
             <a href="a-MenuServicios.html" class="sticky-logo-link" title="Ir al inicio de Mantonet">
               <div id="sticky-logo-container" class="sticky-logo-svg"></div>
             </a>
-            <button type="button" class="btn-hamburger-sticky btn-secciones-drawer" aria-label="Abrir secciones de la página">
+            <button type="button" class="btn-hamburger-sticky btn-secciones-drawer"
+              aria-label="Abrir secciones de la página">
               <i class="fas fa-list-ul"></i>
             </button>
           </div>
 
           <!-- Desktop: chips de secciones -->
           <nav class="sticky-nav-chips" aria-label="Navegación rápida de secciones">
-            <a href="#Section-Nuestros-Servicios" class="chip-seccion"><i class="fas fa-layer-group"></i> <span>Servicios</span></a>
-            <a href="#Section-Nuestro-Procedimiento" class="chip-seccion"><i class="fas fa-list-check"></i> <span>Procedimiento</span></a>
-            <a href="#Section-Porque-Elegirnos" class="chip-seccion"><i class="fas fa-award"></i> <span>Garantías</span></a>
-            <a href="#Seccion-Zonas-Cobertura" class="chip-seccion"><i class="fas fa-map-marker-alt"></i> <span>Cobertura</span></a>
-            <a href="#Seccion-Nuestra-Experiencia" class="chip-seccion"><i class="fas fa-certificate"></i> <span>Experiencia</span></a>
-            <a href="#Section-Faq" class="chip-seccion"><i class="fas fa-circle-question"></i> <span>Preguntas</span></a>
+            <a href="#Section-Nuestros-Servicios" class="chip-seccion"><i class="fas fa-layer-group"></i>
+              <span>Servicios</span></a>
+            <a href="#Section-Nuestro-Procedimiento" class="chip-seccion"><i class="fas fa-list-check"></i>
+              <span>Procedimiento</span></a>
+            <a href="#Section-Porque-Elegirnos" class="chip-seccion"><i class="fas fa-award"></i>
+              <span>Garantías</span></a>
+            <a href="#Seccion-Zonas-Cobertura" class="chip-seccion"><i class="fas fa-map-marker-alt"></i>
+              <span>Cobertura</span></a>
+            <a href="#Seccion-Nuestra-Experiencia" class="chip-seccion"><i class="fas fa-certificate"></i>
+              <span>Experiencia</span></a>
+            <a href="#Section-Faq" class="chip-seccion"><i class="fas fa-circle-question"></i>
+              <span>Preguntas</span></a>
           </nav>
         </div>
       </header>
@@ -2053,8 +2279,8 @@
   </script>
 
   <!-- Botón Circular de Audio / Jingle con animación de Latido de Corazón -->
-  <button id="btnControlAudio" class="boton-circular-audio boton-latido"
-    aria-label="Reproducir Jingle de Mantonet" title="Reproducir Jingle Mantonet">
+  <button id="btnControlAudio" class="boton-circular-audio boton-latido" aria-label="Reproducir Jingle de Mantonet"
+    title="Reproducir Jingle Mantonet">
     <svg version="1.1" id="iconoAudioSvg" xmlns="http://www.w3.org/2000/svg" width="46" height="46"
       viewBox="300,-72.5,1000,1000" style="position:relative; z-index:2; transition: transform 0.25s ease;">
       <g id="Capa 1" fill="#ffffff">
@@ -2062,7 +2288,8 @@
           d="M1109.42478,29.55155l20.36842,7.28888l3.70335,9.11109v517.50989c-8.14737,29.64142 -22.34354,53.33023 -42.58852,71.06649l-55.55027,32.79991l-33.33016,7.28888h-37.0335c-42.4651,-6.80294 -73.94358,-24.41771 -94.43545,-52.84431l-22.2201,-47.37768v-43.73322c8.88805,-38.63101 28.02201,-67.17909 57.40193,-85.64424l55.55027,-25.51104l59.2536,-3.64445c27.4048,4.85924 50.24215,13.36294 68.51201,25.51107c0,0 -1.38231,-139.2565 -1.34307,-161.57505c0.03924,-22.31855 -2.3603,-99.00211 -2.3603,-99.00211l-1.85167,-96.57756l-357.37336,94.75533v519.33212c-9.6287,34.25769 -27.52824,60.37615 -53.69858,78.35536c-17.28231,14.57775 -39.50241,24.29625 -66.66031,29.1555h-59.25362c-34.07083,-7.7748 -60.61151,-22.95995 -79.62205,-45.55545l-22.2201,-40.08879l-3.70335,-54.66654c8.39426,-35.4725 25.05934,-62.80579 49.99523,-81.99981c27.15791,-25.51104 69.12922,-36.44436 125.91393,-32.79993c26.17034,5.34516 47.77322,13.84888 64.80864,25.51107v-424.57679l12.96171,-12.75552z" />
       </g>
     </svg>
-    <i class="fa-solid fa-pause" id="iconoPausaAudio" style="display: none; font-size: 26px; color: #ffffff; position: relative; z-index: 2;"></i>
+    <i class="fa-solid fa-pause" id="iconoPausaAudio"
+      style="display: none; font-size: 26px; color: #ffffff; position: relative; z-index: 2;"></i>
   </button>
 
   <audio id="audioFondoImper" src="sonidos/Tu_Refugio_Bajo_Techo.mp3" preload="auto"></audio>
@@ -2127,11 +2354,15 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-    <a href="#Section-Nuestros-Servicios" class="drawer-link"><i class="fas fa-layer-group"></i><span>Servicios</span></a>
-    <a href="#Section-Nuestro-Procedimiento" class="drawer-link"><i class="fas fa-list-check"></i><span>Procedimiento</span></a>
+    <a href="#Section-Nuestros-Servicios" class="drawer-link"><i
+        class="fas fa-layer-group"></i><span>Servicios</span></a>
+    <a href="#Section-Nuestro-Procedimiento" class="drawer-link"><i
+        class="fas fa-list-check"></i><span>Procedimiento</span></a>
     <a href="#Section-Porque-Elegirnos" class="drawer-link"><i class="fas fa-award"></i><span>Garantías</span></a>
-    <a href="#Seccion-Zonas-Cobertura" class="drawer-link"><i class="fas fa-map-marker-alt"></i><span>Cobertura</span></a>
-    <a href="#Seccion-Nuestra-Experiencia" class="drawer-link"><i class="fas fa-certificate"></i><span>Experiencia</span></a>
+    <a href="#Seccion-Zonas-Cobertura" class="drawer-link"><i
+        class="fas fa-map-marker-alt"></i><span>Cobertura</span></a>
+    <a href="#Seccion-Nuestra-Experiencia" class="drawer-link"><i
+        class="fas fa-certificate"></i><span>Experiencia</span></a>
     <a href="#Section-Faq" class="drawer-link"><i class="fas fa-circle-question"></i><span>Preguntas</span></a>
   </aside>
 
@@ -2178,7 +2409,8 @@
   </script>
 
   <!-- Modal Constelación de Nodos (móvil) -->
-  <div id="modalConstelacion" class="modal-constelacion" aria-hidden="true" role="dialog" aria-label="Secciones de la página">
+  <div id="modalConstelacion" class="modal-constelacion" aria-hidden="true" role="dialog"
+    aria-label="Secciones de la página">
     <div class="constelacion-backdrop" id="backdropConstelacion"></div>
     <div class="constelacion-panel">
       <div class="constelacion-header">
@@ -2208,12 +2440,28 @@
           <span class="nucleo-label">Mantonet</span>
         </div>
 
-        <a href="#Section-Nuestros-Servicios" class="nodo-constelacion nodo-pos-1"><div class="nodo-burbuja"><i class="fas fa-layer-group"></i></div><span class="nodo-etiqueta">Servicios</span></a>
-        <a href="#Section-Nuestro-Procedimiento" class="nodo-constelacion nodo-pos-2"><div class="nodo-burbuja"><i class="fas fa-list-check"></i></div><span class="nodo-etiqueta">Procedimiento</span></a>
-        <a href="#Section-Porque-Elegirnos" class="nodo-constelacion nodo-pos-3"><div class="nodo-burbuja"><i class="fas fa-award"></i></div><span class="nodo-etiqueta">Garantías</span></a>
-        <a href="#Seccion-Zonas-Cobertura" class="nodo-constelacion nodo-pos-4"><div class="nodo-burbuja"><i class="fas fa-map-marker-alt"></i></div><span class="nodo-etiqueta">Cobertura</span></a>
-        <a href="#Seccion-Nuestra-Experiencia" class="nodo-constelacion nodo-pos-5"><div class="nodo-burbuja"><i class="fas fa-certificate"></i></div><span class="nodo-etiqueta">Experiencia</span></a>
-        <a href="#Section-Faq" class="nodo-constelacion nodo-pos-6"><div class="nodo-burbuja"><i class="fas fa-circle-question"></i></div><span class="nodo-etiqueta">Preguntas</span></a>
+        <a href="#Section-Nuestros-Servicios" class="nodo-constelacion nodo-pos-1">
+          <div class="nodo-burbuja"><i class="fas fa-layer-group"></i></div><span class="nodo-etiqueta">Servicios</span>
+        </a>
+        <a href="#Section-Nuestro-Procedimiento" class="nodo-constelacion nodo-pos-2">
+          <div class="nodo-burbuja"><i class="fas fa-list-check"></i></div><span
+            class="nodo-etiqueta">Procedimiento</span>
+        </a>
+        <a href="#Section-Porque-Elegirnos" class="nodo-constelacion nodo-pos-3">
+          <div class="nodo-burbuja"><i class="fas fa-award"></i></div><span class="nodo-etiqueta">Garantías</span>
+        </a>
+        <a href="#Seccion-Zonas-Cobertura" class="nodo-constelacion nodo-pos-4">
+          <div class="nodo-burbuja"><i class="fas fa-map-marker-alt"></i></div><span
+            class="nodo-etiqueta">Cobertura</span>
+        </a>
+        <a href="#Seccion-Nuestra-Experiencia" class="nodo-constelacion nodo-pos-5">
+          <div class="nodo-burbuja"><i class="fas fa-certificate"></i></div><span
+            class="nodo-etiqueta">Experiencia</span>
+        </a>
+        <a href="#Section-Faq" class="nodo-constelacion nodo-pos-6">
+          <div class="nodo-burbuja"><i class="fas fa-circle-question"></i></div><span
+            class="nodo-etiqueta">Preguntas</span>
+        </a>
       </div>
 
       <p class="constelacion-subtexto">Toca un nodo para ir a la sección</p>
