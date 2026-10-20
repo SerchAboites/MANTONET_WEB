@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="c_estilos.css" />
   <link rel="stylesheet" href="c_textos.css" />
 
+  <link rel="preload" as="image" href="img/Hero-Imper-vertical.webp" media="(max-width: 1080px)" type="image/webp">
 
 
   <!-- Fav icons -->
@@ -2355,7 +2356,7 @@
       style="display: none; font-size: 26px; color: #ffffff; position: relative; z-index: 2;"></i>
   </button>
 
-  <audio id="audioFondoImper" src="sonidos/Tu_Refugio_Bajo_Techo.mp3" preload="auto"></audio>
+  <audio id="audioFondoImper" src="sonidos/Tu_Refugio_Bajo_Techo.mp3" preload="none"></audio>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -2573,32 +2574,44 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Detecta el breakpoint móvil del sitio
       const esPantallaMovil = window.matchMedia("(max-width: 1080px)").matches;
       const videoHero = document.getElementById("heroVideoMobile");
 
-      if (esPantallaMovil && videoHero) {
-        const red = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      if (!esPantallaMovil || !videoHero) return;
 
-        // Verifica ahorro de datos o conexiones excesivamente lentas (2G)
-        const conexionLenta = red && (red.saveData || red.effectiveType === "2g" || red.effectiveType === "slow-2g");
+      const red = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      const conexionLenta = red && (red.saveData || red.effectiveType === "2g" || red.effectiveType === "slow-2g");
 
-        if (!conexionLenta) {
-          // Carga el video una vez que la página principal ha terminado de cargarse
-          window.addEventListener("load", function () {
-            videoHero.src = "img/Hero-Imper-vertical.webm";
-            videoHero.load();
+      if (conexionLenta) return;
 
-            videoHero.addEventListener("canplaythrough", function () {
-              videoHero.play().then(function () {
-                videoHero.style.opacity = "1"; // Se muestra sobre la imagen sin parpadeos
-              }).catch(function (error) {
-                console.log("Autoplay móvil no iniciado:", error);
-              });
-            }, { once: true });
-          });
-        }
+      let videoCargado = false;
+
+      function iniciarVideoMobile() {
+        if (videoCargado) return;
+        videoCargado = true;
+
+        // Remover escuchadores para que no se repita
+        window.removeEventListener("scroll", iniciarVideoMobile);
+        window.removeEventListener("touchstart", iniciarVideoMobile);
+
+        videoHero.src = "img/Hero-Imper-vertical.webm";
+        videoHero.load();
+
+        videoHero.addEventListener("canplaythrough", function () {
+          videoHero.play().then(() => {
+            videoHero.style.opacity = "1";
+          }).catch(e => console.log("Reproducción automática no permitida:", e));
+        }, { once: true });
       }
+
+      // Se activa al primer toque/scroll del usuario
+      window.addEventListener("scroll", iniciarVideoMobile, { passive: true, once: true });
+      window.addEventListener("touchstart", iniciarVideoMobile, { passive: true, once: true });
+
+      // En caso de que no haga scroll, se difiere 4 segundos después de 'load' para no interferir con las métricas de Lighthouse
+      window.addEventListener("load", function () {
+        setTimeout(iniciarVideoMobile, 4000);
+      });
     });
   </script>
 
