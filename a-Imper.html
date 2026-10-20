@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <base target="_top">
 
   <!-- Título optimizado para abarcar zonas clave -->
@@ -20,11 +24,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Reemplaza la etiqueta <link> actual de font-awesome por esta versión asíncrona: -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
+
   <link rel="stylesheet" href="c_estilos.css" />
   <link rel="stylesheet" href="c_textos.css" />
 
-  <link rel="preload" as="image" href="img/Hero-Imper-vertical.webp" media="(max-width: 1080px)" type="image/webp">
+  <!-- Prioridad máxima inmediata solo a la imagen vertical en móviles -->
+  <link rel="preload" as="image" href="img/Hero-Imper-vertical.webp" media="(max-width: 768px)" type="image/webp"
+    fetchpriority="high">
 
 
   <!-- Fav icons -->
@@ -1552,14 +1564,11 @@
 
         <!-- 1. IMAGEN DE FONDO RESPONSIVA (Un solo picture con su clase) -->
         <picture class="hero-picture-bg">
-          <!-- Versión vertical para móviles -->
-          <source
-            media="(max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8), (max-width: 1080px) and (min-resolution: 1.8dppx)"
-            srcset="img/Hero-Imper-vertical.webp">
-
-          <!-- Imagen horizontal por defecto (escritorio) -->
+          <!-- Móviles -->
+          <source media="(max-width: 768px)" srcset="img/Hero-Imper-vertical.webp">
+          <!-- Desktop / tablets grandes -->
           <img class="hero-bg" src="img/hero-Impermeabilizaciones.webp"
-            alt="Impermeabilización profesional de techos y terrazas" fetchpriority="high">
+            alt="Impermeabilización profesional de techos y terrazas" fetchpriority="high" loading="eager">
         </picture>
 
         <!-- 2. VIDEO VERTICAL MÓVIL (Afuera del picture, al mismo nivel) -->
@@ -2574,44 +2583,24 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const esPantallaMovil = window.matchMedia("(max-width: 1080px)").matches;
       const videoHero = document.getElementById("heroVideoMobile");
+      if (!videoHero || window.innerWidth > 768) return;
 
-      if (!esPantallaMovil || !videoHero) return;
-
-      const red = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-      const conexionLenta = red && (red.saveData || red.effectiveType === "2g" || red.effectiveType === "slow-2g");
-
-      if (conexionLenta) return;
-
-      let videoCargado = false;
-
-      function iniciarVideoMobile() {
-        if (videoCargado) return;
-        videoCargado = true;
-
-        // Remover escuchadores para que no se repita
-        window.removeEventListener("scroll", iniciarVideoMobile);
-        window.removeEventListener("touchstart", iniciarVideoMobile);
+      function activarVideo() {
+        window.removeEventListener("touchstart", activarVideo);
+        window.removeEventListener("scroll", activarVideo);
 
         videoHero.src = "img/Hero-Imper-vertical.webm";
         videoHero.load();
-
         videoHero.addEventListener("canplaythrough", function () {
           videoHero.play().then(() => {
             videoHero.style.opacity = "1";
-          }).catch(e => console.log("Reproducción automática no permitida:", e));
+          }).catch(() => { });
         }, { once: true });
       }
 
-      // Se activa al primer toque/scroll del usuario
-      window.addEventListener("scroll", iniciarVideoMobile, { passive: true, once: true });
-      window.addEventListener("touchstart", iniciarVideoMobile, { passive: true, once: true });
-
-      // En caso de que no haga scroll, se difiere 4 segundos después de 'load' para no interferir con las métricas de Lighthouse
-      window.addEventListener("load", function () {
-        setTimeout(iniciarVideoMobile, 4000);
-      });
+      window.addEventListener("touchstart", activarVideo, { passive: true, once: true });
+      window.addEventListener("scroll", activarVideo, { passive: true, once: true });
     });
   </script>
 
