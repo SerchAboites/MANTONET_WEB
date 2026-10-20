@@ -386,22 +386,9 @@
     }
 
     /* Bruma y atmósfera húmeda de tormenta */
-    .rain-mist-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 35%, rgba(18, 32, 50, 0.3) 0%, rgba(10, 18, 28, 0.52) 100%);
-      pointer-events: none;
-    }
+    .rain-mist-overlay { display: none !important; }
 
-    .rain-niebla-piso {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 42%;
-      background: linear-gradient(to top, rgba(14, 24, 36, 0.6) 0%, rgba(20, 35, 52, 0.22) 55%, transparent 100%);
-      pointer-events: none;
-    }
+    .rain-niebla-piso { display: none !important; }
 
     /* Gotas de lluvia cayendo con estela de agua en ángulo */
     .gota-lluvia {
@@ -798,6 +785,50 @@
        (~0.36x). Por eso las medidas móviles son 3x (header 200px, botones 150px).
        ========================================================= */
 
+    /* =========================================================
+       INDICADOR DE SCROLL EN EL HERO (3 flechas secuenciales)
+       ========================================================= */
+    .hero-scroll-flechas {
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      pointer-events: none;
+    }
+
+    .flecha-scroll {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-top: -9px;
+      border-right: 3px solid #ffffff;
+      border-bottom: 3px solid #ffffff;
+      transform: rotate(45deg);
+      opacity: 0.15;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
+      animation: flechaScrollAparecer 1.8s ease-in-out infinite;
+    }
+
+    .flecha-scroll:nth-child(2) { animation-delay: 0.3s; }
+    .flecha-scroll:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes flechaScrollAparecer {
+      0%   { opacity: 0.15; }
+      30%  { opacity: 1; }
+      60%  { opacity: 0.15; }
+      100% { opacity: 0.15; }
+    }
+
+    /* Desktop: deja espacio bajo los chips para que las flechas no se encimen */
+    @media (min-width: 851px) {
+      .hero-content { padding-bottom: 95px !important; }
+    }
+
     /* Por defecto (desktop) el botón derecho y el drawer no existen */
     .btn-secciones-drawer,
     .botonArribaDerecha,
@@ -842,6 +873,33 @@
 
     @media (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 1.8),
     (max-width: 1080px) and (min-resolution: 1.8dppx) {
+
+      /* ---- Compensación del <meta viewport> ----
+         Las medidas móviles del sitio (c_estilos.css / c_textos.css / este bloque) se diseñaron
+         para un lienzo virtual de ~980px. Con viewport real (~390px) se verían 2.5x más grandes,
+         así que reescalamos solo esta página para recuperar el lienzo de ~980px. */
+      html {
+        zoom: 0.4;
+      }
+
+      /* Con zoom las unidades vh se reducen; se compensan para que el hero llene la pantalla */
+      .hero-section {
+        height: 250vh !important;
+        min-height: 250vh !important;
+      }
+
+      /* Flechas de scroll: más grandes y por encima de la barra inferior fija */
+      .hero-scroll-flechas {
+        bottom: 360px;
+      }
+
+      .flecha-scroll {
+        width: 54px;
+        height: 54px;
+        margin-top: -24px;
+        border-right-width: 8px;
+        border-bottom-width: 8px;
+      }
 
       /* ---- Hero: sin botones de texto, queda limpio ---- */
       .hero-nav-secciones {
@@ -1578,8 +1636,6 @@
         <!-- Efecto CSS: Lluvia y Partículas de Agua -->
         <div class="hero-rain-fx" aria-hidden="true">
 
-          <div class="rain-mist-overlay"></div>
-          <div class="rain-niebla-piso"></div>
 
           <!-- Capa 1: Lluvia frontal rápida -->
           <div class="gota-lluvia gota-frontal" style="left: 4%; animation-delay: 0.1s; animation-duration: 0.68s;">
@@ -1681,6 +1737,12 @@
               <a href="#Section-Faq" class="btn-hero-nav"><i class="fas fa-circle-question"></i> FAQ</a>
             </div>
           </nav>
+        </div>
+              <!-- Indicador de scroll: 3 flechas que se vuelven sólidas una por una -->
+        <div class="hero-scroll-flechas" aria-hidden="true">
+          <span class="flecha-scroll"></span>
+          <span class="flecha-scroll"></span>
+          <span class="flecha-scroll"></span>
         </div>
       </section>
 
