@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo... | Mantonet</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/FavIcon-Mantonet-32x32.png">
+
+    <!-- Script de redirección automática para URLs antiguas o sin .html -->
+    <script>
+        (function () {
+            var rawPath = window.location.pathname;
+            // Normalizar a minúsculas y quitar barras finales
+            var cleanPath = rawPath.toLowerCase().replace(/\/+$/, "");
+
+            // Si termina en .html, evaluar también la versión sin .html
+            var baseSlug = cleanPath.replace(/\.html$/, "");
+
+            var routes = {
+                "/a-imper": "/a-Imper.html",
+                "/a-imper-satelite-tlalnepantla": "/a-Imper-Satelite-Tlalnepantla.html",
+                "/a-imper-polanco-lomas": "/a-Imper-Polanco-Lomas.html",
+                "/a-imper-narvarte-del-valle": "/a-Imper-Narvarte-Del-Valle.html",
+                "/a-imper-roma-condesa": "/a-Imper-Roma-Condesa.html",
+                "/a-imper-esmeralda-interlomas": "/a-Imper-Esmeralda-Interlomas.html",
+                "/a-electricidad": "/a-Electricidad.html",
+                "/a-pintura": "/a-Pintura.html",
+                "/a-plomeria": "/a-Plomeria.html",
+                "/a-menuservicios": "/a-MenuServicios.html",
+                "/a-somosmantonet": "/a-SomosMantonet.html",
+                "/a-reparaciones-esteticas": "/a-Reparaciones-Esteticas.html",
+                "/html/a-reparaciones-esteticas": "/a-Reparaciones-Esteticas.html",
+                "/index": "/"
+            };
+
+            var target = routes[baseSlug] || routes[cleanPath];
+
+            if (target) {
+                // Redirigir de inmediato manteniendo los parámetros de búsqueda (UTMs, etc.)
+                var search = window.location.search || "";
+                var hash = window.location.hash || "";
+                window.location.replace(target + search + hash);
+            }
+        })();
+    </script>
+
+    <style>
+        body {
+            background: radial-gradient(circle at center, rgb(37, 37, 37) 0%, #2c2c2c 100%);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 72px;
+            margin: 0 0 10px 0;
+            color: #d30000;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 0 0 15px 0;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: darkred;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #8B0000;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Página no encontrada</h2>
+        <p>El enlace que buscas no existe o ha cambiado de dirección. Si estás siendo redirigido automáticamente, por favor espera un momento.</p>
+        <div>
+            <a href="/" class="btn">Ir a Contacto</a>
+            <a href="/a-MenuServicios.html" class="btn">Ver Servicios</a>
+        </div>
+    </div>
+</body>
+
+</html>
