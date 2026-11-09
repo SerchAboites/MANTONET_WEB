@@ -2,3 +2,5 @@
 User-agent: *
 Disallow: /b-boton-whats.html
 Disallow: /b-menu-desplegable.html
+
+Sitemap: https://mantonet.com/sitemap.xml
